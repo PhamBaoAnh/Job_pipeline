@@ -1,0 +1,1076 @@
+[
+    {
+        "id": "0",
+        "title": "Senior Data Engineer - MSB - KCN - 4G010",
+        "company_name": "Ngân hàng TMCP Hàng Hải Việt Nam (MSB)",
+        "salary": "30 - 50 triệu",
+        "city": "30 - 50 triệu",
+        "yoe": "5 năm",
+        "deadline_submit": "Hạn nộp hồ sơ: 27/08/2025",
+        "main_industry": [],
+        "description": "• Tham gia nghiên cứu, phát triển và áp dụng các giải pháp công nghệ liên quan tới ETL, Tích hợp khai thác và phát triển dữ liệu lớn.\n• Rà soát thiết kế hệ thống dữ liệu hiện tại để tìm ra các ưu nhược điểm, đánh giá rủi ro của mô hình hiện tại và đề xuất, tổ chức triển khai các giải pháp khắc phục, nâng cao.\n• Thường xuyên cập nhật các công nghệ mới, mô hình dữ liệu hiện đại, so sánh phân tích đưa ra các giải pháp tối ưu phù hợp để có thể áp dụng vào hệ thống hiện tại của Ngân hàng.\n• Hỗ trợ phân tích, tư vấn về giải pháp, thiết kế dữ liệu lớn cho các hệ thống, ứng dụng được phát triển và triển khai tại Ngân hàng.\n• Xây dựng, kiểm soát, triển khai và nâng cấp hệ thống ETL, tích hợp, khai thác và phát triển dữ liệu lớn",
+        "requirements": "• Tốt nghiệp Đại học Công nghệ thông tin, Khoa học máy tính, Hệ thống thông tin, Thông tin truyền thông, Toán-Tin\n• Có kinh nghiệm làm việc về các hệ thống big data, Data-warehouse, sử dụng các mã nguồn mở trên hệ sinh thái Hadoop ecosystem như spark, spark-streaming, spark-SQL, hive, hbase, Kafka...\n• Có kinh nghiệm làm việc cơ sở dữ liệu lớn, thành thạo ngôn ngữ lập trình Cơ sở Dữ liệu cấu trúc hoặc phi cấu trúc SQL, NoSQL\n• Ít nhất 5 năm lập trình ngôn ngữ lập trình Java/Python/Scala, SQL trong việc sử lý dữ liệu\n• Hiểu về các mô hình thiết kế dữ liệu lớn, công nghệ trong lĩnh vực dữ liệu đang là xu hướng thế giới\n• Khả năng phân tích, thiết kế hệ thống dữ liệu lớn, tối ưu job xử lý dữ liệu có cấu trúc và phi cấu trúc\n• Khả năng thiết kế Tích hợp dữ liệu thời gian thực",
+        "work_address": "- Hà Nội",
+        "company_size": "5000+ nhân viên",
+        "major_field": "Ngân hàng",
+        "level": "Nhân viên",
+        "num_of_recruit": "1 người",
+        "work_form": "Toàn thời gian",
+        "gender_require": null,
+        "relation_fields": [
+            "Công nghệ Thông tin",
+            "Data Science",
+            "Data Engineer",
+            "Việc làm IT"
+        ],
+        "skills": [
+            "Công nghệ Thông tin",
+            "Data Science",
+            "Data Engineer",
+            "Việc làm IT",
+            "Hà Nội"
+        ],
+        "area": [
+            "Hà Nội"
+        ],
+        "update_time": "Cập nhật 2 giờ trước",
+        "remain_time": "Còn 23 ngày để ứng tuyển"
+    },
+    {
+        "id": "1",
+        "title": "On Job Training Data Engineer",
+        "company_name": "FPT Software",
+        "salary": "Thoả thuận",
+        "city": "Thoả thuận",
+        "yoe": "Không yêu cầu",
+        "deadline_submit": "Hạn nộp hồ sơ: 01/10/2025",
+        "main_industry": [],
+        "description": "We are looking for an enthusiastic and eager Data Engineer to join our growing team.\nThis is an excellent opportunity for individuals with a foundational understanding of software development principles who are keen to learn and build applications using the low-code platform.\nYou will work alongside experienced Data Engineers, contributing to the development and maintenance of our applications while gaining valuable hands-on experience.",
+        "requirements": "Bachelor's degree in Computer Science, Data Science, Information Technology, or a related field.\nGood experience working with Python, Pyspark.\nExperience in solving problems related to algorithms, data processing, AI/ML, or software deployment is preferred.\nStrong logical thinking and problem-solving skills.\nGood communication and teamwork skills.\nFluency in English, Ietls 6.0 up\nFulltime working from Mon-Fri (8am-5pm)",
+        "work_address": "- Hồ Chí Minh: Số 3, đường Võ Chí Công, khu Công nghệ cao, Phường Tăng Nhơn Phú, Quận 9",
+        "company_size": "10000+ nhân viên",
+        "major_field": "Tài chính",
+        "level": "Nhân viên",
+        "num_of_recruit": "15 người",
+        "work_form": "Toàn thời gian",
+        "gender_require": null,
+        "relation_fields": [
+            "Công nghệ Thông tin",
+            "Data Science",
+            "Data Engineer",
+            "Việc làm IT"
+        ],
+        "skills": [
+            "Công nghệ Thông tin",
+            "Data Science",
+            "Data Engineer",
+            "Việc làm IT",
+            "Hồ Chí Minh",
+            "Quận 9"
+        ],
+        "area": [
+            "Hồ Chí Minh",
+            "Quận 9"
+        ],
+        "update_time": "Cập nhật 6 giờ trước",
+        "remain_time": "Còn 58 ngày để ứng tuyển"
+    },
+    {
+        "id": "2",
+        "title": "Kỹ Sư Dữ Liệu Lớn (Big Data Engineer)",
+        "company_name": "TẬP ĐOÀN CÔNG NGHIỆP - VIỄN THÔNG QUÂN ĐỘI",
+        "salary": "800 - 3,500 USD",
+        "city": "800 - 3,500 USD",
+        "yoe": "2 năm",
+        "deadline_submit": "Hạn nộp hồ sơ: 25/08/2025",
+        "main_industry": [],
+        "description": "Tổng Công ty Viễn thông Viettel tuyển dụng\nXây dựng, phát triển các hệ thống lưu trữ, xử lý dữ liệu lớn (Big Data)\nXây dựng các giải pháp ETL có khả năng mở rộng linh hoạt với độ tin cậy cao, phục vụ cho việc khai thác/ ingest các loại dữ liệu (cấu trúc, lưu lượng, tốc độ) từ nhiều nguồn khác nhau\nXây dựng, phát triển các công cụ khai thác dữ liệu, quản trị dữ liệu\nThiết kế chi tiết giải pháp cho các luồng thu thập, chuẩn hóa, làm sạch, làm giàu, lưu trữ, xử lý, phân tích và hiển thị dữ liệu lớn\nThiết kế chi tiết giải pháp cho các luồng thu thập, chuẩn hóa, làm sạch, làm giàu, lưu trữ, xử lý,phân tích và hiển thị dữ liệu lớn\nPhối hợp, hỗ trợ Data Scientist trong việc chuyển đổi các mô hình, thuật toán học máy, khai phá dữ liệu thành các bản đặc tả, thiết kế phần mềm đảm bảo chúng có thể được cài đặt, triển khai hiệu quả trên môi trường tính toán phân tán và có khả năng mở rộng tốt khi tập dữ liệu đầu vào tăng trưởng nhanh\nThiết kế giải pháp và trực tiếp phát triển các module, thư viện có tính chất nền tảng, có khả năng tái sử dụng cao, ảnh hưởng diện rộng",
+        "requirements": "Trình độ tiếng anh: TOEIC tối thiểu 550\nKiến thức về lập trình, cấu trúc dữ liệu & giải thuật\nKiến thức về lập trình lưu trữ, xử lý dữ liệu phân tán, xử lý dữ liệu lớn (Hadoop, Spark, Elastic Search...\nKiến thức về xây dựng luồng xử lý dữ liệu (batch processing, stream procesing, ...)\nKiển thức về các loại CSDL (RDBMS, Graph Databases, NoSQL Products, ...)\nKỹ năng sử dụng ngôn ngữ lập trình (Java, Scala, ...), SQL\nK ỹ năng thành thạo một trong các framework, thư viện lưu trữ, xử lý dữ liệu lớn (Hadoop,Spark, Kafka, Zookeeper, ...)\nKỹ năng sử dụng một trong các loại CSDL (Oracle, Neo4j, HBase, Cassandra, MongoDB, ..)",
+        "work_address": "- Hà Nội: Tầng 42 + 43, tòa nhà Keangnam Landmark 72 Phạm Hùng, Nam Từ Liêm\n- Hồ Chí Minh",
+        "company_size": "5000+ nhân viên",
+        "major_field": "Viễn thông",
+        "level": "Nhân viên",
+        "num_of_recruit": "5 người",
+        "work_form": "Toàn thời gian",
+        "gender_require": null,
+        "relation_fields": [
+            "Công nghệ Thông tin",
+            "Data Science",
+            "Data Engineer",
+            "Việc làm IT"
+        ],
+        "skills": [
+            "Công nghệ Thông tin",
+            "Data Science",
+            "Data Engineer",
+            "Việc làm IT",
+            "Hà Nội",
+            "Nam Từ Liêm",
+            "Hồ Chí Minh"
+        ],
+        "area": [
+            "Hà Nội",
+            "Nam Từ Liêm",
+            "Hồ Chí Minh"
+        ],
+        "update_time": "Cập nhật 10 giờ trước",
+        "remain_time": "Còn 21 ngày để ứng tuyển"
+    },
+    {
+        "id": "3",
+        "title": "Data Engineer",
+        "company_name": "Công Ty Tài Chính TNHH MTV Mirae Asset",
+        "salary": "Thoả thuận",
+        "city": "Thoả thuận",
+        "yoe": "3 năm",
+        "deadline_submit": "Hạn nộp hồ sơ: 21/08/2025",
+        "main_industry": [],
+        "description": "Design, build, and operate ETL/ELT pipelines to integrate data from various internal and external source systems.\nWork with diverse data sources: relational databases such as Oracle, MySQL, MSSQL; NoSQL; APIs; flat files, etc.\nManage and optimize the performance and operational cost of the Data Warehouse system.\nEnsure data quality and reliability through validation, monitoring, and quality control processes.\nCollaborate with Data Analytics teams to understand analytical needs and deliver data effectively.\nPropose and implement technical solutions to improve the overall data system architecture.",
+        "requirements": "Bachelor’s Degree in Information Technology, Computer Science, Applied Mathematics, or a related field.\nMinimum of 2.5 years of experience working as a Data Engineer or in a similar role.\nProficient in SQL.\nExperience with ETL/ELT tools such as Apache Airflow, Oracle Data Integrator (ODI), or similar.\nUnderstanding of Data Warehouse and Data Lake.\nExperience in query optimization, cost management, and large-scale data system administration is a plus.\nKnowledge of Python (or other data processing programming languages such as Scala or Java) is a plus.\nStrong teamwork and communication skills.",
+        "work_address": "- Hồ Chí Minh: 91 Pasteur, phường Bến Nghé, Quận 1",
+        "company_size": "5000+ nhân viên",
+        "major_field": "Tài chính",
+        "level": "Nhân viên",
+        "num_of_recruit": "1 người",
+        "work_form": "Toàn thời gian",
+        "gender_require": null,
+        "relation_fields": [
+            "Công nghệ Thông tin",
+            "Data Science",
+            "Data Engineer",
+            "Việc làm IT"
+        ],
+        "skills": [
+            "Công nghệ Thông tin",
+            "Data Science",
+            "Data Engineer",
+            "Việc làm IT",
+            "Hồ Chí Minh",
+            "Quận 1"
+        ],
+        "area": [
+            "Hồ Chí Minh",
+            "Quận 1"
+        ],
+        "update_time": "Cập nhật 12 giờ trước",
+        "remain_time": "Còn 17 ngày để ứng tuyển"
+    },
+    {
+        "id": "4",
+        "title": "Data Engineer - Khối Công Nghệ Thông Tin (HO25.310)",
+        "company_name": "NGÂN HÀNG THƯƠNG MẠI CỔ PHẦN QUÂN ĐỘI",
+        "salary": null,
+        "city": null,
+        "yoe": null,
+        "deadline_submit": null,
+        "main_industry": [],
+        "description": null,
+        "requirements": null,
+        "work_address": null,
+        "company_size": null,
+        "major_field": null,
+        "level": null,
+        "num_of_recruit": null,
+        "work_form": null,
+        "gender_require": null,
+        "relation_fields": [],
+        "skills": [],
+        "area": [],
+        "update_time": "Cập nhật 23 giờ trước",
+        "remain_time": "Còn 20 ngày để ứng tuyển"
+    },
+    {
+        "id": "5",
+        "title": "Data Engineer",
+        "company_name": "Công ty Cổ phần Hệ thống Công nghệ ETC",
+        "salary": "Thoả thuận",
+        "city": "Thoả thuận",
+        "yoe": "2 năm",
+        "deadline_submit": "Hạn nộp hồ sơ: 31/08/2025",
+        "main_industry": [],
+        "description": "Thiết kế và xây dựng pipeline dữ liệu: Kỹ sư dữ liệu chịu trách nhiệm thiết kế, phát triển và tối ưu hóa các luồng xử lý dữ liệu (ETL/ELT) để chuyển đổi, tải và tích hợp dữ liệu từ các hệ thống nguồn (như hệ thống ngân hàng lõi, CRM, ERP) vào Data Lake. Mục tiêu đảm bảo dữ liệu được xử lý một cách nhanh chóng và hiệu quả.\nQuản lý và bảo trì hệ thống dữ liệu: Đảm bảo rằng hệ thống Data Lake hoạt động ổn định, thực hiện bảo trì thường xuyên và cải tiến hiệu suất hệ thống khi cần thiết, bao gồm việc giám sát dữ liệu, phát hiện và khắc phục sự cố, cũng như tối ưu hóa hiệu suất hệ thống.\nXử lý và tích hợp dữ liệu lớn (Big Data): Với khối lượng dữ liệu lớn, kỹ sư dữ liệu cần sử dụng các công nghệ Big Data như Apache Hadoop, Spark hoặc Kafka để xử lý và lưu trữ dữ liệu một cách hiệu quả.",
+        "requirements": "- Kinh nghiệm với hệ thống dữ liệu lớn (Big Data) bao gồm việc xử lý và lưu trữ dữ liệu trong môi trường phân tán. Hiểu biết về các mô hình lưu trữ dữ liệu như Data Lake và Data Warehouse, khả năng quản lý dữ liệu bán cấu trúc và phi cấu trúc (JSON, XML)\n- Vai trò: Xây dựng và duy trì các pipeline dữ liệu, bảo đảm tuân thủ quy định bảo mật và hiệu suất cao.\n- Trách nhiệm:\no Phát triển và triển khai các pipeline ETL/ELT để chuyển đổi và tích hợp dữ liệu từ nhiều nguồn ngân hàng.\no Thiết lập các cơ chế xử lý dữ liệu lớn và tối ưu hóa hiệu suất hệ thống.\no Đảm bảo dữ liệu được quản lý theo các chính sách của ngân hàng và tuân thủ quy định pháp luật về dữ liệu.\nBằng cấp: Tốt nghiệp đại học chuyên ngành Khoa học Máy tính, Kỹ thuật Phần mềm, Hệ thống Thông tin, hoặc các ngành liên quan, Thành tạo tiếng anh đọc hiểu tài liệu\no Chứng chỉ: Ưu tiên (không bắt buộc) ứng viên có các chứng chỉ liên quan đến Big Data hoặc Cloud như AWS Certified Big Data – Specialty, Google Cloud Data Engineer, hoặc Microsoft Azure Data Engineer.",
+        "work_address": "- Hà Nội: Tòa 319 Bộ Quốc Phòng, 63 Lê Văn Lương, Cầu Giấy, Cầu Giấy",
+        "company_size": "500-1000 nhân viên",
+        "major_field": "IT - Phần mềm",
+        "level": "Nhân viên",
+        "num_of_recruit": "5 người",
+        "work_form": "Toàn thời gian",
+        "gender_require": null,
+        "relation_fields": [
+            "Công nghệ Thông tin",
+            "Data Science",
+            "Data Engineer",
+            "Việc làm IT"
+        ],
+        "skills": [
+            "Công nghệ Thông tin",
+            "Data Science",
+            "Data Engineer",
+            "Việc làm IT",
+            "Hà Nội",
+            "Cầu Giấy"
+        ],
+        "area": [
+            "Hà Nội",
+            "Cầu Giấy"
+        ],
+        "update_time": "Cập nhật 12 phút trước",
+        "remain_time": "Còn 27 ngày để ứng tuyển"
+    },
+    {
+        "id": "6",
+        "title": "Kỹ Sư Dữ Liệu/ Data Engineer - Lương Cứng Từ 25-30 Triệu",
+        "company_name": "EDUPIA",
+        "salary": null,
+        "city": null,
+        "yoe": null,
+        "deadline_submit": null,
+        "main_industry": [],
+        "description": null,
+        "requirements": null,
+        "work_address": null,
+        "company_size": null,
+        "major_field": null,
+        "level": null,
+        "num_of_recruit": null,
+        "work_form": null,
+        "gender_require": null,
+        "relation_fields": [],
+        "skills": [],
+        "area": [],
+        "update_time": "Cập nhật 1 ngày trước",
+        "remain_time": "Còn 24 ngày để ứng tuyển"
+    },
+    {
+        "id": "7",
+        "title": "Data Engineer",
+        "company_name": "CÔNG TY CỔ PHẦN IKAME GLOBAL",
+        "salary": "Tới 1,000 USD",
+        "city": "Tới 1,000 USD",
+        "yoe": "Dưới 1 năm",
+        "deadline_submit": "Hạn nộp hồ sơ: 30/09/2025",
+        "main_industry": [],
+        "description": "Key Responsibilities\nDesign, build, and optimize data pipelines to collect, process, and store data from multiple sources, with a strong focus on large-scale user data from mobile applications.\nProactively collaborate with product, mobile, and data analyst teams to thoroughly understand business problems, clarify requirements, and implement data solutions that enable rapid and accurate decision-making.\nImplement and manage ETL processes, ensuring that data is complete, clean, and highly available for analytical and operational purposes.\nTake ownership of the data ecosystem by managing documentation for its architecture, data flows, and internal technical standards.\nDrive system performance improvements by conducting root cause analysis, then proposing and implementing optimizations—you won't just be \"operating\" the system, you'll be \"making it better.\"\nPropose and adopt new technologies and tools to increase the efficiency of data collection, processing, visualization, and utilization, with a focus on automation and scalability.",
+        "requirements": "Required Skills\nSolid programming foundation (Python or Java preferred), with a readiness to use the most suitable tool for the specific problem.\nBasic understanding of data processing and database management systems (SQL, NoSQL).\nStrong logical and analytical thinking; a proactive problem-solver who proposes solutions rather than waiting for instructions.\nA systems-level perspective and an ownership mindset—constantly seeking ways to optimize, improve, and extract more value from data.\nExperience working with data from mobile platforms such as Firebase, Adjust, Applovin, etc., is a major plus.\nExperience with cloud platforms (GCP, AWS, Azure) is an advantage. You don't need to know everything, but you must be a fast, selective learner capable of applying new knowledge effectively.\nQualifications\nA Bachelor's degree in Information Technology, Computer Science, or a related technical field.\nA recent graduate or having less than 1 year of experience in software engineering, backend development, or data engineering.\nCandidates with a background in mobile app development and a desire to build a career in the data field are preferred.\nPossesses strong teamwork and clear communication skills, with a high sense of responsibility.",
+        "work_address": "- Hà Nội: Tầng 9, Tòa Peakview 36 Hoàng Cầu, Đống Đa, Đống Đa",
+        "company_size": "100-499 nhân viên",
+        "major_field": "IT - Phần mềm",
+        "level": "Nhân viên",
+        "num_of_recruit": "1 người",
+        "work_form": "Toàn thời gian",
+        "gender_require": null,
+        "relation_fields": [
+            "Công nghệ Thông tin",
+            "Data Science",
+            "Data Engineer",
+            "Việc làm IT"
+        ],
+        "skills": [
+            "Công nghệ Thông tin",
+            "Data Science",
+            "Data Engineer",
+            "Việc làm IT",
+            "Hà Nội",
+            "Đống Đa"
+        ],
+        "area": [
+            "Hà Nội",
+            "Đống Đa"
+        ],
+        "update_time": "Cập nhật 1 ngày trước",
+        "remain_time": "Còn 57 ngày để ứng tuyển"
+    },
+    {
+        "id": "8",
+        "title": "Data Engineer (DA)",
+        "company_name": "Công Ty TNHH LG CNS VIỆT NAM",
+        "salary": "Thoả thuận",
+        "city": "Thoả thuận",
+        "yoe": "3 năm",
+        "deadline_submit": "Hạn nộp hồ sơ: 31/08/2025",
+        "main_industry": [],
+        "description": "Design, develop, and manage scalable data pipelines and ETL processes using AWS Glue, Lambda, and MWAA (Apache Airflow on AWS).\nBuild and optimize data lakes and data warehouses using Amazon S3, Redshift, Iceberg, and DynamoDB.\nIntegrate and monitor data workflows via SNS, CloudWatch, and Datadog.\nDesign and implement data modeling and storage strategies in MySQL, Oracle, and PostgreSQL.\nArchitect and implement big data platforms with focus on performance, scalability, and maintainability.\nCollaborate with cross-functional teams to analyze business requirements and translate them into data solutions.\nSupport ongoing operations and resolve data issues involving application-layer and cloud infrastructure.",
+        "requirements": "[Required]\n3+ years of experience in data engineering or big data architecture roles.\nStrong hands-on expertise in AWS data services:\nGlue, Lambda, Redshift, S3, DynamoDB, SNS, MWAA, CloudWatch\nDeep understanding of data lake / data warehouse architecture and data modeling.\nExperience with MySQL, Oracle, PostgreSQL.\nFamiliarity with Apache Iceberg or similar data lake table formats.\nProficiency in monitoring/logging tools such as Datadog.\n[Nice to have]\nExperience in Big Data architecture analysis and design.\nProven experience in cloud and resource optimization (cost, performance, scalability).\nAbility to solve complex, multi-layered issues involving both application logic and cloud infrastructure.\nFamiliarity with Digital Marketing, AdTech, or Customer Data Platforms.",
+        "work_address": "- Hà Nội: Tầng 15, Keangnam Landmark 72, Nam Từ Liêm",
+        "company_size": "100-499 nhân viên",
+        "major_field": "IT - Phần mềm",
+        "level": "Nhân viên",
+        "num_of_recruit": "1 người",
+        "work_form": "Toàn thời gian",
+        "gender_require": null,
+        "relation_fields": [
+            "Công nghệ Thông tin",
+            "Data Science",
+            "Data Engineer",
+            "Việc làm IT"
+        ],
+        "skills": [
+            "Công nghệ Thông tin",
+            "Data Science",
+            "Data Engineer",
+            "Việc làm IT",
+            "Hà Nội",
+            "Nam Từ Liêm"
+        ],
+        "area": [
+            "Hà Nội",
+            "Nam Từ Liêm"
+        ],
+        "update_time": "Cập nhật 2 ngày trước",
+        "remain_time": "Còn 27 ngày để ứng tuyển"
+    },
+    {
+        "id": "9",
+        "title": "Data Engineer (Big Data)",
+        "company_name": "CÔNG TY CỔ PHẦN PARALINE SOFTWARE",
+        "salary": "18 - 30 triệu",
+        "city": "18 - 30 triệu",
+        "yoe": "2 năm",
+        "deadline_submit": "Hạn nộp hồ sơ: 31/10/2025",
+        "main_industry": [],
+        "description": "Tham gia phát triển các hệ thống web cho Ngân Hàng\nThực hiện các công việc được phân công:\n- Tham gia thiết kế/xây dựng các kho dữ liệu, mô hình dữ liệu (DataMart) và khai thác dữ liệu.\n- Phát triển các báo cáo quản trị\nTuân thủ các chính sách, quy trình, quy định, tiêu chuẩn về An toàn CNTT\nThực hiện các nhiệm vụ khác do Ban Lãnh đạo Khối CNTT giao\nNghiên cứu và cập nhật các kiến thức mới hỗ trợ cho công việc\nLàm việc nhóm hoặc độc lập, giao tiếp với cấp trên và thành viên liên quan đến công việc",
+        "requirements": "Cử nhân chuyên ngành Công nghệ thông tin, Kỹ thuật, Điện tử viễn thông, hoặc tương đương\nCó tối thiểu 2 năm kinh nghiệm\nThành thạo và biết tối ưu các truy vấn PL/SQL, Procedure, Function, Package trên Oracle, phục vụ hệ thống ODS (Operational Data Store).\nBiết sử dụng các công cụ ETL dữ liệu (như Pentaho, Datastage,...), đảm bảo tính toàn vẹn và logic nghiệp vụ.\nCó khả năng phối hợp cùng BA và kiểm thử báo cáo theo đặc tả nghiệp vụ (SRS).\nƯu tiên ứng viên biết làm việc với Oracle BI để kết xuất báo cáo.",
+        "work_address": "- Hà Nội: Lê Văn Lương, Trung Hòa, Cầu Giấy, Thanh Xuân",
+        "company_size": "100-499 nhân viên",
+        "major_field": "IT - Phần mềm",
+        "level": "Nhân viên",
+        "num_of_recruit": "6 người",
+        "work_form": "Toàn thời gian",
+        "gender_require": null,
+        "relation_fields": [
+            "Công nghệ Thông tin",
+            "Software Engineering",
+            "Software Engineer",
+            "Việc làm IT"
+        ],
+        "skills": [
+            "Công nghệ Thông tin",
+            "Software Engineering",
+            "Software Engineer",
+            "Việc làm IT",
+            "Hà Nội",
+            "Thanh Xuân"
+        ],
+        "area": [
+            "Hà Nội",
+            "Thanh Xuân"
+        ],
+        "update_time": "Cập nhật 5 ngày trước",
+        "remain_time": "Còn 88 ngày để ứng tuyển"
+    },
+    {
+        "id": "10",
+        "title": "Data Engineer (Python/Java, Data Lake)",
+        "company_name": "Công ty CP Kinh doanh F88",
+        "salary": "20 - 55 triệu",
+        "city": "20 - 55 triệu",
+        "yoe": "3 năm",
+        "deadline_submit": "Hạn nộp hồ sơ: 31/08/2025",
+        "main_industry": [],
+        "description": "A. MÔ TẢ CÔNG VIỆC\n1. Nhiệm vụ chính\na. Xây dựng và duy trì hệ thống Data Lake/Data Warehouse:\nTriển khai và tối ưu hóa hệ thống Data Lake sử dụng các công nghệ open source như MinIO, Iceberg, và Trino.\nMigrate dữ liệu từ các hệ thống sang Data Lake, bao gồm cả dữ liệu gần thời gian thực (near real-time) và dữ liệu batch (t-1).\nThiết kế và bảo trì Data Marts cho các đơn vị trong công ty.\nb. Quản lý luồng ETL:\nXây dựng và quản lý luồng ETL sử dụng các công cụ như Airflow, dbt, ODI.\nLàm việc với team Phân tích và Khoa học Dữ liệu để làm giàu dữ liệu cho Data Lake và Data Mart.\nc. Tài liệu hóa và làm sạch dữ liệu:\nTài liệu hóa các mapping về dữ liệu Data Lake, Data warehouse, MetaData của các hệ thống tác nghiệp.\nTham gia vào các hoạt động làm sạch dữ liệu trên các hệ thống.\nd. Vận hành và báo cáo:\nTham gia vào hoạt động vận hành và báo cáo về chất lượng dữ liệu theo mô hình Data Steward Models và Khung Quản trị Dữ liệu.\n2. Thời gian làm việc: 08h30 - 17h30 (Thứ Hai - Thứ Sáu; nghỉ Thứ Bảy + Chủ nhật)",
+        "requirements": "B. YÊU CẦU CÔNG VIỆC\nTốt nghiệp Đại học các chuyên ngành về Công nghệ thông tin, Dữ liệu.\nCó chứng chỉ liên quan đến các chuyên ngành như Khoa học Máy tính, Kỹ sư phần mềm hoặc Khoa học Dữ liệu là một lợi thế.\nCó mindset data-driven và sự tỷ mẩn của người xây dựng hạ tầng dữ liệu. Có khả năng phân tích là một lợi thế.\nTừ 03 năm kinh nghiệm với việc xây dựng luồng ETL trên các hệ thống lưu trữ dữ liệu có cấu trúc và thiết kế Data Marts, Data Warehouse hoặc Data Lake.\nKinh nghiệm với các công nghệ mã nguồn mở như MinIO, Iceberg, DeltaLake là một lợi thế\nThuần thục Python và các thư viện xử lý dữ liệu.\nKinh nghiệm với các công cụ quản lý luồng ETL như Airflow, ODI, Datastate, Pentaho hoặc các công cụ tương tự.\nKinh nghiệm với các công cụ về stream dữ liệu thời gian thực như Kafka, Spark, Risingwave là một lợi thế.",
+        "work_address": "- Hà Nội: 275 Nguyễn Trãi, Thanh Xuân",
+        "company_size": "5000+ nhân viên",
+        "major_field": "Tài chính",
+        "level": "Trưởng nhóm",
+        "num_of_recruit": "2 người",
+        "work_form": "Toàn thời gian",
+        "gender_require": null,
+        "relation_fields": [
+            "Công nghệ Thông tin",
+            "Data Science",
+            "Data Engineer",
+            "Việc làm IT"
+        ],
+        "skills": [
+            "Công nghệ Thông tin",
+            "Data Science",
+            "Data Engineer",
+            "Việc làm IT",
+            "Hà Nội",
+            "Thanh Xuân"
+        ],
+        "area": [
+            "Hà Nội",
+            "Thanh Xuân"
+        ],
+        "update_time": "Cập nhật 3 ngày trước",
+        "remain_time": "Còn 27 ngày để ứng tuyển"
+    },
+    {
+        "id": "11",
+        "title": "Data Engineer",
+        "company_name": "FPT Software",
+        "salary": "Thoả thuận",
+        "city": "Thoả thuận",
+        "yoe": "4 năm",
+        "deadline_submit": "Hạn nộp hồ sơ: 30/09/2025",
+        "main_industry": [],
+        "description": "ABOUT COMPANY\nA subsidiary of the FPT Group, FPT Software is known as a leading global information technology service provider headquartered in Vietnam. With over 33,000 employees working in 83 offices across 30 countries on five continents, FPT Software consistently delivers the best solutions to more than 1000 clients, including 100 Fortune 500 companies. Placing human resources as the cornerstone of its achievements, employee experience is our top priority in continually creating an innovative, open, and enjoyable work environment for every member.\nIn 2023, FPT Software officially made its mark on the global billion-dollar company list. This is evidence of the talent and efforts of multiple generations of employees at FPT Software.\nJOB OVERVIEW\n• We are seeking a highly skilled, innovative, and collaborative Sr Data Engineer/Scientist. The selected candidate will be a member of the Offshore\n• Enterprise Technology Application Development team, working alongside our team to drive innovation across tools throughout the organization. The successful candidate will work closely with onshore colleagues, focusing on delivering innovative solutions. A strategic mindset, strong problem-solving skills, and deep knowledge of emerging trends—especially in AI/ML adoption across business applications—are highly valued for this role.\nRESPONSIBILITIES\n• Develop and deploy the technical data flow architecture for the company’s business applications, ensuring alignment with strategic goals\n• Collaborate and implement advanced data management and integration solutions to drive innovation and increase productivity\n• Participate in 24/5 development methodology – provide some overlap with onshore team to ensure continuity of development throughout the day when onshore team is offline.\n• Ensure integration of emerging technologies and trends including AI/ML into business applications where applicable.\n• Design and implement a data warehousing architecture, ETL/ELT processes, and integration of third-party applications while ensuring data accuracy, and establishing best practices across the organization.",
+        "requirements": "• 4+ years of experience in building data pipelines utilizing DBT, Apache Spark or similar technologies\n• Expertise in modern data management technologies including GCP BigQuery, PostgreSQL, Python, SQL, and NoSQL dbs, data lakes, vector databases, ETL/ELT processes, data validation techniques, and REST APIs.\n• Experience leveraging AI tools like GitHub Copilot and Cursor to enhance productivity, reduce errors, and improve code quality.\n• Practical experience in GenAI, including skills in LLM tuning and training, RAG, MCP, and AI agents, as well as experience with key AI/ML technologies and frameworks such as RAG pipelines, TensorFlow, PyTorch, and Scikit-learn.\n• Knowledge of third-party platforms like GCP BigQuery, Snowflake, Azure Synapse, Redshift as well as data visualization tools like Tableau, PowerBI, cybersecurity awareness.\n• Familiarity with platforms like Salesforce, NetSuite, APX, Private I is a plus.\n• Strong spoken and written English skills.\n• Bachelor’s degree in Computer Science, Information Technology, or a related field is required; an advanced degree is preferred.",
+        "work_address": "- Đà Nẵng: Tòa Nhà FPT Complex, Ðường Nam Kỳ Khởi Nghĩa, Phường Hoà Hải TP.Ðà Nẵng, Ngũ Hành Sơn",
+        "company_size": "10000+ nhân viên",
+        "major_field": "Tài chính",
+        "level": "Nhân viên",
+        "num_of_recruit": "1 người",
+        "work_form": "Toàn thời gian",
+        "gender_require": null,
+        "relation_fields": [
+            "Công nghệ Thông tin",
+            "Data Science",
+            "Data Engineer",
+            "Việc làm IT"
+        ],
+        "skills": [
+            "Công nghệ Thông tin",
+            "Data Science",
+            "Data Engineer",
+            "Việc làm IT",
+            "Đà Nẵng",
+            "Ngũ Hành Sơn"
+        ],
+        "area": [
+            "Đà Nẵng",
+            "Ngũ Hành Sơn"
+        ],
+        "update_time": "Cập nhật 3 ngày trước",
+        "remain_time": "Còn 57 ngày để ứng tuyển"
+    },
+    {
+        "id": "12",
+        "title": "Data Engineer Các Level Từ Fresher,Junior,Middle",
+        "company_name": "công ty cổ phần Data Impact",
+        "salary": "Thoả thuận",
+        "city": "Thoả thuận",
+        "yoe": "1 năm",
+        "deadline_submit": "Hạn nộp hồ sơ: 16/08/2025",
+        "main_industry": [],
+        "description": "- Thiết kế và phát triển hệ thống dữ liệu phù hợp với nhu cầu kinh doanh.\n- Phát triển các thuật toán để chuyển đổi dữ liệu thành thông tin hữu ích, có thể thực hiện được.\n- Xây dựng, thử nghiệm và bảo trì các pipeline cơ sở dữ liệu.\n- Lấy, thêm, sửa đổi dữ liệu theo yêu cầu.\n- Có kỹ năng phối hợp với quản lý để hiểu các mục tiêu của công ty.\n- Phát triển các phương pháp xác thực dữ liệu và các công cụ phân tích dữ liệu.\n- Đảm bảo tuân thủ các chính sách quản trị và bảo mật dữ liệu.\n- Sử dụng các công cụ Business Intelligence để visualize dữ liệu.",
+        "requirements": "- Tốt nghiệp Đại học trở lên.\n- Có kinh nghiệm từ 1 năm làm việc về các hệ thống Big data\n- Có kinh nghiệm coding SQL và một trong những ngôn ngữ sau NoSQL, Python, Java, R, and Scala từ 3 năm trở lên\n- Có kinh nghiệm về thiết kế Data-warehouse, xử lý dữ liệu phân tán, xử lý dữ liệu lớn (Hadoop, Spark, MongoDB, and Kafka...)\n- Có kiến thức về Relational and non-relational databases.\n- Có kinh nghiệm build ETL hay các data pipeline (Airflow...).\n- Có kinh nghiệm viết các script tự động hoá các tác vụ bằng SQL hay Python ...\n- Có kiến thức về Data Security\n- Tư duy tốt, có khả năng nghiên cứu, đánh giá và cập nhật công nghệ mới.\n- Tiếng anh đọc hiểu tài liệu Kỹ thuật.\n- Kỹ năng giao tiếp bằng lời nói và bằng văn bản tốt. Tự tin với kỹ năng làm việc nhóm.\n- Có kiến thức về Cloud (Azure, GCP, AWS) là một lợi thế.\n- Có kiến thức về Machine Learning là một lợi thế\n- Có thể sử dụng tiếng Anh, tiếng Nhật là một lợi thế",
+        "work_address": "- Hà Nội: Tầng 11, Tòa nhà Hồ Gươm Plaza,Trần Phú, Hà Đông",
+        "company_size": "25-99 nhân viên",
+        "major_field": "IT - Phần mềm",
+        "level": "Nhân viên",
+        "num_of_recruit": "3 người",
+        "work_form": "Toàn thời gian",
+        "gender_require": null,
+        "relation_fields": [
+            "Công nghệ Thông tin",
+            "Data Science",
+            "Data Engineer",
+            "Việc làm IT"
+        ],
+        "skills": [
+            "Công nghệ Thông tin",
+            "Data Science",
+            "Data Engineer",
+            "Việc làm IT",
+            "Hà Nội",
+            "Hà Đông"
+        ],
+        "area": [
+            "Hà Nội",
+            "Hà Đông"
+        ],
+        "update_time": "Cập nhật 4 ngày trước",
+        "remain_time": "Còn 12 ngày để ứng tuyển"
+    },
+    {
+        "id": "13",
+        "title": "Data Engineer",
+        "company_name": "CÔNG TY CỔ PHẦN CÔNG NGHỆ ALPHAWAY",
+        "salary": "20 - 35 triệu",
+        "city": "20 - 35 triệu",
+        "yoe": "2 năm",
+        "deadline_submit": "Hạn nộp hồ sơ: 30/08/2025",
+        "main_industry": [],
+        "description": "● Tham gia nghiên cứu, thiết kế và phát triển các sản phẩm dịch vụ Ngân hàng trên các\nhệ thống Oracle Report, Data Warehouse, Data Lake, ETL dữ liệu\n● Phối hợp cùng BA, nhóm nghiệp vụ, PM, PO trong việc xây dựng mô hình, sử dụng,\nphân tích dữ liệu để giải quyết các vấn đề kinh doanh.\n● Tham gia triển khai các dự án CNTT của ngân hàng\n● Quản lý, khai thác các hệ thống dữ liệu và báo cáo\n● Nghiên cứu công nghệ và xu hướng phát triển công nghệ dữ liệu, đưa ra đề xuất nhằm\ncải tiến sản phẩm, trải nghiệm khách hàng, chất lượng dịch vụ",
+        "requirements": "● Tối thiểu 2 năm kinh nghiệm các tổ chức, tập đoàn CNTT\n● Nắm rõ các quy chuẩn về quy trình xây dựng và triển khai một phần mềm.\n● Thành thạo một trong các ngôn ngữ lập trình: PL SQL, Java, .Net, Python, Scala\n● Có kỹ năng phân tích, tìm lỗi dữ liệu, SQL, Data Stage, Jasper Report\n● Tối thiểu 1 năm kinh nghiệm về spark\n● Có kinh nghiệm xây dựng tài liệu chuyển giao công nghệ/vận hành\n● Có kinh nghiệm làm việc với các nền tảng Cloud là một lợi thế.\n● Kỹ năng làm việc nhóm và làm việc độc lập tốt",
+        "work_address": "- Hà Nội: 06 Quang Trung, Hoàn Kiếm\n- Hà Nội: 18 Lê Văn Lương, Hai Bà Trưng",
+        "company_size": "500-1000 nhân viên",
+        "major_field": "IT - Phần mềm",
+        "level": "Trưởng nhóm",
+        "num_of_recruit": "4 người",
+        "work_form": "Toàn thời gian",
+        "gender_require": null,
+        "relation_fields": [
+            "Công nghệ Thông tin",
+            "Data Science",
+            "Data Engineer",
+            "Việc làm IT"
+        ],
+        "skills": [
+            "Công nghệ Thông tin",
+            "Data Science",
+            "Data Engineer",
+            "Việc làm IT",
+            "Hà Nội",
+            "Hoàn Kiếm",
+            "Hai Bà Trưng"
+        ],
+        "area": [
+            "Hà Nội",
+            "Hoàn Kiếm",
+            "Hai Bà Trưng"
+        ],
+        "update_time": "Cập nhật 4 ngày trước",
+        "remain_time": "Còn 26 ngày để ứng tuyển"
+    },
+    {
+        "id": "14",
+        "title": "Data Engineer",
+        "company_name": "CÔNG TY TNHH GIẢI PHÁP BRAIN TECH",
+        "salary": "Thoả thuận",
+        "city": "Thoả thuận",
+        "yoe": "2 năm",
+        "deadline_submit": "Hạn nộp hồ sơ: 13/08/2025",
+        "main_industry": [],
+        "description": "1. Xây dựng và quản lý hệ thống tích hợp dữ liệu (Data Pipelines):\nThiết kế, triển khai và tối ưu hóa các quy trình ETL (Extract, Transform, Load) và ELT (Extract, Load, Transform) để thu thập dữ liệu từ nhiều nguồn khác nhau.\nLàm việc với đa dạng các nguồn dữ liệu:\n- Cơ sở dữ liệu quan hệ (SQL) như Oracle, PostgreSQL, MySQL,....\n- Cơ sở dữ liệu NoSQL: Elasticsearch, Redis, Cassandra...\n- APIs: RESTful APIs, GraphQL...\n- Nguồn dữ liệu dạng file: CSV, JSON, Parquet,...\n- Nguồn dữ liệu streaming (thời gian thực): Kafka, Pub/Sub...\nSử dụng các công cụ điều phối (orchestration tools) như Apache Nifi, Apache Airflow để lên lịch và tự động hóa các pipeline.\nGiám sát, xử lý sự cố và đảm bảo độ tin cậy, tính sẵn sàng và hiệu suất của các pipeline.\n2. Xử lý, làm giàu và trình diễn dữ liệu:\nPhát triển các logic chuyển đổi dữ liệu phức tạp bằng Scala, Python, SQL hoặc Spark để làm sạch, chuẩn hóa và định hình lại dữ liệu thô.\nThực hiện các kỹ thuật làm sạch dữ liệu (data cleaning): xử lý dữ liệu thiếu (missing values), trùng lặp (duplicates), sai định dạng,...\nXây dựng các quy trình làm giàu dữ liệu (data enrichment) bằng cách kết hợp dữ liệu từ nhiều nguồn khác nhau để tạo ra các trường thông tin mới có giá trị hơn.\nThiết kế và xây dựng các bảng dữ liệu (data mart), kho dữ liệu (data warehouse) hoặc các API dữ liệu phục vụ nhu cầu truy xuất, phân tích, báo cáo bằng Trino, Superset,...\nĐảm bảo chất lượng và tính toàn vẹn của dữ liệu trong suốt quá trình xử lý.\n3. Quản lý hạ tầng và kiến trúc dữ liệu:\nLàm việc với các nền tảng dữ liệu hiện đại như Data Warehouse (StarRocks, ClickHouse) và Data Lake (S3, Iceberg).\nPhối hợp với đội ngũ DevOps để triển khai và quản lý hạ tầng dữ liệu trên nền tảng Kubernetes.\nTham gia vào việc thiết kế mô hình dữ liệu (data modeling) và kiến trúc kho dữ liệu để tối ưu hóa cho việc truy vấn và phân tích.\n4. Hợp tác và hỗ trợ:\nLàm việc chặt chẽ với nhóm Data Scientist và Data Analyst để hiểu rõ yêu cầu và cung cấp dữ liệu chất lượng cao, đáp ứng đúng nhu cầu.\nViết tài liệu kỹ thuật rõ ràng cho các pipeline và quy trình dữ liệu đã xây dựng.\nTuân thủ các best practice về phát triển phần mềm (version control với Git, CI/CD, code review).",
+        "requirements": "Yêu cầu bắt buộc:\nTốt nghiệp Đại học chuyên ngành Công nghệ thông tin, Toán tin, Khoa học dữ liệu hoặc lĩnh vực liên quan.\nTối thiểu 2-3 năm kinh nghiệm ở vị trí Data Engineer hoặc các vai trò tương tự.\nThành thạo ít nhất một ngôn ngữ lập trình, ưu tiên Scala, Python, và có kiến thức vững chắc về SQL để truy vấn và thao tác dữ liệu phức tạp.\nCó kinh nghiệm thực tế trong việc xây dựng và vận hành các pipeline ETL/ELT.\nHiểu biết về các công nghệ Big Data như Apache Spark, Apache Flink là một lợi thế lớn.\nTư duy logic, kỹ năng giải quyết vấn đề xuất sắc và khả năng làm việc độc lập cũng như làm việc nhóm.\nYêu cầu ưu tiên (Điểm cộng):\nCó kinh nghiệm với các công cụ điều phối pipeline như Apache Nifi.\nHiểu biết về các hệ thống dữ liệu streaming như Kafka\nKinh nghiệm với containerization (Docker, Kubernetes).\nKhả năng đọc hiểu tài liệu kỹ thuật bằng tiếng Anh tốt.",
+        "work_address": "- Hồ Chí Minh: Phường Đức Nhuận, Phú Nhuận",
+        "company_size": "25-99 nhân viên",
+        "major_field": "IT - Phần mềm",
+        "level": "Nhân viên",
+        "num_of_recruit": "3 người",
+        "work_form": "Toàn thời gian",
+        "gender_require": "Nam",
+        "relation_fields": [
+            "Công nghệ Thông tin",
+            "Data Science",
+            "Data Engineer",
+            "Việc làm IT"
+        ],
+        "skills": [
+            "Công nghệ Thông tin",
+            "Data Science",
+            "Data Engineer",
+            "Việc làm IT",
+            "Hồ Chí Minh",
+            "Phú Nhuận"
+        ],
+        "area": [
+            "Hồ Chí Minh",
+            "Phú Nhuận"
+        ],
+        "update_time": "Cập nhật 1 tuần trước",
+        "remain_time": "Còn 9 ngày để ứng tuyển"
+    },
+    {
+        "id": "15",
+        "title": "Data Engineer (Banking)",
+        "company_name": "Công ty Cổ phần Công nghệ Alphaway",
+        "salary": "25 - 35 triệu",
+        "city": "25 - 35 triệu",
+        "yoe": "2 năm",
+        "deadline_submit": "Hạn nộp hồ sơ: 24/08/2025",
+        "main_industry": [],
+        "description": "Tham gia phát triển hệ thống Ngân hàng\nThiết kế, xây dựng và tối ưu pipeline xử lý dữ liệu phục vụ cho các mô hình quản lý rủi ro.\nThực hiện trích xuất, chuyển đổi và tải dữ liệu (ETL) từ nhiều nguồn khác nhau vào hệ thống Data Warehouse.\nPhối hợp với đội ngũ Data Scientist, Data Analyst, Business Analyst và các bên liên quan để đảm bảo chất lượng và độ tin cậy của dữ liệu.",
+        "requirements": "Tối thiểu 1.5 năm kinh nghiệm làm việc thực tế tại các công ty, dự án về vị trí tuyển\ndụng\nCó kiến thức về ngôn ngữ lập trình Python (>1 năm kinh nghiệm)\nCó khả năng viết mã sạch, dễ maintain\nCó tư duy logic giải quyết vấn đề\nHiểu biết kinh nghiệm về Spark\nCó hiểu biết về các kỹ thuật lập trình (biết được cấu trúc và giải thuật)\nCó hiểu biết về Database\nƯu tiên kinh nghiệm làm ETL job trên Cloud\nƯu tiên từng làm việc trên AWS/Databrick\nƯu tiên có kinh nghiệm trong lĩnh vực tài chính/ngân hàng\nCó khả năng đọc viết tiếng Anh (cơ bản) nghe nói (nếu có thể). Ưu tiên ứng viên có chứng chỉ\nTiếng Anh quốc tế\nKhả năng làm việc độc lập cũng như làm việc nhóm. Chịu được áp lực công việc",
+        "work_address": "- Hà Nội: Quang Trung, Hoàn Kiếm\n- Hà Nội: Trần Duy Hưng, Cầu Giấy",
+        "company_size": "100-499 nhân viên",
+        "major_field": "IT - Phần mềm",
+        "level": "Trưởng nhóm",
+        "num_of_recruit": "2 người",
+        "work_form": "Toàn thời gian",
+        "gender_require": null,
+        "relation_fields": [
+            "Công nghệ Thông tin",
+            "Data Science",
+            "Data Engineer",
+            "Việc làm IT"
+        ],
+        "skills": [
+            "Công nghệ Thông tin",
+            "Data Science",
+            "Data Engineer",
+            "Việc làm IT",
+            "Hà Nội",
+            "Hoàn Kiếm",
+            "Cầu Giấy"
+        ],
+        "area": [
+            "Hà Nội",
+            "Hoàn Kiếm",
+            "Cầu Giấy"
+        ],
+        "update_time": "Cập nhật 1 tuần trước",
+        "remain_time": "Còn 20 ngày để ứng tuyển"
+    },
+    {
+        "id": "16",
+        "title": "Data Engineer",
+        "company_name": "CÔNG TY CỔ PHẦN CÔNG NGHỆ ALPHAWAY",
+        "salary": "20 - 36 triệu",
+        "city": "20 - 36 triệu",
+        "yoe": "2 năm",
+        "deadline_submit": "Hạn nộp hồ sơ: 24/08/2025",
+        "main_industry": [],
+        "description": "- Tham gia nghiên cứu, thiết kế và phát triển các sản phẩm dịch vụ Ngân hàng trên các hệ thống Oracle Report, Datawarehouse, Data Lake, ODS...\n- Thiết kế xây dựng ETL theo batch và realtime, sử dụng các công nghệ Big Data.\n- Phối hợp cùng BA, nhóm nghiệp vụ, PM, PO trong việc xây dựng mô hình, sử dụng, phân tích dữ liệu để giải quyết các vấn đề kinh doanh.\n- Nghiên cứu công nghệ và xu hướng phát triển công nghệ dữ liệu, đưa ra đề xuất nhằm cải tiến sản phẩm, trải nghiệm khách hàng, chất lượng dịch vụ tại MB.\n- Sử dụng công nghệ để tổ chức và duy trì dữ liệu trong database, phát triển chiến lược kiến trúc dữ liệu theo mô hình dữ liệu của Ngân hàng.\n- Quản lý, khai thác các hệ thống dữ liệu và báo cáo tại MB.\n- Tham gia triển khai các dự án CNTT của ngân hàng.",
+        "requirements": "Tốt nghiệp đại học trở lên chuyên ngành CNTT hoặc các ngành tương đương. Trường hợp không đáp ứng, yêu cầu cung cấp Chứng chỉ về CNTT được cấp bởi các tổ chức uy tín.\nCó kinh nghiệm làm việc thực tế tại các công ty, dự án về CNTT hoặc tương đương\nƯu tiên có background về Software Engineering\nCó hiểu biết, kinh nghiệm thiết kế về các hệ thống Big Data, Data Lake, Data Warehouse, ETL, ELT, EDA\nSử dụng thành thạo trong các ngôn ngữ lập trình: PL/ SQL\nSử dụng thành thạo 1 trong các ngôn ngữ lập trình: Python/Java/Scala\nCó kinh nghiệm thiết kế, làm việc với các hệ thống báo cáo như OBIEE, Tableau, power BI\nCó hiểu biết về các hệ quản trị cơ sở dữ liệu Oracle\nCó hiểu biết về Hadoop eco-system: Hadoop HDFS, YARN, Spark\nCó khả năng thiết kế tài liệu cơ sở dữ liệu, tài liệu phân tích nghiệp vụ….\nKinh nghiệm thiết kế database, ETL, Báo cáo\nƯu tiên ứng viên đã làm việc trong lĩnh vực tài chính ngân hàng\nƯu tiên Nhân sự có kinh nghiệm làm ETL, phát triển xử lý dữ liệu\nCó kinh nghiệm với các hệ thống học máy (Machine Learning), khai phá dữ liệu (Data Mining), các nền tảng Cloud, các hệ thống như Hadoop eco system, Spark, Cassandra, Neo4j\nƯu tiên Nhân sự đã từng tham gia triển khai các dự án theo mô hình Agile/Scrum",
+        "work_address": "- Hà Nội",
+        "company_size": "500-1000 nhân viên",
+        "major_field": "IT - Phần mềm",
+        "level": "Trưởng nhóm",
+        "num_of_recruit": "5 người",
+        "work_form": "Toàn thời gian",
+        "gender_require": null,
+        "relation_fields": [
+            "Công nghệ Thông tin",
+            "Data Science",
+            "Data Engineer",
+            "Việc làm IT"
+        ],
+        "skills": [
+            "Công nghệ Thông tin",
+            "Data Science",
+            "Data Engineer",
+            "Việc làm IT",
+            "Hà Nội"
+        ],
+        "area": [
+            "Hà Nội"
+        ],
+        "update_time": "Cập nhật 1 tuần trước",
+        "remain_time": "Còn 20 ngày để ứng tuyển"
+    },
+    {
+        "id": "17",
+        "title": "Data Engineer (Cloud)",
+        "company_name": "Công ty TNHH Horus Productions",
+        "salary": "15 - 25 triệu",
+        "city": "15 - 25 triệu",
+        "yoe": "1 năm",
+        "deadline_submit": "Hạn nộp hồ sơ: 23/08/2025",
+        "main_industry": [],
+        "description": "Tham gia thiết kế, xây dựng, tối ưu hóa và bảo trì kiến trúc dữ liệu hiện đại (Data Warehouse, Data Lakehouse) trên nền tảng Cloud (ưu tiên GCP).\nXây dựng, triển khai và giám sát các quy trình thu thập, chuyển đổi và tải dữ liệu (ETL/ELT) hiệu quả, đảm bảo độ tin cậy và hiệu năng cao.\nXử lý dữ liệu từ nhiều nguồn đa dạng: events trong game (từ SDK như Firebase, hoặc custom), dữ liệu tracking người dùng (Appsflyer, Adjust,...), dữ liệu marketing (Google Ads, Facebook Ads,...), dữ liệu từ các nền tảng bên thứ ba (App Store Connect, Google Play Console), và dữ liệu hệ thống nội bộ.\nPhát triển luồng xử lý theo batch processing và xử lý stream processing tùy theo yêu cầu nghiệp vụ.\nMô hình hóa và chuẩn hóa dữ liệu để đảm bảo tính chính xác và nhất quán\nThiết lập hệ thống giám sát và cảnh báo chủ động cho các luồng dữ liệu và hạ tầng liên quan.\nQuản lý dữ liệu và tài liệu hóa các luồng dữ liệu, mô hình dữ liệu.\nLàm việc cùng Data Analyst để hiểu rõ đề bài dữ liệu từ BOD và các phòng ban từ đó đưa ra phương án triển khai tối ưu nhất",
+        "requirements": "Tối thiểu 1,5 năm kinh nghiệm làm trong vị trí DE\nCó kinh nghiệm làm việc trên Cloud (GCP, AWS, Azure, ...)\nCó kinh nghiệm xây dựng luồng xử lý dữ liệu: batch processing, stream procesing,...\nSử dụng ngôn ngữ lập trình (Python, Java, Scala, ...), SQL\nCó kinh nghiệm làm việc với Bigquery là 1 lợi thế\nHiểu biết và các dịch vụ trên cloud\nCó kinh nghiệm về hạ tầng, hệ thống\nTừng làm việc với các dịch vụ phân tích (Firebase, Mixpanel, Flurry, ...)\nCó kiến thức về các dịch vụ: Appsflyer, Google Ads, Google Play Console ...",
+        "work_address": "- Hà Nội: VOV Mễ Trì - Nam Từ Liêm, Nam Từ Liêm",
+        "company_size": "100-499 nhân viên",
+        "major_field": "IT - Phần mềm",
+        "level": "Trưởng nhóm",
+        "num_of_recruit": "1 người",
+        "work_form": "Toàn thời gian",
+        "gender_require": null,
+        "relation_fields": [
+            "Công nghệ Thông tin",
+            "Data Science",
+            "Data Engineer",
+            "Việc làm IT"
+        ],
+        "skills": [
+            "Công nghệ Thông tin",
+            "Data Science",
+            "Data Engineer",
+            "Việc làm IT",
+            "Hà Nội",
+            "Nam Từ Liêm"
+        ],
+        "area": [
+            "Hà Nội",
+            "Nam Từ Liêm"
+        ],
+        "update_time": "Cập nhật 1 tuần trước",
+        "remain_time": "Còn 19 ngày để ứng tuyển"
+    },
+    {
+        "id": "18",
+        "title": "Data Engineer - Từ 3 Năm Kinh Nghiệm - Onsite Project",
+        "company_name": "CÔNG TY CỔ PHẦN AHT TECH",
+        "salary": "Thoả thuận",
+        "city": "Thoả thuận",
+        "yoe": "3 năm",
+        "deadline_submit": "Hạn nộp hồ sơ: 09/08/2025",
+        "main_industry": [],
+        "description": "Thiết kế, phát triển và tối ưu các luồng xử lý dữ liệu (ETL) sử dụng Oracle Data Integrator (ODI) hoặc Apache Airflow.\nViết, duy trì và tối ưu các truy vấn, thủ tục, hàm xử lý dữ liệu lớn bằng SQL/PLSQL trên hệ quản trị Oracle Database.\nTham gia thiết kế kiến trúc và giải pháp tích hợp dữ liệu theo yêu cầu nghiệp vụ và kiến trúc tổng thể hệ thống.\nTối ưu hiệu năng xử lý dữ liệu: cải thiện execution plan, partition, indexing, và batch performance.\nPhối hợp với các nhóm phát triển và phân tích nghiệp vụ đảm bảo chất lượng, toàn vẹn và hiệu quả của dữ liệu.\nLàm việc trong môi trường bảo mật cao, tuân thủ quy trình nghiêm ngặt, sử dụng tài nguyên nội bộ thay cho nguồn tham khảo bên ngoài.",
+        "requirements": "Tốt nghiệp chuyên ngành Công nghệ thông tin, Hệ thống thông tin, Khoa học máy tính hoặc tương đương.\nTối thiểu 3 năm kinh nghiệm vững vàng trong phát triển giải pháp dữ liệu với Oracle/PLSQL và công cụ ETL.\nThành thạo Oracle PL/SQL và có hiểu biết sâu về tối ưu hóa truy vấn, thiết kế logic xử lý dữ liệu.\nCó kinh nghiệm thực tế với ODI và/hoặc Apache Airflow trong việc thiết kế và quản lý pipeline dữ liệu.\nCó khả năng tự thiết kế giải pháp ETL, xử lý dữ liệu từ nhiều nguồn, và lên kế hoạch triển khai.\nTư duy logic tốt, khả năng giải quyết vấn đề độc lập trong môi trường hạn chế truy cập.\nCó tinh thần trách nhiệm, kỹ năng làm việc nhóm và giao tiếp kỹ thuật tốt.\nƯu tiên\nKinh nghiệm làm việc trong môi trường bảo mật cao như ngân hàng, tài chính, viễn thông, chính phủ.\nTừng tham gia xây dựng hệ thống Data Warehouse, thiết kế dữ liệu theo mô hình star/snowflake schema.\nCó kinh nghiệm tích hợp dữ liệu thời gian thực hoặc gần thời gian thực (near real-time).\nBiết sử dụng Git, Jira, CI/CD pipelines là lợi thế.",
+        "work_address": "- Hà Nội: Trần Hưng Đạo, Hoàn Kiếm",
+        "company_size": "100-499 nhân viên",
+        "major_field": "IT - Phần mềm",
+        "level": "Nhân viên",
+        "num_of_recruit": "1 người",
+        "work_form": "Toàn thời gian",
+        "gender_require": null,
+        "relation_fields": [
+            "Công nghệ Thông tin",
+            "Data Science",
+            "Data Engineer",
+            "Việc làm IT"
+        ],
+        "skills": [
+            "Công nghệ Thông tin",
+            "Data Science",
+            "Data Engineer",
+            "Việc làm IT",
+            "Hà Nội",
+            "Hoàn Kiếm"
+        ],
+        "area": [
+            "Hà Nội",
+            "Hoàn Kiếm"
+        ],
+        "update_time": "Cập nhật 1 tuần trước",
+        "remain_time": "Còn 5 ngày để ứng tuyển"
+    },
+    {
+        "id": "19",
+        "title": "Data Engineer (Có Xe Đưa Đón)",
+        "company_name": "CÔNG TY CỔ PHẦN CÔNG NGHỆ AN NINH MẠNG QUỐC GIA VIỆT NAM",
+        "salary": "9 - 15 triệu",
+        "city": "9 - 15 triệu",
+        "yoe": "1 năm",
+        "deadline_submit": "Hạn nộp hồ sơ: 09/08/2025",
+        "main_industry": [],
+        "description": "Xử lý, làm sạch dữ liệu Big Data\nXây dựng luồng ETL tích hợp dữ liệu bằng các công cụ ETL như NiFi, WSO2 và Zeppelin\nKết nối dữ liệu đa nguồn và làm giàu dữ liệu\nTiền xử lý dữ liệu hình ảnh\nGiám sát và theo dõi hiệu suất quá trình tích hợp dữ liệu\nGiám sát hệ thống hạ tầng k8s và các ứng dụng theo kiến trúc Microservice\nThiết kế kiến trúc trải khai và tối ưu các cơ sở dữ liệu có dung lượng lớn và phân tán như ElasticSearch, MongoDB",
+        "requirements": "Có 1 năm kinh nghiệm trong lĩnh vực Big Data\nSử dụng thông thạo một số công cụ ETL như Nifi, Zeppelin\nCó kinh nghiệm trong kết nối, chia sẻ và modeling dữ liệu\nCó khả năng sử dụng thành thạo Python, R, Scala trong phân tích và xử lý dữ liệu lớn\nCó kiến thức cơ bản về Spark, Elastic Search\nCó kinh nghiệm trong việc xây dựng và quản lý data warehouse, data leak và NoSQL Graph base",
+        "work_address": "- Hưng Yên: Trung Hòa, Yên Mỹ\n- Hà Nội: Thanh Xuân",
+        "company_size": "100-499 nhân viên",
+        "major_field": "IT - Phần mềm",
+        "level": "Nhân viên",
+        "num_of_recruit": "1 người",
+        "work_form": "Toàn thời gian",
+        "gender_require": null,
+        "relation_fields": [
+            "Công nghệ Thông tin",
+            "Data Science",
+            "Data Engineer",
+            "Việc làm IT"
+        ],
+        "skills": [
+            "Công nghệ Thông tin",
+            "Data Science",
+            "Data Engineer",
+            "Việc làm IT",
+            "Hưng Yên",
+            "Yên Mỹ",
+            "Hà Nội",
+            "Thanh Xuân"
+        ],
+        "area": [
+            "Hưng Yên",
+            "Yên Mỹ",
+            "Hà Nội",
+            "Thanh Xuân"
+        ],
+        "update_time": "Cập nhật 1 tuần trước",
+        "remain_time": "Còn 5 ngày để ứng tuyển"
+    },
+    {
+        "id": "20",
+        "title": "Data Engineer",
+        "company_name": "CÔNG TY CỔ PHẦN CÔNG NGHỆ ALPHAWAY",
+        "salary": "9 - 15 triệu",
+        "city": "Thoả thuận",
+        "yoe": "2 năm",
+        "deadline_submit": "Hạn nộp hồ sơ: 04/09/2025",
+        "main_industry": [],
+        "description": "Tham gia làm việc với các đơn vị nghiệp vụ để xác định nhu cầu cùng team\nTham gia xây dựng giải pháp tổng thể và giải pháp chi tiết để giải quyết vấn đề cùng team\nChủ động nghiên cứu các công nghệ mới phục vụ cho việc tối ưu, giải quyết các khó khăn trong công việc.",
+        "requirements": "Đại học hoặc cao hơn liên quan đến 1 trong các ngành công nghệ thông tin, điện tử viễn thông, hoặc toán tin ứng dụng…\nCó 2 năm trở lên có kinh nghiệm ở vai trò Kỹ sư Dữ liệu hoặc vai trò tương đương.\nCó kinh nghiệm thiết kế mô hình dữ liệu theo các mô hình chuẩn hóa đa dạng (ưu tiên biết banking data model) chi tiết tầng dữ liệu với các hệ quản trị cơ sở dữ liệu khác nhau (SQL Server, Oracle, DB2, Postgre, Redshift v.v…)\nƯu tiên có kinh nghiệm cũng như kiến thức nghiệp vụ nhất định về nghiệp vụ và hệ thống trong ngân hàng.\nCó kinh nghiệm tổng hợp dữ liệu cho các hệ thống dữ liệu: Data Warehouse/ Data LakeHouse/ Data Product bằng các công cụ và dịch vụ on-premise và on cloud (Datastage, ODI, Glue, EMR, Kafka, DBT v.v…).\nCó kiến thức sâu và kinh nghiệm thực tế với các ngôn ngữ lập trình (SQL, Python, Spark..).\nƯu tiên\nHiểu biết thêm về các ngôn ngữ lập trình ứng dụng như Javascript, Java, .Net v.v..\nCó kinh nghiệm triển khai thực tế với các hệ thống IBM DWH, AWS, Databricks là 1 điểm cộng.\nCó chứng chỉ về Data engineer là 1 điểm cộng (IBM Certified Data Engineer, AWS Database Speciality, AWS Data & Analytic Speciality).\nTruy vấn, tổ chức, phân tích dữ liệu o Phân tích yêu cầu nghiệp vụ o Kiểm thử dữ liệu và phần mềm",
+        "work_address": "- Hà Nội: 119 Trần Duy Hưng, Trung Hòa, Cầu Giấy, Cầu Giấy\n- Hà Nội: 06 Quang Trung, Hoàn Kiếm, Hoàn Kiếm",
+        "company_size": "500-1000 nhân viên",
+        "major_field": "IT - Phần mềm",
+        "level": "Trưởng nhóm",
+        "num_of_recruit": "2 người",
+        "work_form": "Toàn thời gian",
+        "gender_require": null,
+        "relation_fields": [
+            "Công nghệ Thông tin",
+            "Data Science",
+            "Data Engineer",
+            "Việc làm IT"
+        ],
+        "skills": [
+            "Công nghệ Thông tin",
+            "Data Science",
+            "Data Engineer",
+            "Việc làm IT",
+            "Hà Nội",
+            "Cầu Giấy",
+            "Hoàn Kiếm"
+        ],
+        "area": [
+            "Hà Nội",
+            "Cầu Giấy",
+            "Hoàn Kiếm"
+        ],
+        "update_time": "Cập nhật 1 tuần trước",
+        "remain_time": "Còn 31 ngày để ứng tuyển"
+    },
+    {
+        "id": "21",
+        "title": "Data Engineer (Biết Làm Báo Cáo)",
+        "company_name": "Công ty TNHH Giải pháp Phân tích dữ liệu Insight Data",
+        "salary": "25 - 30 triệu",
+        "city": "25 - 30 triệu",
+        "yoe": "2 năm",
+        "deadline_submit": "Hạn nộp hồ sơ: 20/08/2025",
+        "main_industry": [],
+        "description": "Phối hợp với các phòng ban để thu thập yêu cầu nghiệp vụ, tổ chức dữ liệu, và xây dựng hệ thống báo cáo phục vụ ra quyết định.\nThiết kế, xây dựng và quản lý data pipelines tự động hoá bằng Airflow, đảm bảo dữ liệu được trích xuất - biến đổi - nạp (ETL/ELT) hiệu quả.\nViết và quản lý mô hình dữ liệu bằng dbt (data build tool).\nPhát triển các báo cáo, dashboard bằng Power BI, đảm bảo dễ sử dụng và trực quan hóa tốt.\nTheo dõi, tối ưu hóa hiệu năng hệ thống dữ liệu, hỗ trợ xử lý sự cố phát sinh.",
+        "requirements": "Tốt nghiệp Đại học chuyên ngành Công nghệ thông tin, Khoa học dữ liệu, Toán tin, hoặc các ngành liên quan.\nTừ 1.5 - 3 năm kinh nghiệm làm Data Analyst hoặc Analytics Engineer.\nThành thạo SQL, hiểu rõ về mô hình dữ liệu, quản lý dữ liệu (data modeling, data warehouse).\nCó kinh nghiệm sử dụng một số công cụ sau:\n- Power BI (bắt buộc)\n- Airflow (ưu tiên)\n- dbt (ưu tiên)\nƯu tiên ứng viên từng làm trong các lĩnh vực: F&B, Retail, Ecommerce, FMCG.",
+        "work_address": "- Hà Nội: 315 Đ. Trường Chinh, Khương Mai, Thanh Xuân, Thanh Xuân",
+        "company_size": "25-99 nhân viên",
+        "major_field": "IT - Phần mềm",
+        "level": "Trưởng nhóm",
+        "num_of_recruit": "3 người",
+        "work_form": "Toàn thời gian",
+        "gender_require": null,
+        "relation_fields": [
+            "Công nghệ Thông tin",
+            "Data Science",
+            "Data Engineer",
+            "Việc làm IT"
+        ],
+        "skills": [
+            "Công nghệ Thông tin",
+            "Data Science",
+            "Data Engineer",
+            "Việc làm IT",
+            "Hà Nội",
+            "Thanh Xuân"
+        ],
+        "area": [
+            "Hà Nội",
+            "Thanh Xuân"
+        ],
+        "update_time": "Cập nhật 2 tuần trước",
+        "remain_time": "Còn 16 ngày để ứng tuyển"
+    },
+    {
+        "id": "22",
+        "title": "CDP Data Engineering",
+        "company_name": "CÔNG TY CỔ PHẦN DƯỢC PHẨM FPT LONG CHÂU",
+        "salary": "9 - 15 triệu",
+        "city": "9 - 15 triệu",
+        "yoe": "3 năm",
+        "deadline_submit": "Hạn nộp hồ sơ: 31/08/2025",
+        "main_industry": [],
+        "description": "Kết nối hệ thống dữ liệu: Phối hợp với các bộ phận liên quan để truy xuất dữ liệu từ nhiều nguồn, đảm bảo pipeline hoạt động ổn định và liên tục.\nLàm sạch & chuẩn hóa dữ liệu: Áp dụng quy trình lọc lỗi, mapping, chuẩn hóa định dạng dữ liệu, tạo ra dataset nhất quán, đầy đủ và chính xác.\nGiám sát & xử lý lỗi: Theo dõi log, cài đặt cảnh báo tự động (alert script), xử lý lỗi kịp thời nhằm duy trì chất lượng dữ liệu.\nCập nhật schema & hỗ trợ các team phân tích: Làm việc chặt chẽ với các team DA/BI để đảm bảo bảng dữ liệu có cấu trúc đầy đủ, không lỗi định dạng, hỗ trợ phân tích hiệu quả.\nBáo cáo & các công việc liên quan: Tổng hợp file log, báo cáo định kỳ về trạng thái hệ thống và pipeline dữ liệu. Đảm bảo báo cáo dễ hiểu và đúng thời hạn.",
+        "requirements": "Trình độ học vấn: Tốt nghiệp đại học trở lên chuyên ngành: Công nghệ thông tin, Kinh tế, Marketing hoặc các ngành liên quan.\nKinh nghiệm:\n- Tối thiểu 3-5 năm kinh nghiệm ở vị trí tương đương, ưu tiên ứng viên từng làm tại các công ty bán lẻ hoặc thương mại điện tử lớn.\n- Có kinh nghiệm lập kế hoạch, triển khai, vận hành và báo cáo dữ liệu.\n- Hiểu biết sâu về dữ liệu khách hàng (CDP/CRM) và các chỉ số hành vi người dùng.\nKiến thức & kỹ năng:\n- Am hiểu hành vi người dùng, công nghệ và kinh tế.\n- Có kiến thức cơ bản về AI và ứng dụng trong vận hành.\n- Thành thạo tin học văn phòng (Excel, PowerPoint...).\n- Giao tiếp tiếng Anh tốt là một lợi thế.",
+        "work_address": "- Hồ Chí Minh: 67 Hoàng Văn Thái, Phường Tân Phú, Quận 7",
+        "company_size": "10000+ nhân viên",
+        "major_field": "Dược phẩm / Y tế / Công nghệ sinh học",
+        "level": "Trưởng nhóm",
+        "num_of_recruit": "1 người",
+        "work_form": "Toàn thời gian",
+        "gender_require": null,
+        "relation_fields": [
+            "Công nghệ Thông tin",
+            "Data Science",
+            "Data Engineer",
+            "Việc làm IT"
+        ],
+        "skills": [
+            "Công nghệ Thông tin",
+            "Data Science",
+            "Data Engineer",
+            "Việc làm IT",
+            "Hồ Chí Minh",
+            "Quận 7"
+        ],
+        "area": [
+            "Hồ Chí Minh",
+            "Quận 7"
+        ],
+        "update_time": "Cập nhật 2 tuần trước",
+        "remain_time": "Còn 27 ngày để ứng tuyển"
+    },
+    {
+        "id": "23",
+        "title": "Data Engineer",
+        "company_name": "TMA Solutions",
+        "salary": "9 - 15 triệu",
+        "city": "9 - 15 triệu",
+        "yoe": "1 năm",
+        "deadline_submit": "Hạn nộp hồ sơ: 17/10/2025",
+        "main_industry": [],
+        "description": "Overview:\nWe are looking for Data Engineers to join our development team in building data platform on-cloud or on-premise. The hire will be responsible for developing, monitoring, maintains and optimizing ETL processes, reporting applications, and database design.\nThe ideal candidate is an database architects, data analysts and data warehousing ensure optimal data delivery architecture is consistent throughout ongoing projects.",
+        "requirements": "Key Responsibilities:\nPlan, create, coordinate, and deploy Data Platform.\nDevelop and implement ETL routines according to the Data Platform design and architecture.\nBuild a data platform processing based on Microsoft Azure or AWS infrastructure\nProcessing data before loading into final Storage, e.g. Validate schema, De-duplicate data, Add metadata …\nBuild CI/CD using Azure DevOps or AWS Code Pipeline\nAnalyze and identify issue when it happens and propose solution to solve it\nRequired skills/Experience:\nMust have advanced working SQL knowledge and experience working with relational databases, query authoring (SQL) as well as working familiarity with a variety of databases, such as MS SQL Server, RedShift, MySQL\nMust have experience performing root cause analysis\nStrong analytic skills related to working with structured & unstructured datasets\nExperience with Data Platform to build processes supporting data transformation, data structures, metadata, dependency and workload management.\nExperience supporting and working with cross-functional teams in a dynamic environment.\nHave experience using the following software/tools:\nBusiness Intelligence solution: Microsoft BI/Oracle BI, ETL, Design schema\nDatabase: MS SQL Server, RedShift, MySQL\nData Processing Engine: Spark (SQL) (SQL) using Data & Dynamic Frame, SSIS, Pentaho\nData Visualization tools: PowerBI, SSRS, Tableu\nPrograming Language: Python, Scala (for Spark developing)\nMust have experience at least one cloud platform Microsoft Azure or AWS or Google cloud platform\nStorage Account: ADLS gen 2, AWS S3\nETL tool: Azure Data Factory, AWS Lambda, AWS Glue\nKey Management: Azure KeyVault, AWS Secret Manager\nProcessing engine: Azure Data-brick, AWS EMR\nYears of experiences: Fresher or Experienced",
+        "work_address": "- Bình Định: Công viên Sáng tạo TMA Bình Định – Số 12, Đại lộ Khoa học, Khu vực 2, phường Quy Nhơn Nam, tỉnh Gia Lai, TP Quy Nhơn",
+        "company_size": "3000+ nhân viên",
+        "major_field": "IT - Phần mềm",
+        "level": "Nhân viên",
+        "num_of_recruit": "3 người",
+        "work_form": "Toàn thời gian",
+        "gender_require": null,
+        "relation_fields": [
+            "Công nghệ Thông tin",
+            "Data Science",
+            "Data Engineer",
+            "Việc làm IT"
+        ],
+        "skills": [
+            "Công nghệ Thông tin",
+            "Data Science",
+            "Data Engineer",
+            "Việc làm IT",
+            "Bình Định",
+            "TP Quy Nhơn"
+        ],
+        "area": [
+            "Bình Định",
+            "TP Quy Nhơn"
+        ],
+        "update_time": "Cập nhật 2 tuần trước",
+        "remain_time": "Còn 74 ngày để ứng tuyển"
+    },
+    {
+        "id": "24",
+        "title": "Data Engineer (Onsite)",
+        "company_name": "Công ty cổ phần Ecoit",
+        "salary": "20 - 28 triệu",
+        "city": "20 - 28 triệu",
+        "yoe": "3 năm",
+        "deadline_submit": "Hạn nộp hồ sơ: 16/08/2025",
+        "main_industry": [],
+        "description": "Phát triển luồng ETL dữ liệu cho các hệ thống DWH, Data lake dựa trên các yêu cầu nghiệp vụ và thiết kế chi tiết.\nXây dựng Data Mart, báo cáo, dashboard theo yêu cầu phòng ban nghiệp vụ trên các nền tảng Data warehouse, Data Lake.\nPhát triển dữ liệu cho các ứng dụng phân tích nghiệp vụ ngân hàng.\nNghiên cứu và triển khai các ứng dụng công nghệ, xu hướng công nghệ hoặc kỹ thuật mới về Cloud, AI/ML, Big Data và phân tích.",
+        "requirements": "Tốt nghiệp hệ chính quy các Trường Đại học trong nước (ĐHBK, ĐHCN, ĐH KHTN, học viện Công nghệ BCVT)... hoặc nước ngoài; ưu tiên Chuyên ngành đào tạo: Công nghệ thông tin, Toán tin, Điện tử Viễn thông, Kế Toán, Tài chính Ngân hàng hoặc các ngành tương đương hoặc có các chứng chỉ tương đương được công nhận bởi các tổ chức uy tín.\nCó kinh nghiệm làm việc tại các ngân hàng hoặc các tổ chức, tập đoàn Công nghệ thông tin\nCó kinh nghiệm làm việc tại các ngân hàng; hiểu biết về sản phẩm dịch vụ ngân hàng\nCó hiểu biết về các hệ thống Bigdata,Data Lake, Data warehouse và hiểu biết về Hadoop eco - system: Hadoop, Spark...\nCó kinh nghiệm làm việc với các hệ thống cơ sở dữ liệu Oracle, Netezza\nCó kinh nghiệm làm việc với các hệ thống ETL: Data Stage, Pentaho, ODI và trên các nền tảng Cloud\nƯu tiên:\nNhân sự đã từng làm việc với các hệ thống học máy (Machine Learning), khai phá dữ liệu (Data Mining)\nƯu tiên Nhân sự có kinh nghiệm làm phân tích xử lý dữ liệu\nƯu tiên Nhân sự đã có kinh nghiệm tham gia triển khai các dự án theo mô hình Agile/Scrum\nNgoại ngữ:\nCó khả năng đọc viết Tiếng Anh (cơ bản) nghe nói (nếu có thể).",
+        "work_address": "- Hà Nội: Lê Văn Lương, Cầu Giấy",
+        "company_size": "25-99 nhân viên",
+        "major_field": "IT - Phần mềm",
+        "level": "Trưởng nhóm",
+        "num_of_recruit": "5 người",
+        "work_form": "Toàn thời gian",
+        "gender_require": null,
+        "relation_fields": [
+            "Công nghệ Thông tin",
+            "Data Science",
+            "Data Engineer",
+            "Việc làm IT"
+        ],
+        "skills": [
+            "Công nghệ Thông tin",
+            "Data Science",
+            "Data Engineer",
+            "Việc làm IT",
+            "Hà Nội",
+            "Cầu Giấy"
+        ],
+        "area": [
+            "Hà Nội",
+            "Cầu Giấy"
+        ],
+        "update_time": "Cập nhật 2 tuần trước",
+        "remain_time": "Còn 12 ngày để ứng tuyển"
+    },
+    {
+        "id": "25",
+        "title": "Data Engineer",
+        "company_name": "Alphaway Technology",
+        "salary": "Tới 39 triệu",
+        "city": "Tới 39 triệu",
+        "yoe": "3 năm",
+        "deadline_submit": "Hạn nộp hồ sơ: 14/08/2025",
+        "main_industry": [],
+        "description": "Phân tích yêu cầu, tổ chức thiết kế dữ liệu từ các nguồn khác nhau về các phân vùng dữ liệu tương ứng theo kiến trúc dữ liệu toàn hàng.\nXây dựng luồng xử lý dữ liệu dựa trên kiến trúc dữ liệu toàn hàng để đảm bảo các yêu cầu khai thác dữ liệu cho báo cáo, phân tích, trao đổi dữ liệu, cũng như các mô hình AI/ ML.\nPhân tích xử lý lỗi trong quá trình vận hành. Thực hiện các phương thức phân tích logic và kỹ thuật để cải thiện chất lượng xử lý dữ liệu cũng như hiệu năng hệ thống.\nTư vấn cho các đơn vị liên quan (Data Architecture, BI, Data Scientist ...) để xây dựng các bộ dữ liệu có thể phục vụ cho khai phá dữ liệu, chạy mô hình cũng như xây dựng các báo cáo phân tích.\nChủ động nghiên cứu các công nghệ mới phục vụ cho việc tối ưu, giải quyết các khó khăn trong công việc.",
+        "requirements": "Có 3 năm trở lên có kinh nghiệm ở vai trò Kỹ sư Dữ liệu hoặc vai trò tương đương.\nBắt buộc có kiến thức sâu và kinh nghiệm thực tế với các ngôn ngữ lập trình (SQL, Python, Spark..).\nCó kinh nghiệm thiết kế mô hình dữ liệu theo các mô hình chuẩn hóa đa dạng (ưu tiên biết banking data model) chi tiết tầng dữ liệu với các hệ quản trị cơ sở dữ liệu khác nhau (SQL Server, Oracle, DB2, Postgre, Redshift v.v...)\nƯu tiên biết thêm về các ngôn ngữ lập trình ứng dụng như Javascript, Java, .Net v.v..\nCó kinh nghiệm triển khai thực tế với các hệ thống IBM DWH, AWS, Databricks là 1 điểm cộng.\nCó chứng chỉ về Data engineer là 1 điểm cộng (IBM Certified Data Engineer, AWS Database Speciality, AWS Data & Analytic Speciality).",
+        "work_address": "- Hà Nội: Cầu Giấy\n- Hà Nội: Hoàn Kiếm",
+        "company_size": "100-499 nhân viên",
+        "major_field": "IT - Phần mềm",
+        "level": "Trưởng nhóm",
+        "num_of_recruit": "5 người",
+        "work_form": "Toàn thời gian",
+        "gender_require": null,
+        "relation_fields": [
+            "Công nghệ Thông tin",
+            "Data Science",
+            "Data Engineer",
+            "Việc làm IT"
+        ],
+        "skills": [
+            "Công nghệ Thông tin",
+            "Data Science",
+            "Data Engineer",
+            "Việc làm IT",
+            "Hà Nội",
+            "Cầu Giấy",
+            "Hoàn Kiếm"
+        ],
+        "area": [
+            "Hà Nội",
+            "Cầu Giấy",
+            "Hoàn Kiếm"
+        ],
+        "update_time": "Cập nhật 2 tuần trước",
+        "remain_time": "Còn 10 ngày để ứng tuyển"
+    },
+    {
+        "id": "26",
+        "title": "Data Engineer (Fluent English)",
+        "company_name": "TECHVIFY SOFTWARE., JSC",
+        "salary": "9 - 15 triệu",
+        "city": "9 - 15 triệu",
+        "yoe": "3 năm",
+        "deadline_submit": "Hạn nộp hồ sơ: 12/08/2025",
+        "main_industry": [],
+        "description": "Design, build, and maintain scalable data pipelines and ETL processes for handling large datasets.\nDevelop and manage databases, ensuring data accuracy, integrity, and accessibility.\nCollaborate with teams to integrate data systems and meet business needs.\nOptimize data workflows for performance, scalability, and cost efficiency.\nMonitor, troubleshoot, and resolve issues in data systems to ensure reliability.\nImplement data governance policies and ensure compliance with regulations.\nStay updated on new technologies and apply best practices in data engineering.\nSecure sensitive data and build cloud-based infrastructure for modern solution",
+        "requirements": "1. Experience & Background\n3 years of professional experience in Python development.\nProven experience in data engineering or data processing projects.\n2. Technical Skills\nProficiency with pandas and other data manipulation libraries.\nExperience with PySpark (preferred but not mandatory).\nFamiliarity with Azure Databricks (or similar cloud-based data platforms).\nUnderstanding of blockchain fundamentals (e.g., data structures, consensus mechanisms, smart\ncontracts).\nComfortable working with APIs (REST, RPC, GraphQL) and large-scale datasets.\nExperience building data pipelines and ETL workflows and familiarity with Delta Lake, Spark SQL, and notebook-based workflows in Databricks (preferred but not mandatory).\n3. Technical Skills\nStrong problem-solving and debugging skills.\nClear communication, especially for remote or cross-functional collaboration.\nAbility to work independently and manage time effectively.",
+        "work_address": "- Hà Nội: Tòa nhà Thành Đông, Ngõ 19 Tố Hữu, Phường Trung Văn, Nam Từ Liêm\n- Hà Nội: HUD Tower Lê Văn Lương, Thanh Xuân",
+        "company_size": "100-499 nhân viên",
+        "major_field": "IT - Phần mềm",
+        "level": "Trưởng nhóm",
+        "num_of_recruit": "2 người",
+        "work_form": "Toàn thời gian",
+        "gender_require": null,
+        "relation_fields": [
+            "Công nghệ Thông tin",
+            "Data Science",
+            "Data Engineer",
+            "Việc làm IT"
+        ],
+        "skills": [
+            "Công nghệ Thông tin",
+            "Data Science",
+            "Data Engineer",
+            "Việc làm IT",
+            "Hà Nội",
+            "Nam Từ Liêm",
+            "Thanh Xuân"
+        ],
+        "area": [
+            "Hà Nội",
+            "Nam Từ Liêm",
+            "Thanh Xuân"
+        ],
+        "update_time": "Cập nhật 3 tuần trước",
+        "remain_time": "Còn 8 ngày để ứng tuyển"
+    },
+    {
+        "id": "27",
+        "title": "Kỹ Sư Dữ Liệu (Data Engineer)",
+        "company_name": "Công ty TNHH AMI Group",
+        "salary": "15 - 20 triệu",
+        "city": "15 - 20 triệu",
+        "yoe": "2 năm",
+        "deadline_submit": "Hạn nộp hồ sơ: 06/08/2025",
+        "main_industry": [],
+        "description": "Phân tích yêu cầu về dữ liệu. Thiết kế và xây dựng kiến trúc dữ liệu, phát triển các mô hình dữ liệu, kho dữ liệu.\nLựa chọn công nghệ và công cụ phù hợp để xây dựng hệ thống dữ liệu hiệu quả và có khả năng mở rộng.\nXây dựng và duy trì các quy trình trích xuất, chuyển đổi và tải dữ liệu từ nhiều nguồn khác nhau đảm bảo tính toàn vẹn, chính xác và nhất quán của dữ liệu. Đảm bảo dữ liệu tuân thủ các tiêu chuẩn và quy định của công ty.\nQuản lý và giám sát hệ thống dữ liệu. Theo dõi hiệu suất, chất lượng và độ ổn định của các hệ thống dữ liệu.\nXử lý các sự cố liên quan đến dữ liệu và hệ thống dữ liệu một cách nhanh chóng và hiệu quả.\nThực hiện các hoạt động bảo trì và nâng cấp hệ thống dữ liệu.\nHỗ trợ các nhóm phân tích dữ liệu trong việc truy cập và sử dụng dữ liệu.\nCung cấp dữ liệu đã được xử lý và làm sạch cho bộ phận phân tích dữ liệu\nNghiên cứu và áp dụng công nghệ mới.",
+        "requirements": "Tốt nghiệp Đại học chuyên ngành Khoa học Máy tính, Kỹ thuật Phần mềm, Toán học, Thống kê hoặc các ngành liên quan.\nCó ít nhất 2 năm kinh nghiệm làm việc ở vị trí Kỹ sư Dữ liệu hoặc các vị trí tương đương. Ưu tiên kinh nghiệm về quảng cáo trực tuyến, các nền tảng quảng cáo, mạng quảng cáo.\nCó kinh nghiệm xây dựng và quản lý các hệ thống kho dữ liệu (Data Warehouse) hoặc hồ dữ liệu (Data Lake).\nCó kinh nghiệm xử lý dữ liệu với các công cụ và công nghệ ETL/ELT (ví dụ: Apache Hadoop, Spark, Informatica)\nCó kinh nghiệm làm việc với các hệ quản trị cơ sở dữ liệu quan hệ (SQL Server, PostgreSQL, MySQL) và NoSQL (MongoDB, Cassandra).\nCó kinh nghiệm làm việc với các nền tảng đám mây (AWS, Azure, GCP) là một lợi thế.\nThành thạo ngôn ngữ truy vấn SQL.\nCó kiến thức vững chắc về các khái niệm và nguyên tắc về mô hình hóa dữ liệu.\nCó kỹ năng lập trình với ít nhất một trong các ngôn ngữ sau: Python, Scala, Java.\nCó kiến thức về các công nghệ Big Data (ví dụ: Hadoop, Spark, Kafka) là một lợi thế.\nCó khả năng phân tích và giải quyết vấn đề tốt.\nCó khả năng làm việc độc lập và làm việc nhóm hiệu quả.\nCó khả năng học hỏi nhanh các công nghệ mới.\nKhả năng đọc và hiểu tài liệu tiếng Anh chuyên ngành.",
+        "work_address": "- Hà Nội: Tòa nhà Mỹ Đình Plaza 2, phố Nguyễn Hoàng, Nam Từ Liêm",
+        "company_size": "25-99 nhân viên",
+        "major_field": "Marketing / Truyền thông / Quảng cáo",
+        "level": "Trưởng nhóm",
+        "num_of_recruit": "1 người",
+        "work_form": "Toàn thời gian",
+        "gender_require": null,
+        "relation_fields": [
+            "Công nghệ Thông tin",
+            "Data Science",
+            "Data Engineer",
+            "Việc làm IT"
+        ],
+        "skills": [
+            "Công nghệ Thông tin",
+            "Data Science",
+            "Data Engineer",
+            "Việc làm IT",
+            "Hà Nội",
+            "Nam Từ Liêm"
+        ],
+        "area": [
+            "Hà Nội",
+            "Nam Từ Liêm"
+        ],
+        "update_time": "Cập nhật 4 tuần trước",
+        "remain_time": "Còn 2 ngày để ứng tuyển"
+    }
+]

@@ -1,0 +1,19 @@
+[2025-09-09T02:45:20.480+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-09-09T02:45:20.522+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: jobs_crawler_dag.upload_jobs_to_gcs manual__2025-09-09T02:43:05.827744+00:00 [queued]>
+[2025-09-09T02:45:20.529+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: jobs_crawler_dag.upload_jobs_to_gcs manual__2025-09-09T02:43:05.827744+00:00 [queued]>
+[2025-09-09T02:45:20.530+0000] {taskinstance.py:2306} INFO - Starting attempt 2 of 2
+[2025-09-09T02:45:20.543+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): upload_jobs_to_gcs> on 2025-09-09 02:43:05.827744+00:00
+[2025-09-09T02:45:20.550+0000] {standard_task_runner.py:63} INFO - Started process 345 to run task
+[2025-09-09T02:45:20.554+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'jobs_crawler_dag', 'upload_jobs_to_gcs', 'manual__2025-09-09T02:43:05.827744+00:00', '--job-id', '28', '--raw', '--subdir', 'DAGS_FOLDER/crawl_jobs_dag.py', '--cfg-path', '/tmp/tmpm3xehll3']
+[2025-09-09T02:45:20.556+0000] {standard_task_runner.py:91} INFO - Job 28: Subtask upload_jobs_to_gcs
+[2025-09-09T02:45:20.618+0000] {task_command.py:426} INFO - Running <TaskInstance: jobs_crawler_dag.upload_jobs_to_gcs manual__2025-09-09T02:43:05.827744+00:00 [running]> on host c46b67be7e4e
+[2025-09-09T02:45:20.754+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='jobs_crawler_dag' AIRFLOW_CTX_TASK_ID='upload_jobs_to_gcs' AIRFLOW_CTX_EXECUTION_DATE='2025-09-09T02:43:05.827744+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-09-09T02:43:05.827744+00:00'
+[2025-09-09T02:45:20.755+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-09-09T02:45:20.958+0000] {logging_mixin.py:188} INFO - ✅ Uploaded Pandas DataFrame to MinIO: job/bronze/topcv/topcv_jobs.parquet
+[2025-09-09T02:45:21.056+0000] {logging_mixin.py:188} INFO - ✅ Uploaded Pandas DataFrame to MinIO: job/bronze/vietnamworkcv/vietnamworkcv_jobs.parquet
+[2025-09-09T02:45:21.060+0000] {python.py:237} INFO - Done. Returned value was: None
+[2025-09-09T02:45:21.061+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-09-09T02:45:21.071+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=jobs_crawler_dag, task_id=upload_jobs_to_gcs, run_id=manual__2025-09-09T02:43:05.827744+00:00, execution_date=20250909T024305, start_date=20250909T024520, end_date=20250909T024521
+[2025-09-09T02:45:21.127+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-09-09T02:45:21.151+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-09-09T02:45:21.154+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

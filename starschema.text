@@ -1,0 +1,47 @@
+11. Bảng Fact: Fact_Job
+Cột	Kiểu dữ liệu	Khóa	Mô tả
+JobPostingID	INT	PK	Khóa chính, ID bài đăng tuyển
+CompanyID	INT	FK	Liên kết Dim_Company
+JobPositionID	INT	FK	Liên kết Dim_JobPosition
+DateID	DATE / INT	FK	Liên kết Dim_Date
+WorkFormID	INT	FK	Liên kết Dim_WorkForm
+MinSalary	DECIMAL	NULLABLE	Mức lương tối thiểu, có null
+MaxSalary	DECIMAL	NULLABLE	Mức lương tối đa, có cull
+YOE	INT		Số năm kinh nghiệm
+NumOfRecruit	INT		Số lượng tuyển dụng
+________________________________________
+2. Bảng Dimension: Dim_Company
+Cột	Kiểu dữ liệu	Khóa	Mô tả
+CompanyID	INT	PK	Khóa chính
+CompanyName	VARCHAR		Tên công ty
+MajorField	VARCHAR		Lĩnh vực ngành nghề chính của công ty
+________________________________________
+3. Bảng Dimension: Dim_JobPosition
+Cột	Kiểu dữ liệu	Khóa	Mô tả
+JobPositionID	INT	PK	Khóa chính
+JobPosition	VARCHAR		Tên vị trí công việc
+Level	VARCHAR		Cấp bậc (Entry, Junior, Senior)
+RelationFields	VARCHAR		Các lĩnh vực liên quan (nếu cần)
+________________________________________
+4. Bảng Dimension: Dim_Date
+Cột	Kiểu dữ liệu	Khóa	Mô tả
+DateID	DATE	PK	Khóa chính (ngày đầy đủ)
+Day	INT		Ngày
+Month	INT		Tháng
+Quarter	INT		Quý
+Year	INT		Năm
+________________________________________
+5. Bảng Dimension: Dim_WorkForm
+Cột	Kiểu dữ liệu	Khóa	Mô tả
+WorkFormID	INT	PK	Khóa chính
+WorkForm	VARCHAR		Hình thức làm việc (Full-time, Remote...)
+________________________________________
+6. Bảng Dimension (Tuỳ chọn): Dim_Skills
+Cột	Kiểu dữ liệu	Khóa	Mô tả
+SkillID	INT	PK	Khóa chính
+SkillName	VARCHAR		Tên kỹ năng
+________________________________________
+7. Bảng liên kết (Many-to-Many): Fact_JobSkill
+Cột	Kiểu dữ liệu	Khóa	Mô tả
+JobPostingID	INT	FK	Liên kết Fact_Job
+SkillID	INT	FK	Liên kết Dim_Skills

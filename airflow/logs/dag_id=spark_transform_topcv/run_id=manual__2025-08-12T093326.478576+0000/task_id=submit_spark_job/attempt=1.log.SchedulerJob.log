@@ -1,0 +1,1 @@
+[2025-08-12T09:33:33.045+0000] {task_context_logger.py:104} ERROR - Executor reports task instance <TaskInstance: spark_transform_topcv.submit_spark_job manual__2025-08-12T09:33:26.478576+00:00 [queued]> finished (failed) although the task says it's queued. (Info: None) Was the task killed externally?

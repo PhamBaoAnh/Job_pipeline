@@ -1,0 +1,1068 @@
+[2025-08-09T03:22:46.664+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-08-09T03:22:46.695+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: spark_transform_topcv.submit_spark_job manual__2025-08-09T03:22:42.264655+00:00 [queued]>
+[2025-08-09T03:22:46.701+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: spark_transform_topcv.submit_spark_job manual__2025-08-09T03:22:42.264655+00:00 [queued]>
+[2025-08-09T03:22:46.702+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-08-09T03:22:46.714+0000] {taskinstance.py:2330} INFO - Executing <Task(SparkSubmitOperator): submit_spark_job> on 2025-08-09 03:22:42.264655+00:00
+[2025-08-09T03:22:46.720+0000] {standard_task_runner.py:63} INFO - Started process 1635 to run task
+[2025-08-09T03:22:46.724+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'spark_transform_topcv', 'submit_spark_job', 'manual__2025-08-09T03:22:42.264655+00:00', '--job-id', '38', '--raw', '--subdir', 'DAGS_FOLDER/etl_jobs_dag.py', '--cfg-path', '/tmp/tmp7d2ub0m4']
+[2025-08-09T03:22:46.726+0000] {standard_task_runner.py:91} INFO - Job 38: Subtask submit_spark_job
+[2025-08-09T03:22:46.779+0000] {task_command.py:426} INFO - Running <TaskInstance: spark_transform_topcv.submit_spark_job manual__2025-08-09T03:22:42.264655+00:00 [running]> on host ef38c6a74907
+[2025-08-09T03:22:46.855+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='spark_transform_topcv' AIRFLOW_CTX_TASK_ID='submit_spark_job' AIRFLOW_CTX_EXECUTION_DATE='2025-08-09T03:22:42.264655+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-08-09T03:22:42.264655+00:00'
+[2025-08-09T03:22:46.855+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-08-09T03:22:46.885+0000] {spark_submit.py:223} INFO - Could not load connection string spark_default, defaulting to yarn
+[2025-08-09T03:22:46.886+0000] {spark_submit.py:351} INFO - Spark-Submit cmd: spark-submit --master yarn --conf spark.hadoop.fs.gs.impl=com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem --conf spark.hadoop.fs.AbstractFileSystem.gs.impl=com.google.cloud.hadoop.fs.gcs.GoogleHadoopFS --conf spark.hadoop.google.cloud.auth.service.account.enable=true --conf spark.hadoop.google.cloud.auth.service.account.json.keyfile=/opt/***/gcp-key.json --conf spark.yarn.appMasterEnv.HADOOP_CONF_DIR=/opt/hadoop/etc/hadoop --packages com.google.cloud.bigdataoss:gcs-connector:hadoop3-2.2.14 --name arrow-spark --verbose /opt/spark-jobs/gold_transform.py
+[2025-08-09T03:22:47.327+0000] {spark_submit.py:521} INFO - WARNING: Using incubator modules: jdk.incubator.vector
+[2025-08-09T03:22:48.363+0000] {spark_submit.py:521} INFO - Parsed arguments:
+[2025-08-09T03:22:48.364+0000] {spark_submit.py:521} INFO - master                  yarn
+[2025-08-09T03:22:48.364+0000] {spark_submit.py:521} INFO - remote                  null
+[2025-08-09T03:22:48.364+0000] {spark_submit.py:521} INFO - deployMode              null
+[2025-08-09T03:22:48.364+0000] {spark_submit.py:521} INFO - executorMemory          null
+[2025-08-09T03:22:48.365+0000] {spark_submit.py:521} INFO - executorCores           null
+[2025-08-09T03:22:48.365+0000] {spark_submit.py:521} INFO - totalExecutorCores      null
+[2025-08-09T03:22:48.365+0000] {spark_submit.py:521} INFO - propertiesFile          null
+[2025-08-09T03:22:48.366+0000] {spark_submit.py:521} INFO - driverMemory            null
+[2025-08-09T03:22:48.366+0000] {spark_submit.py:521} INFO - driverCores             null
+[2025-08-09T03:22:48.366+0000] {spark_submit.py:521} INFO - driverExtraClassPath    null
+[2025-08-09T03:22:48.366+0000] {spark_submit.py:521} INFO - driverExtraLibraryPath  null
+[2025-08-09T03:22:48.366+0000] {spark_submit.py:521} INFO - driverExtraJavaOptions  null
+[2025-08-09T03:22:48.367+0000] {spark_submit.py:521} INFO - supervise               false
+[2025-08-09T03:22:48.367+0000] {spark_submit.py:521} INFO - queue                   null
+[2025-08-09T03:22:48.367+0000] {spark_submit.py:521} INFO - numExecutors            null
+[2025-08-09T03:22:48.367+0000] {spark_submit.py:521} INFO - files                   null
+[2025-08-09T03:22:48.368+0000] {spark_submit.py:521} INFO - pyFiles                 null
+[2025-08-09T03:22:48.368+0000] {spark_submit.py:521} INFO - archives                null
+[2025-08-09T03:22:48.368+0000] {spark_submit.py:521} INFO - mainClass               null
+[2025-08-09T03:22:48.368+0000] {spark_submit.py:521} INFO - primaryResource         file:/opt/spark-jobs/gold_transform.py
+[2025-08-09T03:22:48.369+0000] {spark_submit.py:521} INFO - name                    arrow-spark
+[2025-08-09T03:22:48.369+0000] {spark_submit.py:521} INFO - childArgs               []
+[2025-08-09T03:22:48.369+0000] {spark_submit.py:521} INFO - jars                    null
+[2025-08-09T03:22:48.369+0000] {spark_submit.py:521} INFO - packages                com.google.cloud.bigdataoss:gcs-connector:hadoop3-2.2.14
+[2025-08-09T03:22:48.370+0000] {spark_submit.py:521} INFO - packagesExclusions      null
+[2025-08-09T03:22:48.370+0000] {spark_submit.py:521} INFO - repositories            null
+[2025-08-09T03:22:48.370+0000] {spark_submit.py:521} INFO - verbose                 true
+[2025-08-09T03:22:48.370+0000] {spark_submit.py:521} INFO - 
+[2025-08-09T03:22:48.370+0000] {spark_submit.py:521} INFO - Spark properties used, including those specified through
+[2025-08-09T03:22:48.371+0000] {spark_submit.py:521} INFO - --conf and those from the properties file null:
+[2025-08-09T03:22:48.371+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.AbstractFileSystem.gs.impl,com.google.cloud.hadoop.fs.gcs.GoogleHadoopFS)
+[2025-08-09T03:22:48.371+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.gs.impl,com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem)
+[2025-08-09T03:22:48.371+0000] {spark_submit.py:521} INFO - (spark.hadoop.google.cloud.auth.service.account.enable,true)
+[2025-08-09T03:22:48.372+0000] {spark_submit.py:521} INFO - (spark.hadoop.google.cloud.auth.service.account.json.keyfile,/opt/***/gcp-key.json)
+[2025-08-09T03:22:48.372+0000] {spark_submit.py:521} INFO - (spark.yarn.appMasterEnv.HADOOP_CONF_DIR,/opt/hadoop/etc/hadoop)
+[2025-08-09T03:22:48.372+0000] {spark_submit.py:521} INFO - 
+[2025-08-09T03:22:48.372+0000] {spark_submit.py:521} INFO - 
+[2025-08-09T03:22:48.448+0000] {spark_submit.py:521} INFO - :: loading settings :: url = jar:file:/home/***/.local/lib/python3.11/site-packages/pyspark/jars/ivy-2.5.3.jar!/org/apache/ivy/core/settings/ivysettings.xml
+[2025-08-09T03:22:48.526+0000] {spark_submit.py:521} INFO - Ivy Default Cache set to: /home/***/.ivy2.5.2/cache
+[2025-08-09T03:22:48.527+0000] {spark_submit.py:521} INFO - The jars for the packages stored in: /home/***/.ivy2.5.2/jars
+[2025-08-09T03:22:48.530+0000] {spark_submit.py:521} INFO - com.google.cloud.bigdataoss#gcs-connector added as a dependency
+[2025-08-09T03:22:48.531+0000] {spark_submit.py:521} INFO - :: resolving dependencies :: org.apache.spark#spark-submit-parent-0b7efe6d-445e-467f-9044-56bee507f485;1.0
+[2025-08-09T03:22:48.531+0000] {spark_submit.py:521} INFO - confs: [default]
+[2025-08-09T03:22:48.642+0000] {spark_submit.py:521} INFO - found com.google.cloud.bigdataoss#gcs-connector;hadoop3-2.2.14 in central
+[2025-08-09T03:22:48.677+0000] {spark_submit.py:521} INFO - found com.google.api-client#google-api-client-jackson2;2.0.1 in central
+[2025-08-09T03:22:48.701+0000] {spark_submit.py:521} INFO - found com.google.api-client#google-api-client;2.0.1 in central
+[2025-08-09T03:22:48.725+0000] {spark_submit.py:521} INFO - found com.google.oauth-client#google-oauth-client;1.34.1 in central
+[2025-08-09T03:22:48.755+0000] {spark_submit.py:521} INFO - found com.google.http-client#google-http-client;1.42.3 in central
+[2025-08-09T03:22:48.791+0000] {spark_submit.py:521} INFO - found org.apache.httpcomponents#httpclient;4.5.13 in central
+[2025-08-09T03:22:48.823+0000] {spark_submit.py:521} INFO - found org.apache.httpcomponents#httpcore;4.4.15 in central
+[2025-08-09T03:22:48.846+0000] {spark_submit.py:521} INFO - found commons-logging#commons-logging;1.2 in central
+[2025-08-09T03:22:48.870+0000] {spark_submit.py:521} INFO - found commons-codec#commons-codec;1.15 in central
+[2025-08-09T03:22:48.887+0000] {spark_submit.py:521} INFO - found com.google.code.findbugs#jsr305;3.0.2 in central
+[2025-08-09T03:22:48.912+0000] {spark_submit.py:521} INFO - found com.google.errorprone#error_prone_annotations;2.16 in central
+[2025-08-09T03:22:48.929+0000] {spark_submit.py:521} INFO - found com.google.guava#guava;31.1-jre in central
+[2025-08-09T03:22:48.945+0000] {spark_submit.py:521} INFO - found com.google.guava#failureaccess;1.0.1 in central
+[2025-08-09T03:22:48.959+0000] {spark_submit.py:521} INFO - found com.google.guava#listenablefuture;9999.0-empty-to-avoid-conflict-with-guava in central
+[2025-08-09T03:22:48.971+0000] {spark_submit.py:521} INFO - found org.checkerframework#checker-qual;3.12.0 in central
+[2025-08-09T03:22:48.986+0000] {spark_submit.py:521} INFO - found com.google.j2objc#j2objc-annotations;1.3 in central
+[2025-08-09T03:22:49.004+0000] {spark_submit.py:521} INFO - found io.opencensus#opencensus-api;0.31.1 in central
+[2025-08-09T03:22:49.018+0000] {spark_submit.py:521} INFO - found io.grpc#grpc-context;1.54.0 in central
+[2025-08-09T03:22:49.032+0000] {spark_submit.py:521} INFO - found io.opencensus#opencensus-contrib-http-util;0.31.1 in central
+[2025-08-09T03:22:49.049+0000] {spark_submit.py:521} INFO - found com.google.http-client#google-http-client-gson;1.42.3 in central
+[2025-08-09T03:22:49.064+0000] {spark_submit.py:521} INFO - found com.google.code.gson#gson;2.8.9 in central
+[2025-08-09T03:22:49.079+0000] {spark_submit.py:521} INFO - found com.google.http-client#google-http-client-apache-v2;1.42.3 in central
+[2025-08-09T03:22:49.094+0000] {spark_submit.py:521} INFO - found com.google.cloud.bigdataoss#util;2.2.14 in central
+[2025-08-09T03:22:49.107+0000] {spark_submit.py:521} INFO - found com.google.http-client#google-http-client-jackson2;1.42.3 in central
+[2025-08-09T03:22:49.118+0000] {spark_submit.py:521} INFO - found com.fasterxml.jackson.core#jackson-core;2.13.4 in central
+[2025-08-09T03:22:49.128+0000] {spark_submit.py:521} INFO - found com.google.apis#google-api-services-iamcredentials;v1-rev20211203-2.0.0 in central
+[2025-08-09T03:22:49.141+0000] {spark_submit.py:521} INFO - found com.google.apis#google-api-services-storage;v1-rev20220705-2.0.0 in central
+[2025-08-09T03:22:49.154+0000] {spark_submit.py:521} INFO - found com.google.auto.value#auto-value-annotations;1.10.1 in central
+[2025-08-09T03:22:49.173+0000] {spark_submit.py:521} INFO - found com.google.auth#google-auth-library-oauth2-http;1.12.1 in central
+[2025-08-09T03:22:49.188+0000] {spark_submit.py:521} INFO - found com.google.auth#google-auth-library-credentials;1.12.1 in central
+[2025-08-09T03:22:49.201+0000] {spark_submit.py:521} INFO - found com.google.flogger#google-extensions;0.7.1 in central
+[2025-08-09T03:22:49.210+0000] {spark_submit.py:521} INFO - found com.google.flogger#flogger;0.7.1 in central
+[2025-08-09T03:22:49.219+0000] {spark_submit.py:521} INFO - found org.checkerframework#checker-compat-qual;2.5.3 in central
+[2025-08-09T03:22:49.228+0000] {spark_submit.py:521} INFO - found com.google.flogger#flogger-system-backend;0.7.1 in central
+[2025-08-09T03:22:49.242+0000] {spark_submit.py:521} INFO - found io.grpc#grpc-api;1.54.0 in central
+[2025-08-09T03:22:49.251+0000] {spark_submit.py:521} INFO - found com.google.errorprone#error_prone_annotations;2.18.0 in central
+[2025-08-09T03:22:49.263+0000] {spark_submit.py:521} INFO - found com.google.cloud.bigdataoss#util-hadoop;hadoop3-2.2.14 in central
+[2025-08-09T03:22:49.278+0000] {spark_submit.py:521} INFO - found com.google.cloud.bigdataoss#gcsio;2.2.14 in central
+[2025-08-09T03:22:49.312+0000] {spark_submit.py:521} INFO - found io.grpc#grpc-alts;1.54.0 in central
+[2025-08-09T03:22:49.329+0000] {spark_submit.py:521} INFO - found io.grpc#grpc-auth;1.54.0 in central
+[2025-08-09T03:22:49.356+0000] {spark_submit.py:521} INFO - found io.grpc#grpc-grpclb;1.54.0 in central
+[2025-08-09T03:22:49.378+0000] {spark_submit.py:521} INFO - found io.grpc#grpc-protobuf;1.54.0 in central
+[2025-08-09T03:22:49.402+0000] {spark_submit.py:521} INFO - found com.google.protobuf#protobuf-java;3.21.9 in central
+[2025-08-09T03:22:49.419+0000] {spark_submit.py:521} INFO - found com.google.api.grpc#proto-google-common-protos;2.9.0 in central
+[2025-08-09T03:22:49.434+0000] {spark_submit.py:521} INFO - found io.grpc#grpc-protobuf-lite;1.54.0 in central
+[2025-08-09T03:22:49.449+0000] {spark_submit.py:521} INFO - found io.grpc#grpc-stub;1.54.0 in central
+[2025-08-09T03:22:49.463+0000] {spark_submit.py:521} INFO - found org.conscrypt#conscrypt-openjdk-uber;2.5.2 in central
+[2025-08-09T03:22:49.484+0000] {spark_submit.py:521} INFO - found io.grpc#grpc-netty-shaded;1.54.0 in central
+[2025-08-09T03:22:49.494+0000] {spark_submit.py:521} INFO - found io.grpc#grpc-core;1.54.0 in central
+[2025-08-09T03:22:49.505+0000] {spark_submit.py:521} INFO - found io.grpc#grpc-census;1.54.0 in central
+[2025-08-09T03:22:49.520+0000] {spark_submit.py:521} INFO - found com.google.cloud#google-cloud-storage;2.22.2 in central
+[2025-08-09T03:22:49.544+0000] {spark_submit.py:521} INFO - found com.google.http-client#google-http-client;1.43.1 in central
+[2025-08-09T03:22:49.564+0000] {spark_submit.py:521} INFO - found com.google.http-client#google-http-client-gson;1.43.1 in central
+[2025-08-09T03:22:49.576+0000] {spark_submit.py:521} INFO - found com.google.api-client#google-api-client;2.2.0 in central
+[2025-08-09T03:22:49.612+0000] {spark_submit.py:521} INFO - found com.google.http-client#google-http-client-apache-v2;1.43.1 in central
+[2025-08-09T03:22:49.630+0000] {spark_submit.py:521} INFO - found com.google.cloud#google-cloud-core;2.5.4 in central
+[2025-08-09T03:22:49.649+0000] {spark_submit.py:521} INFO - found com.google.protobuf#protobuf-java-util;3.21.9 in central
+[2025-08-09T03:22:49.678+0000] {spark_submit.py:521} INFO - found com.google.api.grpc#proto-google-iam-v1;1.1.7 in central
+[2025-08-09T03:22:49.708+0000] {spark_submit.py:521} INFO - found com.google.cloud#google-cloud-core-http;2.17.0 in central
+[2025-08-09T03:22:49.722+0000] {spark_submit.py:521} INFO - found com.google.http-client#google-http-client-appengine;1.43.1 in central
+[2025-08-09T03:22:49.739+0000] {spark_submit.py:521} INFO - found com.google.api#gax-httpjson;0.112.0 in central
+[2025-08-09T03:22:49.751+0000] {spark_submit.py:521} INFO - found com.google.cloud#google-cloud-core-grpc;2.17.0 in central
+[2025-08-09T03:22:49.758+0000] {spark_submit.py:521} INFO - found com.google.api#gax;2.27.0 in central
+[2025-08-09T03:22:49.770+0000] {spark_submit.py:521} INFO - found com.google.api#gax-grpc;2.27.0 in central
+[2025-08-09T03:22:49.785+0000] {spark_submit.py:521} INFO - found com.google.api#api-common;2.10.0 in central
+[2025-08-09T03:22:49.801+0000] {spark_submit.py:521} INFO - found javax.annotation#javax.annotation-api;1.3.2 in central
+[2025-08-09T03:22:49.808+0000] {spark_submit.py:521} INFO - found com.google.api.grpc#proto-google-common-protos;2.18.0 in central
+[2025-08-09T03:22:49.819+0000] {spark_submit.py:521} INFO - found org.threeten#threetenbp;1.6.8 in central
+[2025-08-09T03:22:49.845+0000] {spark_submit.py:521} INFO - found com.google.api.grpc#proto-google-cloud-storage-v2;2.22.2-alpha in central
+[2025-08-09T03:22:49.856+0000] {spark_submit.py:521} INFO - found com.google.api.grpc#grpc-google-cloud-storage-v2;2.22.2-alpha in central
+[2025-08-09T03:22:49.878+0000] {spark_submit.py:521} INFO - found com.google.api.grpc#gapic-google-cloud-storage-v2;2.22.2-alpha in central
+[2025-08-09T03:22:49.888+0000] {spark_submit.py:521} INFO - found com.fasterxml.jackson.core#jackson-core;2.14.2 in central
+[2025-08-09T03:22:49.896+0000] {spark_submit.py:521} INFO - found org.checkerframework#checker-qual;3.32.0 in central
+[2025-08-09T03:22:49.903+0000] {spark_submit.py:521} INFO - found io.grpc#grpc-xds;1.54.0 in central
+[2025-08-09T03:22:49.911+0000] {spark_submit.py:521} INFO - found io.opencensus#opencensus-proto;0.2.0 in central
+[2025-08-09T03:22:49.918+0000] {spark_submit.py:521} INFO - found io.grpc#grpc-services;1.54.0 in central
+[2025-08-09T03:22:49.926+0000] {spark_submit.py:521} INFO - found com.google.re2j#re2j;1.6 in central
+[2025-08-09T03:22:49.940+0000] {spark_submit.py:521} INFO - found io.opencensus#opencensus-impl;0.31.0 in central
+[2025-08-09T03:22:49.949+0000] {spark_submit.py:521} INFO - found io.opencensus#opencensus-impl-core;0.31.0 in central
+[2025-08-09T03:22:49.957+0000] {spark_submit.py:521} INFO - found com.lmax#disruptor;3.4.2 in central
+[2025-08-09T03:22:49.963+0000] {spark_submit.py:521} INFO - found io.opencensus#opencensus-exporter-stats-stackdriver;0.31.0 in central
+[2025-08-09T03:22:49.971+0000] {spark_submit.py:521} INFO - found io.opencensus#opencensus-contrib-exemplar-util;0.31.0 in central
+[2025-08-09T03:22:49.984+0000] {spark_submit.py:521} INFO - found io.opencensus#opencensus-contrib-resource-util;0.31.0 in central
+[2025-08-09T03:22:50.042+0000] {spark_submit.py:521} INFO - found io.opencensus#opencensus-exporter-metrics-util;0.31.0 in central
+[2025-08-09T03:22:50.308+0000] {spark_submit.py:521} INFO - found com.google.cloud#google-cloud-monitoring;1.82.0 in central
+[2025-08-09T03:22:50.379+0000] {spark_submit.py:521} INFO - found com.google.api.grpc#proto-google-cloud-monitoring-v3;1.64.0 in central
+[2025-08-09T03:22:50.505+0000] {spark_submit.py:521} INFO - found io.opencensus#opencensus-contrib-grpc-metrics;0.31.0 in central
+[2025-08-09T03:22:50.809+0000] {spark_submit.py:521} INFO - found com.google.android#annotations;4.1.1.4 in central
+[2025-08-09T03:22:51.008+0000] {spark_submit.py:521} INFO - found org.codehaus.mojo#animal-sniffer-annotations;1.21 in central
+[2025-08-09T03:22:51.176+0000] {spark_submit.py:521} INFO - found io.perfmark#perfmark-api;0.25.0 in central
+[2025-08-09T03:22:51.276+0000] {spark_submit.py:521} INFO - found io.grpc#grpc-googleapis;1.54.0 in central
+[2025-08-09T03:22:51.332+0000] {spark_submit.py:521} INFO - found io.perfmark#perfmark-api;0.26.0 in central
+[2025-08-09T03:22:51.356+0000] {spark_submit.py:521} INFO - found org.codehaus.mojo#animal-sniffer-annotations;1.23 in central
+[2025-08-09T03:22:51.368+0000] {spark_submit.py:521} INFO - found io.grpc#grpc-rls;1.54.0 in central
+[2025-08-09T03:22:51.450+0000] {spark_submit.py:521} INFO - :: resolution report :: resolve 2854ms :: artifacts dl 65ms
+[2025-08-09T03:22:51.450+0000] {spark_submit.py:521} INFO - :: modules in use:
+[2025-08-09T03:22:51.451+0000] {spark_submit.py:521} INFO - com.fasterxml.jackson.core#jackson-core;2.14.2 from central in [default]
+[2025-08-09T03:22:51.451+0000] {spark_submit.py:521} INFO - com.google.android#annotations;4.1.1.4 from central in [default]
+[2025-08-09T03:22:51.452+0000] {spark_submit.py:521} INFO - com.google.api#api-common;2.10.0 from central in [default]
+[2025-08-09T03:22:51.452+0000] {spark_submit.py:521} INFO - com.google.api#gax;2.27.0 from central in [default]
+[2025-08-09T03:22:51.452+0000] {spark_submit.py:521} INFO - com.google.api#gax-grpc;2.27.0 from central in [default]
+[2025-08-09T03:22:51.452+0000] {spark_submit.py:521} INFO - com.google.api#gax-httpjson;0.112.0 from central in [default]
+[2025-08-09T03:22:51.452+0000] {spark_submit.py:521} INFO - com.google.api-client#google-api-client;2.2.0 from central in [default]
+[2025-08-09T03:22:51.453+0000] {spark_submit.py:521} INFO - com.google.api-client#google-api-client-jackson2;2.0.1 from central in [default]
+[2025-08-09T03:22:51.453+0000] {spark_submit.py:521} INFO - com.google.api.grpc#gapic-google-cloud-storage-v2;2.22.2-alpha from central in [default]
+[2025-08-09T03:22:51.453+0000] {spark_submit.py:521} INFO - com.google.api.grpc#grpc-google-cloud-storage-v2;2.22.2-alpha from central in [default]
+[2025-08-09T03:22:51.453+0000] {spark_submit.py:521} INFO - com.google.api.grpc#proto-google-cloud-monitoring-v3;1.64.0 from central in [default]
+[2025-08-09T03:22:51.454+0000] {spark_submit.py:521} INFO - com.google.api.grpc#proto-google-cloud-storage-v2;2.22.2-alpha from central in [default]
+[2025-08-09T03:22:51.454+0000] {spark_submit.py:521} INFO - com.google.api.grpc#proto-google-common-protos;2.18.0 from central in [default]
+[2025-08-09T03:22:51.454+0000] {spark_submit.py:521} INFO - com.google.api.grpc#proto-google-iam-v1;1.1.7 from central in [default]
+[2025-08-09T03:22:51.454+0000] {spark_submit.py:521} INFO - com.google.apis#google-api-services-iamcredentials;v1-rev20211203-2.0.0 from central in [default]
+[2025-08-09T03:22:51.454+0000] {spark_submit.py:521} INFO - com.google.apis#google-api-services-storage;v1-rev20220705-2.0.0 from central in [default]
+[2025-08-09T03:22:51.455+0000] {spark_submit.py:521} INFO - com.google.auth#google-auth-library-credentials;1.12.1 from central in [default]
+[2025-08-09T03:22:51.455+0000] {spark_submit.py:521} INFO - com.google.auth#google-auth-library-oauth2-http;1.12.1 from central in [default]
+[2025-08-09T03:22:51.455+0000] {spark_submit.py:521} INFO - com.google.auto.value#auto-value-annotations;1.10.1 from central in [default]
+[2025-08-09T03:22:51.455+0000] {spark_submit.py:521} INFO - com.google.cloud#google-cloud-core;2.5.4 from central in [default]
+[2025-08-09T03:22:51.456+0000] {spark_submit.py:521} INFO - com.google.cloud#google-cloud-core-grpc;2.17.0 from central in [default]
+[2025-08-09T03:22:51.456+0000] {spark_submit.py:521} INFO - com.google.cloud#google-cloud-core-http;2.17.0 from central in [default]
+[2025-08-09T03:22:51.456+0000] {spark_submit.py:521} INFO - com.google.cloud#google-cloud-monitoring;1.82.0 from central in [default]
+[2025-08-09T03:22:51.457+0000] {spark_submit.py:521} INFO - com.google.cloud#google-cloud-storage;2.22.2 from central in [default]
+[2025-08-09T03:22:51.457+0000] {spark_submit.py:521} INFO - com.google.cloud.bigdataoss#gcs-connector;hadoop3-2.2.14 from central in [default]
+[2025-08-09T03:22:51.457+0000] {spark_submit.py:521} INFO - com.google.cloud.bigdataoss#gcsio;2.2.14 from central in [default]
+[2025-08-09T03:22:51.457+0000] {spark_submit.py:521} INFO - com.google.cloud.bigdataoss#util;2.2.14 from central in [default]
+[2025-08-09T03:22:51.458+0000] {spark_submit.py:521} INFO - com.google.cloud.bigdataoss#util-hadoop;hadoop3-2.2.14 from central in [default]
+[2025-08-09T03:22:51.458+0000] {spark_submit.py:521} INFO - com.google.code.findbugs#jsr305;3.0.2 from central in [default]
+[2025-08-09T03:22:51.458+0000] {spark_submit.py:521} INFO - com.google.code.gson#gson;2.8.9 from central in [default]
+[2025-08-09T03:22:51.458+0000] {spark_submit.py:521} INFO - com.google.errorprone#error_prone_annotations;2.18.0 from central in [default]
+[2025-08-09T03:22:51.458+0000] {spark_submit.py:521} INFO - com.google.flogger#flogger;0.7.1 from central in [default]
+[2025-08-09T03:22:51.458+0000] {spark_submit.py:521} INFO - com.google.flogger#flogger-system-backend;0.7.1 from central in [default]
+[2025-08-09T03:22:51.459+0000] {spark_submit.py:521} INFO - com.google.flogger#google-extensions;0.7.1 from central in [default]
+[2025-08-09T03:22:51.459+0000] {spark_submit.py:521} INFO - com.google.guava#failureaccess;1.0.1 from central in [default]
+[2025-08-09T03:22:51.459+0000] {spark_submit.py:521} INFO - com.google.guava#guava;31.1-jre from central in [default]
+[2025-08-09T03:22:51.459+0000] {spark_submit.py:521} INFO - com.google.guava#listenablefuture;9999.0-empty-to-avoid-conflict-with-guava from central in [default]
+[2025-08-09T03:22:51.459+0000] {spark_submit.py:521} INFO - com.google.http-client#google-http-client;1.43.1 from central in [default]
+[2025-08-09T03:22:51.459+0000] {spark_submit.py:521} INFO - com.google.http-client#google-http-client-apache-v2;1.43.1 from central in [default]
+[2025-08-09T03:22:51.460+0000] {spark_submit.py:521} INFO - com.google.http-client#google-http-client-appengine;1.43.1 from central in [default]
+[2025-08-09T03:22:51.460+0000] {spark_submit.py:521} INFO - com.google.http-client#google-http-client-gson;1.43.1 from central in [default]
+[2025-08-09T03:22:51.460+0000] {spark_submit.py:521} INFO - com.google.http-client#google-http-client-jackson2;1.42.3 from central in [default]
+[2025-08-09T03:22:51.460+0000] {spark_submit.py:521} INFO - com.google.j2objc#j2objc-annotations;1.3 from central in [default]
+[2025-08-09T03:22:51.460+0000] {spark_submit.py:521} INFO - com.google.oauth-client#google-oauth-client;1.34.1 from central in [default]
+[2025-08-09T03:22:51.460+0000] {spark_submit.py:521} INFO - com.google.protobuf#protobuf-java;3.21.9 from central in [default]
+[2025-08-09T03:22:51.461+0000] {spark_submit.py:521} INFO - com.google.protobuf#protobuf-java-util;3.21.9 from central in [default]
+[2025-08-09T03:22:51.461+0000] {spark_submit.py:521} INFO - com.google.re2j#re2j;1.6 from central in [default]
+[2025-08-09T03:22:51.461+0000] {spark_submit.py:521} INFO - com.lmax#disruptor;3.4.2 from central in [default]
+[2025-08-09T03:22:51.461+0000] {spark_submit.py:521} INFO - commons-codec#commons-codec;1.15 from central in [default]
+[2025-08-09T03:22:51.461+0000] {spark_submit.py:521} INFO - commons-logging#commons-logging;1.2 from central in [default]
+[2025-08-09T03:22:51.461+0000] {spark_submit.py:521} INFO - io.grpc#grpc-alts;1.54.0 from central in [default]
+[2025-08-09T03:22:51.462+0000] {spark_submit.py:521} INFO - io.grpc#grpc-api;1.54.0 from central in [default]
+[2025-08-09T03:22:51.462+0000] {spark_submit.py:521} INFO - io.grpc#grpc-auth;1.54.0 from central in [default]
+[2025-08-09T03:22:51.462+0000] {spark_submit.py:521} INFO - io.grpc#grpc-census;1.54.0 from central in [default]
+[2025-08-09T03:22:51.462+0000] {spark_submit.py:521} INFO - io.grpc#grpc-context;1.54.0 from central in [default]
+[2025-08-09T03:22:51.462+0000] {spark_submit.py:521} INFO - io.grpc#grpc-core;1.54.0 from central in [default]
+[2025-08-09T03:22:51.462+0000] {spark_submit.py:521} INFO - io.grpc#grpc-googleapis;1.54.0 from central in [default]
+[2025-08-09T03:22:51.463+0000] {spark_submit.py:521} INFO - io.grpc#grpc-grpclb;1.54.0 from central in [default]
+[2025-08-09T03:22:51.463+0000] {spark_submit.py:521} INFO - io.grpc#grpc-netty-shaded;1.54.0 from central in [default]
+[2025-08-09T03:22:51.463+0000] {spark_submit.py:521} INFO - io.grpc#grpc-protobuf;1.54.0 from central in [default]
+[2025-08-09T03:22:51.463+0000] {spark_submit.py:521} INFO - io.grpc#grpc-protobuf-lite;1.54.0 from central in [default]
+[2025-08-09T03:22:51.463+0000] {spark_submit.py:521} INFO - io.grpc#grpc-rls;1.54.0 from central in [default]
+[2025-08-09T03:22:51.464+0000] {spark_submit.py:521} INFO - io.grpc#grpc-services;1.54.0 from central in [default]
+[2025-08-09T03:22:51.464+0000] {spark_submit.py:521} INFO - io.grpc#grpc-stub;1.54.0 from central in [default]
+[2025-08-09T03:22:51.464+0000] {spark_submit.py:521} INFO - io.grpc#grpc-xds;1.54.0 from central in [default]
+[2025-08-09T03:22:51.464+0000] {spark_submit.py:521} INFO - io.opencensus#opencensus-api;0.31.1 from central in [default]
+[2025-08-09T03:22:51.464+0000] {spark_submit.py:521} INFO - io.opencensus#opencensus-contrib-exemplar-util;0.31.0 from central in [default]
+[2025-08-09T03:22:51.465+0000] {spark_submit.py:521} INFO - io.opencensus#opencensus-contrib-grpc-metrics;0.31.0 from central in [default]
+[2025-08-09T03:22:51.465+0000] {spark_submit.py:521} INFO - io.opencensus#opencensus-contrib-http-util;0.31.1 from central in [default]
+[2025-08-09T03:22:51.465+0000] {spark_submit.py:521} INFO - io.opencensus#opencensus-contrib-resource-util;0.31.0 from central in [default]
+[2025-08-09T03:22:51.465+0000] {spark_submit.py:521} INFO - io.opencensus#opencensus-exporter-metrics-util;0.31.0 from central in [default]
+[2025-08-09T03:22:51.465+0000] {spark_submit.py:521} INFO - io.opencensus#opencensus-exporter-stats-stackdriver;0.31.0 from central in [default]
+[2025-08-09T03:22:51.465+0000] {spark_submit.py:521} INFO - io.opencensus#opencensus-impl;0.31.0 from central in [default]
+[2025-08-09T03:22:51.466+0000] {spark_submit.py:521} INFO - io.opencensus#opencensus-impl-core;0.31.0 from central in [default]
+[2025-08-09T03:22:51.466+0000] {spark_submit.py:521} INFO - io.opencensus#opencensus-proto;0.2.0 from central in [default]
+[2025-08-09T03:22:51.466+0000] {spark_submit.py:521} INFO - io.perfmark#perfmark-api;0.26.0 from central in [default]
+[2025-08-09T03:22:51.466+0000] {spark_submit.py:521} INFO - javax.annotation#javax.annotation-api;1.3.2 from central in [default]
+[2025-08-09T03:22:51.466+0000] {spark_submit.py:521} INFO - org.apache.httpcomponents#httpclient;4.5.13 from central in [default]
+[2025-08-09T03:22:51.467+0000] {spark_submit.py:521} INFO - org.apache.httpcomponents#httpcore;4.4.15 from central in [default]
+[2025-08-09T03:22:51.467+0000] {spark_submit.py:521} INFO - org.checkerframework#checker-compat-qual;2.5.3 from central in [default]
+[2025-08-09T03:22:51.467+0000] {spark_submit.py:521} INFO - org.checkerframework#checker-qual;3.32.0 from central in [default]
+[2025-08-09T03:22:51.467+0000] {spark_submit.py:521} INFO - org.codehaus.mojo#animal-sniffer-annotations;1.23 from central in [default]
+[2025-08-09T03:22:51.467+0000] {spark_submit.py:521} INFO - org.conscrypt#conscrypt-openjdk-uber;2.5.2 from central in [default]
+[2025-08-09T03:22:51.468+0000] {spark_submit.py:521} INFO - org.threeten#threetenbp;1.6.8 from central in [default]
+[2025-08-09T03:22:51.468+0000] {spark_submit.py:521} INFO - :: evicted modules:
+[2025-08-09T03:22:51.468+0000] {spark_submit.py:521} INFO - com.google.api-client#google-api-client;2.0.1 by [com.google.api-client#google-api-client;2.2.0] in [default]
+[2025-08-09T03:22:51.468+0000] {spark_submit.py:521} INFO - com.google.http-client#google-http-client;1.42.3 by [com.google.http-client#google-http-client;1.43.1] in [default]
+[2025-08-09T03:22:51.469+0000] {spark_submit.py:521} INFO - com.google.errorprone#error_prone_annotations;2.16 by [com.google.errorprone#error_prone_annotations;2.18.0] in [default]
+[2025-08-09T03:22:51.469+0000] {spark_submit.py:521} INFO - org.checkerframework#checker-qual;3.12.0 by [org.checkerframework#checker-qual;3.32.0] in [default]
+[2025-08-09T03:22:51.469+0000] {spark_submit.py:521} INFO - com.google.http-client#google-http-client-gson;1.42.3 by [com.google.http-client#google-http-client-gson;1.43.1] in [default]
+[2025-08-09T03:22:51.469+0000] {spark_submit.py:521} INFO - com.google.http-client#google-http-client-apache-v2;1.42.3 by [com.google.http-client#google-http-client-apache-v2;1.43.1] in [default]
+[2025-08-09T03:22:51.469+0000] {spark_submit.py:521} INFO - com.fasterxml.jackson.core#jackson-core;2.13.4 by [com.fasterxml.jackson.core#jackson-core;2.14.2] in [default]
+[2025-08-09T03:22:51.469+0000] {spark_submit.py:521} INFO - com.google.api-client#google-api-client;2.0.0 by [com.google.api-client#google-api-client;2.0.1] in [default]
+[2025-08-09T03:22:51.470+0000] {spark_submit.py:521} INFO - com.google.http-client#google-http-client;1.42.2 by [com.google.http-client#google-http-client;1.42.3] in [default]
+[2025-08-09T03:22:51.470+0000] {spark_submit.py:521} INFO - com.google.http-client#google-http-client-gson;1.42.2 by [com.google.http-client#google-http-client-gson;1.42.3] in [default]
+[2025-08-09T03:22:51.470+0000] {spark_submit.py:521} INFO - com.google.api.grpc#proto-google-common-protos;2.9.0 by [com.google.api.grpc#proto-google-common-protos;2.18.0] in [default]
+[2025-08-09T03:22:51.470+0000] {spark_submit.py:521} INFO - com.google.api#gax;2.12.2 by [com.google.api#gax;2.27.0] in [default]
+[2025-08-09T03:22:51.470+0000] {spark_submit.py:521} INFO - com.google.errorprone#error_prone_annotations;2.11.0 by [com.google.errorprone#error_prone_annotations;2.16] in [default]
+[2025-08-09T03:22:51.471+0000] {spark_submit.py:521} INFO - com.google.api.grpc#proto-google-common-protos;2.7.3 by [com.google.api.grpc#proto-google-common-protos;2.18.0] in [default]
+[2025-08-09T03:22:51.471+0000] {spark_submit.py:521} INFO - org.threeten#threetenbp;1.5.2 by [org.threeten#threetenbp;1.6.8] in [default]
+[2025-08-09T03:22:51.471+0000] {spark_submit.py:521} INFO - com.google.api#api-common;2.1.4 by [com.google.api#api-common;2.10.0] in [default]
+[2025-08-09T03:22:51.471+0000] {spark_submit.py:521} INFO - com.google.http-client#google-http-client;1.41.3 by [com.google.http-client#google-http-client;1.43.1] in [default]
+[2025-08-09T03:22:51.472+0000] {spark_submit.py:521} INFO - com.google.http-client#google-http-client-gson;1.41.3 by [com.google.http-client#google-http-client-gson;1.43.1] in [default]
+[2025-08-09T03:22:51.472+0000] {spark_submit.py:521} INFO - io.opencensus#opencensus-api;0.31.0 by [io.opencensus#opencensus-api;0.31.1] in [default]
+[2025-08-09T03:22:51.472+0000] {spark_submit.py:521} INFO - com.google.cloud#google-cloud-core-grpc;1.82.0 by [com.google.cloud#google-cloud-core-grpc;2.17.0] in [default]
+[2025-08-09T03:22:51.473+0000] {spark_submit.py:521} INFO - com.google.api#api-common;1.8.1 by [com.google.api#api-common;2.10.0] in [default]
+[2025-08-09T03:22:51.473+0000] {spark_submit.py:521} INFO - com.google.api.grpc#proto-google-common-protos;1.16.0 by [com.google.api.grpc#proto-google-common-protos;2.18.0] in [default]
+[2025-08-09T03:22:51.473+0000] {spark_submit.py:521} INFO - org.codehaus.mojo#animal-sniffer-annotations;1.21 by [org.codehaus.mojo#animal-sniffer-annotations;1.23] in [default]
+[2025-08-09T03:22:51.473+0000] {spark_submit.py:521} INFO - io.perfmark#perfmark-api;0.25.0 by [io.perfmark#perfmark-api;0.26.0] in [default]
+[2025-08-09T03:22:51.474+0000] {spark_submit.py:521} INFO - com.google.errorprone#error_prone_annotations;2.5.1 by [com.google.errorprone#error_prone_annotations;2.18.0] in [default]
+[2025-08-09T03:22:51.474+0000] {spark_submit.py:521} INFO - ---------------------------------------------------------------------
+[2025-08-09T03:22:51.474+0000] {spark_submit.py:521} INFO - |                  |            modules            ||   artifacts   |
+[2025-08-09T03:22:51.474+0000] {spark_submit.py:521} INFO - |       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+[2025-08-09T03:22:51.475+0000] {spark_submit.py:521} INFO - ---------------------------------------------------------------------
+[2025-08-09T03:22:51.475+0000] {spark_submit.py:521} INFO - |      default     |  109  |   0   |   0   |   25  ||   84  |   0   |
+[2025-08-09T03:22:51.475+0000] {spark_submit.py:521} INFO - ---------------------------------------------------------------------
+[2025-08-09T03:22:51.475+0000] {spark_submit.py:521} INFO - :: retrieving :: org.apache.spark#spark-submit-parent-0b7efe6d-445e-467f-9044-56bee507f485
+[2025-08-09T03:22:51.476+0000] {spark_submit.py:521} INFO - confs: [default]
+[2025-08-09T03:22:51.483+0000] {spark_submit.py:521} INFO - 0 artifacts copied, 84 already retrieved (0kB/13ms)
+[2025-08-09T03:22:51.775+0000] {spark_submit.py:521} INFO - 25/08/09 03:22:51 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2025-08-09T03:22:52.171+0000] {spark_submit.py:521} INFO - Main class:
+[2025-08-09T03:22:52.172+0000] {spark_submit.py:521} INFO - org.apache.spark.deploy.PythonRunner
+[2025-08-09T03:22:52.173+0000] {spark_submit.py:521} INFO - Arguments:
+[2025-08-09T03:22:52.173+0000] {spark_submit.py:521} INFO - file:/opt/spark-jobs/gold_transform.py
+[2025-08-09T03:22:52.174+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/com.google.cloud.bigdataoss_gcs-connector-hadoop3-2.2.14.jar,file:///home/***/.ivy2.5.2/jars/com.google.api-client_google-api-client-jackson2-2.0.1.jar,file:///home/***/.ivy2.5.2/jars/com.google.guava_guava-31.1-jre.jar,file:///home/***/.ivy2.5.2/jars/com.google.oauth-client_google-oauth-client-1.34.1.jar,file:///home/***/.ivy2.5.2/jars/com.google.cloud.bigdataoss_util-2.2.14.jar,file:///home/***/.ivy2.5.2/jars/com.google.cloud.bigdataoss_util-hadoop-hadoop3-2.2.14.jar,file:///home/***/.ivy2.5.2/jars/com.google.cloud.bigdataoss_gcsio-2.2.14.jar,file:///home/***/.ivy2.5.2/jars/com.google.auto.value_auto-value-annotations-1.10.1.jar,file:///home/***/.ivy2.5.2/jars/com.google.flogger_flogger-0.7.1.jar,file:///home/***/.ivy2.5.2/jars/com.google.flogger_google-extensions-0.7.1.jar,file:///home/***/.ivy2.5.2/jars/com.google.code.gson_gson-2.8.9.jar,file:///home/***/.ivy2.5.2/jars/org.apache.httpcomponents_httpcore-4.4.15.jar,file:///home/***/.ivy2.5.2/jars/org.apache.httpcomponents_httpclient-4.5.13.jar,file:///home/***/.ivy2.5.2/jars/com.google.code.findbugs_jsr305-3.0.2.jar,file:///home/***/.ivy2.5.2/jars/com.google.j2objc_j2objc-annotations-1.3.jar,file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-api-0.31.1.jar,file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-contrib-http-util-0.31.1.jar,file:///home/***/.ivy2.5.2/jars/commons-logging_commons-logging-1.2.jar,file:///home/***/.ivy2.5.2/jars/commons-codec_commons-codec-1.15.jar,file:///home/***/.ivy2.5.2/jars/com.google.guava_failureaccess-1.0.1.jar,file:///home/***/.ivy2.5.2/jars/com.google.guava_listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-context-1.54.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.http-client_google-http-client-jackson2-1.42.3.jar,file:///home/***/.ivy2.5.2/jars/com.google.apis_google-api-services-iamcredentials-v1-rev20211203-2.0.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.apis_google-api-services-storage-v1-rev20220705-2.0.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.auth_google-auth-library-oauth2-http-1.12.1.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-api-1.54.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.auth_google-auth-library-credentials-1.12.1.jar,file:///home/***/.ivy2.5.2/jars/com.google.flogger_flogger-system-backend-0.7.1.jar,file:///home/***/.ivy2.5.2/jars/org.checkerframework_checker-compat-qual-2.5.3.jar,file:///home/***/.ivy2.5.2/jars/com.google.errorprone_error_prone_annotations-2.18.0.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-alts-1.54.0.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-core-1.54.0.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-census-1.54.0.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-protobuf-1.54.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.cloud_google-cloud-storage-2.22.2.jar,file:///home/***/.ivy2.5.2/jars/com.google.api.grpc_grpc-google-cloud-storage-v2-2.22.2-alpha.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-stub-1.54.0.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-xds-1.54.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.api.grpc_proto-google-iam-v1-1.1.7.jar,file:///home/***/.ivy2.5.2/jars/com.google.protobuf_protobuf-java-3.21.9.jar,file:///home/***/.ivy2.5.2/jars/com.google.protobuf_protobuf-java-util-3.21.9.jar,file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-impl-0.31.0.jar,file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-exporter-stats-stackdriver-0.31.0.jar,file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-contrib-grpc-metrics-0.31.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.cloud_google-cloud-core-2.5.4.jar,file:///home/***/.ivy2.5.2/jars/com.google.api_gax-grpc-2.27.0.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-auth-1.54.0.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-grpclb-1.54.0.jar,file:///home/***/.ivy2.5.2/jars/org.conscrypt_conscrypt-openjdk-uber-2.5.2.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-netty-shaded-1.54.0.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-protobuf-lite-1.54.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.http-client_google-http-client-1.43.1.jar,file:///home/***/.ivy2.5.2/jars/com.google.http-client_google-http-client-gson-1.43.1.jar,file:///home/***/.ivy2.5.2/jars/com.google.api-client_google-api-client-2.2.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.http-client_google-http-client-apache-v2-1.43.1.jar,file:///home/***/.ivy2.5.2/jars/com.google.cloud_google-cloud-core-http-2.17.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.http-client_google-http-client-appengine-1.43.1.jar,file:///home/***/.ivy2.5.2/jars/com.google.api_gax-httpjson-0.112.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.cloud_google-cloud-core-grpc-2.17.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.api_gax-2.27.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.api_api-common-2.10.0.jar,file:///home/***/.ivy2.5.2/jars/javax.annotation_javax.annotation-api-1.3.2.jar,file:///home/***/.ivy2.5.2/jars/com.google.api.grpc_proto-google-common-protos-2.18.0.jar,file:///home/***/.ivy2.5.2/jars/org.threeten_threetenbp-1.6.8.jar,file:///home/***/.ivy2.5.2/jars/com.google.api.grpc_proto-google-cloud-storage-v2-2.22.2-alpha.jar,file:///home/***/.ivy2.5.2/jars/com.google.api.grpc_gapic-google-cloud-storage-v2-2.22.2-alpha.jar,file:///home/***/.ivy2.5.2/jars/com.fasterxml.jackson.core_jackson-core-2.14.2.jar,file:///home/***/.ivy2.5.2/jars/org.checkerframework_checker-qual-3.32.0.jar,file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-proto-0.2.0.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-services-1.54.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.re2j_re2j-1.6.jar,file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-impl-core-0.31.0.jar,file:///home/***/.ivy2.5.2/jars/com.lmax_disruptor-3.4.2.jar,file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-contrib-exemplar-util-0.31.0.jar,file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-contrib-resource-util-0.31.0.jar,file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-exporter-metrics-util-0.31.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.cloud_google-cloud-monitoring-1.82.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.api.grpc_proto-google-cloud-monitoring-v3-1.64.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.android_annotations-4.1.1.4.jar,file:///home/***/.ivy2.5.2/jars/io.perfmark_perfmark-api-0.26.0.jar,file:///home/***/.ivy2.5.2/jars/org.codehaus.mojo_animal-sniffer-annotations-1.23.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-googleapis-1.54.0.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-rls-1.54.0.jar
+[2025-08-09T03:22:52.179+0000] {spark_submit.py:521} INFO - Spark config:
+[2025-08-09T03:22:52.179+0000] {spark_submit.py:521} INFO - (spark.app.name,arrow-spark)
+[2025-08-09T03:22:52.180+0000] {spark_submit.py:521} INFO - (spark.app.submitTime,1754709772146)
+[2025-08-09T03:22:52.180+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.AbstractFileSystem.gs.impl,com.google.cloud.hadoop.fs.gcs.GoogleHadoopFS)
+[2025-08-09T03:22:52.180+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.gs.impl,com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem)
+[2025-08-09T03:22:52.180+0000] {spark_submit.py:521} INFO - (spark.hadoop.google.cloud.auth.service.account.enable,true)
+[2025-08-09T03:22:52.181+0000] {spark_submit.py:521} INFO - (spark.hadoop.google.cloud.auth.service.account.json.keyfile,/opt/***/gcp-key.json)
+[2025-08-09T03:22:52.181+0000] {spark_submit.py:521} INFO - (spark.master,yarn)
+[2025-08-09T03:22:52.181+0000] {spark_submit.py:521} INFO - (spark.repl.local.jars,file:///home/***/.ivy2.5.2/jars/com.google.cloud.bigdataoss_gcs-connector-hadoop3-2.2.14.jar,file:///home/***/.ivy2.5.2/jars/com.google.api-client_google-api-client-jackson2-2.0.1.jar,file:///home/***/.ivy2.5.2/jars/com.google.guava_guava-31.1-jre.jar,file:///home/***/.ivy2.5.2/jars/com.google.oauth-client_google-oauth-client-1.34.1.jar,file:///home/***/.ivy2.5.2/jars/com.google.cloud.bigdataoss_util-2.2.14.jar,file:///home/***/.ivy2.5.2/jars/com.google.cloud.bigdataoss_util-hadoop-hadoop3-2.2.14.jar,file:///home/***/.ivy2.5.2/jars/com.google.cloud.bigdataoss_gcsio-2.2.14.jar,file:///home/***/.ivy2.5.2/jars/com.google.auto.value_auto-value-annotations-1.10.1.jar,file:///home/***/.ivy2.5.2/jars/com.google.flogger_flogger-0.7.1.jar,file:///home/***/.ivy2.5.2/jars/com.google.flogger_google-extensions-0.7.1.jar,file:///home/***/.ivy2.5.2/jars/com.google.code.gson_gson-2.8.9.jar,file:///home/***/.ivy2.5.2/jars/org.apache.httpcomponents_httpcore-4.4.15.jar,file:///home/***/.ivy2.5.2/jars/org.apache.httpcomponents_httpclient-4.5.13.jar,file:///home/***/.ivy2.5.2/jars/com.google.code.findbugs_jsr305-3.0.2.jar,file:///home/***/.ivy2.5.2/jars/com.google.j2objc_j2objc-annotations-1.3.jar,file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-api-0.31.1.jar,file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-contrib-http-util-0.31.1.jar,file:///home/***/.ivy2.5.2/jars/commons-logging_commons-logging-1.2.jar,file:///home/***/.ivy2.5.2/jars/commons-codec_commons-codec-1.15.jar,file:///home/***/.ivy2.5.2/jars/com.google.guava_failureaccess-1.0.1.jar,file:///home/***/.ivy2.5.2/jars/com.google.guava_listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-context-1.54.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.http-client_google-http-client-jackson2-1.42.3.jar,file:///home/***/.ivy2.5.2/jars/com.google.apis_google-api-services-iamcredentials-v1-rev20211203-2.0.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.apis_google-api-services-storage-v1-rev20220705-2.0.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.auth_google-auth-library-oauth2-http-1.12.1.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-api-1.54.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.auth_google-auth-library-credentials-1.12.1.jar,file:///home/***/.ivy2.5.2/jars/com.google.flogger_flogger-system-backend-0.7.1.jar,file:///home/***/.ivy2.5.2/jars/org.checkerframework_checker-compat-qual-2.5.3.jar,file:///home/***/.ivy2.5.2/jars/com.google.errorprone_error_prone_annotations-2.18.0.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-alts-1.54.0.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-core-1.54.0.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-census-1.54.0.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-protobuf-1.54.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.cloud_google-cloud-storage-2.22.2.jar,file:///home/***/.ivy2.5.2/jars/com.google.api.grpc_grpc-google-cloud-storage-v2-2.22.2-alpha.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-stub-1.54.0.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-xds-1.54.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.api.grpc_proto-google-iam-v1-1.1.7.jar,file:///home/***/.ivy2.5.2/jars/com.google.protobuf_protobuf-java-3.21.9.jar,file:///home/***/.ivy2.5.2/jars/com.google.protobuf_protobuf-java-util-3.21.9.jar,file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-impl-0.31.0.jar,file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-exporter-stats-stackdriver-0.31.0.jar,file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-contrib-grpc-metrics-0.31.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.cloud_google-cloud-core-2.5.4.jar,file:///home/***/.ivy2.5.2/jars/com.google.api_gax-grpc-2.27.0.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-auth-1.54.0.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-grpclb-1.54.0.jar,file:///home/***/.ivy2.5.2/jars/org.conscrypt_conscrypt-openjdk-uber-2.5.2.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-netty-shaded-1.54.0.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-protobuf-lite-1.54.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.http-client_google-http-client-1.43.1.jar,file:///home/***/.ivy2.5.2/jars/com.google.http-client_google-http-client-gson-1.43.1.jar,file:///home/***/.ivy2.5.2/jars/com.google.api-client_google-api-client-2.2.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.http-client_google-http-client-apache-v2-1.43.1.jar,file:///home/***/.ivy2.5.2/jars/com.google.cloud_google-cloud-core-http-2.17.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.http-client_google-http-client-appengine-1.43.1.jar,file:///home/***/.ivy2.5.2/jars/com.google.api_gax-httpjson-0.112.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.cloud_google-cloud-core-grpc-2.17.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.api_gax-2.27.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.api_api-common-2.10.0.jar,file:///home/***/.ivy2.5.2/jars/javax.annotation_javax.annotation-api-1.3.2.jar,file:///home/***/.ivy2.5.2/jars/com.google.api.grpc_proto-google-common-protos-2.18.0.jar,file:///home/***/.ivy2.5.2/jars/org.threeten_threetenbp-1.6.8.jar,file:///home/***/.ivy2.5.2/jars/com.google.api.grpc_proto-google-cloud-storage-v2-2.22.2-alpha.jar,file:///home/***/.ivy2.5.2/jars/com.google.api.grpc_gapic-google-cloud-storage-v2-2.22.2-alpha.jar,file:///home/***/.ivy2.5.2/jars/com.fasterxml.jackson.core_jackson-core-2.14.2.jar,file:///home/***/.ivy2.5.2/jars/org.checkerframework_checker-qual-3.32.0.jar,file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-proto-0.2.0.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-services-1.54.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.re2j_re2j-1.6.jar,file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-impl-core-0.31.0.jar,file:///home/***/.ivy2.5.2/jars/com.lmax_disruptor-3.4.2.jar,file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-contrib-exemplar-util-0.31.0.jar,file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-contrib-resource-util-0.31.0.jar,file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-exporter-metrics-util-0.31.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.cloud_google-cloud-monitoring-1.82.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.api.grpc_proto-google-cloud-monitoring-v3-1.64.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.android_annotations-4.1.1.4.jar,file:///home/***/.ivy2.5.2/jars/io.perfmark_perfmark-api-0.26.0.jar,file:///home/***/.ivy2.5.2/jars/org.codehaus.mojo_animal-sniffer-annotations-1.23.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-googleapis-1.54.0.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-rls-1.54.0.jar)
+[2025-08-09T03:22:52.182+0000] {spark_submit.py:521} INFO - (spark.submit.deployMode,client)
+[2025-08-09T03:22:52.183+0000] {spark_submit.py:521} INFO - (spark.submit.pyFiles,/home/***/.ivy2.5.2/jars/com.google.cloud.bigdataoss_gcs-connector-hadoop3-2.2.14.jar,/home/***/.ivy2.5.2/jars/com.google.api-client_google-api-client-jackson2-2.0.1.jar,/home/***/.ivy2.5.2/jars/com.google.guava_guava-31.1-jre.jar,/home/***/.ivy2.5.2/jars/com.google.oauth-client_google-oauth-client-1.34.1.jar,/home/***/.ivy2.5.2/jars/com.google.cloud.bigdataoss_util-2.2.14.jar,/home/***/.ivy2.5.2/jars/com.google.cloud.bigdataoss_util-hadoop-hadoop3-2.2.14.jar,/home/***/.ivy2.5.2/jars/com.google.cloud.bigdataoss_gcsio-2.2.14.jar,/home/***/.ivy2.5.2/jars/com.google.auto.value_auto-value-annotations-1.10.1.jar,/home/***/.ivy2.5.2/jars/com.google.flogger_flogger-0.7.1.jar,/home/***/.ivy2.5.2/jars/com.google.flogger_google-extensions-0.7.1.jar,/home/***/.ivy2.5.2/jars/com.google.code.gson_gson-2.8.9.jar,/home/***/.ivy2.5.2/jars/org.apache.httpcomponents_httpcore-4.4.15.jar,/home/***/.ivy2.5.2/jars/org.apache.httpcomponents_httpclient-4.5.13.jar,/home/***/.ivy2.5.2/jars/com.google.code.findbugs_jsr305-3.0.2.jar,/home/***/.ivy2.5.2/jars/com.google.j2objc_j2objc-annotations-1.3.jar,/home/***/.ivy2.5.2/jars/io.opencensus_opencensus-api-0.31.1.jar,/home/***/.ivy2.5.2/jars/io.opencensus_opencensus-contrib-http-util-0.31.1.jar,/home/***/.ivy2.5.2/jars/commons-logging_commons-logging-1.2.jar,/home/***/.ivy2.5.2/jars/commons-codec_commons-codec-1.15.jar,/home/***/.ivy2.5.2/jars/com.google.guava_failureaccess-1.0.1.jar,/home/***/.ivy2.5.2/jars/com.google.guava_listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar,/home/***/.ivy2.5.2/jars/io.grpc_grpc-context-1.54.0.jar,/home/***/.ivy2.5.2/jars/com.google.http-client_google-http-client-jackson2-1.42.3.jar,/home/***/.ivy2.5.2/jars/com.google.apis_google-api-services-iamcredentials-v1-rev20211203-2.0.0.jar,/home/***/.ivy2.5.2/jars/com.google.apis_google-api-services-storage-v1-rev20220705-2.0.0.jar,/home/***/.ivy2.5.2/jars/com.google.auth_google-auth-library-oauth2-http-1.12.1.jar,/home/***/.ivy2.5.2/jars/io.grpc_grpc-api-1.54.0.jar,/home/***/.ivy2.5.2/jars/com.google.auth_google-auth-library-credentials-1.12.1.jar,/home/***/.ivy2.5.2/jars/com.google.flogger_flogger-system-backend-0.7.1.jar,/home/***/.ivy2.5.2/jars/org.checkerframework_checker-compat-qual-2.5.3.jar,/home/***/.ivy2.5.2/jars/com.google.errorprone_error_prone_annotations-2.18.0.jar,/home/***/.ivy2.5.2/jars/io.grpc_grpc-alts-1.54.0.jar,/home/***/.ivy2.5.2/jars/io.grpc_grpc-core-1.54.0.jar,/home/***/.ivy2.5.2/jars/io.grpc_grpc-census-1.54.0.jar,/home/***/.ivy2.5.2/jars/io.grpc_grpc-protobuf-1.54.0.jar,/home/***/.ivy2.5.2/jars/com.google.cloud_google-cloud-storage-2.22.2.jar,/home/***/.ivy2.5.2/jars/com.google.api.grpc_grpc-google-cloud-storage-v2-2.22.2-alpha.jar,/home/***/.ivy2.5.2/jars/io.grpc_grpc-stub-1.54.0.jar,/home/***/.ivy2.5.2/jars/io.grpc_grpc-xds-1.54.0.jar,/home/***/.ivy2.5.2/jars/com.google.api.grpc_proto-google-iam-v1-1.1.7.jar,/home/***/.ivy2.5.2/jars/com.google.protobuf_protobuf-java-3.21.9.jar,/home/***/.ivy2.5.2/jars/com.google.protobuf_protobuf-java-util-3.21.9.jar,/home/***/.ivy2.5.2/jars/io.opencensus_opencensus-impl-0.31.0.jar,/home/***/.ivy2.5.2/jars/io.opencensus_opencensus-exporter-stats-stackdriver-0.31.0.jar,/home/***/.ivy2.5.2/jars/io.opencensus_opencensus-contrib-grpc-metrics-0.31.0.jar,/home/***/.ivy2.5.2/jars/com.google.cloud_google-cloud-core-2.5.4.jar,/home/***/.ivy2.5.2/jars/com.google.api_gax-grpc-2.27.0.jar,/home/***/.ivy2.5.2/jars/io.grpc_grpc-auth-1.54.0.jar,/home/***/.ivy2.5.2/jars/io.grpc_grpc-grpclb-1.54.0.jar,/home/***/.ivy2.5.2/jars/org.conscrypt_conscrypt-openjdk-uber-2.5.2.jar,/home/***/.ivy2.5.2/jars/io.grpc_grpc-netty-shaded-1.54.0.jar,/home/***/.ivy2.5.2/jars/io.grpc_grpc-protobuf-lite-1.54.0.jar,/home/***/.ivy2.5.2/jars/com.google.http-client_google-http-client-1.43.1.jar,/home/***/.ivy2.5.2/jars/com.google.http-client_google-http-client-gson-1.43.1.jar,/home/***/.ivy2.5.2/jars/com.google.api-client_google-api-client-2.2.0.jar,/home/***/.ivy2.5.2/jars/com.google.http-client_google-http-client-apache-v2-1.43.1.jar,/home/***/.ivy2.5.2/jars/com.google.cloud_google-cloud-core-http-2.17.0.jar,/home/***/.ivy2.5.2/jars/com.google.http-client_google-http-client-appengine-1.43.1.jar,/home/***/.ivy2.5.2/jars/com.google.api_gax-httpjson-0.112.0.jar,/home/***/.ivy2.5.2/jars/com.google.cloud_google-cloud-core-grpc-2.17.0.jar,/home/***/.ivy2.5.2/jars/com.google.api_gax-2.27.0.jar,/home/***/.ivy2.5.2/jars/com.google.api_api-common-2.10.0.jar,/home/***/.ivy2.5.2/jars/javax.annotation_javax.annotation-api-1.3.2.jar,/home/***/.ivy2.5.2/jars/com.google.api.grpc_proto-google-common-protos-2.18.0.jar,/home/***/.ivy2.5.2/jars/org.threeten_threetenbp-1.6.8.jar,/home/***/.ivy2.5.2/jars/com.google.api.grpc_proto-google-cloud-storage-v2-2.22.2-alpha.jar,/home/***/.ivy2.5.2/jars/com.google.api.grpc_gapic-google-cloud-storage-v2-2.22.2-alpha.jar,/home/***/.ivy2.5.2/jars/com.fasterxml.jackson.core_jackson-core-2.14.2.jar,/home/***/.ivy2.5.2/jars/org.checkerframework_checker-qual-3.32.0.jar,/home/***/.ivy2.5.2/jars/io.opencensus_opencensus-proto-0.2.0.jar,/home/***/.ivy2.5.2/jars/io.grpc_grpc-services-1.54.0.jar,/home/***/.ivy2.5.2/jars/com.google.re2j_re2j-1.6.jar,/home/***/.ivy2.5.2/jars/io.opencensus_opencensus-impl-core-0.31.0.jar,/home/***/.ivy2.5.2/jars/com.lmax_disruptor-3.4.2.jar,/home/***/.ivy2.5.2/jars/io.opencensus_opencensus-contrib-exemplar-util-0.31.0.jar,/home/***/.ivy2.5.2/jars/io.opencensus_opencensus-contrib-resource-util-0.31.0.jar,/home/***/.ivy2.5.2/jars/io.opencensus_opencensus-exporter-metrics-util-0.31.0.jar,/home/***/.ivy2.5.2/jars/com.google.cloud_google-cloud-monitoring-1.82.0.jar,/home/***/.ivy2.5.2/jars/com.google.api.grpc_proto-google-cloud-monitoring-v3-1.64.0.jar,/home/***/.ivy2.5.2/jars/com.google.android_annotations-4.1.1.4.jar,/home/***/.ivy2.5.2/jars/io.perfmark_perfmark-api-0.26.0.jar,/home/***/.ivy2.5.2/jars/org.codehaus.mojo_animal-sniffer-annotations-1.23.jar,/home/***/.ivy2.5.2/jars/io.grpc_grpc-googleapis-1.54.0.jar,/home/***/.ivy2.5.2/jars/io.grpc_grpc-rls-1.54.0.jar)
+[2025-08-09T03:22:52.184+0000] {spark_submit.py:521} INFO - (spark.yarn.appMasterEnv.HADOOP_CONF_DIR,/opt/hadoop/etc/hadoop)
+[2025-08-09T03:22:52.184+0000] {spark_submit.py:521} INFO - (spark.yarn.dist.jars,file:///home/***/.ivy2.5.2/jars/com.google.cloud.bigdataoss_gcs-connector-hadoop3-2.2.14.jar,file:///home/***/.ivy2.5.2/jars/com.google.api-client_google-api-client-jackson2-2.0.1.jar,file:///home/***/.ivy2.5.2/jars/com.google.guava_guava-31.1-jre.jar,file:///home/***/.ivy2.5.2/jars/com.google.oauth-client_google-oauth-client-1.34.1.jar,file:///home/***/.ivy2.5.2/jars/com.google.cloud.bigdataoss_util-2.2.14.jar,file:///home/***/.ivy2.5.2/jars/com.google.cloud.bigdataoss_util-hadoop-hadoop3-2.2.14.jar,file:///home/***/.ivy2.5.2/jars/com.google.cloud.bigdataoss_gcsio-2.2.14.jar,file:///home/***/.ivy2.5.2/jars/com.google.auto.value_auto-value-annotations-1.10.1.jar,file:///home/***/.ivy2.5.2/jars/com.google.flogger_flogger-0.7.1.jar,file:///home/***/.ivy2.5.2/jars/com.google.flogger_google-extensions-0.7.1.jar,file:///home/***/.ivy2.5.2/jars/com.google.code.gson_gson-2.8.9.jar,file:///home/***/.ivy2.5.2/jars/org.apache.httpcomponents_httpcore-4.4.15.jar,file:///home/***/.ivy2.5.2/jars/org.apache.httpcomponents_httpclient-4.5.13.jar,file:///home/***/.ivy2.5.2/jars/com.google.code.findbugs_jsr305-3.0.2.jar,file:///home/***/.ivy2.5.2/jars/com.google.j2objc_j2objc-annotations-1.3.jar,file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-api-0.31.1.jar,file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-contrib-http-util-0.31.1.jar,file:///home/***/.ivy2.5.2/jars/commons-logging_commons-logging-1.2.jar,file:///home/***/.ivy2.5.2/jars/commons-codec_commons-codec-1.15.jar,file:///home/***/.ivy2.5.2/jars/com.google.guava_failureaccess-1.0.1.jar,file:///home/***/.ivy2.5.2/jars/com.google.guava_listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-context-1.54.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.http-client_google-http-client-jackson2-1.42.3.jar,file:///home/***/.ivy2.5.2/jars/com.google.apis_google-api-services-iamcredentials-v1-rev20211203-2.0.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.apis_google-api-services-storage-v1-rev20220705-2.0.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.auth_google-auth-library-oauth2-http-1.12.1.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-api-1.54.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.auth_google-auth-library-credentials-1.12.1.jar,file:///home/***/.ivy2.5.2/jars/com.google.flogger_flogger-system-backend-0.7.1.jar,file:///home/***/.ivy2.5.2/jars/org.checkerframework_checker-compat-qual-2.5.3.jar,file:///home/***/.ivy2.5.2/jars/com.google.errorprone_error_prone_annotations-2.18.0.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-alts-1.54.0.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-core-1.54.0.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-census-1.54.0.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-protobuf-1.54.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.cloud_google-cloud-storage-2.22.2.jar,file:///home/***/.ivy2.5.2/jars/com.google.api.grpc_grpc-google-cloud-storage-v2-2.22.2-alpha.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-stub-1.54.0.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-xds-1.54.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.api.grpc_proto-google-iam-v1-1.1.7.jar,file:///home/***/.ivy2.5.2/jars/com.google.protobuf_protobuf-java-3.21.9.jar,file:///home/***/.ivy2.5.2/jars/com.google.protobuf_protobuf-java-util-3.21.9.jar,file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-impl-0.31.0.jar,file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-exporter-stats-stackdriver-0.31.0.jar,file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-contrib-grpc-metrics-0.31.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.cloud_google-cloud-core-2.5.4.jar,file:///home/***/.ivy2.5.2/jars/com.google.api_gax-grpc-2.27.0.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-auth-1.54.0.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-grpclb-1.54.0.jar,file:///home/***/.ivy2.5.2/jars/org.conscrypt_conscrypt-openjdk-uber-2.5.2.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-netty-shaded-1.54.0.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-protobuf-lite-1.54.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.http-client_google-http-client-1.43.1.jar,file:///home/***/.ivy2.5.2/jars/com.google.http-client_google-http-client-gson-1.43.1.jar,file:///home/***/.ivy2.5.2/jars/com.google.api-client_google-api-client-2.2.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.http-client_google-http-client-apache-v2-1.43.1.jar,file:///home/***/.ivy2.5.2/jars/com.google.cloud_google-cloud-core-http-2.17.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.http-client_google-http-client-appengine-1.43.1.jar,file:///home/***/.ivy2.5.2/jars/com.google.api_gax-httpjson-0.112.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.cloud_google-cloud-core-grpc-2.17.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.api_gax-2.27.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.api_api-common-2.10.0.jar,file:///home/***/.ivy2.5.2/jars/javax.annotation_javax.annotation-api-1.3.2.jar,file:///home/***/.ivy2.5.2/jars/com.google.api.grpc_proto-google-common-protos-2.18.0.jar,file:///home/***/.ivy2.5.2/jars/org.threeten_threetenbp-1.6.8.jar,file:///home/***/.ivy2.5.2/jars/com.google.api.grpc_proto-google-cloud-storage-v2-2.22.2-alpha.jar,file:///home/***/.ivy2.5.2/jars/com.google.api.grpc_gapic-google-cloud-storage-v2-2.22.2-alpha.jar,file:///home/***/.ivy2.5.2/jars/com.fasterxml.jackson.core_jackson-core-2.14.2.jar,file:///home/***/.ivy2.5.2/jars/org.checkerframework_checker-qual-3.32.0.jar,file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-proto-0.2.0.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-services-1.54.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.re2j_re2j-1.6.jar,file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-impl-core-0.31.0.jar,file:///home/***/.ivy2.5.2/jars/com.lmax_disruptor-3.4.2.jar,file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-contrib-exemplar-util-0.31.0.jar,file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-contrib-resource-util-0.31.0.jar,file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-exporter-metrics-util-0.31.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.cloud_google-cloud-monitoring-1.82.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.api.grpc_proto-google-cloud-monitoring-v3-1.64.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.android_annotations-4.1.1.4.jar,file:///home/***/.ivy2.5.2/jars/io.perfmark_perfmark-api-0.26.0.jar,file:///home/***/.ivy2.5.2/jars/org.codehaus.mojo_animal-sniffer-annotations-1.23.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-googleapis-1.54.0.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-rls-1.54.0.jar)
+[2025-08-09T03:22:52.186+0000] {spark_submit.py:521} INFO - (spark.yarn.dist.pyFiles,file:///home/***/.ivy2.5.2/jars/com.google.cloud.bigdataoss_gcs-connector-hadoop3-2.2.14.jar,file:///home/***/.ivy2.5.2/jars/com.google.api-client_google-api-client-jackson2-2.0.1.jar,file:///home/***/.ivy2.5.2/jars/com.google.guava_guava-31.1-jre.jar,file:///home/***/.ivy2.5.2/jars/com.google.oauth-client_google-oauth-client-1.34.1.jar,file:///home/***/.ivy2.5.2/jars/com.google.cloud.bigdataoss_util-2.2.14.jar,file:///home/***/.ivy2.5.2/jars/com.google.cloud.bigdataoss_util-hadoop-hadoop3-2.2.14.jar,file:///home/***/.ivy2.5.2/jars/com.google.cloud.bigdataoss_gcsio-2.2.14.jar,file:///home/***/.ivy2.5.2/jars/com.google.auto.value_auto-value-annotations-1.10.1.jar,file:///home/***/.ivy2.5.2/jars/com.google.flogger_flogger-0.7.1.jar,file:///home/***/.ivy2.5.2/jars/com.google.flogger_google-extensions-0.7.1.jar,file:///home/***/.ivy2.5.2/jars/com.google.code.gson_gson-2.8.9.jar,file:///home/***/.ivy2.5.2/jars/org.apache.httpcomponents_httpcore-4.4.15.jar,file:///home/***/.ivy2.5.2/jars/org.apache.httpcomponents_httpclient-4.5.13.jar,file:///home/***/.ivy2.5.2/jars/com.google.code.findbugs_jsr305-3.0.2.jar,file:///home/***/.ivy2.5.2/jars/com.google.j2objc_j2objc-annotations-1.3.jar,file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-api-0.31.1.jar,file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-contrib-http-util-0.31.1.jar,file:///home/***/.ivy2.5.2/jars/commons-logging_commons-logging-1.2.jar,file:///home/***/.ivy2.5.2/jars/commons-codec_commons-codec-1.15.jar,file:///home/***/.ivy2.5.2/jars/com.google.guava_failureaccess-1.0.1.jar,file:///home/***/.ivy2.5.2/jars/com.google.guava_listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-context-1.54.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.http-client_google-http-client-jackson2-1.42.3.jar,file:///home/***/.ivy2.5.2/jars/com.google.apis_google-api-services-iamcredentials-v1-rev20211203-2.0.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.apis_google-api-services-storage-v1-rev20220705-2.0.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.auth_google-auth-library-oauth2-http-1.12.1.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-api-1.54.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.auth_google-auth-library-credentials-1.12.1.jar,file:///home/***/.ivy2.5.2/jars/com.google.flogger_flogger-system-backend-0.7.1.jar,file:///home/***/.ivy2.5.2/jars/org.checkerframework_checker-compat-qual-2.5.3.jar,file:///home/***/.ivy2.5.2/jars/com.google.errorprone_error_prone_annotations-2.18.0.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-alts-1.54.0.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-core-1.54.0.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-census-1.54.0.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-protobuf-1.54.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.cloud_google-cloud-storage-2.22.2.jar,file:///home/***/.ivy2.5.2/jars/com.google.api.grpc_grpc-google-cloud-storage-v2-2.22.2-alpha.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-stub-1.54.0.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-xds-1.54.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.api.grpc_proto-google-iam-v1-1.1.7.jar,file:///home/***/.ivy2.5.2/jars/com.google.protobuf_protobuf-java-3.21.9.jar,file:///home/***/.ivy2.5.2/jars/com.google.protobuf_protobuf-java-util-3.21.9.jar,file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-impl-0.31.0.jar,file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-exporter-stats-stackdriver-0.31.0.jar,file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-contrib-grpc-metrics-0.31.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.cloud_google-cloud-core-2.5.4.jar,file:///home/***/.ivy2.5.2/jars/com.google.api_gax-grpc-2.27.0.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-auth-1.54.0.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-grpclb-1.54.0.jar,file:///home/***/.ivy2.5.2/jars/org.conscrypt_conscrypt-openjdk-uber-2.5.2.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-netty-shaded-1.54.0.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-protobuf-lite-1.54.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.http-client_google-http-client-1.43.1.jar,file:///home/***/.ivy2.5.2/jars/com.google.http-client_google-http-client-gson-1.43.1.jar,file:///home/***/.ivy2.5.2/jars/com.google.api-client_google-api-client-2.2.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.http-client_google-http-client-apache-v2-1.43.1.jar,file:///home/***/.ivy2.5.2/jars/com.google.cloud_google-cloud-core-http-2.17.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.http-client_google-http-client-appengine-1.43.1.jar,file:///home/***/.ivy2.5.2/jars/com.google.api_gax-httpjson-0.112.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.cloud_google-cloud-core-grpc-2.17.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.api_gax-2.27.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.api_api-common-2.10.0.jar,file:///home/***/.ivy2.5.2/jars/javax.annotation_javax.annotation-api-1.3.2.jar,file:///home/***/.ivy2.5.2/jars/com.google.api.grpc_proto-google-common-protos-2.18.0.jar,file:///home/***/.ivy2.5.2/jars/org.threeten_threetenbp-1.6.8.jar,file:///home/***/.ivy2.5.2/jars/com.google.api.grpc_proto-google-cloud-storage-v2-2.22.2-alpha.jar,file:///home/***/.ivy2.5.2/jars/com.google.api.grpc_gapic-google-cloud-storage-v2-2.22.2-alpha.jar,file:///home/***/.ivy2.5.2/jars/com.fasterxml.jackson.core_jackson-core-2.14.2.jar,file:///home/***/.ivy2.5.2/jars/org.checkerframework_checker-qual-3.32.0.jar,file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-proto-0.2.0.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-services-1.54.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.re2j_re2j-1.6.jar,file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-impl-core-0.31.0.jar,file:///home/***/.ivy2.5.2/jars/com.lmax_disruptor-3.4.2.jar,file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-contrib-exemplar-util-0.31.0.jar,file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-contrib-resource-util-0.31.0.jar,file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-exporter-metrics-util-0.31.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.cloud_google-cloud-monitoring-1.82.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.api.grpc_proto-google-cloud-monitoring-v3-1.64.0.jar,file:///home/***/.ivy2.5.2/jars/com.google.android_annotations-4.1.1.4.jar,file:///home/***/.ivy2.5.2/jars/io.perfmark_perfmark-api-0.26.0.jar,file:///home/***/.ivy2.5.2/jars/org.codehaus.mojo_animal-sniffer-annotations-1.23.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-googleapis-1.54.0.jar,file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-rls-1.54.0.jar)
+[2025-08-09T03:22:52.186+0000] {spark_submit.py:521} INFO - (spark.yarn.isPython,true)
+[2025-08-09T03:22:52.187+0000] {spark_submit.py:521} INFO - Classpath elements:
+[2025-08-09T03:22:52.188+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/com.google.cloud.bigdataoss_gcs-connector-hadoop3-2.2.14.jar
+[2025-08-09T03:22:52.188+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/com.google.api-client_google-api-client-jackson2-2.0.1.jar
+[2025-08-09T03:22:52.188+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/com.google.guava_guava-31.1-jre.jar
+[2025-08-09T03:22:52.189+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/com.google.oauth-client_google-oauth-client-1.34.1.jar
+[2025-08-09T03:22:52.190+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/com.google.cloud.bigdataoss_util-2.2.14.jar
+[2025-08-09T03:22:52.191+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/com.google.cloud.bigdataoss_util-hadoop-hadoop3-2.2.14.jar
+[2025-08-09T03:22:52.194+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/com.google.cloud.bigdataoss_gcsio-2.2.14.jar
+[2025-08-09T03:22:52.195+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/com.google.auto.value_auto-value-annotations-1.10.1.jar
+[2025-08-09T03:22:52.195+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/com.google.flogger_flogger-0.7.1.jar
+[2025-08-09T03:22:52.196+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/com.google.flogger_google-extensions-0.7.1.jar
+[2025-08-09T03:22:52.196+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/com.google.code.gson_gson-2.8.9.jar
+[2025-08-09T03:22:52.197+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/org.apache.httpcomponents_httpcore-4.4.15.jar
+[2025-08-09T03:22:52.197+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/org.apache.httpcomponents_httpclient-4.5.13.jar
+[2025-08-09T03:22:52.197+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/com.google.code.findbugs_jsr305-3.0.2.jar
+[2025-08-09T03:22:52.198+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/com.google.j2objc_j2objc-annotations-1.3.jar
+[2025-08-09T03:22:52.198+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-api-0.31.1.jar
+[2025-08-09T03:22:52.198+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-contrib-http-util-0.31.1.jar
+[2025-08-09T03:22:52.199+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/commons-logging_commons-logging-1.2.jar
+[2025-08-09T03:22:52.200+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/commons-codec_commons-codec-1.15.jar
+[2025-08-09T03:22:52.201+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/com.google.guava_failureaccess-1.0.1.jar
+[2025-08-09T03:22:52.202+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/com.google.guava_listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+[2025-08-09T03:22:52.203+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-context-1.54.0.jar
+[2025-08-09T03:22:52.203+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/com.google.http-client_google-http-client-jackson2-1.42.3.jar
+[2025-08-09T03:22:52.204+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/com.google.apis_google-api-services-iamcredentials-v1-rev20211203-2.0.0.jar
+[2025-08-09T03:22:52.204+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/com.google.apis_google-api-services-storage-v1-rev20220705-2.0.0.jar
+[2025-08-09T03:22:52.205+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/com.google.auth_google-auth-library-oauth2-http-1.12.1.jar
+[2025-08-09T03:22:52.205+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-api-1.54.0.jar
+[2025-08-09T03:22:52.206+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/com.google.auth_google-auth-library-credentials-1.12.1.jar
+[2025-08-09T03:22:52.206+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/com.google.flogger_flogger-system-backend-0.7.1.jar
+[2025-08-09T03:22:52.206+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/org.checkerframework_checker-compat-qual-2.5.3.jar
+[2025-08-09T03:22:52.207+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/com.google.errorprone_error_prone_annotations-2.18.0.jar
+[2025-08-09T03:22:52.207+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-alts-1.54.0.jar
+[2025-08-09T03:22:52.208+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-core-1.54.0.jar
+[2025-08-09T03:22:52.208+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-census-1.54.0.jar
+[2025-08-09T03:22:52.209+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-protobuf-1.54.0.jar
+[2025-08-09T03:22:52.209+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/com.google.cloud_google-cloud-storage-2.22.2.jar
+[2025-08-09T03:22:52.210+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/com.google.api.grpc_grpc-google-cloud-storage-v2-2.22.2-alpha.jar
+[2025-08-09T03:22:52.210+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-stub-1.54.0.jar
+[2025-08-09T03:22:52.211+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-xds-1.54.0.jar
+[2025-08-09T03:22:52.211+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/com.google.api.grpc_proto-google-iam-v1-1.1.7.jar
+[2025-08-09T03:22:52.211+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/com.google.protobuf_protobuf-java-3.21.9.jar
+[2025-08-09T03:22:52.212+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/com.google.protobuf_protobuf-java-util-3.21.9.jar
+[2025-08-09T03:22:52.213+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-impl-0.31.0.jar
+[2025-08-09T03:22:52.213+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-exporter-stats-stackdriver-0.31.0.jar
+[2025-08-09T03:22:52.213+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-contrib-grpc-metrics-0.31.0.jar
+[2025-08-09T03:22:52.214+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/com.google.cloud_google-cloud-core-2.5.4.jar
+[2025-08-09T03:22:52.214+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/com.google.api_gax-grpc-2.27.0.jar
+[2025-08-09T03:22:52.215+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-auth-1.54.0.jar
+[2025-08-09T03:22:52.215+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-grpclb-1.54.0.jar
+[2025-08-09T03:22:52.216+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/org.conscrypt_conscrypt-openjdk-uber-2.5.2.jar
+[2025-08-09T03:22:52.216+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-netty-shaded-1.54.0.jar
+[2025-08-09T03:22:52.217+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-protobuf-lite-1.54.0.jar
+[2025-08-09T03:22:52.217+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/com.google.http-client_google-http-client-1.43.1.jar
+[2025-08-09T03:22:52.217+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/com.google.http-client_google-http-client-gson-1.43.1.jar
+[2025-08-09T03:22:52.218+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/com.google.api-client_google-api-client-2.2.0.jar
+[2025-08-09T03:22:52.218+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/com.google.http-client_google-http-client-apache-v2-1.43.1.jar
+[2025-08-09T03:22:52.218+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/com.google.cloud_google-cloud-core-http-2.17.0.jar
+[2025-08-09T03:22:52.219+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/com.google.http-client_google-http-client-appengine-1.43.1.jar
+[2025-08-09T03:22:52.219+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/com.google.api_gax-httpjson-0.112.0.jar
+[2025-08-09T03:22:52.220+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/com.google.cloud_google-cloud-core-grpc-2.17.0.jar
+[2025-08-09T03:22:52.220+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/com.google.api_gax-2.27.0.jar
+[2025-08-09T03:22:52.220+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/com.google.api_api-common-2.10.0.jar
+[2025-08-09T03:22:52.221+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/javax.annotation_javax.annotation-api-1.3.2.jar
+[2025-08-09T03:22:52.221+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/com.google.api.grpc_proto-google-common-protos-2.18.0.jar
+[2025-08-09T03:22:52.222+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/org.threeten_threetenbp-1.6.8.jar
+[2025-08-09T03:22:52.222+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/com.google.api.grpc_proto-google-cloud-storage-v2-2.22.2-alpha.jar
+[2025-08-09T03:22:52.222+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/com.google.api.grpc_gapic-google-cloud-storage-v2-2.22.2-alpha.jar
+[2025-08-09T03:22:52.223+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/com.fasterxml.jackson.core_jackson-core-2.14.2.jar
+[2025-08-09T03:22:52.224+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/org.checkerframework_checker-qual-3.32.0.jar
+[2025-08-09T03:22:52.225+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-proto-0.2.0.jar
+[2025-08-09T03:22:52.225+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-services-1.54.0.jar
+[2025-08-09T03:22:52.226+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/com.google.re2j_re2j-1.6.jar
+[2025-08-09T03:22:52.226+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-impl-core-0.31.0.jar
+[2025-08-09T03:22:52.226+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/com.lmax_disruptor-3.4.2.jar
+[2025-08-09T03:22:52.227+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-contrib-exemplar-util-0.31.0.jar
+[2025-08-09T03:22:52.227+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-contrib-resource-util-0.31.0.jar
+[2025-08-09T03:22:52.227+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-exporter-metrics-util-0.31.0.jar
+[2025-08-09T03:22:52.228+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/com.google.cloud_google-cloud-monitoring-1.82.0.jar
+[2025-08-09T03:22:52.228+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/com.google.api.grpc_proto-google-cloud-monitoring-v3-1.64.0.jar
+[2025-08-09T03:22:52.228+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/com.google.android_annotations-4.1.1.4.jar
+[2025-08-09T03:22:52.229+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/io.perfmark_perfmark-api-0.26.0.jar
+[2025-08-09T03:22:52.229+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/org.codehaus.mojo_animal-sniffer-annotations-1.23.jar
+[2025-08-09T03:22:52.229+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-googleapis-1.54.0.jar
+[2025-08-09T03:22:52.230+0000] {spark_submit.py:521} INFO - file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-rls-1.54.0.jar
+[2025-08-09T03:22:52.231+0000] {spark_submit.py:521} INFO - 
+[2025-08-09T03:22:52.233+0000] {spark_submit.py:521} INFO - 
+[2025-08-09T03:22:54.129+0000] {spark_submit.py:521} INFO - Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+[2025-08-09T03:22:54.138+0000] {spark_submit.py:521} INFO - 25/08/09 03:22:54 INFO SparkContext: Running Spark version 4.0.0
+[2025-08-09T03:22:54.143+0000] {spark_submit.py:521} INFO - 25/08/09 03:22:54 INFO SparkContext: OS info Linux, 5.15.167.4-microsoft-standard-WSL2, amd64
+[2025-08-09T03:22:54.144+0000] {spark_submit.py:521} INFO - 25/08/09 03:22:54 INFO SparkContext: Java version 17.0.15
+[2025-08-09T03:22:54.195+0000] {spark_submit.py:521} INFO - 25/08/09 03:22:54 INFO ResourceUtils: ==============================================================
+[2025-08-09T03:22:54.196+0000] {spark_submit.py:521} INFO - 25/08/09 03:22:54 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2025-08-09T03:22:54.196+0000] {spark_submit.py:521} INFO - 25/08/09 03:22:54 INFO ResourceUtils: ==============================================================
+[2025-08-09T03:22:54.197+0000] {spark_submit.py:521} INFO - 25/08/09 03:22:54 INFO SparkContext: Submitted application: gold_transform
+[2025-08-09T03:22:54.233+0000] {spark_submit.py:521} INFO - 25/08/09 03:22:54 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2025-08-09T03:22:54.244+0000] {spark_submit.py:521} INFO - 25/08/09 03:22:54 INFO ResourceProfile: Limiting resource is cpus at 1 tasks per executor
+[2025-08-09T03:22:54.248+0000] {spark_submit.py:521} INFO - 25/08/09 03:22:54 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2025-08-09T03:22:54.430+0000] {spark_submit.py:521} INFO - 25/08/09 03:22:54 INFO SecurityManager: Changing view acls to: ***
+[2025-08-09T03:22:54.432+0000] {spark_submit.py:521} INFO - 25/08/09 03:22:54 INFO SecurityManager: Changing modify acls to: ***
+[2025-08-09T03:22:54.433+0000] {spark_submit.py:521} INFO - 25/08/09 03:22:54 INFO SecurityManager: Changing view acls groups to: ***
+[2025-08-09T03:22:54.433+0000] {spark_submit.py:521} INFO - 25/08/09 03:22:54 INFO SecurityManager: Changing modify acls groups to: ***
+[2025-08-09T03:22:54.438+0000] {spark_submit.py:521} INFO - 25/08/09 03:22:54 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: *** groups with view permissions: EMPTY; users with modify permissions: ***; groups with modify permissions: EMPTY; RPC SSL disabled
+[2025-08-09T03:22:55.165+0000] {spark_submit.py:521} INFO - 25/08/09 03:22:55 INFO Utils: Successfully started service 'sparkDriver' on port 39411.
+[2025-08-09T03:22:55.242+0000] {spark_submit.py:521} INFO - 25/08/09 03:22:55 INFO SparkEnv: Registering MapOutputTracker
+[2025-08-09T03:22:55.263+0000] {spark_submit.py:521} INFO - 25/08/09 03:22:55 INFO SparkEnv: Registering BlockManagerMaster
+[2025-08-09T03:22:55.283+0000] {spark_submit.py:521} INFO - 25/08/09 03:22:55 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2025-08-09T03:22:55.283+0000] {spark_submit.py:521} INFO - 25/08/09 03:22:55 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2025-08-09T03:22:55.319+0000] {spark_submit.py:521} INFO - 25/08/09 03:22:55 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2025-08-09T03:22:55.348+0000] {spark_submit.py:521} INFO - 25/08/09 03:22:55 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-2d422b8d-b47a-45f9-942f-1ae3fd5f2701
+[2025-08-09T03:22:55.405+0000] {spark_submit.py:521} INFO - 25/08/09 03:22:55 INFO SparkEnv: Registering OutputCommitCoordinator
+[2025-08-09T03:22:55.660+0000] {spark_submit.py:521} INFO - 25/08/09 03:22:55 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+[2025-08-09T03:22:55.792+0000] {spark_submit.py:521} INFO - 25/08/09 03:22:55 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2025-08-09T03:22:55.862+0000] {spark_submit.py:521} INFO - 25/08/09 03:22:55 INFO SecurityManager: Changing view acls to: ***
+[2025-08-09T03:22:55.863+0000] {spark_submit.py:521} INFO - 25/08/09 03:22:55 INFO SecurityManager: Changing modify acls to: ***
+[2025-08-09T03:22:55.863+0000] {spark_submit.py:521} INFO - 25/08/09 03:22:55 INFO SecurityManager: Changing view acls groups to: ***
+[2025-08-09T03:22:55.863+0000] {spark_submit.py:521} INFO - 25/08/09 03:22:55 INFO SecurityManager: Changing modify acls groups to: ***
+[2025-08-09T03:22:55.864+0000] {spark_submit.py:521} INFO - 25/08/09 03:22:55 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: *** groups with view permissions: EMPTY; users with modify permissions: ***; groups with modify permissions: EMPTY; RPC SSL disabled
+[2025-08-09T03:22:56.407+0000] {spark_submit.py:521} INFO - 25/08/09 03:22:56 INFO DefaultNoHARMFailoverProxyProvider: Connecting to ResourceManager at resourcemanager/172.18.0.4:8032
+[2025-08-09T03:22:57.760+0000] {spark_submit.py:521} INFO - 25/08/09 03:22:57 INFO Configuration: resource-types.xml not found
+[2025-08-09T03:22:57.761+0000] {spark_submit.py:521} INFO - 25/08/09 03:22:57 INFO ResourceUtils: Unable to find 'resource-types.xml'.
+[2025-08-09T03:22:57.791+0000] {spark_submit.py:521} INFO - 25/08/09 03:22:57 INFO Client: Verifying our application has not requested more than the maximum memory capability of the cluster (8192 MB per container)
+[2025-08-09T03:22:57.794+0000] {spark_submit.py:521} INFO - 25/08/09 03:22:57 INFO Client: Will allocate AM container, with 896 MB memory including 384 MB overhead
+[2025-08-09T03:22:57.795+0000] {spark_submit.py:521} INFO - 25/08/09 03:22:57 INFO Client: Setting up container launch context for our AM
+[2025-08-09T03:22:57.796+0000] {spark_submit.py:521} INFO - 25/08/09 03:22:57 INFO Client: Setting up the launch environment for our AM container
+[2025-08-09T03:22:57.805+0000] {spark_submit.py:521} INFO - 25/08/09 03:22:57 INFO Client: Preparing resources for our AM container
+[2025-08-09T03:22:59.593+0000] {spark_submit.py:521} INFO - 25/08/09 03:22:59 WARN Client: Neither spark.yarn.jars nor spark.yarn.archive} is set, falling back to uploading libraries under SPARK_HOME.
+[2025-08-09T03:23:02.833+0000] {spark_submit.py:521} INFO - 25/08/09 03:23:02 INFO Client: Uploading resource file:/tmp/spark-8386060a-bc51-46c7-ac31-25adaa2dc428/__spark_libs__9852312319317049351.zip -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/__spark_libs__9852312319317049351.zip
+[2025-08-09T03:24:29.497+0000] {job.py:218} ERROR - Job heartbeat got an exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 3371, in _wrap_pool_connect
+    return fn()
+           ^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/pool/base.py", line 493, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/pool/impl.py", line 256, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/pool/base.py", line 273, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/pool/base.py", line 388, in __init__
+    self.__connect()
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/pool/base.py", line 690, in __connect
+    with util.safe_reraise():
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: could not translate host name "postgres" to address: Temporary failure in name resolution
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/jobs/job.py", line 192, in heartbeat
+    self._merge_from(Job._fetch_from_db(self, session))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/api_internal/internal_api_call.py", line 115, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/utils/session.py", line 76, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/utils/retries.py", line 89, in wrapped_function
+    for attempt in run_with_db_retries(max_retries=retries, logger=logger, **retry_kwargs):
+  File "/home/airflow/.local/lib/python3.11/site-packages/tenacity/__init__.py", line 347, in __iter__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/tenacity/__init__.py", line 325, in iter
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/tenacity/__init__.py", line 158, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/utils/retries.py", line 98, in wrapped_function
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/jobs/job.py", line 316, in _fetch_from_db
+    session.merge(job)
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 3056, in merge
+    return self._merge(
+           ^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 3136, in _merge
+    merged = self.get(
+             ^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2853, in get
+    return self._get_impl(
+           ^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2975, in _get_impl
+    return db_load_fn(
+           ^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/orm/loading.py", line 530, in load_on_pk_identity
+    session.execute(
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1716, in execute
+    conn = self._connection_for_bind(bind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1555, in _connection_for_bind
+    return self._transaction._connection_for_bind(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 750, in _connection_for_bind
+    conn = bind.connect()
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/future/engine.py", line 412, in connect
+    return super(Engine, self).connect()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 3325, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 96, in __init__
+    else engine.raw_connection()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 3404, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 3374, in _wrap_pool_connect
+    Connection._handle_dbapi_exception_noconnection(
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 2208, in _handle_dbapi_exception_noconnection
+    util.raise_(
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 3371, in _wrap_pool_connect
+    return fn()
+           ^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/pool/base.py", line 493, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/pool/impl.py", line 256, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/pool/base.py", line 273, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/pool/base.py", line 388, in __init__
+    self.__connect()
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/pool/base.py", line 690, in __connect
+    with util.safe_reraise():
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) could not translate host name "postgres" to address: Temporary failure in name resolution
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+[2025-08-09T03:24:29.545+0000] {job.py:226} ERROR - Job heartbeat failed with error. Scheduler is in unhealthy state
+[2025-08-09T03:24:42.892+0000] {spark_submit.py:521} INFO - 25/08/09 03:24:42 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/com.google.cloud.bigdataoss_gcs-connector-hadoop3-2.2.14.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/com.google.cloud.bigdataoss_gcs-connector-hadoop3-2.2.14.jar
+[2025-08-09T03:24:44.512+0000] {spark_submit.py:521} INFO - 25/08/09 03:24:44 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/com.google.api-client_google-api-client-jackson2-2.0.1.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/com.google.api-client_google-api-client-jackson2-2.0.1.jar
+[2025-08-09T03:24:45.862+0000] {spark_submit.py:521} INFO - 25/08/09 03:24:45 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/com.google.guava_guava-31.1-jre.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/com.google.guava_guava-31.1-jre.jar
+[2025-08-09T03:24:47.473+0000] {spark_submit.py:521} INFO - 25/08/09 03:24:47 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/com.google.oauth-client_google-oauth-client-1.34.1.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/com.google.oauth-client_google-oauth-client-1.34.1.jar
+[2025-08-09T03:24:48.934+0000] {spark_submit.py:521} INFO - 25/08/09 03:24:48 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/com.google.cloud.bigdataoss_util-2.2.14.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/com.google.cloud.bigdataoss_util-2.2.14.jar
+[2025-08-09T03:24:50.147+0000] {spark_submit.py:521} INFO - 25/08/09 03:24:50 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/com.google.cloud.bigdataoss_util-hadoop-hadoop3-2.2.14.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/com.google.cloud.bigdataoss_util-hadoop-hadoop3-2.2.14.jar
+[2025-08-09T03:24:51.264+0000] {spark_submit.py:521} INFO - 25/08/09 03:24:51 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/com.google.cloud.bigdataoss_gcsio-2.2.14.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/com.google.cloud.bigdataoss_gcsio-2.2.14.jar
+[2025-08-09T03:24:52.631+0000] {spark_submit.py:521} INFO - 25/08/09 03:24:52 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/com.google.auto.value_auto-value-annotations-1.10.1.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/com.google.auto.value_auto-value-annotations-1.10.1.jar
+[2025-08-09T03:24:53.704+0000] {spark_submit.py:521} INFO - 25/08/09 03:24:53 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/com.google.flogger_flogger-0.7.1.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/com.google.flogger_flogger-0.7.1.jar
+[2025-08-09T03:24:55.008+0000] {spark_submit.py:521} INFO - 25/08/09 03:24:55 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/com.google.flogger_google-extensions-0.7.1.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/com.google.flogger_google-extensions-0.7.1.jar
+[2025-08-09T03:24:56.129+0000] {spark_submit.py:521} INFO - 25/08/09 03:24:56 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/com.google.code.gson_gson-2.8.9.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/com.google.code.gson_gson-2.8.9.jar
+[2025-08-09T03:24:57.478+0000] {spark_submit.py:521} INFO - 25/08/09 03:24:57 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/org.apache.httpcomponents_httpcore-4.4.15.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/org.apache.httpcomponents_httpcore-4.4.15.jar
+[2025-08-09T03:24:59.014+0000] {spark_submit.py:521} INFO - 25/08/09 03:24:59 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/org.apache.httpcomponents_httpclient-4.5.13.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/org.apache.httpcomponents_httpclient-4.5.13.jar
+[2025-08-09T03:25:48.332+0000] {job.py:226} ERROR - Job heartbeat failed with error. Scheduler is in unhealthy state
+[2025-08-09T03:27:01.492+0000] {spark_submit.py:521} INFO - 25/08/09 03:27:01 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/com.google.code.findbugs_jsr305-3.0.2.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/com.google.code.findbugs_jsr305-3.0.2.jar
+[2025-08-09T03:27:02.834+0000] {spark_submit.py:521} INFO - 25/08/09 03:27:02 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/com.google.j2objc_j2objc-annotations-1.3.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/com.google.j2objc_j2objc-annotations-1.3.jar
+[2025-08-09T03:27:04.071+0000] {spark_submit.py:521} INFO - 25/08/09 03:27:04 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/io.opencensus_opencensus-api-0.31.1.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/io.opencensus_opencensus-api-0.31.1.jar
+[2025-08-09T03:27:05.533+0000] {spark_submit.py:521} INFO - 25/08/09 03:27:05 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/io.opencensus_opencensus-contrib-http-util-0.31.1.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/io.opencensus_opencensus-contrib-http-util-0.31.1.jar
+[2025-08-09T03:27:06.775+0000] {spark_submit.py:521} INFO - 25/08/09 03:27:06 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/commons-logging_commons-logging-1.2.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/commons-logging_commons-logging-1.2.jar
+[2025-08-09T03:27:08.054+0000] {spark_submit.py:521} INFO - 25/08/09 03:27:08 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/commons-codec_commons-codec-1.15.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/commons-codec_commons-codec-1.15.jar
+[2025-08-09T03:27:09.417+0000] {spark_submit.py:521} INFO - 25/08/09 03:27:09 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/com.google.guava_failureaccess-1.0.1.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/com.google.guava_failureaccess-1.0.1.jar
+[2025-08-09T03:27:10.511+0000] {spark_submit.py:521} INFO - 25/08/09 03:27:10 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/com.google.guava_listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/com.google.guava_listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+[2025-08-09T03:27:11.596+0000] {spark_submit.py:521} INFO - 25/08/09 03:27:11 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/io.grpc_grpc-context-1.54.0.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/io.grpc_grpc-context-1.54.0.jar
+[2025-08-09T03:27:12.829+0000] {spark_submit.py:521} INFO - 25/08/09 03:27:12 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/com.google.http-client_google-http-client-jackson2-1.42.3.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/com.google.http-client_google-http-client-jackson2-1.42.3.jar
+[2025-08-09T03:27:13.914+0000] {spark_submit.py:521} INFO - 25/08/09 03:27:13 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/com.google.apis_google-api-services-iamcredentials-v1-rev20211203-2.0.0.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/com.google.apis_google-api-services-iamcredentials-v1-rev20211203-2.0.0.jar
+[2025-08-09T03:27:15.016+0000] {spark_submit.py:521} INFO - 25/08/09 03:27:15 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/com.google.apis_google-api-services-storage-v1-rev20220705-2.0.0.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/com.google.apis_google-api-services-storage-v1-rev20220705-2.0.0.jar
+[2025-08-09T03:27:16.288+0000] {spark_submit.py:521} INFO - 25/08/09 03:27:16 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/com.google.auth_google-auth-library-oauth2-http-1.12.1.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/com.google.auth_google-auth-library-oauth2-http-1.12.1.jar
+[2025-08-09T03:27:17.451+0000] {spark_submit.py:521} INFO - 25/08/09 03:27:17 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/io.grpc_grpc-api-1.54.0.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/io.grpc_grpc-api-1.54.0.jar
+[2025-08-09T03:27:18.691+0000] {spark_submit.py:521} INFO - 25/08/09 03:27:18 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/com.google.auth_google-auth-library-credentials-1.12.1.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/com.google.auth_google-auth-library-credentials-1.12.1.jar
+[2025-08-09T03:27:19.612+0000] {spark_submit.py:521} INFO - 25/08/09 03:27:19 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/com.google.flogger_flogger-system-backend-0.7.1.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/com.google.flogger_flogger-system-backend-0.7.1.jar
+[2025-08-09T03:27:20.558+0000] {spark_submit.py:521} INFO - 25/08/09 03:27:20 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/org.checkerframework_checker-compat-qual-2.5.3.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/org.checkerframework_checker-compat-qual-2.5.3.jar
+[2025-08-09T03:27:21.641+0000] {spark_submit.py:521} INFO - 25/08/09 03:27:21 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/com.google.errorprone_error_prone_annotations-2.18.0.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/com.google.errorprone_error_prone_annotations-2.18.0.jar
+[2025-08-09T03:27:22.716+0000] {spark_submit.py:521} INFO - 25/08/09 03:27:22 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/io.grpc_grpc-alts-1.54.0.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/io.grpc_grpc-alts-1.54.0.jar
+[2025-08-09T03:27:24.045+0000] {spark_submit.py:521} INFO - 25/08/09 03:27:24 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/io.grpc_grpc-core-1.54.0.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/io.grpc_grpc-core-1.54.0.jar
+[2025-08-09T03:27:25.344+0000] {spark_submit.py:521} INFO - 25/08/09 03:27:25 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/io.grpc_grpc-census-1.54.0.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/io.grpc_grpc-census-1.54.0.jar
+[2025-08-09T03:27:26.340+0000] {spark_submit.py:521} INFO - 25/08/09 03:27:26 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/io.grpc_grpc-protobuf-1.54.0.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/io.grpc_grpc-protobuf-1.54.0.jar
+[2025-08-09T03:27:27.374+0000] {spark_submit.py:521} INFO - 25/08/09 03:27:27 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/com.google.cloud_google-cloud-storage-2.22.2.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/com.google.cloud_google-cloud-storage-2.22.2.jar
+[2025-08-09T03:27:29.331+0000] {spark_submit.py:521} INFO - 25/08/09 03:27:29 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/com.google.api.grpc_grpc-google-cloud-storage-v2-2.22.2-alpha.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/com.google.api.grpc_grpc-google-cloud-storage-v2-2.22.2-alpha.jar
+[2025-08-09T03:27:30.370+0000] {spark_submit.py:521} INFO - 25/08/09 03:27:30 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/io.grpc_grpc-stub-1.54.0.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/io.grpc_grpc-stub-1.54.0.jar
+[2025-08-09T03:27:31.546+0000] {spark_submit.py:521} INFO - 25/08/09 03:27:31 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/io.grpc_grpc-xds-1.54.0.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/io.grpc_grpc-xds-1.54.0.jar
+[2025-08-09T03:27:33.692+0000] {spark_submit.py:521} INFO - 25/08/09 03:27:33 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/com.google.api.grpc_proto-google-iam-v1-1.1.7.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/com.google.api.grpc_proto-google-iam-v1-1.1.7.jar
+[2025-08-09T03:27:34.869+0000] {spark_submit.py:521} INFO - 25/08/09 03:27:34 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/com.google.protobuf_protobuf-java-3.21.9.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/com.google.protobuf_protobuf-java-3.21.9.jar
+[2025-08-09T03:27:36.286+0000] {spark_submit.py:521} INFO - 25/08/09 03:27:36 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/com.google.protobuf_protobuf-java-util-3.21.9.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/com.google.protobuf_protobuf-java-util-3.21.9.jar
+[2025-08-09T03:27:37.446+0000] {spark_submit.py:521} INFO - 25/08/09 03:27:37 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/io.opencensus_opencensus-impl-0.31.0.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/io.opencensus_opencensus-impl-0.31.0.jar
+[2025-08-09T03:27:38.385+0000] {spark_submit.py:521} INFO - 25/08/09 03:27:38 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/io.opencensus_opencensus-exporter-stats-stackdriver-0.31.0.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/io.opencensus_opencensus-exporter-stats-stackdriver-0.31.0.jar
+[2025-08-09T03:27:39.350+0000] {spark_submit.py:521} INFO - 25/08/09 03:27:39 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/io.opencensus_opencensus-contrib-grpc-metrics-0.31.0.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/io.opencensus_opencensus-contrib-grpc-metrics-0.31.0.jar
+[2025-08-09T03:27:40.318+0000] {spark_submit.py:521} INFO - 25/08/09 03:27:40 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/com.google.cloud_google-cloud-core-2.5.4.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/com.google.cloud_google-cloud-core-2.5.4.jar
+[2025-08-09T03:27:41.461+0000] {spark_submit.py:521} INFO - 25/08/09 03:27:41 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/com.google.api_gax-grpc-2.27.0.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/com.google.api_gax-grpc-2.27.0.jar
+[2025-08-09T03:27:42.616+0000] {spark_submit.py:521} INFO - 25/08/09 03:27:42 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/io.grpc_grpc-auth-1.54.0.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/io.grpc_grpc-auth-1.54.0.jar
+[2025-08-09T03:27:43.685+0000] {spark_submit.py:521} INFO - 25/08/09 03:27:43 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/io.grpc_grpc-grpclb-1.54.0.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/io.grpc_grpc-grpclb-1.54.0.jar
+[2025-08-09T03:27:44.643+0000] {spark_submit.py:521} INFO - 25/08/09 03:27:44 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/org.conscrypt_conscrypt-openjdk-uber-2.5.2.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/org.conscrypt_conscrypt-openjdk-uber-2.5.2.jar
+[2025-08-09T03:27:46.225+0000] {spark_submit.py:521} INFO - 25/08/09 03:27:46 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/io.grpc_grpc-netty-shaded-1.54.0.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/io.grpc_grpc-netty-shaded-1.54.0.jar
+[2025-08-09T03:27:47.968+0000] {spark_submit.py:521} INFO - 25/08/09 03:27:47 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/io.grpc_grpc-protobuf-lite-1.54.0.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/io.grpc_grpc-protobuf-lite-1.54.0.jar
+[2025-08-09T03:27:49.029+0000] {spark_submit.py:521} INFO - 25/08/09 03:27:49 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/com.google.http-client_google-http-client-1.43.1.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/com.google.http-client_google-http-client-1.43.1.jar
+[2025-08-09T03:27:50.231+0000] {spark_submit.py:521} INFO - 25/08/09 03:27:50 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/com.google.http-client_google-http-client-gson-1.43.1.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/com.google.http-client_google-http-client-gson-1.43.1.jar
+[2025-08-09T03:27:51.177+0000] {spark_submit.py:521} INFO - 25/08/09 03:27:51 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/com.google.api-client_google-api-client-2.2.0.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/com.google.api-client_google-api-client-2.2.0.jar
+[2025-08-09T03:27:52.418+0000] {spark_submit.py:521} INFO - 25/08/09 03:27:52 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/com.google.http-client_google-http-client-apache-v2-1.43.1.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/com.google.http-client_google-http-client-apache-v2-1.43.1.jar
+[2025-08-09T03:27:53.200+0000] {spark_submit.py:521} INFO - 25/08/09 03:27:53 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/com.google.cloud_google-cloud-core-http-2.17.0.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/com.google.cloud_google-cloud-core-http-2.17.0.jar
+[2025-08-09T03:27:53.990+0000] {spark_submit.py:521} INFO - 25/08/09 03:27:53 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/com.google.http-client_google-http-client-appengine-1.43.1.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/com.google.http-client_google-http-client-appengine-1.43.1.jar
+[2025-08-09T03:27:54.911+0000] {spark_submit.py:521} INFO - 25/08/09 03:27:54 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/com.google.api_gax-httpjson-0.112.0.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/com.google.api_gax-httpjson-0.112.0.jar
+[2025-08-09T03:27:56.024+0000] {spark_submit.py:521} INFO - 25/08/09 03:27:56 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/com.google.cloud_google-cloud-core-grpc-2.17.0.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/com.google.cloud_google-cloud-core-grpc-2.17.0.jar
+[2025-08-09T03:27:56.828+0000] {spark_submit.py:521} INFO - 25/08/09 03:27:56 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/com.google.api_gax-2.27.0.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/com.google.api_gax-2.27.0.jar
+[2025-08-09T03:27:57.912+0000] {spark_submit.py:521} INFO - 25/08/09 03:27:57 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/com.google.api_api-common-2.10.0.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/com.google.api_api-common-2.10.0.jar
+[2025-08-09T03:27:58.758+0000] {spark_submit.py:521} INFO - 25/08/09 03:27:58 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/javax.annotation_javax.annotation-api-1.3.2.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/javax.annotation_javax.annotation-api-1.3.2.jar
+[2025-08-09T03:28:00.775+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:00 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/com.google.api.grpc_proto-google-common-protos-2.18.0.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/com.google.api.grpc_proto-google-common-protos-2.18.0.jar
+[2025-08-09T03:28:01.414+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:01 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/org.threeten_threetenbp-1.6.8.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/org.threeten_threetenbp-1.6.8.jar
+[2025-08-09T03:28:02.538+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:02 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/com.google.api.grpc_proto-google-cloud-storage-v2-2.22.2-alpha.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/com.google.api.grpc_proto-google-cloud-storage-v2-2.22.2-alpha.jar
+[2025-08-09T03:28:03.717+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:03 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/com.google.api.grpc_gapic-google-cloud-storage-v2-2.22.2-alpha.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/com.google.api.grpc_gapic-google-cloud-storage-v2-2.22.2-alpha.jar
+[2025-08-09T03:28:04.574+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:04 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/com.fasterxml.jackson.core_jackson-core-2.14.2.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/com.fasterxml.jackson.core_jackson-core-2.14.2.jar
+[2025-08-09T03:28:05.681+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:05 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/org.checkerframework_checker-qual-3.32.0.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/org.checkerframework_checker-qual-3.32.0.jar
+[2025-08-09T03:28:06.706+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:06 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/io.opencensus_opencensus-proto-0.2.0.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/io.opencensus_opencensus-proto-0.2.0.jar
+[2025-08-09T03:28:07.870+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:07 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/io.grpc_grpc-services-1.54.0.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/io.grpc_grpc-services-1.54.0.jar
+[2025-08-09T03:28:09.106+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:09 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/com.google.re2j_re2j-1.6.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/com.google.re2j_re2j-1.6.jar
+[2025-08-09T03:28:10.097+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:10 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/io.opencensus_opencensus-impl-core-0.31.0.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/io.opencensus_opencensus-impl-core-0.31.0.jar
+[2025-08-09T03:28:11.142+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:11 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/com.lmax_disruptor-3.4.2.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/com.lmax_disruptor-3.4.2.jar
+[2025-08-09T03:28:12.103+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:12 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/io.opencensus_opencensus-contrib-exemplar-util-0.31.0.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/io.opencensus_opencensus-contrib-exemplar-util-0.31.0.jar
+[2025-08-09T03:28:12.954+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:12 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/io.opencensus_opencensus-contrib-resource-util-0.31.0.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/io.opencensus_opencensus-contrib-resource-util-0.31.0.jar
+[2025-08-09T03:28:13.819+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:13 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/io.opencensus_opencensus-exporter-metrics-util-0.31.0.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/io.opencensus_opencensus-exporter-metrics-util-0.31.0.jar
+[2025-08-09T03:28:14.695+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:14 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/com.google.cloud_google-cloud-monitoring-1.82.0.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/com.google.cloud_google-cloud-monitoring-1.82.0.jar
+[2025-08-09T03:28:15.776+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:15 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/com.google.api.grpc_proto-google-cloud-monitoring-v3-1.64.0.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/com.google.api.grpc_proto-google-cloud-monitoring-v3-1.64.0.jar
+[2025-08-09T03:28:17.055+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:17 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/com.google.android_annotations-4.1.1.4.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/com.google.android_annotations-4.1.1.4.jar
+[2025-08-09T03:28:17.883+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:17 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/io.perfmark_perfmark-api-0.26.0.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/io.perfmark_perfmark-api-0.26.0.jar
+[2025-08-09T03:28:18.725+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:18 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/org.codehaus.mojo_animal-sniffer-annotations-1.23.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/org.codehaus.mojo_animal-sniffer-annotations-1.23.jar
+[2025-08-09T03:28:19.563+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:19 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/io.grpc_grpc-googleapis-1.54.0.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/io.grpc_grpc-googleapis-1.54.0.jar
+[2025-08-09T03:28:20.420+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:20 INFO Client: Uploading resource file:/home/***/.ivy2.5.2/jars/io.grpc_grpc-rls-1.54.0.jar -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/io.grpc_grpc-rls-1.54.0.jar
+[2025-08-09T03:28:21.537+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:21 INFO Client: Uploading resource file:/home/***/.local/lib/python3.11/site-packages/pyspark/python/lib/pyspark.zip -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/pyspark.zip
+[2025-08-09T03:28:22.934+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:22 INFO Client: Uploading resource file:/home/***/.local/lib/python3.11/site-packages/pyspark/python/lib/py4j-0.10.9.9-src.zip -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/py4j-0.10.9.9-src.zip
+[2025-08-09T03:28:23.843+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/com.google.cloud.bigdataoss_gcs-connector-hadoop3-2.2.14.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.846+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/com.google.api-client_google-api-client-jackson2-2.0.1.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.846+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/com.google.guava_guava-31.1-jre.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.846+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/com.google.oauth-client_google-oauth-client-1.34.1.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.847+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/com.google.cloud.bigdataoss_util-2.2.14.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.848+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/com.google.cloud.bigdataoss_util-hadoop-hadoop3-2.2.14.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.848+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/com.google.cloud.bigdataoss_gcsio-2.2.14.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.848+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/com.google.auto.value_auto-value-annotations-1.10.1.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.848+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/com.google.flogger_flogger-0.7.1.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.849+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/com.google.flogger_google-extensions-0.7.1.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.849+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/com.google.code.gson_gson-2.8.9.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.849+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/org.apache.httpcomponents_httpcore-4.4.15.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.849+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/org.apache.httpcomponents_httpclient-4.5.13.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.850+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/com.google.code.findbugs_jsr305-3.0.2.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.850+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/com.google.j2objc_j2objc-annotations-1.3.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.850+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-api-0.31.1.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.850+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-contrib-http-util-0.31.1.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.851+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/commons-logging_commons-logging-1.2.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.851+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/commons-codec_commons-codec-1.15.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.851+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/com.google.guava_failureaccess-1.0.1.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.851+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/com.google.guava_listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.851+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-context-1.54.0.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.851+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/com.google.http-client_google-http-client-jackson2-1.42.3.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.852+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/com.google.apis_google-api-services-iamcredentials-v1-rev20211203-2.0.0.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.852+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/com.google.apis_google-api-services-storage-v1-rev20220705-2.0.0.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.852+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/com.google.auth_google-auth-library-oauth2-http-1.12.1.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.852+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-api-1.54.0.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.852+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/com.google.auth_google-auth-library-credentials-1.12.1.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.852+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/com.google.flogger_flogger-system-backend-0.7.1.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.853+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/org.checkerframework_checker-compat-qual-2.5.3.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.853+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/com.google.errorprone_error_prone_annotations-2.18.0.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.853+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-alts-1.54.0.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.853+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-core-1.54.0.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.853+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-census-1.54.0.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.854+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-protobuf-1.54.0.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.854+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/com.google.cloud_google-cloud-storage-2.22.2.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.854+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/com.google.api.grpc_grpc-google-cloud-storage-v2-2.22.2-alpha.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.854+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-stub-1.54.0.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.855+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-xds-1.54.0.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.855+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/com.google.api.grpc_proto-google-iam-v1-1.1.7.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.855+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/com.google.protobuf_protobuf-java-3.21.9.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.855+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/com.google.protobuf_protobuf-java-util-3.21.9.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.855+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-impl-0.31.0.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.856+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-exporter-stats-stackdriver-0.31.0.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.856+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-contrib-grpc-metrics-0.31.0.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.856+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/com.google.cloud_google-cloud-core-2.5.4.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.856+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/com.google.api_gax-grpc-2.27.0.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.857+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-auth-1.54.0.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.857+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-grpclb-1.54.0.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.857+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/org.conscrypt_conscrypt-openjdk-uber-2.5.2.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.857+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-netty-shaded-1.54.0.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.858+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-protobuf-lite-1.54.0.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.858+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/com.google.http-client_google-http-client-1.43.1.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.858+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/com.google.http-client_google-http-client-gson-1.43.1.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.858+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/com.google.api-client_google-api-client-2.2.0.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.859+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/com.google.http-client_google-http-client-apache-v2-1.43.1.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.859+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/com.google.cloud_google-cloud-core-http-2.17.0.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.859+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/com.google.http-client_google-http-client-appengine-1.43.1.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.859+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/com.google.api_gax-httpjson-0.112.0.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.860+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/com.google.cloud_google-cloud-core-grpc-2.17.0.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.860+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/com.google.api_gax-2.27.0.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.860+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/com.google.api_api-common-2.10.0.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.860+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/javax.annotation_javax.annotation-api-1.3.2.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.861+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/com.google.api.grpc_proto-google-common-protos-2.18.0.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.861+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/org.threeten_threetenbp-1.6.8.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.861+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/com.google.api.grpc_proto-google-cloud-storage-v2-2.22.2-alpha.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.861+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/com.google.api.grpc_gapic-google-cloud-storage-v2-2.22.2-alpha.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.861+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/com.fasterxml.jackson.core_jackson-core-2.14.2.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.862+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/org.checkerframework_checker-qual-3.32.0.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.862+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-proto-0.2.0.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.862+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-services-1.54.0.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.862+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/com.google.re2j_re2j-1.6.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.862+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-impl-core-0.31.0.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.863+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/com.lmax_disruptor-3.4.2.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.863+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-contrib-exemplar-util-0.31.0.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.863+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-contrib-resource-util-0.31.0.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.863+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/io.opencensus_opencensus-exporter-metrics-util-0.31.0.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.864+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/com.google.cloud_google-cloud-monitoring-1.82.0.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.864+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/com.google.api.grpc_proto-google-cloud-monitoring-v3-1.64.0.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.864+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/com.google.android_annotations-4.1.1.4.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.864+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/io.perfmark_perfmark-api-0.26.0.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.865+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/org.codehaus.mojo_animal-sniffer-annotations-1.23.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.865+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-googleapis-1.54.0.jar added multiple times to distributed cache.
+[2025-08-09T03:28:23.865+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:23 WARN Client: Same path resource file:///home/***/.ivy2.5.2/jars/io.grpc_grpc-rls-1.54.0.jar added multiple times to distributed cache.
+[2025-08-09T03:28:24.008+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:24 INFO Client: Uploading resource file:/tmp/spark-8386060a-bc51-46c7-ac31-25adaa2dc428/__spark_conf__3927995505889969906.zip -> gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004/__spark_conf__.zip
+[2025-08-09T03:28:25.110+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:25 INFO SecurityManager: Changing view acls to: ***
+[2025-08-09T03:28:25.111+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:25 INFO SecurityManager: Changing modify acls to: ***
+[2025-08-09T03:28:25.111+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:25 INFO SecurityManager: Changing view acls groups to: ***
+[2025-08-09T03:28:25.111+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:25 INFO SecurityManager: Changing modify acls groups to: ***
+[2025-08-09T03:28:25.112+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:25 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: *** groups with view permissions: EMPTY; users with modify permissions: ***; groups with modify permissions: EMPTY; RPC SSL disabled
+[2025-08-09T03:28:25.148+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:25 INFO Client: Submitting application application_1754707010040_0004 to ResourceManager
+[2025-08-09T03:28:25.605+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:25 INFO YarnClientImpl: Submitted application application_1754707010040_0004
+[2025-08-09T03:28:26.635+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:26 INFO Client: Application report for application_1754707010040_0004 (state: ACCEPTED)
+[2025-08-09T03:28:26.641+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:26 INFO Client:
+[2025-08-09T03:28:26.641+0000] {spark_submit.py:521} INFO - client token: N/A
+[2025-08-09T03:28:26.642+0000] {spark_submit.py:521} INFO - diagnostics: AM container is launched, waiting for AM container to Register with RM
+[2025-08-09T03:28:26.642+0000] {spark_submit.py:521} INFO - ApplicationMaster host: N/A
+[2025-08-09T03:28:26.642+0000] {spark_submit.py:521} INFO - ApplicationMaster RPC port: -1
+[2025-08-09T03:28:26.642+0000] {spark_submit.py:521} INFO - queue: default
+[2025-08-09T03:28:26.643+0000] {spark_submit.py:521} INFO - start time: 1754710105281
+[2025-08-09T03:28:26.643+0000] {spark_submit.py:521} INFO - final status: UNDEFINED
+[2025-08-09T03:28:26.643+0000] {spark_submit.py:521} INFO - tracking URL: http://resourcemanager:8088/cluster/app/application_1754707010040_0004
+[2025-08-09T03:28:26.643+0000] {spark_submit.py:521} INFO - user: ***
+[2025-08-09T03:28:28.667+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:28 INFO Client: Application report for application_1754707010040_0004 (state: FAILED)
+[2025-08-09T03:28:28.668+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:28 INFO Client:
+[2025-08-09T03:28:28.669+0000] {spark_submit.py:521} INFO - client token: N/A
+[2025-08-09T03:28:28.669+0000] {spark_submit.py:521} INFO - diagnostics: Application application_1754707010040_0004 failed 2 times due to AM Container for appattempt_1754707010040_0004_000002 exited with  exitCode: -1000
+[2025-08-09T03:28:28.670+0000] {spark_submit.py:521} INFO - Failing this attempt.Diagnostics: [2025-08-09 03:28:27.714]java.lang.ClassNotFoundException: Class com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem not found
+[2025-08-09T03:28:28.670+0000] {spark_submit.py:521} INFO - java.lang.RuntimeException: java.lang.ClassNotFoundException: Class com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem not found
+[2025-08-09T03:28:28.670+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.conf.Configuration.getClass(Configuration.java:2638)
+[2025-08-09T03:28:28.671+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem.getFileSystemClass(FileSystem.java:3269)
+[2025-08-09T03:28:28.671+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem.createFileSystem(FileSystem.java:3301)
+[2025-08-09T03:28:28.671+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem.access$200(FileSystem.java:124)
+[2025-08-09T03:28:28.671+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem$Cache.getInternal(FileSystem.java:3352)
+[2025-08-09T03:28:28.672+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem$Cache.get(FileSystem.java:3320)
+[2025-08-09T03:28:28.672+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:479)
+[2025-08-09T03:28:28.672+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:470)
+[2025-08-09T03:28:28.672+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.Path.getFileSystem(Path.java:365)
+[2025-08-09T03:28:28.673+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.yarn.util.FSDownload.verifyAndCopy(FSDownload.java:268)
+[2025-08-09T03:28:28.673+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.yarn.util.FSDownload.access$000(FSDownload.java:67)
+[2025-08-09T03:28:28.673+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.yarn.util.FSDownload$2.run(FSDownload.java:414)
+[2025-08-09T03:28:28.673+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.yarn.util.FSDownload$2.run(FSDownload.java:411)
+[2025-08-09T03:28:28.674+0000] {spark_submit.py:521} INFO - at java.security.AccessController.doPrivileged(Native Method)
+[2025-08-09T03:28:28.674+0000] {spark_submit.py:521} INFO - at javax.security.auth.Subject.doAs(Subject.java:422)
+[2025-08-09T03:28:28.674+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1730)
+[2025-08-09T03:28:28.674+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.yarn.util.FSDownload.call(FSDownload.java:411)
+[2025-08-09T03:28:28.674+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.yarn.server.nodemanager.containermanager.localizer.ContainerLocalizer$FSDownloadWrapper.doDownloadCall(ContainerLocalizer.java:243)
+[2025-08-09T03:28:28.675+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.yarn.server.nodemanager.containermanager.localizer.ContainerLocalizer$FSDownloadWrapper.call(ContainerLocalizer.java:236)
+[2025-08-09T03:28:28.675+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.yarn.server.nodemanager.containermanager.localizer.ContainerLocalizer$FSDownloadWrapper.call(ContainerLocalizer.java:224)
+[2025-08-09T03:28:28.675+0000] {spark_submit.py:521} INFO - at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+[2025-08-09T03:28:28.675+0000] {spark_submit.py:521} INFO - at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+[2025-08-09T03:28:28.676+0000] {spark_submit.py:521} INFO - at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+[2025-08-09T03:28:28.676+0000] {spark_submit.py:521} INFO - at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+[2025-08-09T03:28:28.676+0000] {spark_submit.py:521} INFO - at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+[2025-08-09T03:28:28.676+0000] {spark_submit.py:521} INFO - at java.lang.Thread.run(Thread.java:748)
+[2025-08-09T03:28:28.676+0000] {spark_submit.py:521} INFO - Caused by: java.lang.ClassNotFoundException: Class com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem not found
+[2025-08-09T03:28:28.677+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.conf.Configuration.getClassByName(Configuration.java:2542)
+[2025-08-09T03:28:28.677+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.conf.Configuration.getClass(Configuration.java:2636)
+[2025-08-09T03:28:28.677+0000] {spark_submit.py:521} INFO - ... 25 more
+[2025-08-09T03:28:28.677+0000] {spark_submit.py:521} INFO - Caused by: Class com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem not found
+[2025-08-09T03:28:28.678+0000] {spark_submit.py:521} INFO - java.lang.ClassNotFoundException: Class com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem not found
+[2025-08-09T03:28:28.678+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.conf.Configuration.getClassByName(Configuration.java:2542)
+[2025-08-09T03:28:28.678+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.conf.Configuration.getClass(Configuration.java:2636)
+[2025-08-09T03:28:28.678+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem.getFileSystemClass(FileSystem.java:3269)
+[2025-08-09T03:28:28.678+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem.createFileSystem(FileSystem.java:3301)
+[2025-08-09T03:28:28.679+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem.access$200(FileSystem.java:124)
+[2025-08-09T03:28:28.679+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem$Cache.getInternal(FileSystem.java:3352)
+[2025-08-09T03:28:28.679+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem$Cache.get(FileSystem.java:3320)
+[2025-08-09T03:28:28.679+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:479)
+[2025-08-09T03:28:28.680+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:470)
+[2025-08-09T03:28:28.680+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.Path.getFileSystem(Path.java:365)
+[2025-08-09T03:28:28.680+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.yarn.util.FSDownload.verifyAndCopy(FSDownload.java:268)
+[2025-08-09T03:28:28.680+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.yarn.util.FSDownload.access$000(FSDownload.java:67)
+[2025-08-09T03:28:28.680+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.yarn.util.FSDownload$2.run(FSDownload.java:414)
+[2025-08-09T03:28:28.681+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.yarn.util.FSDownload$2.run(FSDownload.java:411)
+[2025-08-09T03:28:28.681+0000] {spark_submit.py:521} INFO - at java.security.AccessController.doPrivileged(Native Method)
+[2025-08-09T03:28:28.681+0000] {spark_submit.py:521} INFO - at javax.security.auth.Subject.doAs(Subject.java:422)
+[2025-08-09T03:28:28.681+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1730)
+[2025-08-09T03:28:28.682+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.yarn.util.FSDownload.call(FSDownload.java:411)
+[2025-08-09T03:28:28.682+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.yarn.server.nodemanager.containermanager.localizer.ContainerLocalizer$FSDownloadWrapper.doDownloadCall(ContainerLocalizer.java:243)
+[2025-08-09T03:28:28.682+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.yarn.server.nodemanager.containermanager.localizer.ContainerLocalizer$FSDownloadWrapper.call(ContainerLocalizer.java:236)
+[2025-08-09T03:28:28.682+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.yarn.server.nodemanager.containermanager.localizer.ContainerLocalizer$FSDownloadWrapper.call(ContainerLocalizer.java:224)
+[2025-08-09T03:28:28.682+0000] {spark_submit.py:521} INFO - at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+[2025-08-09T03:28:28.683+0000] {spark_submit.py:521} INFO - at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+[2025-08-09T03:28:28.683+0000] {spark_submit.py:521} INFO - at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+[2025-08-09T03:28:28.683+0000] {spark_submit.py:521} INFO - at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+[2025-08-09T03:28:28.683+0000] {spark_submit.py:521} INFO - at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+[2025-08-09T03:28:28.684+0000] {spark_submit.py:521} INFO - at java.lang.Thread.run(Thread.java:748)
+[2025-08-09T03:28:28.684+0000] {spark_submit.py:521} INFO - 
+[2025-08-09T03:28:28.684+0000] {spark_submit.py:521} INFO - For more detailed output, check the application tracking page: http://resourcemanager:8088/cluster/app/application_1754707010040_0004 Then click on links to logs of each attempt.
+[2025-08-09T03:28:28.684+0000] {spark_submit.py:521} INFO - . Failing the application.
+[2025-08-09T03:28:28.685+0000] {spark_submit.py:521} INFO - ApplicationMaster host: N/A
+[2025-08-09T03:28:28.685+0000] {spark_submit.py:521} INFO - ApplicationMaster RPC port: -1
+[2025-08-09T03:28:28.685+0000] {spark_submit.py:521} INFO - queue: default
+[2025-08-09T03:28:28.686+0000] {spark_submit.py:521} INFO - start time: 1754710105281
+[2025-08-09T03:28:28.686+0000] {spark_submit.py:521} INFO - final status: FAILED
+[2025-08-09T03:28:28.686+0000] {spark_submit.py:521} INFO - tracking URL: http://resourcemanager:8088/cluster/app/application_1754707010040_0004
+[2025-08-09T03:28:28.686+0000] {spark_submit.py:521} INFO - user: ***
+[2025-08-09T03:28:29.579+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:29 INFO Client: Deleted staging directory gs://job_gcp/user/***/.sparkStaging/application_1754707010040_0004
+[2025-08-09T03:28:29.582+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:29 ERROR YarnClientSchedulerBackend: The YARN application has already ended! It might have been killed or the Application Master may have failed to start. Check the YARN application logs for more details.
+[2025-08-09T03:28:29.589+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:29 ERROR SparkContext: Error initializing SparkContext.
+[2025-08-09T03:28:29.590+0000] {spark_submit.py:521} INFO - org.apache.spark.SparkException: Application application_1754707010040_0004 failed 2 times due to AM Container for appattempt_1754707010040_0004_000002 exited with  exitCode: -1000
+[2025-08-09T03:28:29.590+0000] {spark_submit.py:521} INFO - Failing this attempt.Diagnostics: [2025-08-09 03:28:27.714]java.lang.ClassNotFoundException: Class com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem not found
+[2025-08-09T03:28:29.590+0000] {spark_submit.py:521} INFO - java.lang.RuntimeException: java.lang.ClassNotFoundException: Class com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem not found
+[2025-08-09T03:28:29.591+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.conf.Configuration.getClass(Configuration.java:2638)
+[2025-08-09T03:28:29.591+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem.getFileSystemClass(FileSystem.java:3269)
+[2025-08-09T03:28:29.591+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem.createFileSystem(FileSystem.java:3301)
+[2025-08-09T03:28:29.591+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem.access$200(FileSystem.java:124)
+[2025-08-09T03:28:29.591+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem$Cache.getInternal(FileSystem.java:3352)
+[2025-08-09T03:28:29.591+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem$Cache.get(FileSystem.java:3320)
+[2025-08-09T03:28:29.592+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:479)
+[2025-08-09T03:28:29.592+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:470)
+[2025-08-09T03:28:29.592+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.Path.getFileSystem(Path.java:365)
+[2025-08-09T03:28:29.592+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.yarn.util.FSDownload.verifyAndCopy(FSDownload.java:268)
+[2025-08-09T03:28:29.592+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.yarn.util.FSDownload.access$000(FSDownload.java:67)
+[2025-08-09T03:28:29.593+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.yarn.util.FSDownload$2.run(FSDownload.java:414)
+[2025-08-09T03:28:29.593+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.yarn.util.FSDownload$2.run(FSDownload.java:411)
+[2025-08-09T03:28:29.593+0000] {spark_submit.py:521} INFO - at java.security.AccessController.doPrivileged(Native Method)
+[2025-08-09T03:28:29.593+0000] {spark_submit.py:521} INFO - at javax.security.auth.Subject.doAs(Subject.java:422)
+[2025-08-09T03:28:29.593+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1730)
+[2025-08-09T03:28:29.594+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.yarn.util.FSDownload.call(FSDownload.java:411)
+[2025-08-09T03:28:29.594+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.yarn.server.nodemanager.containermanager.localizer.ContainerLocalizer$FSDownloadWrapper.doDownloadCall(ContainerLocalizer.java:243)
+[2025-08-09T03:28:29.594+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.yarn.server.nodemanager.containermanager.localizer.ContainerLocalizer$FSDownloadWrapper.call(ContainerLocalizer.java:236)
+[2025-08-09T03:28:29.594+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.yarn.server.nodemanager.containermanager.localizer.ContainerLocalizer$FSDownloadWrapper.call(ContainerLocalizer.java:224)
+[2025-08-09T03:28:29.594+0000] {spark_submit.py:521} INFO - at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+[2025-08-09T03:28:29.595+0000] {spark_submit.py:521} INFO - at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+[2025-08-09T03:28:29.595+0000] {spark_submit.py:521} INFO - at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+[2025-08-09T03:28:29.595+0000] {spark_submit.py:521} INFO - at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+[2025-08-09T03:28:29.595+0000] {spark_submit.py:521} INFO - at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+[2025-08-09T03:28:29.596+0000] {spark_submit.py:521} INFO - at java.lang.Thread.run(Thread.java:748)
+[2025-08-09T03:28:29.596+0000] {spark_submit.py:521} INFO - Caused by: java.lang.ClassNotFoundException: Class com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem not found
+[2025-08-09T03:28:29.596+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.conf.Configuration.getClassByName(Configuration.java:2542)
+[2025-08-09T03:28:29.596+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.conf.Configuration.getClass(Configuration.java:2636)
+[2025-08-09T03:28:29.597+0000] {spark_submit.py:521} INFO - ... 25 more
+[2025-08-09T03:28:29.597+0000] {spark_submit.py:521} INFO - Caused by: Class com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem not found
+[2025-08-09T03:28:29.597+0000] {spark_submit.py:521} INFO - java.lang.ClassNotFoundException: Class com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem not found
+[2025-08-09T03:28:29.597+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.conf.Configuration.getClassByName(Configuration.java:2542)
+[2025-08-09T03:28:29.597+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.conf.Configuration.getClass(Configuration.java:2636)
+[2025-08-09T03:28:29.598+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem.getFileSystemClass(FileSystem.java:3269)
+[2025-08-09T03:28:29.598+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem.createFileSystem(FileSystem.java:3301)
+[2025-08-09T03:28:29.598+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem.access$200(FileSystem.java:124)
+[2025-08-09T03:28:29.598+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem$Cache.getInternal(FileSystem.java:3352)
+[2025-08-09T03:28:29.598+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem$Cache.get(FileSystem.java:3320)
+[2025-08-09T03:28:29.599+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:479)
+[2025-08-09T03:28:29.599+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:470)
+[2025-08-09T03:28:29.599+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.Path.getFileSystem(Path.java:365)
+[2025-08-09T03:28:29.599+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.yarn.util.FSDownload.verifyAndCopy(FSDownload.java:268)
+[2025-08-09T03:28:29.599+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.yarn.util.FSDownload.access$000(FSDownload.java:67)
+[2025-08-09T03:28:29.600+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.yarn.util.FSDownload$2.run(FSDownload.java:414)
+[2025-08-09T03:28:29.600+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.yarn.util.FSDownload$2.run(FSDownload.java:411)
+[2025-08-09T03:28:29.600+0000] {spark_submit.py:521} INFO - at java.security.AccessController.doPrivileged(Native Method)
+[2025-08-09T03:28:29.600+0000] {spark_submit.py:521} INFO - at javax.security.auth.Subject.doAs(Subject.java:422)
+[2025-08-09T03:28:29.600+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1730)
+[2025-08-09T03:28:29.601+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.yarn.util.FSDownload.call(FSDownload.java:411)
+[2025-08-09T03:28:29.601+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.yarn.server.nodemanager.containermanager.localizer.ContainerLocalizer$FSDownloadWrapper.doDownloadCall(ContainerLocalizer.java:243)
+[2025-08-09T03:28:29.601+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.yarn.server.nodemanager.containermanager.localizer.ContainerLocalizer$FSDownloadWrapper.call(ContainerLocalizer.java:236)
+[2025-08-09T03:28:29.602+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.yarn.server.nodemanager.containermanager.localizer.ContainerLocalizer$FSDownloadWrapper.call(ContainerLocalizer.java:224)
+[2025-08-09T03:28:29.602+0000] {spark_submit.py:521} INFO - at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+[2025-08-09T03:28:29.602+0000] {spark_submit.py:521} INFO - at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+[2025-08-09T03:28:29.602+0000] {spark_submit.py:521} INFO - at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+[2025-08-09T03:28:29.603+0000] {spark_submit.py:521} INFO - at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+[2025-08-09T03:28:29.603+0000] {spark_submit.py:521} INFO - at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+[2025-08-09T03:28:29.603+0000] {spark_submit.py:521} INFO - at java.lang.Thread.run(Thread.java:748)
+[2025-08-09T03:28:29.603+0000] {spark_submit.py:521} INFO - 
+[2025-08-09T03:28:29.603+0000] {spark_submit.py:521} INFO - For more detailed output, check the application tracking page: http://resourcemanager:8088/cluster/app/application_1754707010040_0004 Then click on links to logs of each attempt.
+[2025-08-09T03:28:29.603+0000] {spark_submit.py:521} INFO - . Failing the application.
+[2025-08-09T03:28:29.604+0000] {spark_submit.py:521} INFO - at org.apache.spark.scheduler.cluster.YarnClientSchedulerBackend.waitForApplication(YarnClientSchedulerBackend.scala:99)
+[2025-08-09T03:28:29.604+0000] {spark_submit.py:521} INFO - at org.apache.spark.scheduler.cluster.YarnClientSchedulerBackend.start(YarnClientSchedulerBackend.scala:66)
+[2025-08-09T03:28:29.604+0000] {spark_submit.py:521} INFO - at org.apache.spark.scheduler.TaskSchedulerImpl.start(TaskSchedulerImpl.scala:237)
+[2025-08-09T03:28:29.604+0000] {spark_submit.py:521} INFO - at org.apache.spark.SparkContext.<init>(SparkContext.scala:622)
+[2025-08-09T03:28:29.604+0000] {spark_submit.py:521} INFO - at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:59)
+[2025-08-09T03:28:29.605+0000] {spark_submit.py:521} INFO - at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+[2025-08-09T03:28:29.605+0000] {spark_submit.py:521} INFO - at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+[2025-08-09T03:28:29.605+0000] {spark_submit.py:521} INFO - at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+[2025-08-09T03:28:29.605+0000] {spark_submit.py:521} INFO - at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+[2025-08-09T03:28:29.606+0000] {spark_submit.py:521} INFO - at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+[2025-08-09T03:28:29.606+0000] {spark_submit.py:521} INFO - at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:247)
+[2025-08-09T03:28:29.606+0000] {spark_submit.py:521} INFO - at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+[2025-08-09T03:28:29.606+0000] {spark_submit.py:521} INFO - at py4j.Gateway.invoke(Gateway.java:238)
+[2025-08-09T03:28:29.606+0000] {spark_submit.py:521} INFO - at py4j.commands.ConstructorCommand.invokeConstructor(ConstructorCommand.java:80)
+[2025-08-09T03:28:29.606+0000] {spark_submit.py:521} INFO - at py4j.commands.ConstructorCommand.execute(ConstructorCommand.java:69)
+[2025-08-09T03:28:29.607+0000] {spark_submit.py:521} INFO - at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:184)
+[2025-08-09T03:28:29.607+0000] {spark_submit.py:521} INFO - at py4j.ClientServerConnection.run(ClientServerConnection.java:108)
+[2025-08-09T03:28:29.607+0000] {spark_submit.py:521} INFO - at java.base/java.lang.Thread.run(Thread.java:840)
+[2025-08-09T03:28:29.607+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:29 INFO SparkContext: SparkContext is stopping with exitCode 0 from JavaSparkContext at NativeConstructorAccessorImpl.java:0.
+[2025-08-09T03:28:29.621+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:29 INFO SparkUI: Stopped Spark web UI at http://ef38c6a74907:4040
+[2025-08-09T03:28:29.632+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:29 WARN YarnSchedulerBackend$YarnSchedulerEndpoint: Attempted to send shutdown message before the AM has registered!
+[2025-08-09T03:28:29.640+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:29 WARN YarnSchedulerBackend$YarnSchedulerEndpoint: Attempted to request executors before the AM has registered!
+[2025-08-09T03:28:29.647+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:29 INFO YarnClientSchedulerBackend: Shutting down all executors
+[2025-08-09T03:28:29.653+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:29 INFO YarnSchedulerBackend$YarnDriverEndpoint: Asking each executor to shut down
+[2025-08-09T03:28:29.659+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:29 INFO YarnClientSchedulerBackend: YARN client scheduler backend Stopped
+[2025-08-09T03:28:29.702+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:29 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+[2025-08-09T03:28:29.765+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:29 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+[2025-08-09T03:28:29.766+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:29 INFO MemoryStore: MemoryStore cleared
+[2025-08-09T03:28:29.767+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:29 INFO BlockManager: BlockManager stopped
+[2025-08-09T03:28:29.786+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:29 INFO BlockManagerMaster: BlockManagerMaster stopped
+[2025-08-09T03:28:29.787+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:29 WARN MetricsSystem: Stopping a MetricsSystem that is not running
+[2025-08-09T03:28:29.791+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:29 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+[2025-08-09T03:28:29.811+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:29 INFO SparkContext: Successfully stopped SparkContext
+[2025-08-09T03:28:29.821+0000] {spark_submit.py:521} INFO - Traceback (most recent call last):
+[2025-08-09T03:28:29.822+0000] {spark_submit.py:521} INFO - File "/opt/spark-jobs/gold_transform.py", line 3, in <module>
+[2025-08-09T03:28:29.825+0000] {spark_submit.py:521} INFO - spark = SparkSession.builder.appName("gold_transform").getOrCreate()
+[2025-08-09T03:28:29.825+0000] {spark_submit.py:521} INFO - ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-08-09T03:28:29.826+0000] {spark_submit.py:521} INFO - File "/home/***/.local/lib/python3.11/site-packages/pyspark/python/lib/pyspark.zip/pyspark/sql/session.py", line 556, in getOrCreate
+[2025-08-09T03:28:29.829+0000] {spark_submit.py:521} INFO - File "/home/***/.local/lib/python3.11/site-packages/pyspark/python/lib/pyspark.zip/pyspark/core/context.py", line 523, in getOrCreate
+[2025-08-09T03:28:29.830+0000] {spark_submit.py:521} INFO - File "/home/***/.local/lib/python3.11/site-packages/pyspark/python/lib/pyspark.zip/pyspark/core/context.py", line 207, in __init__
+[2025-08-09T03:28:29.830+0000] {spark_submit.py:521} INFO - File "/home/***/.local/lib/python3.11/site-packages/pyspark/python/lib/pyspark.zip/pyspark/core/context.py", line 300, in _do_init
+[2025-08-09T03:28:29.831+0000] {spark_submit.py:521} INFO - File "/home/***/.local/lib/python3.11/site-packages/pyspark/python/lib/pyspark.zip/pyspark/core/context.py", line 429, in _initialize_context
+[2025-08-09T03:28:29.831+0000] {spark_submit.py:521} INFO - File "/home/***/.local/lib/python3.11/site-packages/pyspark/python/lib/py4j-0.10.9.9-src.zip/py4j/java_gateway.py", line 1627, in __call__
+[2025-08-09T03:28:29.831+0000] {spark_submit.py:521} INFO - File "/home/***/.local/lib/python3.11/site-packages/pyspark/python/lib/py4j-0.10.9.9-src.zip/py4j/protocol.py", line 327, in get_return_value
+[2025-08-09T03:28:29.835+0000] {spark_submit.py:521} INFO - py4j.protocol.Py4JJavaError: An error occurred while calling None.org.apache.spark.api.java.JavaSparkContext.
+[2025-08-09T03:28:29.835+0000] {spark_submit.py:521} INFO - : org.apache.spark.SparkException: Application application_1754707010040_0004 failed 2 times due to AM Container for appattempt_1754707010040_0004_000002 exited with  exitCode: -1000
+[2025-08-09T03:28:29.835+0000] {spark_submit.py:521} INFO - Failing this attempt.Diagnostics: [2025-08-09 03:28:27.714]java.lang.ClassNotFoundException: Class com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem not found
+[2025-08-09T03:28:29.836+0000] {spark_submit.py:521} INFO - java.lang.RuntimeException: java.lang.ClassNotFoundException: Class com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem not found
+[2025-08-09T03:28:29.836+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.conf.Configuration.getClass(Configuration.java:2638)
+[2025-08-09T03:28:29.836+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem.getFileSystemClass(FileSystem.java:3269)
+[2025-08-09T03:28:29.836+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem.createFileSystem(FileSystem.java:3301)
+[2025-08-09T03:28:29.837+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem.access$200(FileSystem.java:124)
+[2025-08-09T03:28:29.837+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem$Cache.getInternal(FileSystem.java:3352)
+[2025-08-09T03:28:29.837+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem$Cache.get(FileSystem.java:3320)
+[2025-08-09T03:28:29.837+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:479)
+[2025-08-09T03:28:29.837+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:470)
+[2025-08-09T03:28:29.838+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.Path.getFileSystem(Path.java:365)
+[2025-08-09T03:28:29.838+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.yarn.util.FSDownload.verifyAndCopy(FSDownload.java:268)
+[2025-08-09T03:28:29.838+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.yarn.util.FSDownload.access$000(FSDownload.java:67)
+[2025-08-09T03:28:29.838+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.yarn.util.FSDownload$2.run(FSDownload.java:414)
+[2025-08-09T03:28:29.838+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.yarn.util.FSDownload$2.run(FSDownload.java:411)
+[2025-08-09T03:28:29.839+0000] {spark_submit.py:521} INFO - at java.security.AccessController.doPrivileged(Native Method)
+[2025-08-09T03:28:29.839+0000] {spark_submit.py:521} INFO - at javax.security.auth.Subject.doAs(Subject.java:422)
+[2025-08-09T03:28:29.839+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1730)
+[2025-08-09T03:28:29.839+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.yarn.util.FSDownload.call(FSDownload.java:411)
+[2025-08-09T03:28:29.840+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.yarn.server.nodemanager.containermanager.localizer.ContainerLocalizer$FSDownloadWrapper.doDownloadCall(ContainerLocalizer.java:243)
+[2025-08-09T03:28:29.840+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.yarn.server.nodemanager.containermanager.localizer.ContainerLocalizer$FSDownloadWrapper.call(ContainerLocalizer.java:236)
+[2025-08-09T03:28:29.840+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.yarn.server.nodemanager.containermanager.localizer.ContainerLocalizer$FSDownloadWrapper.call(ContainerLocalizer.java:224)
+[2025-08-09T03:28:29.840+0000] {spark_submit.py:521} INFO - at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+[2025-08-09T03:28:29.840+0000] {spark_submit.py:521} INFO - at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+[2025-08-09T03:28:29.841+0000] {spark_submit.py:521} INFO - at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+[2025-08-09T03:28:29.841+0000] {spark_submit.py:521} INFO - at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+[2025-08-09T03:28:29.841+0000] {spark_submit.py:521} INFO - at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+[2025-08-09T03:28:29.841+0000] {spark_submit.py:521} INFO - at java.lang.Thread.run(Thread.java:748)
+[2025-08-09T03:28:29.841+0000] {spark_submit.py:521} INFO - Caused by: java.lang.ClassNotFoundException: Class com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem not found
+[2025-08-09T03:28:29.841+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.conf.Configuration.getClassByName(Configuration.java:2542)
+[2025-08-09T03:28:29.842+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.conf.Configuration.getClass(Configuration.java:2636)
+[2025-08-09T03:28:29.842+0000] {spark_submit.py:521} INFO - ... 25 more
+[2025-08-09T03:28:29.842+0000] {spark_submit.py:521} INFO - Caused by: Class com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem not found
+[2025-08-09T03:28:29.842+0000] {spark_submit.py:521} INFO - java.lang.ClassNotFoundException: Class com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem not found
+[2025-08-09T03:28:29.842+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.conf.Configuration.getClassByName(Configuration.java:2542)
+[2025-08-09T03:28:29.843+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.conf.Configuration.getClass(Configuration.java:2636)
+[2025-08-09T03:28:29.843+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem.getFileSystemClass(FileSystem.java:3269)
+[2025-08-09T03:28:29.843+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem.createFileSystem(FileSystem.java:3301)
+[2025-08-09T03:28:29.843+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem.access$200(FileSystem.java:124)
+[2025-08-09T03:28:29.843+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem$Cache.getInternal(FileSystem.java:3352)
+[2025-08-09T03:28:29.844+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem$Cache.get(FileSystem.java:3320)
+[2025-08-09T03:28:29.844+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:479)
+[2025-08-09T03:28:29.844+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:470)
+[2025-08-09T03:28:29.844+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.Path.getFileSystem(Path.java:365)
+[2025-08-09T03:28:29.844+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.yarn.util.FSDownload.verifyAndCopy(FSDownload.java:268)
+[2025-08-09T03:28:29.845+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.yarn.util.FSDownload.access$000(FSDownload.java:67)
+[2025-08-09T03:28:29.845+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.yarn.util.FSDownload$2.run(FSDownload.java:414)
+[2025-08-09T03:28:29.845+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.yarn.util.FSDownload$2.run(FSDownload.java:411)
+[2025-08-09T03:28:29.845+0000] {spark_submit.py:521} INFO - at java.security.AccessController.doPrivileged(Native Method)
+[2025-08-09T03:28:29.845+0000] {spark_submit.py:521} INFO - at javax.security.auth.Subject.doAs(Subject.java:422)
+[2025-08-09T03:28:29.846+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1730)
+[2025-08-09T03:28:29.846+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.yarn.util.FSDownload.call(FSDownload.java:411)
+[2025-08-09T03:28:29.846+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.yarn.server.nodemanager.containermanager.localizer.ContainerLocalizer$FSDownloadWrapper.doDownloadCall(ContainerLocalizer.java:243)
+[2025-08-09T03:28:29.846+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.yarn.server.nodemanager.containermanager.localizer.ContainerLocalizer$FSDownloadWrapper.call(ContainerLocalizer.java:236)
+[2025-08-09T03:28:29.847+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.yarn.server.nodemanager.containermanager.localizer.ContainerLocalizer$FSDownloadWrapper.call(ContainerLocalizer.java:224)
+[2025-08-09T03:28:29.847+0000] {spark_submit.py:521} INFO - at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+[2025-08-09T03:28:29.847+0000] {spark_submit.py:521} INFO - at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+[2025-08-09T03:28:29.847+0000] {spark_submit.py:521} INFO - at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+[2025-08-09T03:28:29.847+0000] {spark_submit.py:521} INFO - at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+[2025-08-09T03:28:29.848+0000] {spark_submit.py:521} INFO - at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+[2025-08-09T03:28:29.848+0000] {spark_submit.py:521} INFO - at java.lang.Thread.run(Thread.java:748)
+[2025-08-09T03:28:29.848+0000] {spark_submit.py:521} INFO - 
+[2025-08-09T03:28:29.848+0000] {spark_submit.py:521} INFO - For more detailed output, check the application tracking page: http://resourcemanager:8088/cluster/app/application_1754707010040_0004 Then click on links to logs of each attempt.
+[2025-08-09T03:28:29.848+0000] {spark_submit.py:521} INFO - . Failing the application.
+[2025-08-09T03:28:29.849+0000] {spark_submit.py:521} INFO - at org.apache.spark.scheduler.cluster.YarnClientSchedulerBackend.waitForApplication(YarnClientSchedulerBackend.scala:99)
+[2025-08-09T03:28:29.849+0000] {spark_submit.py:521} INFO - at org.apache.spark.scheduler.cluster.YarnClientSchedulerBackend.start(YarnClientSchedulerBackend.scala:66)
+[2025-08-09T03:28:29.849+0000] {spark_submit.py:521} INFO - at org.apache.spark.scheduler.TaskSchedulerImpl.start(TaskSchedulerImpl.scala:237)
+[2025-08-09T03:28:29.849+0000] {spark_submit.py:521} INFO - at org.apache.spark.SparkContext.<init>(SparkContext.scala:622)
+[2025-08-09T03:28:29.850+0000] {spark_submit.py:521} INFO - at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:59)
+[2025-08-09T03:28:29.850+0000] {spark_submit.py:521} INFO - at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+[2025-08-09T03:28:29.850+0000] {spark_submit.py:521} INFO - at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+[2025-08-09T03:28:29.850+0000] {spark_submit.py:521} INFO - at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+[2025-08-09T03:28:29.851+0000] {spark_submit.py:521} INFO - at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+[2025-08-09T03:28:29.851+0000] {spark_submit.py:521} INFO - at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+[2025-08-09T03:28:29.851+0000] {spark_submit.py:521} INFO - at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:247)
+[2025-08-09T03:28:29.851+0000] {spark_submit.py:521} INFO - at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+[2025-08-09T03:28:29.852+0000] {spark_submit.py:521} INFO - at py4j.Gateway.invoke(Gateway.java:238)
+[2025-08-09T03:28:29.852+0000] {spark_submit.py:521} INFO - at py4j.commands.ConstructorCommand.invokeConstructor(ConstructorCommand.java:80)
+[2025-08-09T03:28:29.852+0000] {spark_submit.py:521} INFO - at py4j.commands.ConstructorCommand.execute(ConstructorCommand.java:69)
+[2025-08-09T03:28:29.852+0000] {spark_submit.py:521} INFO - at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:184)
+[2025-08-09T03:28:29.853+0000] {spark_submit.py:521} INFO - at py4j.ClientServerConnection.run(ClientServerConnection.java:108)
+[2025-08-09T03:28:29.853+0000] {spark_submit.py:521} INFO - at java.base/java.lang.Thread.run(Thread.java:840)
+[2025-08-09T03:28:29.853+0000] {spark_submit.py:521} INFO - 
+[2025-08-09T03:28:30.088+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:30 INFO ShutdownHookManager: Shutdown hook called
+[2025-08-09T03:28:30.088+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:30 INFO ShutdownHookManager: Deleting directory /tmp/spark-4fb73a8d-3188-4738-bf53-9d5eaf9fdc8b
+[2025-08-09T03:28:30.113+0000] {spark_submit.py:521} INFO - 25/08/09 03:28:30 INFO ShutdownHookManager: Deleting directory /tmp/spark-8386060a-bc51-46c7-ac31-25adaa2dc428
+[2025-08-09T03:28:30.206+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-08-09T03:28:30.335+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/providers/apache/spark/operators/spark_submit.py", line 156, in execute
+    self._hook.submit(self._application)
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/providers/apache/spark/hooks/spark_submit.py", line 452, in submit
+    raise AirflowException(
+airflow.exceptions.AirflowException: Cannot execute: spark-submit --master yarn --conf spark.hadoop.fs.gs.impl=com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem --conf spark.hadoop.fs.AbstractFileSystem.gs.impl=com.google.cloud.hadoop.fs.gcs.GoogleHadoopFS --conf spark.hadoop.google.cloud.auth.service.account.enable=true --conf spark.hadoop.google.cloud.auth.service.account.json.keyfile=/opt/***/gcp-key.json --conf spark.yarn.appMasterEnv.HADOOP_CONF_DIR=/opt/hadoop/etc/hadoop --packages com.google.cloud.bigdataoss:gcs-connector:hadoop3-2.2.14 --name arrow-spark --verbose /opt/spark-jobs/gold_transform.py. Error code is: 1.
+[2025-08-09T03:28:30.358+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=spark_transform_topcv, task_id=submit_spark_job, run_id=manual__2025-08-09T03:22:42.264655+00:00, execution_date=20250809T032242, start_date=20250809T032246, end_date=20250809T032830
+[2025-08-09T03:28:30.402+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 38 for task submit_spark_job (Cannot execute: spark-submit --master yarn --conf spark.hadoop.fs.gs.impl=com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem --conf spark.hadoop.fs.AbstractFileSystem.gs.impl=com.google.cloud.hadoop.fs.gcs.GoogleHadoopFS --conf spark.hadoop.google.cloud.auth.service.account.enable=true --conf spark.hadoop.google.cloud.auth.service.account.json.keyfile=/opt/***/gcp-key.json --conf spark.yarn.appMasterEnv.HADOOP_CONF_DIR=/opt/hadoop/etc/hadoop --packages com.google.cloud.bigdataoss:gcs-connector:hadoop3-2.2.14 --name arrow-spark --verbose /opt/spark-jobs/gold_transform.py. Error code is: 1.; 1635)
+[2025-08-09T03:28:30.444+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-08-09T03:28:30.486+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-08-09T03:28:30.488+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

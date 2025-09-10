@@ -1,0 +1,229 @@
+[2025-08-14T08:50:35.143+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-08-14T08:50:35.200+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: spark_transform_pipeline.silver_topcv_transform manual__2025-08-14T08:50:29.040810+00:00 [queued]>
+[2025-08-14T08:50:35.215+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: spark_transform_pipeline.silver_topcv_transform manual__2025-08-14T08:50:29.040810+00:00 [queued]>
+[2025-08-14T08:50:35.216+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-08-14T08:50:35.232+0000] {taskinstance.py:2330} INFO - Executing <Task(SparkSubmitOperator): silver_topcv_transform> on 2025-08-14 08:50:29.040810+00:00
+[2025-08-14T08:50:35.245+0000] {standard_task_runner.py:63} INFO - Started process 2238 to run task
+[2025-08-14T08:50:35.251+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'spark_transform_pipeline', 'silver_topcv_transform', 'manual__2025-08-14T08:50:29.040810+00:00', '--job-id', '181', '--raw', '--subdir', 'DAGS_FOLDER/etl_jobs_dag.py', '--cfg-path', '/tmp/tmpqszm06lh']
+[2025-08-14T08:50:35.262+0000] {standard_task_runner.py:91} INFO - Job 181: Subtask silver_topcv_transform
+[2025-08-14T08:50:35.385+0000] {task_command.py:426} INFO - Running <TaskInstance: spark_transform_pipeline.silver_topcv_transform manual__2025-08-14T08:50:29.040810+00:00 [running]> on host 20bdaa41dd93
+[2025-08-14T08:50:35.527+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='spark_transform_pipeline' AIRFLOW_CTX_TASK_ID='silver_topcv_transform' AIRFLOW_CTX_EXECUTION_DATE='2025-08-14T08:50:29.040810+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-08-14T08:50:29.040810+00:00'
+[2025-08-14T08:50:35.528+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-08-14T08:50:35.574+0000] {base.py:84} INFO - Using connection ID 'spark_default' for task execution.
+[2025-08-14T08:50:35.578+0000] {spark_submit.py:351} INFO - Spark-Submit cmd: spark-submit --master spark://spark-master:7077 --conf spark.master=spark://spark-master:7077 --conf spark.driver.extraClassPath=/opt/custom-jars/* --conf spark.executor.extraClassPath=/opt/custom-jars/* --conf spark.hadoop.fs.gs.impl=com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem --conf spark.hadoop.fs.AbstractFileSystem.gs.impl=com.google.cloud.hadoop.fs.gcs.GoogleHadoopFS --conf spark.hadoop.google.cloud.auth.service.account.enable=true --conf spark.hadoop.google.cloud.auth.service.account.json.keyfile=/opt/***/gcp-key.json --jars /opt/custom-jars/spark-bigquery-with-dependencies_2.13-0.30.0.jar,/opt/custom-jars/gcs-connector-hadoop3-2.2.14-shaded.jar --name arrow-spark --verbose /opt/spark-jobs/load/upload_jobs_to_dwh.py
+[2025-08-14T08:50:36.860+0000] {spark_submit.py:521} INFO - WARNING: Using incubator modules: jdk.incubator.vector
+[2025-08-14T08:50:38.779+0000] {spark_submit.py:521} INFO - Parsed arguments:
+[2025-08-14T08:50:38.780+0000] {spark_submit.py:521} INFO - master                  spark://spark-master:7077
+[2025-08-14T08:50:38.781+0000] {spark_submit.py:521} INFO - remote                  null
+[2025-08-14T08:50:38.781+0000] {spark_submit.py:521} INFO - deployMode              null
+[2025-08-14T08:50:38.782+0000] {spark_submit.py:521} INFO - executorMemory          null
+[2025-08-14T08:50:38.782+0000] {spark_submit.py:521} INFO - executorCores           null
+[2025-08-14T08:50:38.783+0000] {spark_submit.py:521} INFO - totalExecutorCores      null
+[2025-08-14T08:50:38.783+0000] {spark_submit.py:521} INFO - propertiesFile          null
+[2025-08-14T08:50:38.783+0000] {spark_submit.py:521} INFO - driverMemory            null
+[2025-08-14T08:50:38.784+0000] {spark_submit.py:521} INFO - driverCores             null
+[2025-08-14T08:50:38.784+0000] {spark_submit.py:521} INFO - driverExtraClassPath    /opt/custom-jars/*
+[2025-08-14T08:50:38.784+0000] {spark_submit.py:521} INFO - driverExtraLibraryPath  null
+[2025-08-14T08:50:38.785+0000] {spark_submit.py:521} INFO - driverExtraJavaOptions  null
+[2025-08-14T08:50:38.785+0000] {spark_submit.py:521} INFO - supervise               false
+[2025-08-14T08:50:38.785+0000] {spark_submit.py:521} INFO - queue                   null
+[2025-08-14T08:50:38.786+0000] {spark_submit.py:521} INFO - numExecutors            null
+[2025-08-14T08:50:38.786+0000] {spark_submit.py:521} INFO - files                   null
+[2025-08-14T08:50:38.786+0000] {spark_submit.py:521} INFO - pyFiles                 null
+[2025-08-14T08:50:38.786+0000] {spark_submit.py:521} INFO - archives                null
+[2025-08-14T08:50:38.786+0000] {spark_submit.py:521} INFO - mainClass               null
+[2025-08-14T08:50:38.787+0000] {spark_submit.py:521} INFO - primaryResource         file:/opt/spark-jobs/load/upload_jobs_to_dwh.py
+[2025-08-14T08:50:38.787+0000] {spark_submit.py:521} INFO - name                    arrow-spark
+[2025-08-14T08:50:38.787+0000] {spark_submit.py:521} INFO - childArgs               []
+[2025-08-14T08:50:38.787+0000] {spark_submit.py:521} INFO - jars                    file:/opt/custom-jars/spark-bigquery-with-dependencies_2.13-0.30.0.jar,file:/opt/custom-jars/gcs-connector-hadoop3-2.2.14-shaded.jar
+[2025-08-14T08:50:38.787+0000] {spark_submit.py:521} INFO - packages                null
+[2025-08-14T08:50:38.787+0000] {spark_submit.py:521} INFO - packagesExclusions      null
+[2025-08-14T08:50:38.788+0000] {spark_submit.py:521} INFO - repositories            null
+[2025-08-14T08:50:38.788+0000] {spark_submit.py:521} INFO - verbose                 true
+[2025-08-14T08:50:38.788+0000] {spark_submit.py:521} INFO - 
+[2025-08-14T08:50:38.788+0000] {spark_submit.py:521} INFO - Spark properties used, including those specified through
+[2025-08-14T08:50:38.788+0000] {spark_submit.py:521} INFO - --conf and those from the properties file null:
+[2025-08-14T08:50:38.789+0000] {spark_submit.py:521} INFO - (spark.driver.extraClassPath,/opt/custom-jars/*)
+[2025-08-14T08:50:38.789+0000] {spark_submit.py:521} INFO - (spark.executor.extraClassPath,/opt/custom-jars/*)
+[2025-08-14T08:50:38.789+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.AbstractFileSystem.gs.impl,com.google.cloud.hadoop.fs.gcs.GoogleHadoopFS)
+[2025-08-14T08:50:38.790+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.gs.impl,com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem)
+[2025-08-14T08:50:38.790+0000] {spark_submit.py:521} INFO - (spark.hadoop.google.cloud.auth.service.account.enable,true)
+[2025-08-14T08:50:38.791+0000] {spark_submit.py:521} INFO - (spark.hadoop.google.cloud.auth.service.account.json.keyfile,/opt/***/gcp-key.json)
+[2025-08-14T08:50:38.791+0000] {spark_submit.py:521} INFO - (spark.master,spark://spark-master:7077)
+[2025-08-14T08:50:38.791+0000] {spark_submit.py:521} INFO - 
+[2025-08-14T08:50:38.791+0000] {spark_submit.py:521} INFO - 
+[2025-08-14T08:50:39.188+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:39 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2025-08-14T08:50:39.949+0000] {spark_submit.py:521} INFO - Main class:
+[2025-08-14T08:50:39.950+0000] {spark_submit.py:521} INFO - org.apache.spark.deploy.PythonRunner
+[2025-08-14T08:50:39.951+0000] {spark_submit.py:521} INFO - Arguments:
+[2025-08-14T08:50:39.952+0000] {spark_submit.py:521} INFO - file:/opt/spark-jobs/load/upload_jobs_to_dwh.py
+[2025-08-14T08:50:39.952+0000] {spark_submit.py:521} INFO - null
+[2025-08-14T08:50:39.953+0000] {spark_submit.py:521} INFO - Spark config:
+[2025-08-14T08:50:39.953+0000] {spark_submit.py:521} INFO - (spark.app.name,arrow-spark)
+[2025-08-14T08:50:39.954+0000] {spark_submit.py:521} INFO - (spark.app.submitTime,1755161439928)
+[2025-08-14T08:50:39.954+0000] {spark_submit.py:521} INFO - (spark.driver.extraClassPath,/opt/custom-jars/*)
+[2025-08-14T08:50:39.954+0000] {spark_submit.py:521} INFO - (spark.executor.extraClassPath,/opt/custom-jars/*)
+[2025-08-14T08:50:39.954+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.AbstractFileSystem.gs.impl,com.google.cloud.hadoop.fs.gcs.GoogleHadoopFS)
+[2025-08-14T08:50:39.955+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.gs.impl,com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem)
+[2025-08-14T08:50:39.955+0000] {spark_submit.py:521} INFO - (spark.hadoop.google.cloud.auth.service.account.enable,true)
+[2025-08-14T08:50:39.955+0000] {spark_submit.py:521} INFO - (spark.hadoop.google.cloud.auth.service.account.json.keyfile,/opt/***/gcp-key.json)
+[2025-08-14T08:50:39.955+0000] {spark_submit.py:521} INFO - (spark.jars,file:/opt/custom-jars/spark-bigquery-with-dependencies_2.13-0.30.0.jar,file:///opt/custom-jars/gcs-connector-hadoop3-2.2.14-shaded.jar)
+[2025-08-14T08:50:39.956+0000] {spark_submit.py:521} INFO - (spark.master,spark://spark-master:7077)
+[2025-08-14T08:50:39.956+0000] {spark_submit.py:521} INFO - (spark.repl.local.jars,file:/opt/custom-jars/spark-bigquery-with-dependencies_2.13-0.30.0.jar,file:///opt/custom-jars/gcs-connector-hadoop3-2.2.14-shaded.jar)
+[2025-08-14T08:50:39.956+0000] {spark_submit.py:521} INFO - (spark.submit.deployMode,client)
+[2025-08-14T08:50:39.956+0000] {spark_submit.py:521} INFO - (spark.submit.pyFiles,)
+[2025-08-14T08:50:39.957+0000] {spark_submit.py:521} INFO - Classpath elements:
+[2025-08-14T08:50:39.957+0000] {spark_submit.py:521} INFO - file:/opt/custom-jars/spark-bigquery-with-dependencies_2.13-0.30.0.jar
+[2025-08-14T08:50:39.957+0000] {spark_submit.py:521} INFO - file:///opt/custom-jars/gcs-connector-hadoop3-2.2.14-shaded.jar
+[2025-08-14T08:50:39.958+0000] {spark_submit.py:521} INFO - 
+[2025-08-14T08:50:39.958+0000] {spark_submit.py:521} INFO - 
+[2025-08-14T08:50:39.968+0000] {spark_submit.py:521} INFO - Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+[2025-08-14T08:50:39.970+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:39 WARN DependencyUtils: Local jar /opt/custom-jars/spark-bigquery-with-dependencies_2.13-0.30.0.jar does not exist, skipping.
+[2025-08-14T08:50:41.328+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:41 INFO SparkContext: Running Spark version 4.0.0
+[2025-08-14T08:50:41.330+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:41 INFO SparkContext: OS info Linux, 5.15.167.4-microsoft-standard-WSL2, amd64
+[2025-08-14T08:50:41.331+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:41 INFO SparkContext: Java version 17.0.16
+[2025-08-14T08:50:41.357+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:41 INFO ResourceUtils: ==============================================================
+[2025-08-14T08:50:41.358+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:41 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2025-08-14T08:50:41.359+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:41 INFO ResourceUtils: ==============================================================
+[2025-08-14T08:50:41.360+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:41 INFO SparkContext: Submitted application: load_to_bq_connector
+[2025-08-14T08:50:41.383+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:41 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2025-08-14T08:50:41.385+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:41 INFO ResourceProfile: Limiting resource is cpu
+[2025-08-14T08:50:41.386+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:41 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2025-08-14T08:50:41.430+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:41 INFO SecurityManager: Changing view acls to: ***
+[2025-08-14T08:50:41.431+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:41 INFO SecurityManager: Changing modify acls to: ***
+[2025-08-14T08:50:41.431+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:41 INFO SecurityManager: Changing view acls groups to: ***
+[2025-08-14T08:50:41.432+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:41 INFO SecurityManager: Changing modify acls groups to: ***
+[2025-08-14T08:50:41.434+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:41 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: *** groups with view permissions: EMPTY; users with modify permissions: ***; groups with modify permissions: EMPTY; RPC SSL disabled
+[2025-08-14T08:50:41.685+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:41 INFO Utils: Successfully started service 'sparkDriver' on port 33927.
+[2025-08-14T08:50:41.721+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:41 INFO SparkEnv: Registering MapOutputTracker
+[2025-08-14T08:50:41.738+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:41 INFO SparkEnv: Registering BlockManagerMaster
+[2025-08-14T08:50:41.759+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:41 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2025-08-14T08:50:41.759+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:41 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2025-08-14T08:50:41.763+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:41 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2025-08-14T08:50:41.805+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:41 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-7313ecdf-0443-4731-8ea6-73fd2380d5fd
+[2025-08-14T08:50:41.836+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:41 INFO SparkEnv: Registering OutputCommitCoordinator
+[2025-08-14T08:50:42.048+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:42 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+[2025-08-14T08:50:42.143+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:42 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2025-08-14T08:50:42.190+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:42 INFO SparkContext: Added JAR /opt/custom-jars/spark-bigquery-with-dependencies_2.12-0.30.0.jar at spark://20bdaa41dd93:33927/jars/spark-bigquery-with-dependencies_2.12-0.30.0.jar with timestamp 1755161441322
+[2025-08-14T08:50:42.192+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:42 INFO SparkContext: Added JAR /opt/custom-jars/gcs-connector-hadoop3-2.2.14-shaded.jar at spark://20bdaa41dd93:33927/jars/gcs-connector-hadoop3-2.2.14-shaded.jar with timestamp 1755161441322
+[2025-08-14T08:50:42.225+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:42 INFO SecurityManager: Changing view acls to: ***
+[2025-08-14T08:50:42.226+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:42 INFO SecurityManager: Changing modify acls to: ***
+[2025-08-14T08:50:42.226+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:42 INFO SecurityManager: Changing view acls groups to: ***
+[2025-08-14T08:50:42.227+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:42 INFO SecurityManager: Changing modify acls groups to: ***
+[2025-08-14T08:50:42.227+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:42 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: *** groups with view permissions: EMPTY; users with modify permissions: ***; groups with modify permissions: EMPTY; RPC SSL disabled
+[2025-08-14T08:50:42.450+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:42 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark-master:7077...
+[2025-08-14T08:50:42.526+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:42 INFO TransportClientFactory: Successfully created connection to spark-master/172.18.0.4:7077 after 39 ms (0 ms spent in bootstraps)
+[2025-08-14T08:50:43.216+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:43 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20250814085043-0005
+[2025-08-14T08:50:43.238+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:43 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 44531.
+[2025-08-14T08:50:43.240+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:43 INFO NettyBlockTransferService: Server created on 20bdaa41dd93:44531
+[2025-08-14T08:50:43.246+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:43 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2025-08-14T08:50:43.291+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:43 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 20bdaa41dd93, 44531, None)
+[2025-08-14T08:50:43.316+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:43 INFO BlockManagerMasterEndpoint: Registering block manager 20bdaa41dd93:44531 with 434.4 MiB RAM, BlockManagerId(driver, 20bdaa41dd93, 44531, None)
+[2025-08-14T08:50:43.324+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:43 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 20bdaa41dd93, 44531, None)
+[2025-08-14T08:50:43.328+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:43 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 20bdaa41dd93, 44531, None)
+[2025-08-14T08:50:43.365+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:43 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20250814085043-0005/0 on worker-20250814083233-172.18.0.5-37435 (172.18.0.5:37435) with 2 core(s)
+[2025-08-14T08:50:43.369+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:43 INFO StandaloneSchedulerBackend: Granted executor ID app-20250814085043-0005/0 on hostPort 172.18.0.5:37435 with 2 core(s), 1024.0 MiB RAM
+[2025-08-14T08:50:43.732+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:43 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+[2025-08-14T08:50:44.363+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:44 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20250814085043-0005/0 is now RUNNING
+[2025-08-14T08:50:48.134+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:48 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+[2025-08-14T08:50:48.136+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:48 INFO SharedState: Warehouse path is 'file:/opt/***/spark-warehouse'.
+[2025-08-14T08:50:50.849+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:50 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.18.0.5:52642) with ID 0, ResourceProfileId 0
+[2025-08-14T08:50:51.057+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:51 INFO BlockManagerMasterEndpoint: Registering block manager 172.18.0.5:41939 with 434.4 MiB RAM, BlockManagerId(0, 172.18.0.5, 41939, None)
+[2025-08-14T08:50:53.121+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:53 INFO InMemoryFileIndex: It took 249 ms to list leaf files for 1 paths.
+[2025-08-14T08:50:53.815+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:53 INFO SparkContext: Starting job: parquet at NativeMethodAccessorImpl.java:0
+[2025-08-14T08:50:53.834+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:53 INFO DAGScheduler: Got job 0 (parquet at NativeMethodAccessorImpl.java:0) with 1 output partitions
+[2025-08-14T08:50:53.835+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:53 INFO DAGScheduler: Final stage: ResultStage 0 (parquet at NativeMethodAccessorImpl.java:0)
+[2025-08-14T08:50:53.836+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:53 INFO DAGScheduler: Parents of final stage: List()
+[2025-08-14T08:50:53.842+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:53 INFO DAGScheduler: Missing parents: List()
+[2025-08-14T08:50:53.847+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:53 INFO DAGScheduler: Submitting ResultStage 0 (MapPartitionsRDD[1] at parquet at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2025-08-14T08:50:53.893+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:53 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+[2025-08-14T08:50:53.908+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:53 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 116.4 KiB, free 434.3 MiB)
+[2025-08-14T08:50:54.123+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:54 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 41.8 KiB, free 434.2 MiB)
+[2025-08-14T08:50:54.179+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:54 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:1676
+[2025-08-14T08:50:54.280+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:54 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 0 (MapPartitionsRDD[1] at parquet at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+[2025-08-14T08:50:54.309+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:54 INFO TaskSchedulerImpl: Adding task set 0.0 with 1 tasks resource profile 0
+[2025-08-14T08:50:54.974+0000] {spark_submit.py:521} INFO - 25/08/14 08:50:54 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0) (172.18.0.5,executor 0, partition 0, PROCESS_LOCAL, 10348 bytes)
+[2025-08-14T08:51:02.631+0000] {spark_submit.py:521} INFO - 25/08/14 08:51:02 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 7677 ms on 172.18.0.5 (executor 0) (1/1)
+[2025-08-14T08:51:02.633+0000] {spark_submit.py:521} INFO - 25/08/14 08:51:02 INFO TaskSchedulerImpl: Removed TaskSet 0.0 whose tasks have all completed, from pool
+[2025-08-14T08:51:02.639+0000] {spark_submit.py:521} INFO - 25/08/14 08:51:02 INFO DAGScheduler: ResultStage 0 (parquet at NativeMethodAccessorImpl.java:0) finished in 8772 ms
+[2025-08-14T08:51:02.641+0000] {spark_submit.py:521} INFO - 25/08/14 08:51:02 INFO DAGScheduler: Job 0 is finished. Cancelling potential speculative or zombie tasks for this job
+[2025-08-14T08:51:02.641+0000] {spark_submit.py:521} INFO - 25/08/14 08:51:02 INFO TaskSchedulerImpl: Canceling stage 0
+[2025-08-14T08:51:02.642+0000] {spark_submit.py:521} INFO - 25/08/14 08:51:02 INFO TaskSchedulerImpl: Killing all running tasks in stage 0: Stage finished
+[2025-08-14T08:51:02.646+0000] {spark_submit.py:521} INFO - 25/08/14 08:51:02 INFO DAGScheduler: Job 0 finished: parquet at NativeMethodAccessorImpl.java:0, took 8830.276302 ms
+[2025-08-14T08:51:02.898+0000] {spark_submit.py:521} INFO - 25/08/14 08:51:02 INFO DataSourceManager: Loading static Python Data Sources.
+[2025-08-14T08:51:06.260+0000] {spark_submit.py:521} INFO - Traceback (most recent call last):
+[2025-08-14T08:51:06.261+0000] {spark_submit.py:521} INFO - File "/opt/spark-jobs/load/upload_jobs_to_dwh.py", line 44, in <module>
+[2025-08-14T08:51:06.264+0000] {spark_submit.py:521} INFO - .save()
+[2025-08-14T08:51:06.265+0000] {spark_submit.py:521} INFO - ^^^^^^
+[2025-08-14T08:51:06.265+0000] {spark_submit.py:521} INFO - File "/home/***/.local/lib/python3.11/site-packages/pyspark/python/lib/pyspark.zip/pyspark/sql/readwriter.py", line 1743, in save
+[2025-08-14T08:51:06.266+0000] {spark_submit.py:521} INFO - File "/home/***/.local/lib/python3.11/site-packages/pyspark/python/lib/py4j-0.10.9.9-src.zip/py4j/java_gateway.py", line 1362, in __call__
+[2025-08-14T08:51:06.267+0000] {spark_submit.py:521} INFO - File "/home/***/.local/lib/python3.11/site-packages/pyspark/python/lib/pyspark.zip/pyspark/errors/exceptions/captured.py", line 282, in deco
+[2025-08-14T08:51:06.268+0000] {spark_submit.py:521} INFO - File "/home/***/.local/lib/python3.11/site-packages/pyspark/python/lib/py4j-0.10.9.9-src.zip/py4j/protocol.py", line 327, in get_return_value
+[2025-08-14T08:51:06.270+0000] {spark_submit.py:521} INFO - py4j.protocol.Py4JJavaError: An error occurred while calling o49.save.
+[2025-08-14T08:51:06.270+0000] {spark_submit.py:521} INFO - : org.apache.spark.SparkClassNotFoundException: [DATA_SOURCE_NOT_FOUND] Failed to find the data source: bigquery. Make sure the provider name is correct and the package is properly registered and compatible with your Spark version. SQLSTATE: 42K02
+[2025-08-14T08:51:06.270+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.errors.QueryExecutionErrors$.dataSourceNotFoundError(QueryExecutionErrors.scala:722)
+[2025-08-14T08:51:06.271+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.execution.datasources.DataSource$.lookupDataSource(DataSource.scala:681)
+[2025-08-14T08:51:06.271+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.execution.datasources.DataSource$.lookupDataSourceV2(DataSource.scala:740)
+[2025-08-14T08:51:06.271+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.classic.DataFrameWriter.lookupV2Provider(DataFrameWriter.scala:626)
+[2025-08-14T08:51:06.272+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.classic.DataFrameWriter.saveInternal(DataFrameWriter.scala:135)
+[2025-08-14T08:51:06.272+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.classic.DataFrameWriter.save(DataFrameWriter.scala:126)
+[2025-08-14T08:51:06.272+0000] {spark_submit.py:521} INFO - at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[2025-08-14T08:51:06.272+0000] {spark_submit.py:521} INFO - at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+[2025-08-14T08:51:06.273+0000] {spark_submit.py:521} INFO - at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[2025-08-14T08:51:06.274+0000] {spark_submit.py:521} INFO - at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+[2025-08-14T08:51:06.274+0000] {spark_submit.py:521} INFO - at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+[2025-08-14T08:51:06.275+0000] {spark_submit.py:521} INFO - at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+[2025-08-14T08:51:06.275+0000] {spark_submit.py:521} INFO - at py4j.Gateway.invoke(Gateway.java:282)
+[2025-08-14T08:51:06.275+0000] {spark_submit.py:521} INFO - at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+[2025-08-14T08:51:06.276+0000] {spark_submit.py:521} INFO - at py4j.commands.CallCommand.execute(CallCommand.java:79)
+[2025-08-14T08:51:06.276+0000] {spark_submit.py:521} INFO - at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:184)
+[2025-08-14T08:51:06.276+0000] {spark_submit.py:521} INFO - at py4j.ClientServerConnection.run(ClientServerConnection.java:108)
+[2025-08-14T08:51:06.276+0000] {spark_submit.py:521} INFO - at java.base/java.lang.Thread.run(Thread.java:840)
+[2025-08-14T08:51:06.277+0000] {spark_submit.py:521} INFO - Caused by: java.lang.ClassNotFoundException: bigquery.DefaultSource
+[2025-08-14T08:51:06.277+0000] {spark_submit.py:521} INFO - at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:445)
+[2025-08-14T08:51:06.277+0000] {spark_submit.py:521} INFO - at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:592)
+[2025-08-14T08:51:06.278+0000] {spark_submit.py:521} INFO - at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+[2025-08-14T08:51:06.278+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.execution.datasources.DataSource$.$anonfun$lookupDataSource$6(DataSource.scala:665)
+[2025-08-14T08:51:06.278+0000] {spark_submit.py:521} INFO - at scala.util.Try$.apply(Try.scala:217)
+[2025-08-14T08:51:06.278+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.execution.datasources.DataSource$.$anonfun$lookupDataSource$5(DataSource.scala:665)
+[2025-08-14T08:51:06.279+0000] {spark_submit.py:521} INFO - at scala.util.Failure.orElse(Try.scala:230)
+[2025-08-14T08:51:06.279+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.execution.datasources.DataSource$.lookupDataSource(DataSource.scala:665)
+[2025-08-14T08:51:06.279+0000] {spark_submit.py:521} INFO - ... 16 more
+[2025-08-14T08:51:06.280+0000] {spark_submit.py:521} INFO - 
+[2025-08-14T08:51:06.895+0000] {spark_submit.py:521} INFO - 25/08/14 08:51:06 INFO SparkContext: Invoking stop() from shutdown hook
+[2025-08-14T08:51:06.897+0000] {spark_submit.py:521} INFO - 25/08/14 08:51:06 INFO SparkContext: SparkContext is stopping with exitCode 0 from run at Executors.java:539.
+[2025-08-14T08:51:06.940+0000] {spark_submit.py:521} INFO - 25/08/14 08:51:06 INFO SparkUI: Stopped Spark web UI at http://20bdaa41dd93:4040
+[2025-08-14T08:51:06.947+0000] {spark_submit.py:521} INFO - 25/08/14 08:51:06 INFO StandaloneSchedulerBackend: Shutting down all executors
+[2025-08-14T08:51:06.948+0000] {spark_submit.py:521} INFO - 25/08/14 08:51:06 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Asking each executor to shut down
+[2025-08-14T08:51:06.980+0000] {spark_submit.py:521} INFO - 25/08/14 08:51:06 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+[2025-08-14T08:51:07.104+0000] {spark_submit.py:521} INFO - 25/08/14 08:51:07 INFO MemoryStore: MemoryStore cleared
+[2025-08-14T08:51:07.105+0000] {spark_submit.py:521} INFO - 25/08/14 08:51:07 INFO BlockManager: BlockManager stopped
+[2025-08-14T08:51:07.176+0000] {spark_submit.py:521} INFO - 25/08/14 08:51:07 INFO BlockManagerMaster: BlockManagerMaster stopped
+[2025-08-14T08:51:07.184+0000] {spark_submit.py:521} INFO - 25/08/14 08:51:07 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+[2025-08-14T08:51:07.228+0000] {spark_submit.py:521} INFO - 25/08/14 08:51:07 INFO SparkContext: Successfully stopped SparkContext
+[2025-08-14T08:51:07.230+0000] {spark_submit.py:521} INFO - 25/08/14 08:51:07 INFO ShutdownHookManager: Shutdown hook called
+[2025-08-14T08:51:07.232+0000] {spark_submit.py:521} INFO - 25/08/14 08:51:07 INFO ShutdownHookManager: Deleting directory /tmp/spark-53c6e25a-ab15-41b9-adaf-baba4c363399
+[2025-08-14T08:51:07.252+0000] {spark_submit.py:521} INFO - 25/08/14 08:51:07 INFO ShutdownHookManager: Deleting directory /tmp/spark-1d00cb36-0d29-4aa3-a702-17a4ad2c139e
+[2025-08-14T08:51:07.285+0000] {spark_submit.py:521} INFO - 25/08/14 08:51:07 INFO ShutdownHookManager: Deleting directory /tmp/spark-53c6e25a-ab15-41b9-adaf-baba4c363399/pyspark-e6f89e34-5b83-456b-857e-acc6503588f1
+[2025-08-14T08:51:07.368+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-08-14T08:51:07.477+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/providers/apache/spark/operators/spark_submit.py", line 156, in execute
+    self._hook.submit(self._application)
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/providers/apache/spark/hooks/spark_submit.py", line 452, in submit
+    raise AirflowException(
+airflow.exceptions.AirflowException: Cannot execute: spark-submit --master spark://spark-master:7077 --conf spark.master=spark://spark-master:7077 --conf spark.driver.extraClassPath=/opt/custom-jars/* --conf spark.executor.extraClassPath=/opt/custom-jars/* --conf spark.hadoop.fs.gs.impl=com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem --conf spark.hadoop.fs.AbstractFileSystem.gs.impl=com.google.cloud.hadoop.fs.gcs.GoogleHadoopFS --conf spark.hadoop.google.cloud.auth.service.account.enable=true --conf spark.hadoop.google.cloud.auth.service.account.json.keyfile=/opt/***/gcp-key.json --jars /opt/custom-jars/spark-bigquery-with-dependencies_2.13-0.30.0.jar,/opt/custom-jars/gcs-connector-hadoop3-2.2.14-shaded.jar --name arrow-spark --verbose /opt/spark-jobs/load/upload_jobs_to_dwh.py. Error code is: 1.
+[2025-08-14T08:51:07.526+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=spark_transform_pipeline, task_id=silver_topcv_transform, run_id=manual__2025-08-14T08:50:29.040810+00:00, execution_date=20250814T085029, start_date=20250814T085035, end_date=20250814T085107
+[2025-08-14T08:51:07.602+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 181 for task silver_topcv_transform (Cannot execute: spark-submit --master spark://spark-master:7077 --conf spark.master=spark://spark-master:7077 --conf spark.driver.extraClassPath=/opt/custom-jars/* --conf spark.executor.extraClassPath=/opt/custom-jars/* --conf spark.hadoop.fs.gs.impl=com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem --conf spark.hadoop.fs.AbstractFileSystem.gs.impl=com.google.cloud.hadoop.fs.gcs.GoogleHadoopFS --conf spark.hadoop.google.cloud.auth.service.account.enable=true --conf spark.hadoop.google.cloud.auth.service.account.json.keyfile=/opt/***/gcp-key.json --jars /opt/custom-jars/spark-bigquery-with-dependencies_2.13-0.30.0.jar,/opt/custom-jars/gcs-connector-hadoop3-2.2.14-shaded.jar --name arrow-spark --verbose /opt/spark-jobs/load/upload_jobs_to_dwh.py. Error code is: 1.; 2238)
+[2025-08-14T08:51:07.657+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-08-14T08:51:07.752+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-08-14T08:51:07.757+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

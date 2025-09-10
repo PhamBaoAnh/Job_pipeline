@@ -1,0 +1,249 @@
+[2025-08-12T07:25:23.181+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-08-12T07:25:23.238+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: spark_transform_topcv.submit_spark_job manual__2025-08-12T07:25:18.775427+00:00 [queued]>
+[2025-08-12T07:25:23.246+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: spark_transform_topcv.submit_spark_job manual__2025-08-12T07:25:18.775427+00:00 [queued]>
+[2025-08-12T07:25:23.247+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-08-12T07:25:23.265+0000] {taskinstance.py:2330} INFO - Executing <Task(SparkSubmitOperator): submit_spark_job> on 2025-08-12 07:25:18.775427+00:00
+[2025-08-12T07:25:23.281+0000] {standard_task_runner.py:63} INFO - Started process 399 to run task
+[2025-08-12T07:25:23.285+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'spark_transform_topcv', 'submit_spark_job', 'manual__2025-08-12T07:25:18.775427+00:00', '--job-id', '32', '--raw', '--subdir', 'DAGS_FOLDER/etl_jobs_dag.py', '--cfg-path', '/tmp/tmp61qevouv']
+[2025-08-12T07:25:23.288+0000] {standard_task_runner.py:91} INFO - Job 32: Subtask submit_spark_job
+[2025-08-12T07:25:23.345+0000] {task_command.py:426} INFO - Running <TaskInstance: spark_transform_topcv.submit_spark_job manual__2025-08-12T07:25:18.775427+00:00 [running]> on host d64d9d97170e
+[2025-08-12T07:25:23.436+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='spark_transform_topcv' AIRFLOW_CTX_TASK_ID='submit_spark_job' AIRFLOW_CTX_EXECUTION_DATE='2025-08-12T07:25:18.775427+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-08-12T07:25:18.775427+00:00'
+[2025-08-12T07:25:23.438+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-08-12T07:25:23.472+0000] {base.py:84} INFO - Using connection ID 'spark_default' for task execution.
+[2025-08-12T07:25:23.474+0000] {spark_submit.py:351} INFO - Spark-Submit cmd: spark-submit --master spark://spark-master:7077 --conf spark.master=spark://spark-master:7077 --conf spark.driver.extraClassPath=/opt/custom-jars/* --conf spark.executor.extraClassPath=/opt/custom-jars/* --conf spark.hadoop.fs.gs.impl=com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem --conf spark.hadoop.fs.AbstractFileSystem.gs.impl=com.google.cloud.hadoop.fs.gcs.GoogleHadoopFS --conf spark.hadoop.google.cloud.auth.service.account.enable=true --conf spark.hadoop.google.cloud.auth.service.account.json.keyfile=/opt/***/gcp-key.json --jars /opt/custom-jars/gcs-connector-hadoop3-2.2.14-shaded.jar --name arrow-spark --verbose /opt/spark-jobs/gold_transform.py
+[2025-08-12T07:25:24.560+0000] {spark_submit.py:521} INFO - WARNING: Using incubator modules: jdk.incubator.vector
+[2025-08-12T07:25:26.729+0000] {spark_submit.py:521} INFO - Parsed arguments:
+[2025-08-12T07:25:26.731+0000] {spark_submit.py:521} INFO - master                  spark://spark-master:7077
+[2025-08-12T07:25:26.732+0000] {spark_submit.py:521} INFO - remote                  null
+[2025-08-12T07:25:26.732+0000] {spark_submit.py:521} INFO - deployMode              null
+[2025-08-12T07:25:26.733+0000] {spark_submit.py:521} INFO - executorMemory          null
+[2025-08-12T07:25:26.733+0000] {spark_submit.py:521} INFO - executorCores           null
+[2025-08-12T07:25:26.733+0000] {spark_submit.py:521} INFO - totalExecutorCores      null
+[2025-08-12T07:25:26.734+0000] {spark_submit.py:521} INFO - propertiesFile          null
+[2025-08-12T07:25:26.734+0000] {spark_submit.py:521} INFO - driverMemory            null
+[2025-08-12T07:25:26.734+0000] {spark_submit.py:521} INFO - driverCores             null
+[2025-08-12T07:25:26.735+0000] {spark_submit.py:521} INFO - driverExtraClassPath    /opt/custom-jars/*
+[2025-08-12T07:25:26.735+0000] {spark_submit.py:521} INFO - driverExtraLibraryPath  null
+[2025-08-12T07:25:26.736+0000] {spark_submit.py:521} INFO - driverExtraJavaOptions  null
+[2025-08-12T07:25:26.736+0000] {spark_submit.py:521} INFO - supervise               false
+[2025-08-12T07:25:26.736+0000] {spark_submit.py:521} INFO - queue                   null
+[2025-08-12T07:25:26.737+0000] {spark_submit.py:521} INFO - numExecutors            null
+[2025-08-12T07:25:26.737+0000] {spark_submit.py:521} INFO - files                   null
+[2025-08-12T07:25:26.737+0000] {spark_submit.py:521} INFO - pyFiles                 null
+[2025-08-12T07:25:26.737+0000] {spark_submit.py:521} INFO - archives                null
+[2025-08-12T07:25:26.738+0000] {spark_submit.py:521} INFO - mainClass               null
+[2025-08-12T07:25:26.738+0000] {spark_submit.py:521} INFO - primaryResource         file:/opt/spark-jobs/gold_transform.py
+[2025-08-12T07:25:26.739+0000] {spark_submit.py:521} INFO - name                    arrow-spark
+[2025-08-12T07:25:26.739+0000] {spark_submit.py:521} INFO - childArgs               []
+[2025-08-12T07:25:26.739+0000] {spark_submit.py:521} INFO - jars                    file:/opt/custom-jars/gcs-connector-hadoop3-2.2.14-shaded.jar
+[2025-08-12T07:25:26.740+0000] {spark_submit.py:521} INFO - packages                null
+[2025-08-12T07:25:26.740+0000] {spark_submit.py:521} INFO - packagesExclusions      null
+[2025-08-12T07:25:26.741+0000] {spark_submit.py:521} INFO - repositories            null
+[2025-08-12T07:25:26.741+0000] {spark_submit.py:521} INFO - verbose                 true
+[2025-08-12T07:25:26.741+0000] {spark_submit.py:521} INFO - 
+[2025-08-12T07:25:26.742+0000] {spark_submit.py:521} INFO - Spark properties used, including those specified through
+[2025-08-12T07:25:26.742+0000] {spark_submit.py:521} INFO - --conf and those from the properties file null:
+[2025-08-12T07:25:26.742+0000] {spark_submit.py:521} INFO - (spark.driver.extraClassPath,/opt/custom-jars/*)
+[2025-08-12T07:25:26.743+0000] {spark_submit.py:521} INFO - (spark.executor.extraClassPath,/opt/custom-jars/*)
+[2025-08-12T07:25:26.743+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.AbstractFileSystem.gs.impl,com.google.cloud.hadoop.fs.gcs.GoogleHadoopFS)
+[2025-08-12T07:25:26.743+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.gs.impl,com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem)
+[2025-08-12T07:25:26.743+0000] {spark_submit.py:521} INFO - (spark.hadoop.google.cloud.auth.service.account.enable,true)
+[2025-08-12T07:25:26.744+0000] {spark_submit.py:521} INFO - (spark.hadoop.google.cloud.auth.service.account.json.keyfile,/opt/***/gcp-key.json)
+[2025-08-12T07:25:26.744+0000] {spark_submit.py:521} INFO - (spark.master,spark://spark-master:7077)
+[2025-08-12T07:25:26.744+0000] {spark_submit.py:521} INFO - 
+[2025-08-12T07:25:26.745+0000] {spark_submit.py:521} INFO - 
+[2025-08-12T07:25:27.414+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:27 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2025-08-12T07:25:28.111+0000] {spark_submit.py:521} INFO - Main class:
+[2025-08-12T07:25:28.112+0000] {spark_submit.py:521} INFO - org.apache.spark.deploy.PythonRunner
+[2025-08-12T07:25:28.113+0000] {spark_submit.py:521} INFO - Arguments:
+[2025-08-12T07:25:28.113+0000] {spark_submit.py:521} INFO - file:/opt/spark-jobs/gold_transform.py
+[2025-08-12T07:25:28.113+0000] {spark_submit.py:521} INFO - null
+[2025-08-12T07:25:28.114+0000] {spark_submit.py:521} INFO - Spark config:
+[2025-08-12T07:25:28.114+0000] {spark_submit.py:521} INFO - (spark.app.name,arrow-spark)
+[2025-08-12T07:25:28.115+0000] {spark_submit.py:521} INFO - (spark.app.submitTime,1754983528095)
+[2025-08-12T07:25:28.115+0000] {spark_submit.py:521} INFO - (spark.driver.extraClassPath,/opt/custom-jars/*)
+[2025-08-12T07:25:28.115+0000] {spark_submit.py:521} INFO - (spark.executor.extraClassPath,/opt/custom-jars/*)
+[2025-08-12T07:25:28.116+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.AbstractFileSystem.gs.impl,com.google.cloud.hadoop.fs.gcs.GoogleHadoopFS)
+[2025-08-12T07:25:28.116+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.gs.impl,com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem)
+[2025-08-12T07:25:28.116+0000] {spark_submit.py:521} INFO - (spark.hadoop.google.cloud.auth.service.account.enable,true)
+[2025-08-12T07:25:28.117+0000] {spark_submit.py:521} INFO - (spark.hadoop.google.cloud.auth.service.account.json.keyfile,/opt/***/gcp-key.json)
+[2025-08-12T07:25:28.117+0000] {spark_submit.py:521} INFO - (spark.jars,file:///opt/custom-jars/gcs-connector-hadoop3-2.2.14-shaded.jar)
+[2025-08-12T07:25:28.117+0000] {spark_submit.py:521} INFO - (spark.master,spark://spark-master:7077)
+[2025-08-12T07:25:28.117+0000] {spark_submit.py:521} INFO - (spark.repl.local.jars,file:///opt/custom-jars/gcs-connector-hadoop3-2.2.14-shaded.jar)
+[2025-08-12T07:25:28.118+0000] {spark_submit.py:521} INFO - (spark.submit.deployMode,client)
+[2025-08-12T07:25:28.118+0000] {spark_submit.py:521} INFO - (spark.submit.pyFiles,)
+[2025-08-12T07:25:28.118+0000] {spark_submit.py:521} INFO - Classpath elements:
+[2025-08-12T07:25:28.118+0000] {spark_submit.py:521} INFO - file:///opt/custom-jars/gcs-connector-hadoop3-2.2.14-shaded.jar
+[2025-08-12T07:25:28.118+0000] {spark_submit.py:521} INFO - 
+[2025-08-12T07:25:28.119+0000] {spark_submit.py:521} INFO - 
+[2025-08-12T07:25:30.827+0000] {spark_submit.py:521} INFO - Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+[2025-08-12T07:25:30.835+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:30 INFO SparkContext: Running Spark version 4.0.0
+[2025-08-12T07:25:30.837+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:30 INFO SparkContext: OS info Linux, 5.15.167.4-microsoft-standard-WSL2, amd64
+[2025-08-12T07:25:30.838+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:30 INFO SparkContext: Java version 17.0.15
+[2025-08-12T07:25:30.881+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:30 INFO ResourceUtils: ==============================================================
+[2025-08-12T07:25:30.882+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:30 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2025-08-12T07:25:30.882+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:30 INFO ResourceUtils: ==============================================================
+[2025-08-12T07:25:30.883+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:30 INFO SparkContext: Submitted application: gold_transform
+[2025-08-12T07:25:30.947+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:30 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2025-08-12T07:25:30.951+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:30 INFO ResourceProfile: Limiting resource is cpu
+[2025-08-12T07:25:30.952+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:30 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2025-08-12T07:25:31.029+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:31 INFO SecurityManager: Changing view acls to: ***
+[2025-08-12T07:25:31.031+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:31 INFO SecurityManager: Changing modify acls to: ***
+[2025-08-12T07:25:31.031+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:31 INFO SecurityManager: Changing view acls groups to: ***
+[2025-08-12T07:25:31.032+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:31 INFO SecurityManager: Changing modify acls groups to: ***
+[2025-08-12T07:25:31.036+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:31 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: *** groups with view permissions: EMPTY; users with modify permissions: ***; groups with modify permissions: EMPTY; RPC SSL disabled
+[2025-08-12T07:25:31.415+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:31 INFO Utils: Successfully started service 'sparkDriver' on port 37027.
+[2025-08-12T07:25:31.453+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:31 INFO SparkEnv: Registering MapOutputTracker
+[2025-08-12T07:25:31.473+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:31 INFO SparkEnv: Registering BlockManagerMaster
+[2025-08-12T07:25:31.488+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:31 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2025-08-12T07:25:31.489+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:31 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2025-08-12T07:25:31.493+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:31 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2025-08-12T07:25:31.519+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:31 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-015520e7-2fe9-4748-ade4-5ee1e4574270
+[2025-08-12T07:25:31.541+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:31 INFO SparkEnv: Registering OutputCommitCoordinator
+[2025-08-12T07:25:31.705+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:31 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+[2025-08-12T07:25:31.815+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:31 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2025-08-12T07:25:31.858+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:31 INFO SparkContext: Added JAR file:///opt/custom-jars/gcs-connector-hadoop3-2.2.14-shaded.jar at spark://d64d9d97170e:37027/jars/gcs-connector-hadoop3-2.2.14-shaded.jar with timestamp 1754983530819
+[2025-08-12T07:25:31.890+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:31 INFO SecurityManager: Changing view acls to: ***
+[2025-08-12T07:25:31.891+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:31 INFO SecurityManager: Changing modify acls to: ***
+[2025-08-12T07:25:31.891+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:31 INFO SecurityManager: Changing view acls groups to: ***
+[2025-08-12T07:25:31.892+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:31 INFO SecurityManager: Changing modify acls groups to: ***
+[2025-08-12T07:25:31.892+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:31 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: *** groups with view permissions: EMPTY; users with modify permissions: ***; groups with modify permissions: EMPTY; RPC SSL disabled
+[2025-08-12T07:25:32.173+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:32 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark-master:7077...
+[2025-08-12T07:25:32.336+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:32 INFO TransportClientFactory: Successfully created connection to spark-master/172.18.0.2:7077 after 28 ms (0 ms spent in bootstraps)
+[2025-08-12T07:25:33.559+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:33 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20250812072533-0000
+[2025-08-12T07:25:33.572+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:33 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 41737.
+[2025-08-12T07:25:33.572+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:33 INFO NettyBlockTransferService: Server created on d64d9d97170e:41737
+[2025-08-12T07:25:33.574+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:33 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2025-08-12T07:25:33.597+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:33 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, d64d9d97170e, 41737, None)
+[2025-08-12T07:25:33.605+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:33 INFO BlockManagerMasterEndpoint: Registering block manager d64d9d97170e:41737 with 434.4 MiB RAM, BlockManagerId(driver, d64d9d97170e, 41737, None)
+[2025-08-12T07:25:33.611+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:33 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, d64d9d97170e, 41737, None)
+[2025-08-12T07:25:33.612+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:33 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, d64d9d97170e, 41737, None)
+[2025-08-12T07:25:33.890+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:33 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20250812072533-0000/0 on worker-20250812062322-172.18.0.5-45907 (172.18.0.5:45907) with 2 core(s)
+[2025-08-12T07:25:33.891+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:33 INFO StandaloneSchedulerBackend: Granted executor ID app-20250812072533-0000/0 on hostPort 172.18.0.5:45907 with 2 core(s), 1024.0 MiB RAM
+[2025-08-12T07:25:33.891+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:33 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+[2025-08-12T07:25:35.588+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:35 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20250812072533-0000/0 is now RUNNING
+[2025-08-12T07:25:36.808+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:36 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+[2025-08-12T07:25:36.811+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:36 INFO SharedState: Warehouse path is 'file:/opt/***/spark-warehouse'.
+[2025-08-12T07:25:41.349+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:41 INFO InMemoryFileIndex: It took 255 ms to list leaf files for 1 paths.
+[2025-08-12T07:25:41.691+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:41 INFO SparkContext: Starting job: parquet at NativeMethodAccessorImpl.java:0
+[2025-08-12T07:25:41.734+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:41 INFO DAGScheduler: Got job 0 (parquet at NativeMethodAccessorImpl.java:0) with 1 output partitions
+[2025-08-12T07:25:41.738+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:41 INFO DAGScheduler: Final stage: ResultStage 0 (parquet at NativeMethodAccessorImpl.java:0)
+[2025-08-12T07:25:41.741+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:41 INFO DAGScheduler: Parents of final stage: List()
+[2025-08-12T07:25:41.753+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:41 INFO DAGScheduler: Missing parents: List()
+[2025-08-12T07:25:41.760+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:41 INFO DAGScheduler: Submitting ResultStage 0 (MapPartitionsRDD[1] at parquet at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2025-08-12T07:25:41.846+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:41 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+[2025-08-12T07:25:41.866+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:41 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 116.0 KiB, free 434.3 MiB)
+[2025-08-12T07:25:41.945+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:41 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 41.7 KiB, free 434.2 MiB)
+[2025-08-12T07:25:41.980+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:41 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:1676
+[2025-08-12T07:25:42.011+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:42 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 0 (MapPartitionsRDD[1] at parquet at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+[2025-08-12T07:25:42.028+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:42 INFO TaskSchedulerImpl: Adding task set 0.0 with 1 tasks resource profile 0
+[2025-08-12T07:25:42.129+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:42 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.18.0.5:39834) with ID 0, ResourceProfileId 0
+[2025-08-12T07:25:42.388+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:42 INFO BlockManagerMasterEndpoint: Registering block manager 172.18.0.5:41053 with 434.4 MiB RAM, BlockManagerId(0, 172.18.0.5, 41053, None)
+[2025-08-12T07:25:43.127+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:43 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0) (172.18.0.5,executor 0, partition 0, PROCESS_LOCAL, 9992 bytes)
+[2025-08-12T07:25:46.579+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:46 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 3466 ms on 172.18.0.5 (executor 0) (1/1)
+[2025-08-12T07:25:46.582+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:46 INFO TaskSchedulerImpl: Removed TaskSet 0.0 whose tasks have all completed, from pool
+[2025-08-12T07:25:46.586+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:46 INFO DAGScheduler: ResultStage 0 (parquet at NativeMethodAccessorImpl.java:0) finished in 4788 ms
+[2025-08-12T07:25:46.589+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:46 INFO DAGScheduler: Job 0 is finished. Cancelling potential speculative or zombie tasks for this job
+[2025-08-12T07:25:46.589+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:46 INFO TaskSchedulerImpl: Canceling stage 0
+[2025-08-12T07:25:46.590+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:46 INFO TaskSchedulerImpl: Killing all running tasks in stage 0: Stage finished
+[2025-08-12T07:25:46.592+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:46 INFO DAGScheduler: Job 0 finished: parquet at NativeMethodAccessorImpl.java:0, took 4900.861272 ms
+[2025-08-12T07:25:47.258+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:47 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 208.0 B, free 434.4 MiB)
+[2025-08-12T07:25:47.267+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:47 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 789.0 B, free 434.4 MiB)
+[2025-08-12T07:25:47.268+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:47 INFO SparkContext: Created broadcast 1 from broadcast at NativeMethodAccessorImpl.java:0
+[2025-08-12T07:25:48.199+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:48 INFO FileSourceStrategy: Pushed Filters: IsNotNull(requirements),Not(EqualTo(requirements,)),IsNotNull(description),Not(EqualTo(description,))
+[2025-08-12T07:25:48.202+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:48 INFO FileSourceStrategy: Post-Scan Filters: Set(isnotnull(trim(lower(title#1), None)), NOT (trim(lower(title#1), None) = ), isnotnull(trim(company_name#2, None)), NOT (trim(company_name#2, None) = ), isnotnull(requirements#9), NOT (requirements#9 = ), isnotnull(description#8), NOT (description#8 = ))
+[2025-08-12T07:25:48.878+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:48 INFO CodeGenerator: Code generated in 228.631212 ms
+[2025-08-12T07:25:49.003+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:49 INFO CodeGenerator: Code generated in 67.598845 ms
+[2025-08-12T07:25:49.022+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:49 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 219.4 KiB, free 434.2 MiB)
+[2025-08-12T07:25:49.038+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:49 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 39.9 KiB, free 434.1 MiB)
+[2025-08-12T07:25:49.040+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:49 INFO SparkContext: Created broadcast 2 from $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+[2025-08-12T07:25:49.063+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:49 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+[2025-08-12T07:25:49.179+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:49 INFO DAGScheduler: Registering RDD 9 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) as input to shuffle 0
+[2025-08-12T07:25:49.183+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:49 INFO DAGScheduler: Got map stage job 1 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) with 1 output partitions
+[2025-08-12T07:25:49.184+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:49 INFO DAGScheduler: Final stage: ShuffleMapStage 1 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768)
+[2025-08-12T07:25:49.185+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:49 INFO DAGScheduler: Parents of final stage: List()
+[2025-08-12T07:25:49.186+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:49 INFO DAGScheduler: Missing parents: List()
+[2025-08-12T07:25:49.187+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:49 INFO DAGScheduler: Submitting ShuffleMapStage 1 (MapPartitionsRDD[9] at $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768), which has no missing parents
+[2025-08-12T07:25:49.210+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:49 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 98.6 KiB, free 434.0 MiB)
+[2025-08-12T07:25:49.218+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:49 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 35.9 KiB, free 434.0 MiB)
+[2025-08-12T07:25:49.219+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:49 INFO SparkContext: Created broadcast 3 from broadcast at DAGScheduler.scala:1676
+[2025-08-12T07:25:49.221+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:49 INFO DAGScheduler: Submitting 1 missing tasks from ShuffleMapStage 1 (MapPartitionsRDD[9] at $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) (first 15 tasks are for partitions Vector(0))
+[2025-08-12T07:25:49.222+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:49 INFO TaskSchedulerImpl: Adding task set 1.0 with 1 tasks resource profile 0
+[2025-08-12T07:25:49.225+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:49 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 1) (172.18.0.5,executor 0, partition 0, PROCESS_LOCAL, 10422 bytes)
+[2025-08-12T07:25:54.966+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:54 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 1) in 5743 ms on 172.18.0.5 (executor 0) (1/1)
+[2025-08-12T07:25:54.967+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:54 INFO TaskSchedulerImpl: Removed TaskSet 1.0 whose tasks have all completed, from pool
+[2025-08-12T07:25:54.967+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:54 INFO PythonAccumulatorV2: Connected to AccumulatorServer at host: 127.0.0.1 port: 48849
+[2025-08-12T07:25:54.970+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:54 INFO DAGScheduler: ShuffleMapStage 1 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) finished in 5779 ms
+[2025-08-12T07:25:54.971+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:54 INFO DAGScheduler: looking for newly runnable stages
+[2025-08-12T07:25:54.971+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:54 INFO DAGScheduler: running: HashSet()
+[2025-08-12T07:25:54.972+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:54 INFO DAGScheduler: waiting: HashSet()
+[2025-08-12T07:25:54.972+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:54 INFO DAGScheduler: failed: HashSet()
+[2025-08-12T07:25:55.004+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:55 INFO ShufflePartitionsUtil: For shuffle(0, advisory target size: 67108864, actual target size 1048576, minimum partition size: 1048576
+[2025-08-12T07:25:55.054+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:55 INFO CodeGenerator: Code generated in 16.834461 ms
+[2025-08-12T07:25:55.071+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:55 INFO CodeGenerator: Code generated in 7.31677 ms
+[2025-08-12T07:25:55.110+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:55 INFO SparkContext: Starting job: $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+[2025-08-12T07:25:55.111+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:55 INFO DAGScheduler: Got job 2 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) with 1 output partitions
+[2025-08-12T07:25:55.112+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:55 INFO DAGScheduler: Final stage: ResultStage 3 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768)
+[2025-08-12T07:25:55.113+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:55 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 2)
+[2025-08-12T07:25:55.113+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:55 INFO DAGScheduler: Missing parents: List()
+[2025-08-12T07:25:55.114+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:55 INFO DAGScheduler: Submitting ResultStage 3 (MapPartitionsRDD[15] at $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768), which has no missing parents
+[2025-08-12T07:25:55.125+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:55 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 82.7 KiB, free 433.9 MiB)
+[2025-08-12T07:25:55.133+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:55 INFO MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 31.2 KiB, free 433.9 MiB)
+[2025-08-12T07:25:55.135+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:55 INFO SparkContext: Created broadcast 4 from broadcast at DAGScheduler.scala:1676
+[2025-08-12T07:25:55.136+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:55 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 3 (MapPartitionsRDD[15] at $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) (first 15 tasks are for partitions Vector(0))
+[2025-08-12T07:25:55.137+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:55 INFO TaskSchedulerImpl: Adding task set 3.0 with 1 tasks resource profile 0
+[2025-08-12T07:25:55.147+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:55 INFO TaskSetManager: Starting task 0.0 in stage 3.0 (TID 2) (172.18.0.5,executor 0, partition 0, NODE_LOCAL, 9833 bytes)
+[2025-08-12T07:25:55.256+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:55 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 0 to 172.18.0.5:39834
+[2025-08-12T07:25:55.504+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:55 INFO TaskSetManager: Finished task 0.0 in stage 3.0 (TID 2) in 361 ms on 172.18.0.5 (executor 0) (1/1)
+[2025-08-12T07:25:55.505+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:55 INFO TaskSchedulerImpl: Removed TaskSet 3.0 whose tasks have all completed, from pool
+[2025-08-12T07:25:55.506+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:55 INFO DAGScheduler: ResultStage 3 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) finished in 385 ms
+[2025-08-12T07:25:55.507+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:55 INFO DAGScheduler: Job 2 is finished. Cancelling potential speculative or zombie tasks for this job
+[2025-08-12T07:25:55.507+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:55 INFO TaskSchedulerImpl: Canceling stage 3
+[2025-08-12T07:25:55.507+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:55 INFO TaskSchedulerImpl: Killing all running tasks in stage 3: Stage finished
+[2025-08-12T07:25:55.507+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:55 INFO DAGScheduler: Job 2 finished: $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768, took 397.100464 ms
+[2025-08-12T07:25:55.550+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:55 INFO CodeGenerator: Code generated in 14.934674 ms
+[2025-08-12T07:25:55.620+0000] {spark_submit.py:521} INFO - +-----------------------------------------------------+--------------------------------------------------------+---+----------------+----------+----------+----------------+----------------+-------------------------------------+-----------+--------------+--------------+--------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+-----------+------------+------+
+[2025-08-12T07:25:55.621+0000] {spark_submit.py:521} INFO - |job_position                                         |company_name                                            |yoe|job_posting_date|min_salary|max_salary|company_size_min|company_size_max|major_field                          |level      |num_of_recruit|work_form     |relation_fields                                               |skills_extracted                                                                                                                          |city       |district    |source|
+[2025-08-12T07:25:55.621+0000] {spark_submit.py:521} INFO - +-----------------------------------------------------+--------------------------------------------------------+---+----------------+----------+----------+----------------+----------------+-------------------------------------+-----------+--------------+--------------+--------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+-----------+------------+------+
+[2025-08-12T07:25:55.621+0000] {spark_submit.py:521} INFO - |cdp data engineering                                 |CÔNG TY CỔ PHẦN DƯỢC PHẨM FPT LONG CHÂU                 |3.0|2025-08-31      |NULL      |NULL      |10000           |10000           |Dược phẩm / Y tế / Công nghệ sinh học|Trưởng nhóm|1             |Toàn thời gian|[Công nghệ Thông tin, Data Science, Data Engineer]            |[]                                                                                                                                        |Hồ Chí Minh|Quận 7      |topcv |
+[2025-08-12T07:25:55.622+0000] {spark_submit.py:521} INFO - |data engineer                                        |Alphaway Technology                                     |3.0|2025-08-14      |39000000  |NULL      |100             |499             |IT - Phần mềm                        |Trưởng nhóm|5             |Toàn thời gian|[Công nghệ Thông tin, Data Science, Data Engineer]            |[python, java, sql, javascript, aws, spark, redshift]                                                                                     |Hà Nội     |Cầu Giấy    |topcv |
+[2025-08-12T07:25:55.622+0000] {spark_submit.py:521} INFO - |data engineer                                        |CÔNG TY CỔ PHẦN CÔNG NGHỆ ALPHAWAY                      |2.0|2025-09-04      |NULL      |NULL      |500             |1000            |IT - Phần mềm                        |Trưởng nhóm|2             |Toàn thời gian|[Công nghệ Thông tin, Data Science, Data Engineer]            |[python, java, sql, javascript, aws, spark, kafka, data warehouse, data lake, redshift]                                                   |Hà Nội     |Cầu Giấy    |topcv |
+[2025-08-12T07:25:55.622+0000] {spark_submit.py:521} INFO - |data engineer                                        |CÔNG TY CỔ PHẦN IKAME GLOBAL                            |1.0|2025-09-30      |1000000   |NULL      |100             |499             |IT - Phần mềm                        |Nhân viên  |1             |Toàn thời gian|[Công nghệ Thông tin, Data Science, Data Engineer]            |[python, java, sql, aws, azure, gcp, nosql]                                                                                               |Hà Nội     |Đống Đa     |topcv |
+[2025-08-12T07:25:55.622+0000] {spark_submit.py:521} INFO - |data engineer                                        |CÔNG TY TNHH GIẢI PHÁP BRAIN TECH                       |2.0|2025-08-13      |NULL      |NULL      |25              |99              |IT - Phần mềm                        |Nhân viên  |3             |Toàn thời gian|[Công nghệ Thông tin, Data Science, Data Engineer]            |[python, scala, sql, docker, kubernetes, spark, kafka, flink, etl]                                                                        |Hồ Chí Minh|Phú Nhuận   |topcv |
+[2025-08-12T07:25:55.623+0000] {spark_submit.py:521} INFO - |data engineer                                        |Công Ty Tài Chính TNHH MTV Mirae Asset                  |3.0|2025-08-21      |NULL      |NULL      |5000            |5000            |Tài chính                            |Nhân viên  |1             |Toàn thời gian|[Công nghệ Thông tin, Data Science, Data Engineer]            |[python, java, scala, sql, ***, etl, data warehouse, data lake]                                                                       |Hồ Chí Minh|Quận 1      |topcv |
+[2025-08-12T07:25:55.623+0000] {spark_submit.py:521} INFO - |data engineer                                        |Công ty Cổ phần Hệ thống Công nghệ ETC                  |2.0|2025-08-31      |NULL      |NULL      |500             |1000            |IT - Phần mềm                        |Nhân viên  |5             |Toàn thời gian|[Công nghệ Thông tin, Data Science, Data Engineer]            |[aws, azure, etl, data warehouse, data lake]                                                                                              |Hà Nội     |Cầu Giấy    |topcv |
+[2025-08-12T07:25:55.623+0000] {spark_submit.py:521} INFO - |data engineer                                        |FPT Software                                            |4.0|2025-09-30      |NULL      |NULL      |10000           |10000           |Tài chính                            |Nhân viên  |1             |Toàn thời gian|[Công nghệ Thông tin, Data Science, Data Engineer]            |[python, sql, azure, gcp, git, rest, spark, nosql, tensorflow, pytorch, etl, data pipeline, data lake, bigquery, redshift, snowflake, api]|Đà Nẵng    |Ngũ Hành Sơn|topcv |
+[2025-08-12T07:25:55.624+0000] {spark_submit.py:521} INFO - |data engineer                                        |TMA Solutions                                           |1.0|2025-10-17      |NULL      |NULL      |3000            |3000            |IT - Phần mềm                        |Nhân viên  |3             |Toàn thời gian|[Công nghệ Thông tin, Data Science, Data Engineer]            |[python, scala, sql, aws, azure, spark, etl, redshift]                                                                                    |Bình Định  |TP Quy Nhơn |topcv |
+[2025-08-12T07:25:55.624+0000] {spark_submit.py:521} INFO - |data engineer (banking)                              |Công ty Cổ phần Công nghệ Alphaway                      |2.0|2025-08-24      |25000000  |35000000  |100             |499             |IT - Phần mềm                        |Trưởng nhóm|2             |Toàn thời gian|[Công nghệ Thông tin, Data Science, Data Engineer]            |[python, aws, spark, etl]                                                                                                                 |Hà Nội     |Hoàn Kiếm   |topcv |
+[2025-08-12T07:25:55.624+0000] {spark_submit.py:521} INFO - |data engineer (big data)                             |CÔNG TY CỔ PHẦN PARALINE SOFTWARE                       |2.0|2025-10-31      |18000000  |30000000  |100             |499             |IT - Phần mềm                        |Nhân viên  |6             |Toàn thời gian|[Công nghệ Thông tin, Software Engineering, Software Engineer]|[sql, etl]                                                                                                                                |Hà Nội     |Thanh Xuân  |topcv |
+[2025-08-12T07:25:55.625+0000] {spark_submit.py:521} INFO - |data engineer (biết làm báo cáo)                     |Công ty TNHH Giải pháp Phân tích dữ liệu Insight Data   |2.0|2025-08-20      |25000000  |30000000  |25              |99              |IT - Phần mềm                        |Trưởng nhóm|3             |Toàn thời gian|[Công nghệ Thông tin, Data Science, Data Engineer]            |[sql, ***, data warehouse]                                                                                                            |Hà Nội     |Thanh Xuân  |topcv |
+[2025-08-12T07:25:55.625+0000] {spark_submit.py:521} INFO - |data engineer (cloud)                                |Công ty TNHH Horus Productions                          |1.0|2025-08-23      |15000000  |25000000  |100             |499             |IT - Phần mềm                        |Trưởng nhóm|1             |Toàn thời gian|[Công nghệ Thông tin, Data Science, Data Engineer]            |[python, java, scala, sql, aws, azure, gcp, bigquery]                                                                                     |Hà Nội     |Nam Từ Liêm |topcv |
+[2025-08-12T07:25:55.625+0000] {spark_submit.py:521} INFO - |data engineer (có xe đưa đón)                        |CÔNG TY CỔ PHẦN CÔNG NGHỆ AN NINH MẠNG QUỐC GIA VIỆT NAM|1.0|2025-08-09      |9000000   |15000000  |100             |499             |IT - Phần mềm                        |Nhân viên  |1             |Toàn thời gian|[Công nghệ Thông tin, Data Science, Data Engineer]            |[python, scala, sql, spark, nosql, zeppelin, etl, data warehouse]                                                                         |Hưng Yên   |Yên Mỹ      |topcv |
+[2025-08-12T07:25:55.626+0000] {spark_submit.py:521} INFO - |data engineer (da)                                   |Công Ty TNHH LG CNS VIỆT NAM                            |3.0|2025-08-31      |NULL      |NULL      |100             |499             |IT - Phần mềm                        |Nhân viên  |1             |Toàn thời gian|[Công nghệ Thông tin, Data Science, Data Engineer]            |[scala, sql, aws, git, data warehouse, data lake, redshift]                                                                               |Hà Nội     |Nam Từ Liêm |topcv |
+[2025-08-12T07:25:55.626+0000] {spark_submit.py:521} INFO - |data engineer (fluent english)                       |TECHVIFY SOFTWARE., JSC                                 |3.0|2025-08-12      |NULL      |NULL      |100             |499             |IT - Phần mềm                        |Trưởng nhóm|2             |Toàn thời gian|[Công nghệ Thông tin, Data Science, Data Engineer]            |[python, sql, azure, rest, graphql, spark, etl, data pipeline, api]                                                                       |Hà Nội     |Nam Từ Liêm |topcv |
+[2025-08-12T07:25:55.626+0000] {spark_submit.py:521} INFO - |data engineer (onsite)                               |Công ty cổ phần Ecoit                                   |3.0|2025-08-16      |20000000  |28000000  |25              |99              |IT - Phần mềm                        |Trưởng nhóm|5             |Toàn thời gian|[Công nghệ Thông tin, Data Science, Data Engineer]            |[spark, hadoop, etl, data warehouse, data lake]                                                                                           |Hà Nội     |Cầu Giấy    |topcv |
+[2025-08-12T07:25:55.627+0000] {spark_submit.py:521} INFO - |data engineer (python/java, data lake)               |Công ty CP Kinh doanh F88                               |3.0|2025-08-31      |20000000  |55000000  |5000            |5000            |Tài chính                            |Trưởng nhóm|2             |Toàn thời gian|[Công nghệ Thông tin, Data Science, Data Engineer]            |[python, spark, kafka, ***, etl, data warehouse, data lake]                                                                           |Hà Nội     |Thanh Xuân  |topcv |
+[2025-08-12T07:25:55.627+0000] {spark_submit.py:521} INFO - |data engineer - từ 3 năm kinh nghiệm - onsite project|CÔNG TY CỔ PHẦN AHT TECH                                |3.0|2025-08-09      |NULL      |NULL      |100             |499             |IT - Phần mềm                        |Nhân viên  |1             |Toàn thời gian|[Công nghệ Thông tin, Data Science, Data Engineer]            |[sql, git, ***, etl, data warehouse, snowflake]                                                                                       |Hà Nội     |Hoàn Kiếm   |topcv |
+[2025-08-12T07:25:55.627+0000] {spark_submit.py:521} INFO - |data engineer các level từ fresher,junior,middle     |công ty cổ phần Data Impact                             |1.0|2025-08-16      |NULL      |NULL      |25              |99              |IT - Phần mềm                        |Nhân viên  |3             |Toàn thời gian|[Công nghệ Thông tin, Data Science, Data Engineer]            |[python, java, scala, sql, aws, azure, gcp, spark, hadoop, kafka, ***, nosql, mongodb, etl, data pipeline]                            |Hà Nội     |Hà Đông     |topcv |
+[2025-08-12T07:25:55.628+0000] {spark_submit.py:521} INFO - +-----------------------------------------------------+--------------------------------------------------------+---+----------------+----------+----------+----------------+----------------+-------------------------------------+-----------+--------------+--------------+--------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+-----------+------------+------+
+[2025-08-12T07:25:55.628+0000] {spark_submit.py:521} INFO - only showing top 20 rows
+[2025-08-12T07:25:55.629+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:55 INFO SparkContext: SparkContext is stopping with exitCode 0 from stop at NativeMethodAccessorImpl.java:0.
+[2025-08-12T07:25:55.636+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:55 INFO SparkUI: Stopped Spark web UI at http://d64d9d97170e:4040
+[2025-08-12T07:25:55.639+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:55 INFO StandaloneSchedulerBackend: Shutting down all executors
+[2025-08-12T07:25:55.639+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:55 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Asking each executor to shut down
+[2025-08-12T07:25:55.664+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:55 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+[2025-08-12T07:25:55.701+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:55 INFO MemoryStore: MemoryStore cleared
+[2025-08-12T07:25:55.702+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:55 INFO BlockManager: BlockManager stopped
+[2025-08-12T07:25:55.709+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:55 INFO BlockManagerMaster: BlockManagerMaster stopped
+[2025-08-12T07:25:55.714+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:55 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+[2025-08-12T07:25:55.727+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:55 INFO SparkContext: Successfully stopped SparkContext
+[2025-08-12T07:25:56.707+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:56 INFO ShutdownHookManager: Shutdown hook called
+[2025-08-12T07:25:56.708+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:56 INFO ShutdownHookManager: Deleting directory /opt/***/artifacts/spark-37abf928-1a2f-4bb7-ad94-966e48c39b6c
+[2025-08-12T07:25:56.711+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:56 INFO ShutdownHookManager: Deleting directory /tmp/spark-a5ad74e6-740f-4199-8780-ad786523c55e
+[2025-08-12T07:25:56.717+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:56 INFO ShutdownHookManager: Deleting directory /tmp/spark-95dd75d3-9abc-47df-9843-c61cdbcf87eb
+[2025-08-12T07:25:56.721+0000] {spark_submit.py:521} INFO - 25/08/12 07:25:56 INFO ShutdownHookManager: Deleting directory /tmp/spark-95dd75d3-9abc-47df-9843-c61cdbcf87eb/pyspark-f9fbf3e9-9442-4c81-8dac-2ac692536446
+[2025-08-12T07:25:56.784+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-08-12T07:25:56.855+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=spark_transform_topcv, task_id=submit_spark_job, run_id=manual__2025-08-12T07:25:18.775427+00:00, execution_date=20250812T072518, start_date=20250812T072523, end_date=20250812T072556
+[2025-08-12T07:25:56.920+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-08-12T07:25:56.984+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-08-12T07:25:56.987+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

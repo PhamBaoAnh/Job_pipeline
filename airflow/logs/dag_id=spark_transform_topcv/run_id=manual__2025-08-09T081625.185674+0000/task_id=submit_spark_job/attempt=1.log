@@ -1,0 +1,259 @@
+[2025-08-09T08:16:27.644+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-08-09T08:16:27.667+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: spark_transform_topcv.submit_spark_job manual__2025-08-09T08:16:25.185674+00:00 [queued]>
+[2025-08-09T08:16:27.674+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: spark_transform_topcv.submit_spark_job manual__2025-08-09T08:16:25.185674+00:00 [queued]>
+[2025-08-09T08:16:27.675+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-08-09T08:16:27.691+0000] {taskinstance.py:2330} INFO - Executing <Task(SparkSubmitOperator): submit_spark_job> on 2025-08-09 08:16:25.185674+00:00
+[2025-08-09T08:16:27.698+0000] {standard_task_runner.py:63} INFO - Started process 420 to run task
+[2025-08-09T08:16:27.701+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'spark_transform_topcv', 'submit_spark_job', 'manual__2025-08-09T08:16:25.185674+00:00', '--job-id', '47', '--raw', '--subdir', 'DAGS_FOLDER/etl_jobs_dag.py', '--cfg-path', '/tmp/tmp8pz1znll']
+[2025-08-09T08:16:27.704+0000] {standard_task_runner.py:91} INFO - Job 47: Subtask submit_spark_job
+[2025-08-09T08:16:27.760+0000] {task_command.py:426} INFO - Running <TaskInstance: spark_transform_topcv.submit_spark_job manual__2025-08-09T08:16:25.185674+00:00 [running]> on host 7239c47c7114
+[2025-08-09T08:16:27.846+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='spark_transform_topcv' AIRFLOW_CTX_TASK_ID='submit_spark_job' AIRFLOW_CTX_EXECUTION_DATE='2025-08-09T08:16:25.185674+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-08-09T08:16:25.185674+00:00'
+[2025-08-09T08:16:27.847+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-08-09T08:16:27.868+0000] {spark_submit.py:223} INFO - Could not load connection string spark_default, defaulting to yarn
+[2025-08-09T08:16:27.870+0000] {spark_submit.py:351} INFO - Spark-Submit cmd: spark-submit --master yarn --conf spark.hadoop.fs.gs.impl=com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem --conf spark.hadoop.fs.AbstractFileSystem.gs.impl=com.google.cloud.hadoop.fs.gcs.GoogleHadoopFS --conf spark.hadoop.google.cloud.auth.service.account.enable=true --conf spark.hadoop.google.cloud.auth.service.account.json.keyfile=/opt/keys/gcp-key.json --conf spark.jars=/opt/custom-jars/gcs-connector-hadoop3-2.2.14-shaded.jar --conf spark.driver.extraClassPath=/opt/custom-jars/gcs-connector-hadoop3-2.2.14-shaded.jar --conf spark.executor.extraClassPath=/opt/custom-jars/gcs-connector-hadoop3-2.2.14-shaded.jar --conf spark.yarn.appMasterEnv.HADOOP_CONF_DIR=/opt/hadoop/etc/hadoop --jars /opt/custom-jars/gcs-connector-hadoop3-2.2.14-shaded.jar --name arrow-spark --verbose /opt/spark-jobs/gold_transform.py
+[2025-08-09T08:16:28.348+0000] {spark_submit.py:521} INFO - WARNING: Using incubator modules: jdk.incubator.vector
+[2025-08-09T08:16:30.321+0000] {spark_submit.py:521} INFO - Parsed arguments:
+[2025-08-09T08:16:30.323+0000] {spark_submit.py:521} INFO - master                  yarn
+[2025-08-09T08:16:30.323+0000] {spark_submit.py:521} INFO - remote                  null
+[2025-08-09T08:16:30.325+0000] {spark_submit.py:521} INFO - deployMode              null
+[2025-08-09T08:16:30.326+0000] {spark_submit.py:521} INFO - executorMemory          null
+[2025-08-09T08:16:30.326+0000] {spark_submit.py:521} INFO - executorCores           null
+[2025-08-09T08:16:30.327+0000] {spark_submit.py:521} INFO - totalExecutorCores      null
+[2025-08-09T08:16:30.327+0000] {spark_submit.py:521} INFO - propertiesFile          null
+[2025-08-09T08:16:30.328+0000] {spark_submit.py:521} INFO - driverMemory            null
+[2025-08-09T08:16:30.328+0000] {spark_submit.py:521} INFO - driverCores             null
+[2025-08-09T08:16:30.328+0000] {spark_submit.py:521} INFO - driverExtraClassPath    /opt/custom-jars/gcs-connector-hadoop3-2.2.14-shaded.jar
+[2025-08-09T08:16:30.329+0000] {spark_submit.py:521} INFO - driverExtraLibraryPath  null
+[2025-08-09T08:16:30.329+0000] {spark_submit.py:521} INFO - driverExtraJavaOptions  null
+[2025-08-09T08:16:30.330+0000] {spark_submit.py:521} INFO - supervise               false
+[2025-08-09T08:16:30.330+0000] {spark_submit.py:521} INFO - queue                   null
+[2025-08-09T08:16:30.330+0000] {spark_submit.py:521} INFO - numExecutors            null
+[2025-08-09T08:16:30.331+0000] {spark_submit.py:521} INFO - files                   null
+[2025-08-09T08:16:30.331+0000] {spark_submit.py:521} INFO - pyFiles                 null
+[2025-08-09T08:16:30.331+0000] {spark_submit.py:521} INFO - archives                null
+[2025-08-09T08:16:30.332+0000] {spark_submit.py:521} INFO - mainClass               null
+[2025-08-09T08:16:30.332+0000] {spark_submit.py:521} INFO - primaryResource         file:/opt/spark-jobs/gold_transform.py
+[2025-08-09T08:16:30.332+0000] {spark_submit.py:521} INFO - name                    arrow-spark
+[2025-08-09T08:16:30.333+0000] {spark_submit.py:521} INFO - childArgs               []
+[2025-08-09T08:16:30.333+0000] {spark_submit.py:521} INFO - jars                    file:/opt/custom-jars/gcs-connector-hadoop3-2.2.14-shaded.jar
+[2025-08-09T08:16:30.333+0000] {spark_submit.py:521} INFO - packages                null
+[2025-08-09T08:16:30.333+0000] {spark_submit.py:521} INFO - packagesExclusions      null
+[2025-08-09T08:16:30.333+0000] {spark_submit.py:521} INFO - repositories            null
+[2025-08-09T08:16:30.334+0000] {spark_submit.py:521} INFO - verbose                 true
+[2025-08-09T08:16:30.334+0000] {spark_submit.py:521} INFO - 
+[2025-08-09T08:16:30.334+0000] {spark_submit.py:521} INFO - Spark properties used, including those specified through
+[2025-08-09T08:16:30.334+0000] {spark_submit.py:521} INFO - --conf and those from the properties file null:
+[2025-08-09T08:16:30.335+0000] {spark_submit.py:521} INFO - (spark.driver.extraClassPath,/opt/custom-jars/gcs-connector-hadoop3-2.2.14-shaded.jar)
+[2025-08-09T08:16:30.335+0000] {spark_submit.py:521} INFO - (spark.executor.extraClassPath,/opt/custom-jars/gcs-connector-hadoop3-2.2.14-shaded.jar)
+[2025-08-09T08:16:30.335+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.AbstractFileSystem.gs.impl,com.google.cloud.hadoop.fs.gcs.GoogleHadoopFS)
+[2025-08-09T08:16:30.336+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.gs.impl,com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem)
+[2025-08-09T08:16:30.338+0000] {spark_submit.py:521} INFO - (spark.hadoop.google.cloud.auth.service.account.enable,true)
+[2025-08-09T08:16:30.338+0000] {spark_submit.py:521} INFO - (spark.hadoop.google.cloud.auth.service.account.json.keyfile,/opt/keys/gcp-key.json)
+[2025-08-09T08:16:30.338+0000] {spark_submit.py:521} INFO - (spark.jars,/opt/custom-jars/gcs-connector-hadoop3-2.2.14-shaded.jar)
+[2025-08-09T08:16:30.338+0000] {spark_submit.py:521} INFO - (spark.yarn.appMasterEnv.HADOOP_CONF_DIR,/opt/hadoop/etc/hadoop)
+[2025-08-09T08:16:30.339+0000] {spark_submit.py:521} INFO - 
+[2025-08-09T08:16:30.339+0000] {spark_submit.py:521} INFO - 
+[2025-08-09T08:16:30.830+0000] {spark_submit.py:521} INFO - 25/08/09 08:16:30 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2025-08-09T08:16:30.989+0000] {spark_submit.py:521} INFO - Main class:
+[2025-08-09T08:16:30.989+0000] {spark_submit.py:521} INFO - org.apache.spark.deploy.PythonRunner
+[2025-08-09T08:16:30.989+0000] {spark_submit.py:521} INFO - Arguments:
+[2025-08-09T08:16:30.990+0000] {spark_submit.py:521} INFO - file:/opt/spark-jobs/gold_transform.py
+[2025-08-09T08:16:30.990+0000] {spark_submit.py:521} INFO - null
+[2025-08-09T08:16:30.992+0000] {spark_submit.py:521} INFO - Spark config:
+[2025-08-09T08:16:30.993+0000] {spark_submit.py:521} INFO - (spark.app.name,arrow-spark)
+[2025-08-09T08:16:30.993+0000] {spark_submit.py:521} INFO - (spark.app.submitTime,1754727390965)
+[2025-08-09T08:16:30.994+0000] {spark_submit.py:521} INFO - (spark.driver.extraClassPath,/opt/custom-jars/gcs-connector-hadoop3-2.2.14-shaded.jar)
+[2025-08-09T08:16:30.994+0000] {spark_submit.py:521} INFO - (spark.executor.extraClassPath,/opt/custom-jars/gcs-connector-hadoop3-2.2.14-shaded.jar)
+[2025-08-09T08:16:30.994+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.AbstractFileSystem.gs.impl,com.google.cloud.hadoop.fs.gcs.GoogleHadoopFS)
+[2025-08-09T08:16:30.994+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.gs.impl,com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem)
+[2025-08-09T08:16:30.995+0000] {spark_submit.py:521} INFO - (spark.hadoop.google.cloud.auth.service.account.enable,true)
+[2025-08-09T08:16:30.995+0000] {spark_submit.py:521} INFO - (spark.hadoop.google.cloud.auth.service.account.json.keyfile,/opt/keys/gcp-key.json)
+[2025-08-09T08:16:30.995+0000] {spark_submit.py:521} INFO - (spark.jars,file:/opt/custom-jars/gcs-connector-hadoop3-2.2.14-shaded.jar)
+[2025-08-09T08:16:30.995+0000] {spark_submit.py:521} INFO - (spark.master,yarn)
+[2025-08-09T08:16:30.995+0000] {spark_submit.py:521} INFO - (spark.repl.local.jars,file:/opt/custom-jars/gcs-connector-hadoop3-2.2.14-shaded.jar)
+[2025-08-09T08:16:30.996+0000] {spark_submit.py:521} INFO - (spark.submit.deployMode,client)
+[2025-08-09T08:16:30.996+0000] {spark_submit.py:521} INFO - (spark.submit.pyFiles,)
+[2025-08-09T08:16:30.996+0000] {spark_submit.py:521} INFO - (spark.yarn.appMasterEnv.HADOOP_CONF_DIR,/opt/hadoop/etc/hadoop)
+[2025-08-09T08:16:30.996+0000] {spark_submit.py:521} INFO - (spark.yarn.dist.jars,file:/opt/custom-jars/gcs-connector-hadoop3-2.2.14-shaded.jar)
+[2025-08-09T08:16:30.997+0000] {spark_submit.py:521} INFO - (spark.yarn.isPython,true)
+[2025-08-09T08:16:30.997+0000] {spark_submit.py:521} INFO - Classpath elements:
+[2025-08-09T08:16:30.997+0000] {spark_submit.py:521} INFO - file:/opt/custom-jars/gcs-connector-hadoop3-2.2.14-shaded.jar
+[2025-08-09T08:16:30.997+0000] {spark_submit.py:521} INFO - 
+[2025-08-09T08:16:30.997+0000] {spark_submit.py:521} INFO - 
+[2025-08-09T08:16:31.001+0000] {spark_submit.py:521} INFO - Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+[2025-08-09T08:16:31.001+0000] {spark_submit.py:521} INFO - 25/08/09 08:16:31 WARN DependencyUtils: Local jar /opt/custom-jars/gcs-connector-hadoop3-2.2.14-shaded.jar does not exist, skipping.
+[2025-08-09T08:16:33.330+0000] {spark_submit.py:521} INFO - 25/08/09 08:16:33 INFO SparkContext: Running Spark version 4.0.0
+[2025-08-09T08:16:33.331+0000] {spark_submit.py:521} INFO - 25/08/09 08:16:33 INFO SparkContext: OS info Linux, 5.15.167.4-microsoft-standard-WSL2, amd64
+[2025-08-09T08:16:33.331+0000] {spark_submit.py:521} INFO - 25/08/09 08:16:33 INFO SparkContext: Java version 17.0.15
+[2025-08-09T08:16:33.354+0000] {spark_submit.py:521} INFO - 25/08/09 08:16:33 INFO ResourceUtils: ==============================================================
+[2025-08-09T08:16:33.355+0000] {spark_submit.py:521} INFO - 25/08/09 08:16:33 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2025-08-09T08:16:33.355+0000] {spark_submit.py:521} INFO - 25/08/09 08:16:33 INFO ResourceUtils: ==============================================================
+[2025-08-09T08:16:33.356+0000] {spark_submit.py:521} INFO - 25/08/09 08:16:33 INFO SparkContext: Submitted application: gold_transform
+[2025-08-09T08:16:33.381+0000] {spark_submit.py:521} INFO - 25/08/09 08:16:33 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2025-08-09T08:16:33.385+0000] {spark_submit.py:521} INFO - 25/08/09 08:16:33 INFO ResourceProfile: Limiting resource is cpus at 1 tasks per executor
+[2025-08-09T08:16:33.387+0000] {spark_submit.py:521} INFO - 25/08/09 08:16:33 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2025-08-09T08:16:33.441+0000] {spark_submit.py:521} INFO - 25/08/09 08:16:33 INFO SecurityManager: Changing view acls to: ***
+[2025-08-09T08:16:33.442+0000] {spark_submit.py:521} INFO - 25/08/09 08:16:33 INFO SecurityManager: Changing modify acls to: ***
+[2025-08-09T08:16:33.443+0000] {spark_submit.py:521} INFO - 25/08/09 08:16:33 INFO SecurityManager: Changing view acls groups to: ***
+[2025-08-09T08:16:33.444+0000] {spark_submit.py:521} INFO - 25/08/09 08:16:33 INFO SecurityManager: Changing modify acls groups to: ***
+[2025-08-09T08:16:33.446+0000] {spark_submit.py:521} INFO - 25/08/09 08:16:33 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: *** groups with view permissions: EMPTY; users with modify permissions: ***; groups with modify permissions: EMPTY; RPC SSL disabled
+[2025-08-09T08:16:33.755+0000] {spark_submit.py:521} INFO - 25/08/09 08:16:33 INFO Utils: Successfully started service 'sparkDriver' on port 36103.
+[2025-08-09T08:16:33.798+0000] {spark_submit.py:521} INFO - 25/08/09 08:16:33 INFO SparkEnv: Registering MapOutputTracker
+[2025-08-09T08:16:33.813+0000] {spark_submit.py:521} INFO - 25/08/09 08:16:33 INFO SparkEnv: Registering BlockManagerMaster
+[2025-08-09T08:16:33.824+0000] {spark_submit.py:521} INFO - 25/08/09 08:16:33 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2025-08-09T08:16:33.825+0000] {spark_submit.py:521} INFO - 25/08/09 08:16:33 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2025-08-09T08:16:33.873+0000] {spark_submit.py:521} INFO - 25/08/09 08:16:33 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2025-08-09T08:16:33.891+0000] {spark_submit.py:521} INFO - 25/08/09 08:16:33 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-8631fc34-efff-4390-80dd-890ff195ecd7
+[2025-08-09T08:16:33.940+0000] {spark_submit.py:521} INFO - 25/08/09 08:16:33 INFO SparkEnv: Registering OutputCommitCoordinator
+[2025-08-09T08:16:34.081+0000] {spark_submit.py:521} INFO - 25/08/09 08:16:34 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+[2025-08-09T08:16:34.234+0000] {spark_submit.py:521} INFO - 25/08/09 08:16:34 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2025-08-09T08:16:34.296+0000] {spark_submit.py:521} INFO - 25/08/09 08:16:34 ERROR SparkContext: Failed to add file:/opt/custom-jars/gcs-connector-hadoop3-2.2.14-shaded.jar to Spark environment
+[2025-08-09T08:16:34.296+0000] {spark_submit.py:521} INFO - java.io.FileNotFoundException: Jar /opt/custom-jars/gcs-connector-hadoop3-2.2.14-shaded.jar not found
+[2025-08-09T08:16:34.297+0000] {spark_submit.py:521} INFO - at org.apache.spark.SparkContext.addLocalJarFile$1(SparkContext.scala:2174)
+[2025-08-09T08:16:34.297+0000] {spark_submit.py:521} INFO - at org.apache.spark.SparkContext.addJar(SparkContext.scala:2230)
+[2025-08-09T08:16:34.297+0000] {spark_submit.py:521} INFO - at org.apache.spark.SparkContext.$anonfun$new$15(SparkContext.scala:538)
+[2025-08-09T08:16:34.298+0000] {spark_submit.py:521} INFO - at org.apache.spark.SparkContext.$anonfun$new$15$adapted(SparkContext.scala:538)
+[2025-08-09T08:16:34.298+0000] {spark_submit.py:521} INFO - at scala.collection.IterableOnceOps.foreach(IterableOnce.scala:619)
+[2025-08-09T08:16:34.298+0000] {spark_submit.py:521} INFO - at scala.collection.IterableOnceOps.foreach$(IterableOnce.scala:617)
+[2025-08-09T08:16:34.299+0000] {spark_submit.py:521} INFO - at scala.collection.AbstractIterable.foreach(Iterable.scala:935)
+[2025-08-09T08:16:34.299+0000] {spark_submit.py:521} INFO - at org.apache.spark.SparkContext.<init>(SparkContext.scala:538)
+[2025-08-09T08:16:34.299+0000] {spark_submit.py:521} INFO - at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:59)
+[2025-08-09T08:16:34.300+0000] {spark_submit.py:521} INFO - at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+[2025-08-09T08:16:34.300+0000] {spark_submit.py:521} INFO - at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+[2025-08-09T08:16:34.300+0000] {spark_submit.py:521} INFO - at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+[2025-08-09T08:16:34.300+0000] {spark_submit.py:521} INFO - at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+[2025-08-09T08:16:34.301+0000] {spark_submit.py:521} INFO - at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+[2025-08-09T08:16:34.301+0000] {spark_submit.py:521} INFO - at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:247)
+[2025-08-09T08:16:34.301+0000] {spark_submit.py:521} INFO - at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+[2025-08-09T08:16:34.301+0000] {spark_submit.py:521} INFO - at py4j.Gateway.invoke(Gateway.java:238)
+[2025-08-09T08:16:34.302+0000] {spark_submit.py:521} INFO - at py4j.commands.ConstructorCommand.invokeConstructor(ConstructorCommand.java:80)
+[2025-08-09T08:16:34.302+0000] {spark_submit.py:521} INFO - at py4j.commands.ConstructorCommand.execute(ConstructorCommand.java:69)
+[2025-08-09T08:16:34.302+0000] {spark_submit.py:521} INFO - at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:184)
+[2025-08-09T08:16:34.303+0000] {spark_submit.py:521} INFO - at py4j.ClientServerConnection.run(ClientServerConnection.java:108)
+[2025-08-09T08:16:34.303+0000] {spark_submit.py:521} INFO - at java.base/java.lang.Thread.run(Thread.java:840)
+[2025-08-09T08:16:34.318+0000] {spark_submit.py:521} INFO - 25/08/09 08:16:34 INFO SecurityManager: Changing view acls to: ***
+[2025-08-09T08:16:34.319+0000] {spark_submit.py:521} INFO - 25/08/09 08:16:34 INFO SecurityManager: Changing modify acls to: ***
+[2025-08-09T08:16:34.320+0000] {spark_submit.py:521} INFO - 25/08/09 08:16:34 INFO SecurityManager: Changing view acls groups to: ***
+[2025-08-09T08:16:34.320+0000] {spark_submit.py:521} INFO - 25/08/09 08:16:34 INFO SecurityManager: Changing modify acls groups to: ***
+[2025-08-09T08:16:34.320+0000] {spark_submit.py:521} INFO - 25/08/09 08:16:34 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: *** groups with view permissions: EMPTY; users with modify permissions: ***; groups with modify permissions: EMPTY; RPC SSL disabled
+[2025-08-09T08:16:34.652+0000] {spark_submit.py:521} INFO - 25/08/09 08:16:34 INFO DefaultNoHARMFailoverProxyProvider: Connecting to ResourceManager at resourcemanager/172.18.0.2:8032
+[2025-08-09T08:16:34.873+0000] {spark_submit.py:521} INFO - 25/08/09 08:16:34 ERROR SparkContext: Error initializing SparkContext.
+[2025-08-09T08:16:34.873+0000] {spark_submit.py:521} INFO - java.lang.RuntimeException: java.lang.ClassNotFoundException: Class com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem not found
+[2025-08-09T08:16:34.874+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.conf.Configuration.getClass(Configuration.java:2737)
+[2025-08-09T08:16:34.874+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem.getFileSystemClass(FileSystem.java:3569)
+[2025-08-09T08:16:34.875+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem.createFileSystem(FileSystem.java:3612)
+[2025-08-09T08:16:34.875+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem.access$300(FileSystem.java:172)
+[2025-08-09T08:16:34.875+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem$Cache.getInternal(FileSystem.java:3716)
+[2025-08-09T08:16:34.876+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem$Cache.get(FileSystem.java:3667)
+[2025-08-09T08:16:34.876+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:557)
+[2025-08-09T08:16:34.877+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:289)
+[2025-08-09T08:16:34.877+0000] {spark_submit.py:521} INFO - at org.apache.spark.deploy.yarn.Client.$anonfun$submitApplication$3(Client.scala:217)
+[2025-08-09T08:16:34.877+0000] {spark_submit.py:521} INFO - at scala.Option.getOrElse(Option.scala:201)
+[2025-08-09T08:16:34.877+0000] {spark_submit.py:521} INFO - at org.apache.spark.deploy.yarn.Client.submitApplication(Client.scala:217)
+[2025-08-09T08:16:34.878+0000] {spark_submit.py:521} INFO - at org.apache.spark.scheduler.cluster.YarnClientSchedulerBackend.start(YarnClientSchedulerBackend.scala:63)
+[2025-08-09T08:16:34.878+0000] {spark_submit.py:521} INFO - at org.apache.spark.scheduler.TaskSchedulerImpl.start(TaskSchedulerImpl.scala:237)
+[2025-08-09T08:16:34.878+0000] {spark_submit.py:521} INFO - at org.apache.spark.SparkContext.<init>(SparkContext.scala:622)
+[2025-08-09T08:16:34.879+0000] {spark_submit.py:521} INFO - at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:59)
+[2025-08-09T08:16:34.879+0000] {spark_submit.py:521} INFO - at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+[2025-08-09T08:16:34.879+0000] {spark_submit.py:521} INFO - at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+[2025-08-09T08:16:34.879+0000] {spark_submit.py:521} INFO - at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+[2025-08-09T08:16:34.880+0000] {spark_submit.py:521} INFO - at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+[2025-08-09T08:16:34.880+0000] {spark_submit.py:521} INFO - at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+[2025-08-09T08:16:34.880+0000] {spark_submit.py:521} INFO - at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:247)
+[2025-08-09T08:16:34.880+0000] {spark_submit.py:521} INFO - at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+[2025-08-09T08:16:34.881+0000] {spark_submit.py:521} INFO - at py4j.Gateway.invoke(Gateway.java:238)
+[2025-08-09T08:16:34.881+0000] {spark_submit.py:521} INFO - at py4j.commands.ConstructorCommand.invokeConstructor(ConstructorCommand.java:80)
+[2025-08-09T08:16:34.881+0000] {spark_submit.py:521} INFO - at py4j.commands.ConstructorCommand.execute(ConstructorCommand.java:69)
+[2025-08-09T08:16:34.882+0000] {spark_submit.py:521} INFO - at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:184)
+[2025-08-09T08:16:34.882+0000] {spark_submit.py:521} INFO - at py4j.ClientServerConnection.run(ClientServerConnection.java:108)
+[2025-08-09T08:16:34.882+0000] {spark_submit.py:521} INFO - at java.base/java.lang.Thread.run(Thread.java:840)
+[2025-08-09T08:16:34.883+0000] {spark_submit.py:521} INFO - Caused by: java.lang.ClassNotFoundException: Class com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem not found
+[2025-08-09T08:16:34.883+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.conf.Configuration.getClassByName(Configuration.java:2641)
+[2025-08-09T08:16:34.883+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.conf.Configuration.getClass(Configuration.java:2735)
+[2025-08-09T08:16:34.884+0000] {spark_submit.py:521} INFO - ... 27 more
+[2025-08-09T08:16:34.884+0000] {spark_submit.py:521} INFO - 25/08/09 08:16:34 INFO SparkContext: SparkContext is stopping with exitCode 0 from JavaSparkContext at NativeConstructorAccessorImpl.java:0.
+[2025-08-09T08:16:34.891+0000] {spark_submit.py:521} INFO - 25/08/09 08:16:34 INFO SparkUI: Stopped Spark web UI at http://7239c47c7114:4040
+[2025-08-09T08:16:34.898+0000] {spark_submit.py:521} INFO - 25/08/09 08:16:34 WARN YarnSchedulerBackend$YarnSchedulerEndpoint: Attempted to send shutdown message before the AM has registered!
+[2025-08-09T08:16:34.904+0000] {spark_submit.py:521} INFO - 25/08/09 08:16:34 WARN YarnSchedulerBackend$YarnSchedulerEndpoint: Attempted to request executors before the AM has registered!
+[2025-08-09T08:16:34.907+0000] {spark_submit.py:521} INFO - 25/08/09 08:16:34 INFO YarnClientSchedulerBackend: Shutting down all executors
+[2025-08-09T08:16:34.911+0000] {spark_submit.py:521} INFO - 25/08/09 08:16:34 INFO YarnSchedulerBackend$YarnDriverEndpoint: Asking each executor to shut down
+[2025-08-09T08:16:34.915+0000] {spark_submit.py:521} INFO - 25/08/09 08:16:34 INFO YarnClientSchedulerBackend: YARN client scheduler backend Stopped
+[2025-08-09T08:16:34.938+0000] {spark_submit.py:521} INFO - 25/08/09 08:16:34 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+[2025-08-09T08:16:34.964+0000] {spark_submit.py:521} INFO - 25/08/09 08:16:34 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+[2025-08-09T08:16:34.965+0000] {spark_submit.py:521} INFO - 25/08/09 08:16:34 INFO MemoryStore: MemoryStore cleared
+[2025-08-09T08:16:34.965+0000] {spark_submit.py:521} INFO - 25/08/09 08:16:34 INFO BlockManager: BlockManager stopped
+[2025-08-09T08:16:34.971+0000] {spark_submit.py:521} INFO - 25/08/09 08:16:34 INFO BlockManagerMaster: BlockManagerMaster stopped
+[2025-08-09T08:16:34.971+0000] {spark_submit.py:521} INFO - 25/08/09 08:16:34 WARN MetricsSystem: Stopping a MetricsSystem that is not running
+[2025-08-09T08:16:34.973+0000] {spark_submit.py:521} INFO - 25/08/09 08:16:34 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+[2025-08-09T08:16:34.988+0000] {spark_submit.py:521} INFO - 25/08/09 08:16:34 INFO SparkContext: Successfully stopped SparkContext
+[2025-08-09T08:16:34.988+0000] {spark_submit.py:521} INFO - Traceback (most recent call last):
+[2025-08-09T08:16:34.989+0000] {spark_submit.py:521} INFO - File "/opt/spark-jobs/gold_transform.py", line 3, in <module>
+[2025-08-09T08:16:34.989+0000] {spark_submit.py:521} INFO - spark = SparkSession.builder.appName("gold_transform").getOrCreate()
+[2025-08-09T08:16:34.990+0000] {spark_submit.py:521} INFO - ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-08-09T08:16:34.990+0000] {spark_submit.py:521} INFO - File "/home/***/.local/lib/python3.11/site-packages/pyspark/python/lib/pyspark.zip/pyspark/sql/session.py", line 556, in getOrCreate
+[2025-08-09T08:16:34.990+0000] {spark_submit.py:521} INFO - File "/home/***/.local/lib/python3.11/site-packages/pyspark/python/lib/pyspark.zip/pyspark/core/context.py", line 523, in getOrCreate
+[2025-08-09T08:16:34.990+0000] {spark_submit.py:521} INFO - File "/home/***/.local/lib/python3.11/site-packages/pyspark/python/lib/pyspark.zip/pyspark/core/context.py", line 207, in __init__
+[2025-08-09T08:16:34.991+0000] {spark_submit.py:521} INFO - File "/home/***/.local/lib/python3.11/site-packages/pyspark/python/lib/pyspark.zip/pyspark/core/context.py", line 300, in _do_init
+[2025-08-09T08:16:34.991+0000] {spark_submit.py:521} INFO - File "/home/***/.local/lib/python3.11/site-packages/pyspark/python/lib/pyspark.zip/pyspark/core/context.py", line 429, in _initialize_context
+[2025-08-09T08:16:34.992+0000] {spark_submit.py:521} INFO - File "/home/***/.local/lib/python3.11/site-packages/pyspark/python/lib/py4j-0.10.9.9-src.zip/py4j/java_gateway.py", line 1627, in __call__
+[2025-08-09T08:16:34.992+0000] {spark_submit.py:521} INFO - File "/home/***/.local/lib/python3.11/site-packages/pyspark/python/lib/py4j-0.10.9.9-src.zip/py4j/protocol.py", line 327, in get_return_value
+[2025-08-09T08:16:34.992+0000] {spark_submit.py:521} INFO - py4j.protocol.Py4JJavaError: An error occurred while calling None.org.apache.spark.api.java.JavaSparkContext.
+[2025-08-09T08:16:34.993+0000] {spark_submit.py:521} INFO - : java.lang.RuntimeException: java.lang.ClassNotFoundException: Class com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem not found
+[2025-08-09T08:16:34.993+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.conf.Configuration.getClass(Configuration.java:2737)
+[2025-08-09T08:16:34.994+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem.getFileSystemClass(FileSystem.java:3569)
+[2025-08-09T08:16:34.994+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem.createFileSystem(FileSystem.java:3612)
+[2025-08-09T08:16:34.994+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem.access$300(FileSystem.java:172)
+[2025-08-09T08:16:34.994+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem$Cache.getInternal(FileSystem.java:3716)
+[2025-08-09T08:16:34.995+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem$Cache.get(FileSystem.java:3667)
+[2025-08-09T08:16:34.995+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:557)
+[2025-08-09T08:16:34.995+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:289)
+[2025-08-09T08:16:34.996+0000] {spark_submit.py:521} INFO - at org.apache.spark.deploy.yarn.Client.$anonfun$submitApplication$3(Client.scala:217)
+[2025-08-09T08:16:34.996+0000] {spark_submit.py:521} INFO - at scala.Option.getOrElse(Option.scala:201)
+[2025-08-09T08:16:34.996+0000] {spark_submit.py:521} INFO - at org.apache.spark.deploy.yarn.Client.submitApplication(Client.scala:217)
+[2025-08-09T08:16:34.996+0000] {spark_submit.py:521} INFO - at org.apache.spark.scheduler.cluster.YarnClientSchedulerBackend.start(YarnClientSchedulerBackend.scala:63)
+[2025-08-09T08:16:34.997+0000] {spark_submit.py:521} INFO - at org.apache.spark.scheduler.TaskSchedulerImpl.start(TaskSchedulerImpl.scala:237)
+[2025-08-09T08:16:34.997+0000] {spark_submit.py:521} INFO - at org.apache.spark.SparkContext.<init>(SparkContext.scala:622)
+[2025-08-09T08:16:34.997+0000] {spark_submit.py:521} INFO - at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:59)
+[2025-08-09T08:16:34.997+0000] {spark_submit.py:521} INFO - at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+[2025-08-09T08:16:34.997+0000] {spark_submit.py:521} INFO - at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+[2025-08-09T08:16:34.997+0000] {spark_submit.py:521} INFO - at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+[2025-08-09T08:16:34.998+0000] {spark_submit.py:521} INFO - at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+[2025-08-09T08:16:34.998+0000] {spark_submit.py:521} INFO - at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+[2025-08-09T08:16:34.998+0000] {spark_submit.py:521} INFO - at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:247)
+[2025-08-09T08:16:34.998+0000] {spark_submit.py:521} INFO - at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+[2025-08-09T08:16:34.998+0000] {spark_submit.py:521} INFO - at py4j.Gateway.invoke(Gateway.java:238)
+[2025-08-09T08:16:34.999+0000] {spark_submit.py:521} INFO - at py4j.commands.ConstructorCommand.invokeConstructor(ConstructorCommand.java:80)
+[2025-08-09T08:16:34.999+0000] {spark_submit.py:521} INFO - at py4j.commands.ConstructorCommand.execute(ConstructorCommand.java:69)
+[2025-08-09T08:16:34.999+0000] {spark_submit.py:521} INFO - at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:184)
+[2025-08-09T08:16:34.999+0000] {spark_submit.py:521} INFO - at py4j.ClientServerConnection.run(ClientServerConnection.java:108)
+[2025-08-09T08:16:34.999+0000] {spark_submit.py:521} INFO - at java.base/java.lang.Thread.run(Thread.java:840)
+[2025-08-09T08:16:34.999+0000] {spark_submit.py:521} INFO - Caused by: java.lang.ClassNotFoundException: Class com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem not found
+[2025-08-09T08:16:35.000+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.conf.Configuration.getClassByName(Configuration.java:2641)
+[2025-08-09T08:16:35.000+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.conf.Configuration.getClass(Configuration.java:2735)
+[2025-08-09T08:16:35.000+0000] {spark_submit.py:521} INFO - ... 27 more
+[2025-08-09T08:16:35.000+0000] {spark_submit.py:521} INFO - 
+[2025-08-09T08:16:35.103+0000] {spark_submit.py:521} INFO - 25/08/09 08:16:35 INFO ShutdownHookManager: Shutdown hook called
+[2025-08-09T08:16:35.104+0000] {spark_submit.py:521} INFO - 25/08/09 08:16:35 INFO ShutdownHookManager: Deleting directory /tmp/spark-3cd72529-c715-49ad-bccb-4d54fe730118
+[2025-08-09T08:16:35.110+0000] {spark_submit.py:521} INFO - 25/08/09 08:16:35 INFO ShutdownHookManager: Deleting directory /tmp/spark-420380f0-3bf4-4091-b181-614b62d946d5
+[2025-08-09T08:16:35.143+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-08-09T08:16:35.153+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/providers/apache/spark/operators/spark_submit.py", line 156, in execute
+    self._hook.submit(self._application)
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/providers/apache/spark/hooks/spark_submit.py", line 452, in submit
+    raise AirflowException(
+airflow.exceptions.AirflowException: Cannot execute: spark-submit --master yarn --conf spark.hadoop.fs.gs.impl=com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem --conf spark.hadoop.fs.AbstractFileSystem.gs.impl=com.google.cloud.hadoop.fs.gcs.GoogleHadoopFS --conf spark.hadoop.google.cloud.auth.service.account.enable=true --conf spark.hadoop.google.cloud.auth.service.account.json.keyfile=/opt/keys/gcp-key.json --conf spark.jars=/opt/custom-jars/gcs-connector-hadoop3-2.2.14-shaded.jar --conf spark.driver.extraClassPath=/opt/custom-jars/gcs-connector-hadoop3-2.2.14-shaded.jar --conf spark.executor.extraClassPath=/opt/custom-jars/gcs-connector-hadoop3-2.2.14-shaded.jar --conf spark.yarn.appMasterEnv.HADOOP_CONF_DIR=/opt/hadoop/etc/hadoop --jars /opt/custom-jars/gcs-connector-hadoop3-2.2.14-shaded.jar --name arrow-spark --verbose /opt/spark-jobs/gold_transform.py. Error code is: 1.
+[2025-08-09T08:16:35.161+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=spark_transform_topcv, task_id=submit_spark_job, run_id=manual__2025-08-09T08:16:25.185674+00:00, execution_date=20250809T081625, start_date=20250809T081627, end_date=20250809T081635
+[2025-08-09T08:16:35.172+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 47 for task submit_spark_job (Cannot execute: spark-submit --master yarn --conf spark.hadoop.fs.gs.impl=com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem --conf spark.hadoop.fs.AbstractFileSystem.gs.impl=com.google.cloud.hadoop.fs.gcs.GoogleHadoopFS --conf spark.hadoop.google.cloud.auth.service.account.enable=true --conf spark.hadoop.google.cloud.auth.service.account.json.keyfile=/opt/keys/gcp-key.json --conf spark.jars=/opt/custom-jars/gcs-connector-hadoop3-2.2.14-shaded.jar --conf spark.driver.extraClassPath=/opt/custom-jars/gcs-connector-hadoop3-2.2.14-shaded.jar --conf spark.executor.extraClassPath=/opt/custom-jars/gcs-connector-hadoop3-2.2.14-shaded.jar --conf spark.yarn.appMasterEnv.HADOOP_CONF_DIR=/opt/hadoop/etc/hadoop --jars /opt/custom-jars/gcs-connector-hadoop3-2.2.14-shaded.jar --name arrow-spark --verbose /opt/spark-jobs/gold_transform.py. Error code is: 1.; 420)
+[2025-08-09T08:16:35.211+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-08-09T08:16:35.229+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-08-09T08:16:35.232+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

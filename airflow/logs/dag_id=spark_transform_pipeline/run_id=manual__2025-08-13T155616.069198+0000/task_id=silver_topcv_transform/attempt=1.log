@@ -1,0 +1,554 @@
+[2025-08-13T15:56:20.281+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-08-13T15:56:20.303+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: spark_transform_pipeline.silver_topcv_transform manual__2025-08-13T15:56:16.069198+00:00 [queued]>
+[2025-08-13T15:56:20.310+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: spark_transform_pipeline.silver_topcv_transform manual__2025-08-13T15:56:16.069198+00:00 [queued]>
+[2025-08-13T15:56:20.311+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-08-13T15:56:20.327+0000] {taskinstance.py:2330} INFO - Executing <Task(SparkSubmitOperator): silver_topcv_transform> on 2025-08-13 15:56:16.069198+00:00
+[2025-08-13T15:56:20.341+0000] {standard_task_runner.py:63} INFO - Started process 44 to run task
+[2025-08-13T15:56:20.344+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'spark_transform_pipeline', 'silver_topcv_transform', 'manual__2025-08-13T15:56:16.069198+00:00', '--job-id', '134', '--raw', '--subdir', 'DAGS_FOLDER/etl_jobs_dag.py', '--cfg-path', '/tmp/tmpxm7eis6o']
+[2025-08-13T15:56:20.347+0000] {standard_task_runner.py:91} INFO - Job 134: Subtask silver_topcv_transform
+[2025-08-13T15:56:20.411+0000] {task_command.py:426} INFO - Running <TaskInstance: spark_transform_pipeline.silver_topcv_transform manual__2025-08-13T15:56:16.069198+00:00 [running]> on host 63163ed450b9
+[2025-08-13T15:56:20.635+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='spark_transform_pipeline' AIRFLOW_CTX_TASK_ID='silver_topcv_transform' AIRFLOW_CTX_EXECUTION_DATE='2025-08-13T15:56:16.069198+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-08-13T15:56:16.069198+00:00'
+[2025-08-13T15:56:20.636+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-08-13T15:56:20.697+0000] {base.py:84} INFO - Using connection ID 'spark_default' for task execution.
+[2025-08-13T15:56:20.699+0000] {spark_submit.py:351} INFO - Spark-Submit cmd: spark-submit --master spark://spark-master:7077 --conf spark.master=spark://spark-master:7077 --conf spark.driver.extraClassPath=/opt/custom-jars/* --conf spark.executor.extraClassPath=/opt/custom-jars/* --conf spark.hadoop.fs.gs.impl=com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem --conf spark.hadoop.fs.AbstractFileSystem.gs.impl=com.google.cloud.hadoop.fs.gcs.GoogleHadoopFS --conf spark.hadoop.google.cloud.auth.service.account.enable=true --conf spark.hadoop.google.cloud.auth.service.account.json.keyfile=/opt/***/gcp-key.json --jars /opt/custom-jars/gcs-connector-hadoop3-2.2.14-shaded.jar --name arrow-spark --verbose /opt/spark-jobs/transform/gold_transfrom.py
+[2025-08-13T15:56:24.473+0000] {spark_submit.py:521} INFO - Using properties file: null
+[2025-08-13T15:56:24.675+0000] {spark_submit.py:521} INFO - Parsed arguments:
+[2025-08-13T15:56:24.679+0000] {spark_submit.py:521} INFO - master                  spark://spark-master:7077
+[2025-08-13T15:56:24.680+0000] {spark_submit.py:521} INFO - remote                  null
+[2025-08-13T15:56:24.681+0000] {spark_submit.py:521} INFO - deployMode              null
+[2025-08-13T15:56:24.681+0000] {spark_submit.py:521} INFO - executorMemory          null
+[2025-08-13T15:56:24.682+0000] {spark_submit.py:521} INFO - executorCores           null
+[2025-08-13T15:56:24.682+0000] {spark_submit.py:521} INFO - totalExecutorCores      null
+[2025-08-13T15:56:24.682+0000] {spark_submit.py:521} INFO - propertiesFile          null
+[2025-08-13T15:56:24.683+0000] {spark_submit.py:521} INFO - driverMemory            null
+[2025-08-13T15:56:24.683+0000] {spark_submit.py:521} INFO - driverCores             null
+[2025-08-13T15:56:24.684+0000] {spark_submit.py:521} INFO - driverExtraClassPath    /opt/custom-jars/*
+[2025-08-13T15:56:24.684+0000] {spark_submit.py:521} INFO - driverExtraLibraryPath  null
+[2025-08-13T15:56:24.684+0000] {spark_submit.py:521} INFO - driverExtraJavaOptions  null
+[2025-08-13T15:56:24.685+0000] {spark_submit.py:521} INFO - supervise               false
+[2025-08-13T15:56:24.685+0000] {spark_submit.py:521} INFO - queue                   null
+[2025-08-13T15:56:24.685+0000] {spark_submit.py:521} INFO - numExecutors            null
+[2025-08-13T15:56:24.686+0000] {spark_submit.py:521} INFO - files                   null
+[2025-08-13T15:56:24.686+0000] {spark_submit.py:521} INFO - pyFiles                 null
+[2025-08-13T15:56:24.686+0000] {spark_submit.py:521} INFO - archives                null
+[2025-08-13T15:56:24.687+0000] {spark_submit.py:521} INFO - mainClass               null
+[2025-08-13T15:56:24.687+0000] {spark_submit.py:521} INFO - primaryResource         file:/opt/spark-jobs/transform/gold_transfrom.py
+[2025-08-13T15:56:24.687+0000] {spark_submit.py:521} INFO - name                    arrow-spark
+[2025-08-13T15:56:24.688+0000] {spark_submit.py:521} INFO - childArgs               []
+[2025-08-13T15:56:24.688+0000] {spark_submit.py:521} INFO - jars                    file:/opt/custom-jars/gcs-connector-hadoop3-2.2.14-shaded.jar
+[2025-08-13T15:56:24.689+0000] {spark_submit.py:521} INFO - packages                null
+[2025-08-13T15:56:24.689+0000] {spark_submit.py:521} INFO - packagesExclusions      null
+[2025-08-13T15:56:24.689+0000] {spark_submit.py:521} INFO - repositories            null
+[2025-08-13T15:56:24.690+0000] {spark_submit.py:521} INFO - verbose                 true
+[2025-08-13T15:56:24.690+0000] {spark_submit.py:521} INFO - 
+[2025-08-13T15:56:24.691+0000] {spark_submit.py:521} INFO - Spark properties used, including those specified through
+[2025-08-13T15:56:24.691+0000] {spark_submit.py:521} INFO - --conf and those from the properties file null:
+[2025-08-13T15:56:24.691+0000] {spark_submit.py:521} INFO - (spark.driver.extraClassPath,/opt/custom-jars/*)
+[2025-08-13T15:56:24.692+0000] {spark_submit.py:521} INFO - (spark.executor.extraClassPath,/opt/custom-jars/*)
+[2025-08-13T15:56:24.692+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.AbstractFileSystem.gs.impl,com.google.cloud.hadoop.fs.gcs.GoogleHadoopFS)
+[2025-08-13T15:56:24.693+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.gs.impl,com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem)
+[2025-08-13T15:56:24.693+0000] {spark_submit.py:521} INFO - (spark.hadoop.google.cloud.auth.service.account.enable,true)
+[2025-08-13T15:56:24.693+0000] {spark_submit.py:521} INFO - (spark.hadoop.google.cloud.auth.service.account.json.keyfile,/opt/***/gcp-key.json)
+[2025-08-13T15:56:24.694+0000] {spark_submit.py:521} INFO - (spark.master,spark://spark-master:7077)
+[2025-08-13T15:56:24.694+0000] {spark_submit.py:521} INFO - 
+[2025-08-13T15:56:24.694+0000] {spark_submit.py:521} INFO - 
+[2025-08-13T15:56:25.191+0000] {spark_submit.py:521} INFO - 25/08/13 15:56:25 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2025-08-13T15:56:25.378+0000] {spark_submit.py:521} INFO - Main class:
+[2025-08-13T15:56:25.378+0000] {spark_submit.py:521} INFO - org.apache.spark.deploy.PythonRunner
+[2025-08-13T15:56:25.379+0000] {spark_submit.py:521} INFO - Arguments:
+[2025-08-13T15:56:25.380+0000] {spark_submit.py:521} INFO - file:/opt/spark-jobs/transform/gold_transfrom.py
+[2025-08-13T15:56:25.380+0000] {spark_submit.py:521} INFO - null
+[2025-08-13T15:56:25.380+0000] {spark_submit.py:521} INFO - Spark config:
+[2025-08-13T15:56:25.381+0000] {spark_submit.py:521} INFO - (spark.app.name,arrow-spark)
+[2025-08-13T15:56:25.381+0000] {spark_submit.py:521} INFO - (spark.app.submitTime,1755100585365)
+[2025-08-13T15:56:25.381+0000] {spark_submit.py:521} INFO - (spark.driver.extraClassPath,/opt/custom-jars/*)
+[2025-08-13T15:56:25.382+0000] {spark_submit.py:521} INFO - (spark.executor.extraClassPath,/opt/custom-jars/*)
+[2025-08-13T15:56:25.382+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.AbstractFileSystem.gs.impl,com.google.cloud.hadoop.fs.gcs.GoogleHadoopFS)
+[2025-08-13T15:56:25.383+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.gs.impl,com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem)
+[2025-08-13T15:56:25.383+0000] {spark_submit.py:521} INFO - (spark.hadoop.google.cloud.auth.service.account.enable,true)
+[2025-08-13T15:56:25.383+0000] {spark_submit.py:521} INFO - (spark.hadoop.google.cloud.auth.service.account.json.keyfile,/opt/***/gcp-key.json)
+[2025-08-13T15:56:25.384+0000] {spark_submit.py:521} INFO - (spark.jars,file:/opt/custom-jars/gcs-connector-hadoop3-2.2.14-shaded.jar)
+[2025-08-13T15:56:25.384+0000] {spark_submit.py:521} INFO - (spark.master,spark://spark-master:7077)
+[2025-08-13T15:56:25.384+0000] {spark_submit.py:521} INFO - (spark.repl.local.jars,file:/opt/custom-jars/gcs-connector-hadoop3-2.2.14-shaded.jar)
+[2025-08-13T15:56:25.385+0000] {spark_submit.py:521} INFO - (spark.submit.deployMode,client)
+[2025-08-13T15:56:25.385+0000] {spark_submit.py:521} INFO - (spark.submit.pyFiles,)
+[2025-08-13T15:56:25.385+0000] {spark_submit.py:521} INFO - Classpath elements:
+[2025-08-13T15:56:25.386+0000] {spark_submit.py:521} INFO - file:/opt/custom-jars/gcs-connector-hadoop3-2.2.14-shaded.jar
+[2025-08-13T15:56:25.386+0000] {spark_submit.py:521} INFO - 
+[2025-08-13T15:56:25.386+0000] {spark_submit.py:521} INFO - 
+[2025-08-13T15:56:25.387+0000] {spark_submit.py:521} INFO - 25/08/13 15:56:25 WARN DependencyUtils: Local jar /opt/custom-jars/gcs-connector-hadoop3-2.2.14-shaded.jar does not exist, skipping.
+[2025-08-13T15:56:26.799+0000] {spark_submit.py:521} INFO - 25/08/13 15:56:26 INFO SparkContext: Running Spark version 3.5.1
+[2025-08-13T15:56:26.800+0000] {spark_submit.py:521} INFO - 25/08/13 15:56:26 INFO SparkContext: OS info Linux, 5.15.167.4-microsoft-standard-WSL2, amd64
+[2025-08-13T15:56:26.801+0000] {spark_submit.py:521} INFO - 25/08/13 15:56:26 INFO SparkContext: Java version 17.0.16
+[2025-08-13T15:56:26.831+0000] {spark_submit.py:521} INFO - 25/08/13 15:56:26 INFO ResourceUtils: ==============================================================
+[2025-08-13T15:56:26.832+0000] {spark_submit.py:521} INFO - 25/08/13 15:56:26 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2025-08-13T15:56:26.832+0000] {spark_submit.py:521} INFO - 25/08/13 15:56:26 INFO ResourceUtils: ==============================================================
+[2025-08-13T15:56:26.833+0000] {spark_submit.py:521} INFO - 25/08/13 15:56:26 INFO SparkContext: Submitted application: gold_transform
+[2025-08-13T15:56:26.862+0000] {spark_submit.py:521} INFO - 25/08/13 15:56:26 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2025-08-13T15:56:26.872+0000] {spark_submit.py:521} INFO - 25/08/13 15:56:26 INFO ResourceProfile: Limiting resource is cpu
+[2025-08-13T15:56:26.873+0000] {spark_submit.py:521} INFO - 25/08/13 15:56:26 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2025-08-13T15:56:26.955+0000] {spark_submit.py:521} INFO - 25/08/13 15:56:26 INFO SecurityManager: Changing view acls to: ***
+[2025-08-13T15:56:26.955+0000] {spark_submit.py:521} INFO - 25/08/13 15:56:26 INFO SecurityManager: Changing modify acls to: ***
+[2025-08-13T15:56:26.956+0000] {spark_submit.py:521} INFO - 25/08/13 15:56:26 INFO SecurityManager: Changing view acls groups to:
+[2025-08-13T15:56:26.956+0000] {spark_submit.py:521} INFO - 25/08/13 15:56:26 INFO SecurityManager: Changing modify acls groups to:
+[2025-08-13T15:56:26.957+0000] {spark_submit.py:521} INFO - 25/08/13 15:56:26 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: ***; groups with view permissions: EMPTY; users with modify permissions: ***; groups with modify permissions: EMPTY
+[2025-08-13T15:56:27.203+0000] {spark_submit.py:521} INFO - 25/08/13 15:56:27 INFO Utils: Successfully started service 'sparkDriver' on port 35481.
+[2025-08-13T15:56:27.230+0000] {spark_submit.py:521} INFO - 25/08/13 15:56:27 INFO SparkEnv: Registering MapOutputTracker
+[2025-08-13T15:56:27.263+0000] {spark_submit.py:521} INFO - 25/08/13 15:56:27 INFO SparkEnv: Registering BlockManagerMaster
+[2025-08-13T15:56:27.285+0000] {spark_submit.py:521} INFO - 25/08/13 15:56:27 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2025-08-13T15:56:27.285+0000] {spark_submit.py:521} INFO - 25/08/13 15:56:27 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2025-08-13T15:56:27.289+0000] {spark_submit.py:521} INFO - 25/08/13 15:56:27 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2025-08-13T15:56:27.317+0000] {spark_submit.py:521} INFO - 25/08/13 15:56:27 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-dc45026c-031e-43ac-a99b-f67ad921ab39
+[2025-08-13T15:56:27.333+0000] {spark_submit.py:521} INFO - 25/08/13 15:56:27 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+[2025-08-13T15:56:27.353+0000] {spark_submit.py:521} INFO - 25/08/13 15:56:27 INFO SparkEnv: Registering OutputCommitCoordinator
+[2025-08-13T15:56:27.485+0000] {spark_submit.py:521} INFO - 25/08/13 15:56:27 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+[2025-08-13T15:56:27.547+0000] {spark_submit.py:521} INFO - 25/08/13 15:56:27 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2025-08-13T15:56:27.578+0000] {spark_submit.py:521} INFO - 25/08/13 15:56:27 ERROR SparkContext: Failed to add file:/opt/custom-jars/gcs-connector-hadoop3-2.2.14-shaded.jar to Spark environment
+[2025-08-13T15:56:27.578+0000] {spark_submit.py:521} INFO - java.io.FileNotFoundException: Jar /opt/custom-jars/gcs-connector-hadoop3-2.2.14-shaded.jar not found
+[2025-08-13T15:56:27.578+0000] {spark_submit.py:521} INFO - at org.apache.spark.SparkContext.addLocalJarFile$1(SparkContext.scala:2100)
+[2025-08-13T15:56:27.579+0000] {spark_submit.py:521} INFO - at org.apache.spark.SparkContext.addJar(SparkContext.scala:2156)
+[2025-08-13T15:56:27.579+0000] {spark_submit.py:521} INFO - at org.apache.spark.SparkContext.$anonfun$new$15(SparkContext.scala:526)
+[2025-08-13T15:56:27.579+0000] {spark_submit.py:521} INFO - at org.apache.spark.SparkContext.$anonfun$new$15$adapted(SparkContext.scala:526)
+[2025-08-13T15:56:27.579+0000] {spark_submit.py:521} INFO - at scala.collection.mutable.ResizableArray.foreach(ResizableArray.scala:62)
+[2025-08-13T15:56:27.580+0000] {spark_submit.py:521} INFO - at scala.collection.mutable.ResizableArray.foreach$(ResizableArray.scala:55)
+[2025-08-13T15:56:27.580+0000] {spark_submit.py:521} INFO - at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:49)
+[2025-08-13T15:56:27.580+0000] {spark_submit.py:521} INFO - at org.apache.spark.SparkContext.<init>(SparkContext.scala:526)
+[2025-08-13T15:56:27.580+0000] {spark_submit.py:521} INFO - at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:58)
+[2025-08-13T15:56:27.580+0000] {spark_submit.py:521} INFO - at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+[2025-08-13T15:56:27.581+0000] {spark_submit.py:521} INFO - at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+[2025-08-13T15:56:27.581+0000] {spark_submit.py:521} INFO - at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+[2025-08-13T15:56:27.581+0000] {spark_submit.py:521} INFO - at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+[2025-08-13T15:56:27.581+0000] {spark_submit.py:521} INFO - at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+[2025-08-13T15:56:27.581+0000] {spark_submit.py:521} INFO - at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:247)
+[2025-08-13T15:56:27.582+0000] {spark_submit.py:521} INFO - at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+[2025-08-13T15:56:27.582+0000] {spark_submit.py:521} INFO - at py4j.Gateway.invoke(Gateway.java:238)
+[2025-08-13T15:56:27.582+0000] {spark_submit.py:521} INFO - at py4j.commands.ConstructorCommand.invokeConstructor(ConstructorCommand.java:80)
+[2025-08-13T15:56:27.583+0000] {spark_submit.py:521} INFO - at py4j.commands.ConstructorCommand.execute(ConstructorCommand.java:69)
+[2025-08-13T15:56:27.583+0000] {spark_submit.py:521} INFO - at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+[2025-08-13T15:56:27.583+0000] {spark_submit.py:521} INFO - at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+[2025-08-13T15:56:27.583+0000] {spark_submit.py:521} INFO - at java.base/java.lang.Thread.run(Thread.java:840)
+[2025-08-13T15:56:27.775+0000] {spark_submit.py:521} INFO - 25/08/13 15:56:27 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark-master:7077...
+[2025-08-13T15:56:27.896+0000] {spark_submit.py:521} INFO - 25/08/13 15:56:27 INFO TransportClientFactory: Successfully created connection to spark-master/172.18.0.2:7077 after 65 ms (0 ms spent in bootstraps)
+[2025-08-13T15:56:28.172+0000] {spark_submit.py:521} INFO - 25/08/13 15:56:28 WARN StandaloneAppClient$ClientEndpoint: Failed to connect to master spark-master:7077
+[2025-08-13T15:56:28.173+0000] {spark_submit.py:521} INFO - org.apache.spark.SparkException: Exception thrown in awaitResult:
+[2025-08-13T15:56:28.173+0000] {spark_submit.py:521} INFO - at org.apache.spark.util.SparkThreadUtils$.awaitResult(SparkThreadUtils.scala:56)
+[2025-08-13T15:56:28.173+0000] {spark_submit.py:521} INFO - at org.apache.spark.util.ThreadUtils$.awaitResult(ThreadUtils.scala:310)
+[2025-08-13T15:56:28.174+0000] {spark_submit.py:521} INFO - at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:75)
+[2025-08-13T15:56:28.174+0000] {spark_submit.py:521} INFO - at org.apache.spark.rpc.RpcEnv.setupEndpointRefByURI(RpcEnv.scala:102)
+[2025-08-13T15:56:28.174+0000] {spark_submit.py:521} INFO - at org.apache.spark.rpc.RpcEnv.setupEndpointRef(RpcEnv.scala:110)
+[2025-08-13T15:56:28.175+0000] {spark_submit.py:521} INFO - at org.apache.spark.deploy.client.StandaloneAppClient$ClientEndpoint$$anon$1.run(StandaloneAppClient.scala:108)
+[2025-08-13T15:56:28.175+0000] {spark_submit.py:521} INFO - at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+[2025-08-13T15:56:28.175+0000] {spark_submit.py:521} INFO - at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+[2025-08-13T15:56:28.175+0000] {spark_submit.py:521} INFO - at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+[2025-08-13T15:56:28.176+0000] {spark_submit.py:521} INFO - at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+[2025-08-13T15:56:28.176+0000] {spark_submit.py:521} INFO - at java.base/java.lang.Thread.run(Thread.java:840)
+[2025-08-13T15:56:28.176+0000] {spark_submit.py:521} INFO - Caused by: java.lang.RuntimeException: java.io.InvalidClassException: org.apache.spark.rpc.netty.RpcEndpointVerifier$CheckExistence; local class incompatible: stream classdesc serialVersionUID = 7789290765573734431, local class serialVersionUID = 5378738997755484868
+[2025-08-13T15:56:28.176+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectStreamClass.initNonProxy(Unknown Source)
+[2025-08-13T15:56:28.177+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readNonProxyDesc(Unknown Source)
+[2025-08-13T15:56:28.177+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readClassDesc(Unknown Source)
+[2025-08-13T15:56:28.177+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-08-13T15:56:28.178+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-08-13T15:56:28.178+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject(Unknown Source)
+[2025-08-13T15:56:28.178+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject(Unknown Source)
+[2025-08-13T15:56:28.178+0000] {spark_submit.py:521} INFO - at org.apache.spark.serializer.JavaDeserializationStream.readObject(JavaSerializer.scala:88)
+[2025-08-13T15:56:28.179+0000] {spark_submit.py:521} INFO - at org.apache.spark.serializer.JavaSerializerInstance.deserialize(JavaSerializer.scala:130)
+[2025-08-13T15:56:28.179+0000] {spark_submit.py:521} INFO - at org.apache.spark.rpc.netty.NettyRpcEnv.$anonfun$deserialize$2(NettyRpcEnv.scala:302)
+[2025-08-13T15:56:28.180+0000] {spark_submit.py:521} INFO - at scala.util.DynamicVariable.withValue(DynamicVariable.scala:59)
+[2025-08-13T15:56:28.180+0000] {spark_submit.py:521} INFO - at org.apache.spark.rpc.netty.NettyRpcEnv.deserialize(NettyRpcEnv.scala:355)
+[2025-08-13T15:56:28.180+0000] {spark_submit.py:521} INFO - at org.apache.spark.rpc.netty.NettyRpcEnv.$anonfun$deserialize$1(NettyRpcEnv.scala:301)
+[2025-08-13T15:56:28.181+0000] {spark_submit.py:521} INFO - at scala.util.DynamicVariable.withValue(DynamicVariable.scala:59)
+[2025-08-13T15:56:28.181+0000] {spark_submit.py:521} INFO - at org.apache.spark.rpc.netty.NettyRpcEnv.deserialize(NettyRpcEnv.scala:301)
+[2025-08-13T15:56:28.181+0000] {spark_submit.py:521} INFO - at org.apache.spark.rpc.netty.RequestMessage$.apply(NettyRpcEnv.scala:653)
+[2025-08-13T15:56:28.181+0000] {spark_submit.py:521} INFO - at org.apache.spark.rpc.netty.NettyRpcHandler.internalReceive(NettyRpcEnv.scala:704)
+[2025-08-13T15:56:28.182+0000] {spark_submit.py:521} INFO - at org.apache.spark.rpc.netty.NettyRpcHandler.receive(NettyRpcEnv.scala:689)
+[2025-08-13T15:56:28.182+0000] {spark_submit.py:521} INFO - at org.apache.spark.network.server.TransportRequestHandler.processRpcRequest(TransportRequestHandler.java:167)
+[2025-08-13T15:56:28.182+0000] {spark_submit.py:521} INFO - at org.apache.spark.network.server.TransportRequestHandler.handle(TransportRequestHandler.java:111)
+[2025-08-13T15:56:28.183+0000] {spark_submit.py:521} INFO - at org.apache.spark.network.server.TransportChannelHandler.channelRead0(TransportChannelHandler.java:143)
+[2025-08-13T15:56:28.183+0000] {spark_submit.py:521} INFO - at org.apache.spark.network.server.TransportChannelHandler.channelRead0(TransportChannelHandler.java:55)
+[2025-08-13T15:56:28.183+0000] {spark_submit.py:521} INFO - at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:99)
+[2025-08-13T15:56:28.183+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+[2025-08-13T15:56:28.184+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+[2025-08-13T15:56:28.184+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+[2025-08-13T15:56:28.184+0000] {spark_submit.py:521} INFO - at io.netty.handler.timeout.IdleStateHandler.channelRead(IdleStateHandler.java:289)
+[2025-08-13T15:56:28.184+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+[2025-08-13T15:56:28.185+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+[2025-08-13T15:56:28.185+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+[2025-08-13T15:56:28.185+0000] {spark_submit.py:521} INFO - at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:107)
+[2025-08-13T15:56:28.186+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+[2025-08-13T15:56:28.186+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+[2025-08-13T15:56:28.186+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+[2025-08-13T15:56:28.186+0000] {spark_submit.py:521} INFO - at org.apache.spark.network.util.TransportFrameDecoder.channelRead(TransportFrameDecoder.java:102)
+[2025-08-13T15:56:28.187+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+[2025-08-13T15:56:28.187+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+[2025-08-13T15:56:28.187+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+[2025-08-13T15:56:28.187+0000] {spark_submit.py:521} INFO - at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1357)
+[2025-08-13T15:56:28.188+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440)
+[2025-08-13T15:56:28.188+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+[2025-08-13T15:56:28.188+0000] {spark_submit.py:521} INFO - at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:868)
+[2025-08-13T15:56:28.188+0000] {spark_submit.py:521} INFO - at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+[2025-08-13T15:56:28.189+0000] {spark_submit.py:521} INFO - at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:796)
+[2025-08-13T15:56:28.189+0000] {spark_submit.py:521} INFO - at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:732)
+[2025-08-13T15:56:28.189+0000] {spark_submit.py:521} INFO - at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:658)
+[2025-08-13T15:56:28.190+0000] {spark_submit.py:521} INFO - at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+[2025-08-13T15:56:28.190+0000] {spark_submit.py:521} INFO - at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998)
+[2025-08-13T15:56:28.190+0000] {spark_submit.py:521} INFO - at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+[2025-08-13T15:56:28.190+0000] {spark_submit.py:521} INFO - at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+[2025-08-13T15:56:28.191+0000] {spark_submit.py:521} INFO - at java.base/java.lang.Thread.run(Unknown Source)
+[2025-08-13T15:56:28.191+0000] {spark_submit.py:521} INFO - 
+[2025-08-13T15:56:28.191+0000] {spark_submit.py:521} INFO - at org.apache.spark.network.client.TransportResponseHandler.handle(TransportResponseHandler.java:209)
+[2025-08-13T15:56:28.191+0000] {spark_submit.py:521} INFO - at org.apache.spark.network.server.TransportChannelHandler.channelRead0(TransportChannelHandler.java:142)
+[2025-08-13T15:56:28.192+0000] {spark_submit.py:521} INFO - at org.apache.spark.network.server.TransportChannelHandler.channelRead0(TransportChannelHandler.java:53)
+[2025-08-13T15:56:28.192+0000] {spark_submit.py:521} INFO - at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:99)
+[2025-08-13T15:56:28.192+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+[2025-08-13T15:56:28.193+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+[2025-08-13T15:56:28.193+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+[2025-08-13T15:56:28.193+0000] {spark_submit.py:521} INFO - at io.netty.handler.timeout.IdleStateHandler.channelRead(IdleStateHandler.java:286)
+[2025-08-13T15:56:28.193+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+[2025-08-13T15:56:28.194+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+[2025-08-13T15:56:28.194+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+[2025-08-13T15:56:28.194+0000] {spark_submit.py:521} INFO - at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+[2025-08-13T15:56:28.195+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+[2025-08-13T15:56:28.195+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+[2025-08-13T15:56:28.195+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+[2025-08-13T15:56:28.196+0000] {spark_submit.py:521} INFO - at org.apache.spark.network.util.TransportFrameDecoder.channelRead(TransportFrameDecoder.java:102)
+[2025-08-13T15:56:28.196+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+[2025-08-13T15:56:28.196+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+[2025-08-13T15:56:28.196+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+[2025-08-13T15:56:28.197+0000] {spark_submit.py:521} INFO - at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+[2025-08-13T15:56:28.197+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440)
+[2025-08-13T15:56:28.197+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+[2025-08-13T15:56:28.197+0000] {spark_submit.py:521} INFO - at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+[2025-08-13T15:56:28.198+0000] {spark_submit.py:521} INFO - at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+[2025-08-13T15:56:28.198+0000] {spark_submit.py:521} INFO - at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+[2025-08-13T15:56:28.198+0000] {spark_submit.py:521} INFO - at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+[2025-08-13T15:56:28.198+0000] {spark_submit.py:521} INFO - at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+[2025-08-13T15:56:28.199+0000] {spark_submit.py:521} INFO - at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+[2025-08-13T15:56:28.199+0000] {spark_submit.py:521} INFO - at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+[2025-08-13T15:56:28.199+0000] {spark_submit.py:521} INFO - at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+[2025-08-13T15:56:28.199+0000] {spark_submit.py:521} INFO - at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+[2025-08-13T15:56:28.200+0000] {spark_submit.py:521} INFO - ... 1 more
+[2025-08-13T15:56:47.776+0000] {spark_submit.py:521} INFO - 25/08/13 15:56:47 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark-master:7077...
+[2025-08-13T15:56:47.787+0000] {spark_submit.py:521} INFO - 25/08/13 15:56:47 WARN StandaloneAppClient$ClientEndpoint: Failed to connect to master spark-master:7077
+[2025-08-13T15:56:47.787+0000] {spark_submit.py:521} INFO - org.apache.spark.SparkException: Exception thrown in awaitResult:
+[2025-08-13T15:56:47.788+0000] {spark_submit.py:521} INFO - at org.apache.spark.util.SparkThreadUtils$.awaitResult(SparkThreadUtils.scala:56)
+[2025-08-13T15:56:47.788+0000] {spark_submit.py:521} INFO - at org.apache.spark.util.ThreadUtils$.awaitResult(ThreadUtils.scala:310)
+[2025-08-13T15:56:47.788+0000] {spark_submit.py:521} INFO - at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:75)
+[2025-08-13T15:56:47.789+0000] {spark_submit.py:521} INFO - at org.apache.spark.rpc.RpcEnv.setupEndpointRefByURI(RpcEnv.scala:102)
+[2025-08-13T15:56:47.789+0000] {spark_submit.py:521} INFO - at org.apache.spark.rpc.RpcEnv.setupEndpointRef(RpcEnv.scala:110)
+[2025-08-13T15:56:47.789+0000] {spark_submit.py:521} INFO - at org.apache.spark.deploy.client.StandaloneAppClient$ClientEndpoint$$anon$1.run(StandaloneAppClient.scala:108)
+[2025-08-13T15:56:47.790+0000] {spark_submit.py:521} INFO - at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+[2025-08-13T15:56:47.790+0000] {spark_submit.py:521} INFO - at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+[2025-08-13T15:56:47.790+0000] {spark_submit.py:521} INFO - at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+[2025-08-13T15:56:47.791+0000] {spark_submit.py:521} INFO - at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+[2025-08-13T15:56:47.791+0000] {spark_submit.py:521} INFO - at java.base/java.lang.Thread.run(Thread.java:840)
+[2025-08-13T15:56:47.791+0000] {spark_submit.py:521} INFO - Caused by: java.lang.RuntimeException: java.io.InvalidClassException: org.apache.spark.rpc.netty.RpcEndpointVerifier$CheckExistence; local class incompatible: stream classdesc serialVersionUID = 7789290765573734431, local class serialVersionUID = 5378738997755484868
+[2025-08-13T15:56:47.791+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectStreamClass.initNonProxy(Unknown Source)
+[2025-08-13T15:56:47.791+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readNonProxyDesc(Unknown Source)
+[2025-08-13T15:56:47.792+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readClassDesc(Unknown Source)
+[2025-08-13T15:56:47.792+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-08-13T15:56:47.792+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-08-13T15:56:47.792+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject(Unknown Source)
+[2025-08-13T15:56:47.792+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject(Unknown Source)
+[2025-08-13T15:56:47.792+0000] {spark_submit.py:521} INFO - at org.apache.spark.serializer.JavaDeserializationStream.readObject(JavaSerializer.scala:88)
+[2025-08-13T15:56:47.792+0000] {spark_submit.py:521} INFO - at org.apache.spark.serializer.JavaSerializerInstance.deserialize(JavaSerializer.scala:130)
+[2025-08-13T15:56:47.792+0000] {spark_submit.py:521} INFO - at org.apache.spark.rpc.netty.NettyRpcEnv.$anonfun$deserialize$2(NettyRpcEnv.scala:302)
+[2025-08-13T15:56:47.793+0000] {spark_submit.py:521} INFO - at scala.util.DynamicVariable.withValue(DynamicVariable.scala:59)
+[2025-08-13T15:56:47.793+0000] {spark_submit.py:521} INFO - at org.apache.spark.rpc.netty.NettyRpcEnv.deserialize(NettyRpcEnv.scala:355)
+[2025-08-13T15:56:47.793+0000] {spark_submit.py:521} INFO - at org.apache.spark.rpc.netty.NettyRpcEnv.$anonfun$deserialize$1(NettyRpcEnv.scala:301)
+[2025-08-13T15:56:47.793+0000] {spark_submit.py:521} INFO - at scala.util.DynamicVariable.withValue(DynamicVariable.scala:59)
+[2025-08-13T15:56:47.793+0000] {spark_submit.py:521} INFO - at org.apache.spark.rpc.netty.NettyRpcEnv.deserialize(NettyRpcEnv.scala:301)
+[2025-08-13T15:56:47.793+0000] {spark_submit.py:521} INFO - at org.apache.spark.rpc.netty.RequestMessage$.apply(NettyRpcEnv.scala:653)
+[2025-08-13T15:56:47.794+0000] {spark_submit.py:521} INFO - at org.apache.spark.rpc.netty.NettyRpcHandler.internalReceive(NettyRpcEnv.scala:704)
+[2025-08-13T15:56:47.794+0000] {spark_submit.py:521} INFO - at org.apache.spark.rpc.netty.NettyRpcHandler.receive(NettyRpcEnv.scala:689)
+[2025-08-13T15:56:47.794+0000] {spark_submit.py:521} INFO - at org.apache.spark.network.server.TransportRequestHandler.processRpcRequest(TransportRequestHandler.java:167)
+[2025-08-13T15:56:47.794+0000] {spark_submit.py:521} INFO - at org.apache.spark.network.server.TransportRequestHandler.handle(TransportRequestHandler.java:111)
+[2025-08-13T15:56:47.794+0000] {spark_submit.py:521} INFO - at org.apache.spark.network.server.TransportChannelHandler.channelRead0(TransportChannelHandler.java:143)
+[2025-08-13T15:56:47.794+0000] {spark_submit.py:521} INFO - at org.apache.spark.network.server.TransportChannelHandler.channelRead0(TransportChannelHandler.java:55)
+[2025-08-13T15:56:47.794+0000] {spark_submit.py:521} INFO - at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:99)
+[2025-08-13T15:56:47.795+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+[2025-08-13T15:56:47.795+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+[2025-08-13T15:56:47.795+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+[2025-08-13T15:56:47.795+0000] {spark_submit.py:521} INFO - at io.netty.handler.timeout.IdleStateHandler.channelRead(IdleStateHandler.java:289)
+[2025-08-13T15:56:47.795+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+[2025-08-13T15:56:47.795+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+[2025-08-13T15:56:47.796+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+[2025-08-13T15:56:47.796+0000] {spark_submit.py:521} INFO - at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:107)
+[2025-08-13T15:56:47.796+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+[2025-08-13T15:56:47.796+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+[2025-08-13T15:56:47.797+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+[2025-08-13T15:56:47.797+0000] {spark_submit.py:521} INFO - at org.apache.spark.network.util.TransportFrameDecoder.channelRead(TransportFrameDecoder.java:102)
+[2025-08-13T15:56:47.797+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+[2025-08-13T15:56:47.797+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+[2025-08-13T15:56:47.797+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+[2025-08-13T15:56:47.797+0000] {spark_submit.py:521} INFO - at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1357)
+[2025-08-13T15:56:47.798+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440)
+[2025-08-13T15:56:47.798+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+[2025-08-13T15:56:47.798+0000] {spark_submit.py:521} INFO - at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:868)
+[2025-08-13T15:56:47.798+0000] {spark_submit.py:521} INFO - at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+[2025-08-13T15:56:47.798+0000] {spark_submit.py:521} INFO - at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:796)
+[2025-08-13T15:56:47.798+0000] {spark_submit.py:521} INFO - at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:732)
+[2025-08-13T15:56:47.799+0000] {spark_submit.py:521} INFO - at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:658)
+[2025-08-13T15:56:47.799+0000] {spark_submit.py:521} INFO - at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+[2025-08-13T15:56:47.799+0000] {spark_submit.py:521} INFO - at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998)
+[2025-08-13T15:56:47.799+0000] {spark_submit.py:521} INFO - at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+[2025-08-13T15:56:47.799+0000] {spark_submit.py:521} INFO - at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+[2025-08-13T15:56:47.799+0000] {spark_submit.py:521} INFO - at java.base/java.lang.Thread.run(Unknown Source)
+[2025-08-13T15:56:47.800+0000] {spark_submit.py:521} INFO - 
+[2025-08-13T15:56:47.800+0000] {spark_submit.py:521} INFO - at org.apache.spark.network.client.TransportResponseHandler.handle(TransportResponseHandler.java:209)
+[2025-08-13T15:56:47.800+0000] {spark_submit.py:521} INFO - at org.apache.spark.network.server.TransportChannelHandler.channelRead0(TransportChannelHandler.java:142)
+[2025-08-13T15:56:47.800+0000] {spark_submit.py:521} INFO - at org.apache.spark.network.server.TransportChannelHandler.channelRead0(TransportChannelHandler.java:53)
+[2025-08-13T15:56:47.800+0000] {spark_submit.py:521} INFO - at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:99)
+[2025-08-13T15:56:47.800+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+[2025-08-13T15:56:47.801+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+[2025-08-13T15:56:47.801+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+[2025-08-13T15:56:47.801+0000] {spark_submit.py:521} INFO - at io.netty.handler.timeout.IdleStateHandler.channelRead(IdleStateHandler.java:286)
+[2025-08-13T15:56:47.801+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+[2025-08-13T15:56:47.801+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+[2025-08-13T15:56:47.801+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+[2025-08-13T15:56:47.802+0000] {spark_submit.py:521} INFO - at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+[2025-08-13T15:56:47.802+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+[2025-08-13T15:56:47.802+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+[2025-08-13T15:56:47.802+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+[2025-08-13T15:56:47.802+0000] {spark_submit.py:521} INFO - at org.apache.spark.network.util.TransportFrameDecoder.channelRead(TransportFrameDecoder.java:102)
+[2025-08-13T15:56:47.802+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+[2025-08-13T15:56:47.803+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+[2025-08-13T15:56:47.803+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+[2025-08-13T15:56:47.803+0000] {spark_submit.py:521} INFO - at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+[2025-08-13T15:56:47.803+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440)
+[2025-08-13T15:56:47.803+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+[2025-08-13T15:56:47.804+0000] {spark_submit.py:521} INFO - at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+[2025-08-13T15:56:47.804+0000] {spark_submit.py:521} INFO - at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+[2025-08-13T15:56:47.804+0000] {spark_submit.py:521} INFO - at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+[2025-08-13T15:56:47.804+0000] {spark_submit.py:521} INFO - at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+[2025-08-13T15:56:47.804+0000] {spark_submit.py:521} INFO - at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+[2025-08-13T15:56:47.804+0000] {spark_submit.py:521} INFO - at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+[2025-08-13T15:56:47.805+0000] {spark_submit.py:521} INFO - at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+[2025-08-13T15:56:47.805+0000] {spark_submit.py:521} INFO - at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+[2025-08-13T15:56:47.805+0000] {spark_submit.py:521} INFO - at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+[2025-08-13T15:56:47.805+0000] {spark_submit.py:521} INFO - ... 1 more
+[2025-08-13T15:57:07.772+0000] {spark_submit.py:521} INFO - 25/08/13 15:57:07 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark-master:7077...
+[2025-08-13T15:57:07.780+0000] {spark_submit.py:521} INFO - 25/08/13 15:57:07 WARN StandaloneAppClient$ClientEndpoint: Failed to connect to master spark-master:7077
+[2025-08-13T15:57:07.781+0000] {spark_submit.py:521} INFO - org.apache.spark.SparkException: Exception thrown in awaitResult:
+[2025-08-13T15:57:07.781+0000] {spark_submit.py:521} INFO - at org.apache.spark.util.SparkThreadUtils$.awaitResult(SparkThreadUtils.scala:56)
+[2025-08-13T15:57:07.781+0000] {spark_submit.py:521} INFO - at org.apache.spark.util.ThreadUtils$.awaitResult(ThreadUtils.scala:310)
+[2025-08-13T15:57:07.782+0000] {spark_submit.py:521} INFO - at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:75)
+[2025-08-13T15:57:07.782+0000] {spark_submit.py:521} INFO - at org.apache.spark.rpc.RpcEnv.setupEndpointRefByURI(RpcEnv.scala:102)
+[2025-08-13T15:57:07.782+0000] {spark_submit.py:521} INFO - at org.apache.spark.rpc.RpcEnv.setupEndpointRef(RpcEnv.scala:110)
+[2025-08-13T15:57:07.783+0000] {spark_submit.py:521} INFO - at org.apache.spark.deploy.client.StandaloneAppClient$ClientEndpoint$$anon$1.run(StandaloneAppClient.scala:108)
+[2025-08-13T15:57:07.783+0000] {spark_submit.py:521} INFO - at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+[2025-08-13T15:57:07.783+0000] {spark_submit.py:521} INFO - at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+[2025-08-13T15:57:07.783+0000] {spark_submit.py:521} INFO - at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+[2025-08-13T15:57:07.784+0000] {spark_submit.py:521} INFO - at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+[2025-08-13T15:57:07.784+0000] {spark_submit.py:521} INFO - at java.base/java.lang.Thread.run(Thread.java:840)
+[2025-08-13T15:57:07.784+0000] {spark_submit.py:521} INFO - Caused by: java.lang.RuntimeException: java.io.InvalidClassException: org.apache.spark.rpc.netty.RpcEndpointVerifier$CheckExistence; local class incompatible: stream classdesc serialVersionUID = 7789290765573734431, local class serialVersionUID = 5378738997755484868
+[2025-08-13T15:57:07.784+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectStreamClass.initNonProxy(Unknown Source)
+[2025-08-13T15:57:07.785+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readNonProxyDesc(Unknown Source)
+[2025-08-13T15:57:07.785+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readClassDesc(Unknown Source)
+[2025-08-13T15:57:07.785+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-08-13T15:57:07.786+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-08-13T15:57:07.786+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject(Unknown Source)
+[2025-08-13T15:57:07.786+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject(Unknown Source)
+[2025-08-13T15:57:07.786+0000] {spark_submit.py:521} INFO - at org.apache.spark.serializer.JavaDeserializationStream.readObject(JavaSerializer.scala:88)
+[2025-08-13T15:57:07.787+0000] {spark_submit.py:521} INFO - at org.apache.spark.serializer.JavaSerializerInstance.deserialize(JavaSerializer.scala:130)
+[2025-08-13T15:57:07.787+0000] {spark_submit.py:521} INFO - at org.apache.spark.rpc.netty.NettyRpcEnv.$anonfun$deserialize$2(NettyRpcEnv.scala:302)
+[2025-08-13T15:57:07.787+0000] {spark_submit.py:521} INFO - at scala.util.DynamicVariable.withValue(DynamicVariable.scala:59)
+[2025-08-13T15:57:07.788+0000] {spark_submit.py:521} INFO - at org.apache.spark.rpc.netty.NettyRpcEnv.deserialize(NettyRpcEnv.scala:355)
+[2025-08-13T15:57:07.788+0000] {spark_submit.py:521} INFO - at org.apache.spark.rpc.netty.NettyRpcEnv.$anonfun$deserialize$1(NettyRpcEnv.scala:301)
+[2025-08-13T15:57:07.789+0000] {spark_submit.py:521} INFO - at scala.util.DynamicVariable.withValue(DynamicVariable.scala:59)
+[2025-08-13T15:57:07.789+0000] {spark_submit.py:521} INFO - at org.apache.spark.rpc.netty.NettyRpcEnv.deserialize(NettyRpcEnv.scala:301)
+[2025-08-13T15:57:07.790+0000] {spark_submit.py:521} INFO - at org.apache.spark.rpc.netty.RequestMessage$.apply(NettyRpcEnv.scala:653)
+[2025-08-13T15:57:07.790+0000] {spark_submit.py:521} INFO - at org.apache.spark.rpc.netty.NettyRpcHandler.internalReceive(NettyRpcEnv.scala:704)
+[2025-08-13T15:57:07.790+0000] {spark_submit.py:521} INFO - at org.apache.spark.rpc.netty.NettyRpcHandler.receive(NettyRpcEnv.scala:689)
+[2025-08-13T15:57:07.790+0000] {spark_submit.py:521} INFO - at org.apache.spark.network.server.TransportRequestHandler.processRpcRequest(TransportRequestHandler.java:167)
+[2025-08-13T15:57:07.791+0000] {spark_submit.py:521} INFO - at org.apache.spark.network.server.TransportRequestHandler.handle(TransportRequestHandler.java:111)
+[2025-08-13T15:57:07.791+0000] {spark_submit.py:521} INFO - at org.apache.spark.network.server.TransportChannelHandler.channelRead0(TransportChannelHandler.java:143)
+[2025-08-13T15:57:07.791+0000] {spark_submit.py:521} INFO - at org.apache.spark.network.server.TransportChannelHandler.channelRead0(TransportChannelHandler.java:55)
+[2025-08-13T15:57:07.791+0000] {spark_submit.py:521} INFO - at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:99)
+[2025-08-13T15:57:07.792+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+[2025-08-13T15:57:07.792+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+[2025-08-13T15:57:07.792+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+[2025-08-13T15:57:07.792+0000] {spark_submit.py:521} INFO - at io.netty.handler.timeout.IdleStateHandler.channelRead(IdleStateHandler.java:289)
+[2025-08-13T15:57:07.793+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+[2025-08-13T15:57:07.793+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+[2025-08-13T15:57:07.794+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+[2025-08-13T15:57:07.794+0000] {spark_submit.py:521} INFO - at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:107)
+[2025-08-13T15:57:07.794+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+[2025-08-13T15:57:07.794+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+[2025-08-13T15:57:07.795+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+[2025-08-13T15:57:07.795+0000] {spark_submit.py:521} INFO - at org.apache.spark.network.util.TransportFrameDecoder.channelRead(TransportFrameDecoder.java:102)
+[2025-08-13T15:57:07.795+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+[2025-08-13T15:57:07.795+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+[2025-08-13T15:57:07.796+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+[2025-08-13T15:57:07.796+0000] {spark_submit.py:521} INFO - at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1357)
+[2025-08-13T15:57:07.796+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440)
+[2025-08-13T15:57:07.796+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+[2025-08-13T15:57:07.797+0000] {spark_submit.py:521} INFO - at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:868)
+[2025-08-13T15:57:07.797+0000] {spark_submit.py:521} INFO - at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+[2025-08-13T15:57:07.797+0000] {spark_submit.py:521} INFO - at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:796)
+[2025-08-13T15:57:07.798+0000] {spark_submit.py:521} INFO - at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:732)
+[2025-08-13T15:57:07.798+0000] {spark_submit.py:521} INFO - at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:658)
+[2025-08-13T15:57:07.798+0000] {spark_submit.py:521} INFO - at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+[2025-08-13T15:57:07.798+0000] {spark_submit.py:521} INFO - at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998)
+[2025-08-13T15:57:07.799+0000] {spark_submit.py:521} INFO - at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+[2025-08-13T15:57:07.799+0000] {spark_submit.py:521} INFO - at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+[2025-08-13T15:57:07.799+0000] {spark_submit.py:521} INFO - at java.base/java.lang.Thread.run(Unknown Source)
+[2025-08-13T15:57:07.799+0000] {spark_submit.py:521} INFO - 
+[2025-08-13T15:57:07.800+0000] {spark_submit.py:521} INFO - at org.apache.spark.network.client.TransportResponseHandler.handle(TransportResponseHandler.java:209)
+[2025-08-13T15:57:07.800+0000] {spark_submit.py:521} INFO - at org.apache.spark.network.server.TransportChannelHandler.channelRead0(TransportChannelHandler.java:142)
+[2025-08-13T15:57:07.800+0000] {spark_submit.py:521} INFO - at org.apache.spark.network.server.TransportChannelHandler.channelRead0(TransportChannelHandler.java:53)
+[2025-08-13T15:57:07.800+0000] {spark_submit.py:521} INFO - at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:99)
+[2025-08-13T15:57:07.801+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+[2025-08-13T15:57:07.801+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+[2025-08-13T15:57:07.801+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+[2025-08-13T15:57:07.802+0000] {spark_submit.py:521} INFO - at io.netty.handler.timeout.IdleStateHandler.channelRead(IdleStateHandler.java:286)
+[2025-08-13T15:57:07.802+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+[2025-08-13T15:57:07.802+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+[2025-08-13T15:57:07.802+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+[2025-08-13T15:57:07.803+0000] {spark_submit.py:521} INFO - at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+[2025-08-13T15:57:07.803+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+[2025-08-13T15:57:07.804+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+[2025-08-13T15:57:07.804+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+[2025-08-13T15:57:07.804+0000] {spark_submit.py:521} INFO - at org.apache.spark.network.util.TransportFrameDecoder.channelRead(TransportFrameDecoder.java:102)
+[2025-08-13T15:57:07.805+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+[2025-08-13T15:57:07.805+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+[2025-08-13T15:57:07.805+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+[2025-08-13T15:57:07.805+0000] {spark_submit.py:521} INFO - at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+[2025-08-13T15:57:07.806+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440)
+[2025-08-13T15:57:07.806+0000] {spark_submit.py:521} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+[2025-08-13T15:57:07.806+0000] {spark_submit.py:521} INFO - at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+[2025-08-13T15:57:07.807+0000] {spark_submit.py:521} INFO - at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+[2025-08-13T15:57:07.807+0000] {spark_submit.py:521} INFO - at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+[2025-08-13T15:57:07.807+0000] {spark_submit.py:521} INFO - at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+[2025-08-13T15:57:07.807+0000] {spark_submit.py:521} INFO - at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+[2025-08-13T15:57:07.808+0000] {spark_submit.py:521} INFO - at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+[2025-08-13T15:57:07.808+0000] {spark_submit.py:521} INFO - at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+[2025-08-13T15:57:07.808+0000] {spark_submit.py:521} INFO - at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+[2025-08-13T15:57:07.808+0000] {spark_submit.py:521} INFO - at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+[2025-08-13T15:57:07.808+0000] {spark_submit.py:521} INFO - ... 1 more
+[2025-08-13T15:57:27.784+0000] {spark_submit.py:521} INFO - 25/08/13 15:57:27 WARN StandaloneSchedulerBackend: Application ID is not initialized yet.
+[2025-08-13T15:57:27.788+0000] {spark_submit.py:521} INFO - 25/08/13 15:57:27 ERROR StandaloneSchedulerBackend: Application has been killed. Reason: All masters are unresponsive! Giving up.
+[2025-08-13T15:57:27.826+0000] {spark_submit.py:521} INFO - 25/08/13 15:57:27 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 40035.
+[2025-08-13T15:57:27.827+0000] {spark_submit.py:521} INFO - 25/08/13 15:57:27 INFO NettyBlockTransferService: Server created on 63163ed450b9:40035
+[2025-08-13T15:57:27.830+0000] {spark_submit.py:521} INFO - 25/08/13 15:57:27 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2025-08-13T15:57:27.848+0000] {spark_submit.py:521} INFO - 25/08/13 15:57:27 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 63163ed450b9, 40035, None)
+[2025-08-13T15:57:27.857+0000] {spark_submit.py:521} INFO - 25/08/13 15:57:27 INFO BlockManagerMasterEndpoint: Registering block manager 63163ed450b9:40035 with 434.4 MiB RAM, BlockManagerId(driver, 63163ed450b9, 40035, None)
+[2025-08-13T15:57:27.861+0000] {spark_submit.py:521} INFO - 25/08/13 15:57:27 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 63163ed450b9, 40035, None)
+[2025-08-13T15:57:27.862+0000] {spark_submit.py:521} INFO - 25/08/13 15:57:27 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 63163ed450b9, 40035, None)
+[2025-08-13T15:57:28.065+0000] {spark_submit.py:521} INFO - 25/08/13 15:57:28 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+[2025-08-13T15:57:28.279+0000] {spark_submit.py:521} INFO - 25/08/13 15:57:28 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+[2025-08-13T15:57:28.282+0000] {spark_submit.py:521} INFO - 25/08/13 15:57:28 INFO SharedState: Warehouse path is 'file:/opt/***/spark-warehouse'.
+[2025-08-13T15:57:28.290+0000] {spark_submit.py:521} INFO - 25/08/13 15:57:28 INFO SparkContext: SparkContext is stopping with exitCode 0.
+[2025-08-13T15:57:28.310+0000] {spark_submit.py:521} INFO - 25/08/13 15:57:28 INFO SparkUI: Stopped Spark web UI at http://63163ed450b9:4040
+[2025-08-13T15:57:28.318+0000] {spark_submit.py:521} INFO - 25/08/13 15:57:28 INFO StandaloneSchedulerBackend: Shutting down all executors
+[2025-08-13T15:57:28.322+0000] {spark_submit.py:521} INFO - 25/08/13 15:57:28 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Asking each executor to shut down
+[2025-08-13T15:57:28.326+0000] {spark_submit.py:521} INFO - 25/08/13 15:57:28 WARN StandaloneAppClient$ClientEndpoint: Drop UnregisterApplication(null) because has not yet connected to master
+[2025-08-13T15:57:28.337+0000] {spark_submit.py:521} INFO - 25/08/13 15:57:28 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+[2025-08-13T15:57:28.367+0000] {spark_submit.py:521} INFO - 25/08/13 15:57:28 INFO MemoryStore: MemoryStore cleared
+[2025-08-13T15:57:28.368+0000] {spark_submit.py:521} INFO - 25/08/13 15:57:28 INFO BlockManager: BlockManager stopped
+[2025-08-13T15:57:28.375+0000] {spark_submit.py:521} INFO - 25/08/13 15:57:28 INFO BlockManagerMaster: BlockManagerMaster stopped
+[2025-08-13T15:57:28.377+0000] {spark_submit.py:521} INFO - 25/08/13 15:57:28 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+[2025-08-13T15:57:28.406+0000] {spark_submit.py:521} INFO - 25/08/13 15:57:28 INFO SparkContext: Successfully stopped SparkContext
+[2025-08-13T15:57:29.049+0000] {spark_submit.py:521} INFO - 25/08/13 15:57:29 WARN FileStreamSink: Assume no metadata directory. Error while looking for metadata directory in the path: gs://job_gcp/silver/topcv/topcv_jobs.parquet.
+[2025-08-13T15:57:29.050+0000] {spark_submit.py:521} INFO - java.lang.RuntimeException: java.lang.ClassNotFoundException: Class com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem not found
+[2025-08-13T15:57:29.050+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.conf.Configuration.getClass(Configuration.java:2688)
+[2025-08-13T15:57:29.050+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem.getFileSystemClass(FileSystem.java:3431)
+[2025-08-13T15:57:29.051+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem.createFileSystem(FileSystem.java:3466)
+[2025-08-13T15:57:29.051+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem.access$300(FileSystem.java:174)
+[2025-08-13T15:57:29.051+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem$Cache.getInternal(FileSystem.java:3574)
+[2025-08-13T15:57:29.051+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem$Cache.get(FileSystem.java:3521)
+[2025-08-13T15:57:29.052+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:540)
+[2025-08-13T15:57:29.052+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.Path.getFileSystem(Path.java:365)
+[2025-08-13T15:57:29.052+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.execution.streaming.FileStreamSink$.hasMetadata(FileStreamSink.scala:53)
+[2025-08-13T15:57:29.052+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.execution.datasources.DataSource.resolveRelation(DataSource.scala:366)
+[2025-08-13T15:57:29.052+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.DataFrameReader.loadV1Source(DataFrameReader.scala:229)
+[2025-08-13T15:57:29.053+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.DataFrameReader.$anonfun$load$2(DataFrameReader.scala:211)
+[2025-08-13T15:57:29.053+0000] {spark_submit.py:521} INFO - at scala.Option.getOrElse(Option.scala:189)
+[2025-08-13T15:57:29.053+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.DataFrameReader.load(DataFrameReader.scala:211)
+[2025-08-13T15:57:29.053+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.DataFrameReader.parquet(DataFrameReader.scala:563)
+[2025-08-13T15:57:29.054+0000] {spark_submit.py:521} INFO - at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[2025-08-13T15:57:29.054+0000] {spark_submit.py:521} INFO - at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+[2025-08-13T15:57:29.054+0000] {spark_submit.py:521} INFO - at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[2025-08-13T15:57:29.055+0000] {spark_submit.py:521} INFO - at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+[2025-08-13T15:57:29.055+0000] {spark_submit.py:521} INFO - at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+[2025-08-13T15:57:29.055+0000] {spark_submit.py:521} INFO - at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+[2025-08-13T15:57:29.056+0000] {spark_submit.py:521} INFO - at py4j.Gateway.invoke(Gateway.java:282)
+[2025-08-13T15:57:29.056+0000] {spark_submit.py:521} INFO - at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+[2025-08-13T15:57:29.056+0000] {spark_submit.py:521} INFO - at py4j.commands.CallCommand.execute(CallCommand.java:79)
+[2025-08-13T15:57:29.056+0000] {spark_submit.py:521} INFO - at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+[2025-08-13T15:57:29.057+0000] {spark_submit.py:521} INFO - at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+[2025-08-13T15:57:29.057+0000] {spark_submit.py:521} INFO - at java.base/java.lang.Thread.run(Thread.java:840)
+[2025-08-13T15:57:29.057+0000] {spark_submit.py:521} INFO - Caused by: java.lang.ClassNotFoundException: Class com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem not found
+[2025-08-13T15:57:29.058+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.conf.Configuration.getClassByName(Configuration.java:2592)
+[2025-08-13T15:57:29.058+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.conf.Configuration.getClass(Configuration.java:2686)
+[2025-08-13T15:57:29.058+0000] {spark_submit.py:521} INFO - ... 26 more
+[2025-08-13T15:57:29.085+0000] {spark_submit.py:521} INFO - Traceback (most recent call last):
+[2025-08-13T15:57:29.086+0000] {spark_submit.py:521} INFO - File "/opt/spark-jobs/transform/gold_transfrom.py", line 14, in <module>
+[2025-08-13T15:57:29.090+0000] {spark_submit.py:521} INFO - df1 = spark.read.parquet("gs://job_gcp/silver/topcv/topcv_jobs.parquet")
+[2025-08-13T15:57:29.091+0000] {spark_submit.py:521} INFO - ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-08-13T15:57:29.091+0000] {spark_submit.py:521} INFO - File "/home/***/.local/lib/python3.11/site-packages/pyspark/python/lib/pyspark.zip/pyspark/sql/readwriter.py", line 544, in parquet
+[2025-08-13T15:57:29.092+0000] {spark_submit.py:521} INFO - File "/home/***/.local/lib/python3.11/site-packages/pyspark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1322, in __call__
+[2025-08-13T15:57:29.093+0000] {spark_submit.py:521} INFO - File "/home/***/.local/lib/python3.11/site-packages/pyspark/python/lib/pyspark.zip/pyspark/errors/exceptions/captured.py", line 179, in deco
+[2025-08-13T15:57:29.093+0000] {spark_submit.py:521} INFO - File "/home/***/.local/lib/python3.11/site-packages/pyspark/python/lib/py4j-0.10.9.7-src.zip/py4j/protocol.py", line 326, in get_return_value
+[2025-08-13T15:57:29.094+0000] {spark_submit.py:521} INFO - py4j.protocol.Py4JJavaError: An error occurred while calling o32.parquet.
+[2025-08-13T15:57:29.095+0000] {spark_submit.py:521} INFO - : java.lang.RuntimeException: java.lang.ClassNotFoundException: Class com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem not found
+[2025-08-13T15:57:29.095+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.conf.Configuration.getClass(Configuration.java:2688)
+[2025-08-13T15:57:29.095+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem.getFileSystemClass(FileSystem.java:3431)
+[2025-08-13T15:57:29.095+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem.createFileSystem(FileSystem.java:3466)
+[2025-08-13T15:57:29.096+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem.access$300(FileSystem.java:174)
+[2025-08-13T15:57:29.096+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem$Cache.getInternal(FileSystem.java:3574)
+[2025-08-13T15:57:29.096+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem$Cache.get(FileSystem.java:3521)
+[2025-08-13T15:57:29.096+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:540)
+[2025-08-13T15:57:29.096+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.Path.getFileSystem(Path.java:365)
+[2025-08-13T15:57:29.097+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.execution.datasources.DataSource$.$anonfun$checkAndGlobPathIfNecessary$1(DataSource.scala:724)
+[2025-08-13T15:57:29.097+0000] {spark_submit.py:521} INFO - at scala.collection.immutable.List.map(List.scala:293)
+[2025-08-13T15:57:29.097+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.execution.datasources.DataSource$.checkAndGlobPathIfNecessary(DataSource.scala:722)
+[2025-08-13T15:57:29.097+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.execution.datasources.DataSource.checkAndGlobPathIfNecessary(DataSource.scala:551)
+[2025-08-13T15:57:29.098+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.execution.datasources.DataSource.resolveRelation(DataSource.scala:404)
+[2025-08-13T15:57:29.098+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.DataFrameReader.loadV1Source(DataFrameReader.scala:229)
+[2025-08-13T15:57:29.098+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.DataFrameReader.$anonfun$load$2(DataFrameReader.scala:211)
+[2025-08-13T15:57:29.098+0000] {spark_submit.py:521} INFO - at scala.Option.getOrElse(Option.scala:189)
+[2025-08-13T15:57:29.099+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.DataFrameReader.load(DataFrameReader.scala:211)
+[2025-08-13T15:57:29.099+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.DataFrameReader.parquet(DataFrameReader.scala:563)
+[2025-08-13T15:57:29.099+0000] {spark_submit.py:521} INFO - at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[2025-08-13T15:57:29.099+0000] {spark_submit.py:521} INFO - at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+[2025-08-13T15:57:29.100+0000] {spark_submit.py:521} INFO - at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[2025-08-13T15:57:29.100+0000] {spark_submit.py:521} INFO - at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+[2025-08-13T15:57:29.100+0000] {spark_submit.py:521} INFO - at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+[2025-08-13T15:57:29.100+0000] {spark_submit.py:521} INFO - at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+[2025-08-13T15:57:29.100+0000] {spark_submit.py:521} INFO - at py4j.Gateway.invoke(Gateway.java:282)
+[2025-08-13T15:57:29.101+0000] {spark_submit.py:521} INFO - at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+[2025-08-13T15:57:29.101+0000] {spark_submit.py:521} INFO - at py4j.commands.CallCommand.execute(CallCommand.java:79)
+[2025-08-13T15:57:29.101+0000] {spark_submit.py:521} INFO - at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+[2025-08-13T15:57:29.101+0000] {spark_submit.py:521} INFO - at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+[2025-08-13T15:57:29.102+0000] {spark_submit.py:521} INFO - at java.base/java.lang.Thread.run(Thread.java:840)
+[2025-08-13T15:57:29.102+0000] {spark_submit.py:521} INFO - Caused by: java.lang.ClassNotFoundException: Class com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem not found
+[2025-08-13T15:57:29.102+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.conf.Configuration.getClassByName(Configuration.java:2592)
+[2025-08-13T15:57:29.102+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.conf.Configuration.getClass(Configuration.java:2686)
+[2025-08-13T15:57:29.102+0000] {spark_submit.py:521} INFO - ... 29 more
+[2025-08-13T15:57:29.103+0000] {spark_submit.py:521} INFO - 
+[2025-08-13T15:57:29.308+0000] {spark_submit.py:521} INFO - 25/08/13 15:57:29 INFO ShutdownHookManager: Shutdown hook called
+[2025-08-13T15:57:29.308+0000] {spark_submit.py:521} INFO - 25/08/13 15:57:29 INFO ShutdownHookManager: Deleting directory /tmp/spark-c85db5ed-7c42-4b11-bffd-607ae010dd5b/pyspark-3e02f14d-8752-4800-aa72-6699176763cb
+[2025-08-13T15:57:29.316+0000] {spark_submit.py:521} INFO - 25/08/13 15:57:29 INFO ShutdownHookManager: Deleting directory /tmp/spark-9efec6bc-760e-409c-9857-744e2aacffd0
+[2025-08-13T15:57:29.328+0000] {spark_submit.py:521} INFO - 25/08/13 15:57:29 INFO ShutdownHookManager: Deleting directory /tmp/spark-c85db5ed-7c42-4b11-bffd-607ae010dd5b
+[2025-08-13T15:57:29.367+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-08-13T15:57:29.385+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/providers/apache/spark/operators/spark_submit.py", line 156, in execute
+    self._hook.submit(self._application)
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/providers/apache/spark/hooks/spark_submit.py", line 452, in submit
+    raise AirflowException(
+airflow.exceptions.AirflowException: Cannot execute: spark-submit --master spark://spark-master:7077 --conf spark.master=spark://spark-master:7077 --conf spark.driver.extraClassPath=/opt/custom-jars/* --conf spark.executor.extraClassPath=/opt/custom-jars/* --conf spark.hadoop.fs.gs.impl=com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem --conf spark.hadoop.fs.AbstractFileSystem.gs.impl=com.google.cloud.hadoop.fs.gcs.GoogleHadoopFS --conf spark.hadoop.google.cloud.auth.service.account.enable=true --conf spark.hadoop.google.cloud.auth.service.account.json.keyfile=/opt/***/gcp-key.json --jars /opt/custom-jars/gcs-connector-hadoop3-2.2.14-shaded.jar --name arrow-spark --verbose /opt/spark-jobs/transform/gold_transfrom.py. Error code is: 1.
+[2025-08-13T15:57:29.394+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=spark_transform_pipeline, task_id=silver_topcv_transform, run_id=manual__2025-08-13T15:56:16.069198+00:00, execution_date=20250813T155616, start_date=20250813T155620, end_date=20250813T155729
+[2025-08-13T15:57:29.416+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 134 for task silver_topcv_transform (Cannot execute: spark-submit --master spark://spark-master:7077 --conf spark.master=spark://spark-master:7077 --conf spark.driver.extraClassPath=/opt/custom-jars/* --conf spark.executor.extraClassPath=/opt/custom-jars/* --conf spark.hadoop.fs.gs.impl=com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem --conf spark.hadoop.fs.AbstractFileSystem.gs.impl=com.google.cloud.hadoop.fs.gcs.GoogleHadoopFS --conf spark.hadoop.google.cloud.auth.service.account.enable=true --conf spark.hadoop.google.cloud.auth.service.account.json.keyfile=/opt/***/gcp-key.json --jars /opt/custom-jars/gcs-connector-hadoop3-2.2.14-shaded.jar --name arrow-spark --verbose /opt/spark-jobs/transform/gold_transfrom.py. Error code is: 1.; 44)
+[2025-08-13T15:57:29.438+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-08-13T15:57:29.462+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-08-13T15:57:29.465+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

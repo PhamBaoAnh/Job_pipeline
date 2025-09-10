@@ -1,0 +1,44 @@
+[2025-08-05T18:29:34.859+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-08-05T18:29:34.894+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: spark_test_job.run_spark_job manual__2025-08-05T18:29:31.854822+00:00 [queued]>
+[2025-08-05T18:29:34.904+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: spark_test_job.run_spark_job manual__2025-08-05T18:29:31.854822+00:00 [queued]>
+[2025-08-05T18:29:34.907+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-08-05T18:29:34.927+0000] {taskinstance.py:2330} INFO - Executing <Task(SparkSubmitOperator): run_spark_job> on 2025-08-05 18:29:31.854822+00:00
+[2025-08-05T18:29:34.947+0000] {standard_task_runner.py:63} INFO - Started process 92 to run task
+[2025-08-05T18:29:34.951+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'spark_test_job', 'run_spark_job', 'manual__2025-08-05T18:29:31.854822+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/etl_jobs_dag.py', '--cfg-path', '/tmp/tmpf8aqp9af']
+[2025-08-05T18:29:34.953+0000] {standard_task_runner.py:91} INFO - Job 5: Subtask run_spark_job
+[2025-08-05T18:29:35.021+0000] {task_command.py:426} INFO - Running <TaskInstance: spark_test_job.run_spark_job manual__2025-08-05T18:29:31.854822+00:00 [running]> on host 3d7b53adf102
+[2025-08-05T18:29:35.174+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='spark_test_job' AIRFLOW_CTX_TASK_ID='run_spark_job' AIRFLOW_CTX_EXECUTION_DATE='2025-08-05T18:29:31.854822+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-08-05T18:29:31.854822+00:00'
+[2025-08-05T18:29:35.176+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-08-05T18:29:35.232+0000] {spark_submit.py:223} INFO - Could not load connection string spark_default, defaulting to yarn
+[2025-08-05T18:29:35.237+0000] {spark_submit.py:351} INFO - Spark-Submit cmd: spark-submit --master yarn --name arrow-spark --verbose /opt/spark-jobs/gold_transform.py
+[2025-08-05T18:29:36.053+0000] {spark_submit.py:521} INFO - WARNING: Using incubator modules: jdk.incubator.vector
+[2025-08-05T18:29:37.971+0000] {spark_submit.py:521} INFO - Exception in thread "main" org.apache.spark.SparkException: When running with master 'yarn' either HADOOP_CONF_DIR or YARN_CONF_DIR must be set in the environment.
+[2025-08-05T18:29:37.972+0000] {spark_submit.py:521} INFO - at org.apache.spark.deploy.SparkSubmitArguments.error(SparkSubmitArguments.scala:640)
+[2025-08-05T18:29:37.972+0000] {spark_submit.py:521} INFO - at org.apache.spark.deploy.SparkSubmitArguments.validateSubmitArguments(SparkSubmitArguments.scala:287)
+[2025-08-05T18:29:37.973+0000] {spark_submit.py:521} INFO - at org.apache.spark.deploy.SparkSubmitArguments.validateArguments(SparkSubmitArguments.scala:245)
+[2025-08-05T18:29:37.973+0000] {spark_submit.py:521} INFO - at org.apache.spark.deploy.SparkSubmitArguments.<init>(SparkSubmitArguments.scala:104)
+[2025-08-05T18:29:37.973+0000] {spark_submit.py:521} INFO - at org.apache.spark.deploy.SparkSubmit$$anon$2$$anon$3.<init>(SparkSubmit.scala:1101)
+[2025-08-05T18:29:37.973+0000] {spark_submit.py:521} INFO - at org.apache.spark.deploy.SparkSubmit$$anon$2.parseArguments(SparkSubmit.scala:1101)
+[2025-08-05T18:29:37.974+0000] {spark_submit.py:521} INFO - at org.apache.spark.deploy.SparkSubmit.doSubmit(SparkSubmit.scala:72)
+[2025-08-05T18:29:37.974+0000] {spark_submit.py:521} INFO - at org.apache.spark.deploy.SparkSubmit$$anon$2.doSubmit(SparkSubmit.scala:1132)
+[2025-08-05T18:29:37.978+0000] {spark_submit.py:521} INFO - at org.apache.spark.deploy.SparkSubmit$.main(SparkSubmit.scala:1141)
+[2025-08-05T18:29:37.978+0000] {spark_submit.py:521} INFO - at org.apache.spark.deploy.SparkSubmit.main(SparkSubmit.scala)
+[2025-08-05T18:29:37.987+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-08-05T18:29:38.008+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/providers/apache/spark/operators/spark_submit.py", line 156, in execute
+    self._hook.submit(self._application)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/providers/apache/spark/hooks/spark_submit.py", line 452, in submit
+    raise AirflowException(
+airflow.exceptions.AirflowException: Cannot execute: spark-submit --master yarn --name arrow-spark --verbose /opt/spark-jobs/gold_transform.py. Error code is: 1.
+[2025-08-05T18:29:38.013+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=spark_test_job, task_id=run_spark_job, run_id=manual__2025-08-05T18:29:31.854822+00:00, execution_date=20250805T182931, start_date=20250805T182934, end_date=20250805T182938
+[2025-08-05T18:29:38.029+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 5 for task run_spark_job (Cannot execute: spark-submit --master yarn --name arrow-spark --verbose /opt/spark-jobs/gold_transform.py. Error code is: 1.; 92)
+[2025-08-05T18:29:38.059+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-08-05T18:29:38.082+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-08-05T18:29:38.089+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

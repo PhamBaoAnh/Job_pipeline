@@ -1,0 +1,159 @@
+[2025-08-07T17:16:58.261+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-08-07T17:16:58.289+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: spark_transform_topcv.submit_spark_job manual__2025-08-07T17:16:53.904001+00:00 [queued]>
+[2025-08-07T17:16:58.294+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: spark_transform_topcv.submit_spark_job manual__2025-08-07T17:16:53.904001+00:00 [queued]>
+[2025-08-07T17:16:58.294+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-08-07T17:16:58.303+0000] {taskinstance.py:2330} INFO - Executing <Task(SparkSubmitOperator): submit_spark_job> on 2025-08-07 17:16:53.904001+00:00
+[2025-08-07T17:16:58.308+0000] {standard_task_runner.py:63} INFO - Started process 5255 to run task
+[2025-08-07T17:16:58.310+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'spark_transform_topcv', 'submit_spark_job', 'manual__2025-08-07T17:16:53.904001+00:00', '--job-id', '84', '--raw', '--subdir', 'DAGS_FOLDER/etl_jobs_dag.py', '--cfg-path', '/tmp/tmplruwybej']
+[2025-08-07T17:16:58.312+0000] {standard_task_runner.py:91} INFO - Job 84: Subtask submit_spark_job
+[2025-08-07T17:16:58.354+0000] {task_command.py:426} INFO - Running <TaskInstance: spark_transform_topcv.submit_spark_job manual__2025-08-07T17:16:53.904001+00:00 [running]> on host 0d9cbc3d310d
+[2025-08-07T17:16:58.425+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='spark_transform_topcv' AIRFLOW_CTX_TASK_ID='submit_spark_job' AIRFLOW_CTX_EXECUTION_DATE='2025-08-07T17:16:53.904001+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-08-07T17:16:53.904001+00:00'
+[2025-08-07T17:16:58.426+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-08-07T17:16:58.449+0000] {base.py:84} INFO - Using connection ID 'spark_default' for task execution.
+[2025-08-07T17:16:58.451+0000] {spark_submit.py:351} INFO - Spark-Submit cmd: spark-submit --master spark://spark-master:7077 --conf spark.hadoop.fs.s3a.endpoint=http://minio:9000 --conf spark.hadoop.fs.s3a.access.key=minioadmin --conf spark.hadoop.fs.s3a.secret.key=****** --conf spark.hadoop.fs.s3a.path.style.access=true --conf spark.hadoop.fs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem --conf spark.hadoop.fs.s3a.connection.ssl.enabled=false --conf spark.hadoop.fs.s3a.aws.credentials.provider=org.apache.hadoop.fs.s3a.SimpleAWSCredentialsProvider --conf spark.hadoop.fs.s3a.connection.timeout=60000 --conf spark.hadoop.fs.s3a.connection.establish.timeout=60000 --conf spark.hadoop.fs.s3a.connection.request.timeout=60000 --conf spark.hadoop.fs.s3a.attempts.maximum=20 --jars /opt/custom-jars/hadoop-aws-3.3.6.jar,/opt/custom-jars/aws-java-sdk-bundle-1.12.621.jar --name arrow-spark --verbose /opt/spark-jobs/gold_transform.py
+[2025-08-07T17:16:59.307+0000] {spark_submit.py:521} INFO - WARNING: Using incubator modules: jdk.incubator.vector
+[2025-08-07T17:17:01.306+0000] {spark_submit.py:521} INFO - Parsed arguments:
+[2025-08-07T17:17:01.307+0000] {spark_submit.py:521} INFO - master                  spark://spark-master:7077
+[2025-08-07T17:17:01.307+0000] {spark_submit.py:521} INFO - remote                  null
+[2025-08-07T17:17:01.307+0000] {spark_submit.py:521} INFO - deployMode              null
+[2025-08-07T17:17:01.308+0000] {spark_submit.py:521} INFO - executorMemory          null
+[2025-08-07T17:17:01.308+0000] {spark_submit.py:521} INFO - executorCores           null
+[2025-08-07T17:17:01.308+0000] {spark_submit.py:521} INFO - totalExecutorCores      null
+[2025-08-07T17:17:01.308+0000] {spark_submit.py:521} INFO - propertiesFile          null
+[2025-08-07T17:17:01.309+0000] {spark_submit.py:521} INFO - driverMemory            null
+[2025-08-07T17:17:01.309+0000] {spark_submit.py:521} INFO - driverCores             null
+[2025-08-07T17:17:01.309+0000] {spark_submit.py:521} INFO - driverExtraClassPath    null
+[2025-08-07T17:17:01.309+0000] {spark_submit.py:521} INFO - driverExtraLibraryPath  null
+[2025-08-07T17:17:01.309+0000] {spark_submit.py:521} INFO - driverExtraJavaOptions  null
+[2025-08-07T17:17:01.310+0000] {spark_submit.py:521} INFO - supervise               false
+[2025-08-07T17:17:01.310+0000] {spark_submit.py:521} INFO - queue                   null
+[2025-08-07T17:17:01.310+0000] {spark_submit.py:521} INFO - numExecutors            null
+[2025-08-07T17:17:01.310+0000] {spark_submit.py:521} INFO - files                   null
+[2025-08-07T17:17:01.310+0000] {spark_submit.py:521} INFO - pyFiles                 null
+[2025-08-07T17:17:01.311+0000] {spark_submit.py:521} INFO - archives                null
+[2025-08-07T17:17:01.311+0000] {spark_submit.py:521} INFO - mainClass               null
+[2025-08-07T17:17:01.311+0000] {spark_submit.py:521} INFO - primaryResource         file:/opt/spark-jobs/gold_transform.py
+[2025-08-07T17:17:01.311+0000] {spark_submit.py:521} INFO - name                    arrow-spark
+[2025-08-07T17:17:01.312+0000] {spark_submit.py:521} INFO - childArgs               []
+[2025-08-07T17:17:01.312+0000] {spark_submit.py:521} INFO - jars                    file:/opt/custom-jars/hadoop-aws-3.3.6.jar,file:/opt/custom-jars/aws-java-sdk-bundle-1.12.621.jar
+[2025-08-07T17:17:01.312+0000] {spark_submit.py:521} INFO - packages                null
+[2025-08-07T17:17:01.312+0000] {spark_submit.py:521} INFO - packagesExclusions      null
+[2025-08-07T17:17:01.313+0000] {spark_submit.py:521} INFO - repositories            null
+[2025-08-07T17:17:01.313+0000] {spark_submit.py:521} INFO - verbose                 true
+[2025-08-07T17:17:01.313+0000] {spark_submit.py:521} INFO - 
+[2025-08-07T17:17:01.313+0000] {spark_submit.py:521} INFO - Spark properties used, including those specified through
+[2025-08-07T17:17:01.313+0000] {spark_submit.py:521} INFO - --conf and those from the properties file null:
+[2025-08-07T17:17:01.314+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.s3a.access.key,*********(redacted))
+[2025-08-07T17:17:01.314+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.s3a.attempts.maximum,20)
+[2025-08-07T17:17:01.314+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.s3a.aws.credentials.provider,org.apache.hadoop.fs.s3a.SimpleAWSCredentialsProvider)
+[2025-08-07T17:17:01.314+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.s3a.connection.establish.timeout,60000)
+[2025-08-07T17:17:01.315+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.s3a.connection.request.timeout,60000)
+[2025-08-07T17:17:01.315+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.s3a.connection.ssl.enabled,false)
+[2025-08-07T17:17:01.315+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.s3a.connection.timeout,60000)
+[2025-08-07T17:17:01.316+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.s3a.endpoint,http://minio:9000)
+[2025-08-07T17:17:01.316+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.s3a.impl,org.apache.hadoop.fs.s3a.S3AFileSystem)
+[2025-08-07T17:17:01.317+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.s3a.path.style.access,true)
+[2025-08-07T17:17:01.317+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.s3a.secret.key,*********(redacted))
+[2025-08-07T17:17:01.317+0000] {spark_submit.py:521} INFO - 
+[2025-08-07T17:17:01.318+0000] {spark_submit.py:521} INFO - 
+[2025-08-07T17:17:01.740+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:01 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2025-08-07T17:17:01.901+0000] {spark_submit.py:521} INFO - Main class:
+[2025-08-07T17:17:01.901+0000] {spark_submit.py:521} INFO - org.apache.spark.deploy.PythonRunner
+[2025-08-07T17:17:01.902+0000] {spark_submit.py:521} INFO - Arguments:
+[2025-08-07T17:17:01.903+0000] {spark_submit.py:521} INFO - file:/opt/spark-jobs/gold_transform.py
+[2025-08-07T17:17:01.903+0000] {spark_submit.py:521} INFO - null
+[2025-08-07T17:17:01.904+0000] {spark_submit.py:521} INFO - Spark config:
+[2025-08-07T17:17:01.904+0000] {spark_submit.py:521} INFO - (spark.app.name,arrow-spark)
+[2025-08-07T17:17:01.905+0000] {spark_submit.py:521} INFO - (spark.app.submitTime,1754587021885)
+[2025-08-07T17:17:01.905+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.s3a.access.key,*********(redacted))
+[2025-08-07T17:17:01.905+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.s3a.attempts.maximum,20)
+[2025-08-07T17:17:01.905+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.s3a.aws.credentials.provider,org.apache.hadoop.fs.s3a.SimpleAWSCredentialsProvider)
+[2025-08-07T17:17:01.906+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.s3a.connection.establish.timeout,60000)
+[2025-08-07T17:17:01.906+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.s3a.connection.request.timeout,60000)
+[2025-08-07T17:17:01.906+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.s3a.connection.ssl.enabled,false)
+[2025-08-07T17:17:01.906+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.s3a.connection.timeout,60000)
+[2025-08-07T17:17:01.906+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.s3a.endpoint,http://minio:9000)
+[2025-08-07T17:17:01.907+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.s3a.impl,org.apache.hadoop.fs.s3a.S3AFileSystem)
+[2025-08-07T17:17:01.907+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.s3a.path.style.access,true)
+[2025-08-07T17:17:01.907+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.s3a.secret.key,*********(redacted))
+[2025-08-07T17:17:01.907+0000] {spark_submit.py:521} INFO - (spark.jars,file:///opt/custom-jars/hadoop-aws-3.3.6.jar,file:///opt/custom-jars/aws-java-sdk-bundle-1.12.621.jar)
+[2025-08-07T17:17:01.908+0000] {spark_submit.py:521} INFO - (spark.master,spark://spark-master:7077)
+[2025-08-07T17:17:01.908+0000] {spark_submit.py:521} INFO - (spark.repl.local.jars,file:///opt/custom-jars/hadoop-aws-3.3.6.jar,file:///opt/custom-jars/aws-java-sdk-bundle-1.12.621.jar)
+[2025-08-07T17:17:01.908+0000] {spark_submit.py:521} INFO - (spark.submit.deployMode,client)
+[2025-08-07T17:17:01.908+0000] {spark_submit.py:521} INFO - (spark.submit.pyFiles,)
+[2025-08-07T17:17:01.908+0000] {spark_submit.py:521} INFO - Classpath elements:
+[2025-08-07T17:17:01.908+0000] {spark_submit.py:521} INFO - file:///opt/custom-jars/hadoop-aws-3.3.6.jar
+[2025-08-07T17:17:01.909+0000] {spark_submit.py:521} INFO - file:///opt/custom-jars/aws-java-sdk-bundle-1.12.621.jar
+[2025-08-07T17:17:01.909+0000] {spark_submit.py:521} INFO - 
+[2025-08-07T17:17:01.909+0000] {spark_submit.py:521} INFO - 
+[2025-08-07T17:17:03.568+0000] {spark_submit.py:521} INFO - Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+[2025-08-07T17:17:03.574+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:03 INFO SparkContext: Running Spark version 4.0.0
+[2025-08-07T17:17:03.576+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:03 INFO SparkContext: OS info Linux, 5.15.167.4-microsoft-standard-WSL2, amd64
+[2025-08-07T17:17:03.577+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:03 INFO SparkContext: Java version 17.0.15
+[2025-08-07T17:17:03.601+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:03 INFO ResourceUtils: ==============================================================
+[2025-08-07T17:17:03.601+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:03 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2025-08-07T17:17:03.602+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:03 INFO ResourceUtils: ==============================================================
+[2025-08-07T17:17:03.603+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:03 INFO SparkContext: Submitted application: arrow-spark
+[2025-08-07T17:17:03.637+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:03 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2025-08-07T17:17:03.639+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:03 INFO ResourceProfile: Limiting resource is cpu
+[2025-08-07T17:17:03.641+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:03 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2025-08-07T17:17:03.711+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:03 INFO SecurityManager: Changing view acls to: ***
+[2025-08-07T17:17:03.712+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:03 INFO SecurityManager: Changing modify acls to: ***
+[2025-08-07T17:17:03.712+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:03 INFO SecurityManager: Changing view acls groups to: ***
+[2025-08-07T17:17:03.713+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:03 INFO SecurityManager: Changing modify acls groups to: ***
+[2025-08-07T17:17:03.716+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:03 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: *** groups with view permissions: EMPTY; users with modify permissions: ***; groups with modify permissions: EMPTY; RPC SSL disabled
+[2025-08-07T17:17:04.000+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:03 INFO Utils: Successfully started service 'sparkDriver' on port 36319.
+[2025-08-07T17:17:04.045+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:04 INFO SparkEnv: Registering MapOutputTracker
+[2025-08-07T17:17:04.060+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:04 INFO SparkEnv: Registering BlockManagerMaster
+[2025-08-07T17:17:04.076+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:04 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2025-08-07T17:17:04.077+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:04 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2025-08-07T17:17:04.081+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:04 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2025-08-07T17:17:04.108+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:04 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-9fb87a7e-1ae6-4260-a6c5-dcde5b4ba529
+[2025-08-07T17:17:04.133+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:04 INFO SparkEnv: Registering OutputCommitCoordinator
+[2025-08-07T17:17:04.281+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:04 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+[2025-08-07T17:17:04.357+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:04 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2025-08-07T17:17:04.392+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:04 INFO SparkContext: Added JAR file:///opt/custom-jars/hadoop-aws-3.3.6.jar at spark://0d9cbc3d310d:36319/jars/hadoop-aws-3.3.6.jar with timestamp 1754587023562
+[2025-08-07T17:17:04.392+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:04 INFO SparkContext: Added JAR file:///opt/custom-jars/aws-java-sdk-bundle-1.12.621.jar at spark://0d9cbc3d310d:36319/jars/aws-java-sdk-bundle-1.12.621.jar with timestamp 1754587023562
+[2025-08-07T17:17:04.411+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:04 INFO SecurityManager: Changing view acls to: ***
+[2025-08-07T17:17:04.412+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:04 INFO SecurityManager: Changing modify acls to: ***
+[2025-08-07T17:17:04.413+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:04 INFO SecurityManager: Changing view acls groups to: ***
+[2025-08-07T17:17:04.413+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:04 INFO SecurityManager: Changing modify acls groups to: ***
+[2025-08-07T17:17:04.413+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:04 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: *** groups with view permissions: EMPTY; users with modify permissions: ***; groups with modify permissions: EMPTY; RPC SSL disabled
+[2025-08-07T17:17:04.568+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:04 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark-master:7077...
+[2025-08-07T17:17:04.614+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:04 INFO TransportClientFactory: Successfully created connection to spark-master/172.19.0.3:7077 after 22 ms (0 ms spent in bootstraps)
+[2025-08-07T17:17:05.130+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:05 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20250807171705-0004
+[2025-08-07T17:17:05.137+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:05 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20250807171705-0004/0 on worker-20250807152928-172.19.0.5-46073 (172.19.0.5:46073) with 2 core(s)
+[2025-08-07T17:17:05.143+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:05 INFO StandaloneSchedulerBackend: Granted executor ID app-20250807171705-0004/0 on hostPort 172.19.0.5:46073 with 2 core(s), 1024.0 MiB RAM
+[2025-08-07T17:17:05.143+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:05 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 35631.
+[2025-08-07T17:17:05.144+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:05 INFO NettyBlockTransferService: Server created on 0d9cbc3d310d:35631
+[2025-08-07T17:17:05.146+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:05 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2025-08-07T17:17:05.162+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:05 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 0d9cbc3d310d, 35631, None)
+[2025-08-07T17:17:05.168+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:05 INFO BlockManagerMasterEndpoint: Registering block manager 0d9cbc3d310d:35631 with 434.4 MiB RAM, BlockManagerId(driver, 0d9cbc3d310d, 35631, None)
+[2025-08-07T17:17:05.174+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:05 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 0d9cbc3d310d, 35631, None)
+[2025-08-07T17:17:05.176+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:05 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 0d9cbc3d310d, 35631, None)
+[2025-08-07T17:17:05.187+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:05 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20250807171705-0004/0 is now RUNNING
+[2025-08-07T17:17:05.407+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:05 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+[2025-08-07T17:17:08.289+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:08 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+[2025-08-07T17:17:08.304+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:08 INFO SharedState: Warehouse path is 'file:/opt/***/spark-warehouse'.
+[2025-08-07T17:17:09.107+0000] {spark_submit.py:521} INFO - fs.s3a.connection.timeout = NOT SET
+[2025-08-07T17:17:09.115+0000] {spark_submit.py:521} INFO - spark.hadoop.fs.s3a.connection.timeout = 60000
+[2025-08-07T17:17:09.115+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:09 INFO SparkContext: SparkContext is stopping with exitCode 0 from stop at NativeMethodAccessorImpl.java:0.
+[2025-08-07T17:17:09.142+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:09 INFO SparkUI: Stopped Spark web UI at http://0d9cbc3d310d:4040
+[2025-08-07T17:17:09.145+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:09 INFO StandaloneSchedulerBackend: Shutting down all executors
+[2025-08-07T17:17:09.155+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:09 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Asking each executor to shut down
+[2025-08-07T17:17:09.185+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:09 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+[2025-08-07T17:17:09.326+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:09 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+[2025-08-07T17:17:09.332+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:09 INFO MemoryStore: MemoryStore cleared
+[2025-08-07T17:17:09.333+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:09 INFO BlockManager: BlockManager stopped
+[2025-08-07T17:17:09.348+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:09 INFO BlockManagerMaster: BlockManagerMaster stopped
+[2025-08-07T17:17:09.353+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:09 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+[2025-08-07T17:17:09.467+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:09 INFO SparkContext: Successfully stopped SparkContext
+[2025-08-07T17:17:10.214+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:10 INFO ShutdownHookManager: Shutdown hook called
+[2025-08-07T17:17:10.216+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:10 INFO ShutdownHookManager: Deleting directory /tmp/spark-17aac6c1-6c51-48cf-a1d1-ae24221bcc73
+[2025-08-07T17:17:10.241+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:10 INFO ShutdownHookManager: Deleting directory /tmp/spark-3ffb8f5e-49dd-4cad-9aaa-bf198a5cdff5
+[2025-08-07T17:17:10.245+0000] {spark_submit.py:521} INFO - 25/08/07 17:17:10 INFO ShutdownHookManager: Deleting directory /tmp/spark-3ffb8f5e-49dd-4cad-9aaa-bf198a5cdff5/pyspark-ce2609e2-5ba3-4b49-b1a0-2e0774b24ffe
+[2025-08-07T17:17:10.299+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-08-07T17:17:10.310+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=spark_transform_topcv, task_id=submit_spark_job, run_id=manual__2025-08-07T17:16:53.904001+00:00, execution_date=20250807T171653, start_date=20250807T171658, end_date=20250807T171710
+[2025-08-07T17:17:10.362+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-08-07T17:17:10.374+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-08-07T17:17:10.378+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -1,0 +1,47 @@
+[2025-09-09T13:42:57.697+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-09-09T13:42:57.731+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: spark_transform_pipeline.silver_group.silver_topcv_transform manual__2025-09-09T13:42:54.519489+00:00 [queued]>
+[2025-09-09T13:42:57.737+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: spark_transform_pipeline.silver_group.silver_topcv_transform manual__2025-09-09T13:42:54.519489+00:00 [queued]>
+[2025-09-09T13:42:57.737+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-09-09T13:42:57.749+0000] {taskinstance.py:2330} INFO - Executing <Task(SparkSubmitOperator): silver_group.silver_topcv_transform> on 2025-09-09 13:42:54.519489+00:00
+[2025-09-09T13:42:57.754+0000] {standard_task_runner.py:63} INFO - Started process 325 to run task
+[2025-09-09T13:42:57.759+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'spark_transform_pipeline', 'silver_group.silver_topcv_transform', 'manual__2025-09-09T13:42:54.519489+00:00', '--job-id', '102', '--raw', '--subdir', 'DAGS_FOLDER/etl_jobs_dag.py', '--cfg-path', '/tmp/tmpah3yl0t8']
+[2025-09-09T13:42:57.765+0000] {standard_task_runner.py:91} INFO - Job 102: Subtask silver_group.silver_topcv_transform
+[2025-09-09T13:42:57.859+0000] {task_command.py:426} INFO - Running <TaskInstance: spark_transform_pipeline.silver_group.silver_topcv_transform manual__2025-09-09T13:42:54.519489+00:00 [running]> on host 3002617d4ef7
+[2025-09-09T13:42:57.963+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='spark_transform_pipeline' AIRFLOW_CTX_TASK_ID='silver_group.silver_topcv_transform' AIRFLOW_CTX_EXECUTION_DATE='2025-09-09T13:42:54.519489+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-09-09T13:42:54.519489+00:00'
+[2025-09-09T13:42:57.964+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-09-09T13:42:57.992+0000] {spark_submit.py:223} INFO - Could not load connection string spark_default, defaulting to yarn
+[2025-09-09T13:42:57.994+0000] {spark_submit.py:351} INFO - Spark-Submit cmd: spark-submit --master yarn --conf spark.master=spark://spark-master:7077 --conf spark.driver.extraClassPath=/opt/custom-jars/* --conf spark.executor.extraClassPath=/opt/custom-jars/* --conf spark.hadoop.fs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem --conf spark.hadoop.fs.s3a.endpoint=http://minio:9000 --conf spark.hadoop.fs.s3a.access.key=minio --conf spark.hadoop.fs.s3a.secret.key=****** --conf spark.hadoop.fs.s3a.path.style.access=true --conf spark.hadoop.fs.s3a.connection.ssl.enabled=false --jars /opt/custom-jars/aws-java-sdk-bundle-1.12.262.jar,/opt/custom-jars/hadoop-aws-3.3.4.jar --name arrow-spark --verbose /opt/spark-jobs/transform/silver_topcv_transform.py
+[2025-09-09T13:42:58.468+0000] {spark_submit.py:521} INFO - WARNING: Using incubator modules: jdk.incubator.vector
+[2025-09-09T13:42:59.463+0000] {spark_submit.py:521} INFO - Exception in thread "main" org.apache.spark.SparkException: When running with master 'yarn' either HADOOP_CONF_DIR or YARN_CONF_DIR must be set in the environment.
+[2025-09-09T13:42:59.464+0000] {spark_submit.py:521} INFO - at org.apache.spark.deploy.SparkSubmitArguments.error(SparkSubmitArguments.scala:640)
+[2025-09-09T13:42:59.464+0000] {spark_submit.py:521} INFO - at org.apache.spark.deploy.SparkSubmitArguments.validateSubmitArguments(SparkSubmitArguments.scala:287)
+[2025-09-09T13:42:59.465+0000] {spark_submit.py:521} INFO - at org.apache.spark.deploy.SparkSubmitArguments.validateArguments(SparkSubmitArguments.scala:245)
+[2025-09-09T13:42:59.465+0000] {spark_submit.py:521} INFO - at org.apache.spark.deploy.SparkSubmitArguments.<init>(SparkSubmitArguments.scala:104)
+[2025-09-09T13:42:59.465+0000] {spark_submit.py:521} INFO - at org.apache.spark.deploy.SparkSubmit$$anon$2$$anon$3.<init>(SparkSubmit.scala:1101)
+[2025-09-09T13:42:59.466+0000] {spark_submit.py:521} INFO - at org.apache.spark.deploy.SparkSubmit$$anon$2.parseArguments(SparkSubmit.scala:1101)
+[2025-09-09T13:42:59.466+0000] {spark_submit.py:521} INFO - at org.apache.spark.deploy.SparkSubmit.doSubmit(SparkSubmit.scala:72)
+[2025-09-09T13:42:59.466+0000] {spark_submit.py:521} INFO - at org.apache.spark.deploy.SparkSubmit$$anon$2.doSubmit(SparkSubmit.scala:1132)
+[2025-09-09T13:42:59.467+0000] {spark_submit.py:521} INFO - at org.apache.spark.deploy.SparkSubmit$.main(SparkSubmit.scala:1141)
+[2025-09-09T13:42:59.467+0000] {spark_submit.py:521} INFO - at org.apache.spark.deploy.SparkSubmit.main(SparkSubmit.scala)
+[2025-09-09T13:42:59.471+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-09-09T13:42:59.481+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/providers/apache/spark/operators/spark_submit.py", line 156, in execute
+    self._hook.submit(self._application)
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/providers/apache/spark/hooks/spark_submit.py", line 452, in submit
+    raise AirflowException(
+airflow.exceptions.AirflowException: Cannot execute: spark-submit --master yarn --conf spark.master=spark://spark-master:7077 --conf spark.driver.extraClassPath=/opt/custom-jars/* --conf spark.executor.extraClassPath=/opt/custom-jars/* --conf spark.hadoop.fs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem --conf spark.hadoop.fs.s3a.endpoint=http://minio:9000 --conf spark.hadoop.fs.s3a.access.key=minio --conf spark.hadoop.fs.s3a.secret.key=****** --conf spark.hadoop.fs.s3a.path.style.access=true --conf spark.hadoop.fs.s3a.connection.ssl.enabled=false --jars /opt/custom-jars/aws-java-sdk-bundle-1.12.262.jar,/opt/custom-jars/hadoop-aws-3.3.4.jar --name arrow-spark --verbose /opt/spark-jobs/transform/silver_topcv_transform.py. Error code is: 1.
+[2025-09-09T13:42:59.485+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=spark_transform_pipeline, task_id=silver_group.silver_topcv_transform, run_id=manual__2025-09-09T13:42:54.519489+00:00, execution_date=20250909T134254, start_date=20250909T134257, end_date=20250909T134259
+[2025-09-09T13:42:59.495+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 102 for task silver_group.silver_topcv_transform (Cannot execute: spark-submit --master yarn --conf spark.master=spark://spark-master:7077 --conf spark.driver.extraClassPath=/opt/custom-jars/* --conf spark.executor.extraClassPath=/opt/custom-jars/* --conf spark.hadoop.fs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem --conf spark.hadoop.fs.s3a.endpoint=http://minio:9000 --conf spark.hadoop.fs.s3a.access.key=minio --conf spark.hadoop.fs.s3a.secret.key=****** --conf spark.hadoop.fs.s3a.path.style.access=true --conf spark.hadoop.fs.s3a.connection.ssl.enabled=false --jars /opt/custom-jars/aws-java-sdk-bundle-1.12.262.jar,/opt/custom-jars/hadoop-aws-3.3.4.jar --name arrow-spark --verbose /opt/spark-jobs/transform/silver_topcv_transform.py. Error code is: 1.; 325)
+[2025-09-09T13:42:59.540+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-09-09T13:42:59.558+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-09-09T13:42:59.561+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

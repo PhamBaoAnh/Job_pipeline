@@ -1,0 +1,1 @@
+[2025-08-06T10:05:51.137+0000] {scheduler_job_runner.py:769} ERROR - Executor reports task instance <TaskInstance: spark_gold_transform_dag.submit_spark_job manual__2025-08-06T10:05:44.583540+00:00 [queued]> finished (failed) although the task says it's queued. (Info: None) Was the task killed externally?

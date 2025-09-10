@@ -1,0 +1,1005 @@
+[2025-08-13T08:46:01.774+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-08-13T08:46:01.811+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: spark_transform_pipeline.gold_transform manual__2025-08-13T08:44:20.643148+00:00 [queued]>
+[2025-08-13T08:46:01.818+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: spark_transform_pipeline.gold_transform manual__2025-08-13T08:44:20.643148+00:00 [queued]>
+[2025-08-13T08:46:01.819+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-08-13T08:46:01.832+0000] {taskinstance.py:2330} INFO - Executing <Task(SparkSubmitOperator): gold_transform> on 2025-08-13 08:44:20.643148+00:00
+[2025-08-13T08:46:01.841+0000] {standard_task_runner.py:63} INFO - Started process 791 to run task
+[2025-08-13T08:46:01.846+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'spark_transform_pipeline', 'gold_transform', 'manual__2025-08-13T08:44:20.643148+00:00', '--job-id', '95', '--raw', '--subdir', 'DAGS_FOLDER/etl_jobs_dag.py', '--cfg-path', '/tmp/tmpady3m5xi']
+[2025-08-13T08:46:01.850+0000] {standard_task_runner.py:91} INFO - Job 95: Subtask gold_transform
+[2025-08-13T08:46:01.897+0000] {task_command.py:426} INFO - Running <TaskInstance: spark_transform_pipeline.gold_transform manual__2025-08-13T08:44:20.643148+00:00 [running]> on host 89a37f983b11
+[2025-08-13T08:46:02.024+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='spark_transform_pipeline' AIRFLOW_CTX_TASK_ID='gold_transform' AIRFLOW_CTX_EXECUTION_DATE='2025-08-13T08:44:20.643148+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-08-13T08:44:20.643148+00:00'
+[2025-08-13T08:46:02.025+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-08-13T08:46:02.047+0000] {base.py:84} INFO - Using connection ID 'spark_default' for task execution.
+[2025-08-13T08:46:02.049+0000] {spark_submit.py:351} INFO - Spark-Submit cmd: spark-submit --master spark://spark-master:7077 --conf spark.master=spark://spark-master:7077 --conf spark.driver.extraClassPath=/opt/custom-jars/* --conf spark.executor.extraClassPath=/opt/custom-jars/* --conf spark.hadoop.fs.gs.impl=com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem --conf spark.hadoop.fs.AbstractFileSystem.gs.impl=com.google.cloud.hadoop.fs.gcs.GoogleHadoopFS --conf spark.hadoop.google.cloud.auth.service.account.enable=true --conf spark.hadoop.google.cloud.auth.service.account.json.keyfile=/opt/***/gcp-key.json --jars /opt/custom-jars/gcs-connector-hadoop3-2.2.14-shaded.jar --name arrow-spark --verbose /opt/spark-jobs/transform/gold.transfrom.py
+[2025-08-13T08:46:02.790+0000] {spark_submit.py:521} INFO - WARNING: Using incubator modules: jdk.incubator.vector
+[2025-08-13T08:46:04.304+0000] {spark_submit.py:521} INFO - Parsed arguments:
+[2025-08-13T08:46:04.304+0000] {spark_submit.py:521} INFO - master                  spark://spark-master:7077
+[2025-08-13T08:46:04.305+0000] {spark_submit.py:521} INFO - remote                  null
+[2025-08-13T08:46:04.305+0000] {spark_submit.py:521} INFO - deployMode              null
+[2025-08-13T08:46:04.305+0000] {spark_submit.py:521} INFO - executorMemory          null
+[2025-08-13T08:46:04.306+0000] {spark_submit.py:521} INFO - executorCores           null
+[2025-08-13T08:46:04.306+0000] {spark_submit.py:521} INFO - totalExecutorCores      null
+[2025-08-13T08:46:04.306+0000] {spark_submit.py:521} INFO - propertiesFile          null
+[2025-08-13T08:46:04.307+0000] {spark_submit.py:521} INFO - driverMemory            null
+[2025-08-13T08:46:04.307+0000] {spark_submit.py:521} INFO - driverCores             null
+[2025-08-13T08:46:04.307+0000] {spark_submit.py:521} INFO - driverExtraClassPath    /opt/custom-jars/*
+[2025-08-13T08:46:04.307+0000] {spark_submit.py:521} INFO - driverExtraLibraryPath  null
+[2025-08-13T08:46:04.308+0000] {spark_submit.py:521} INFO - driverExtraJavaOptions  null
+[2025-08-13T08:46:04.308+0000] {spark_submit.py:521} INFO - supervise               false
+[2025-08-13T08:46:04.309+0000] {spark_submit.py:521} INFO - queue                   null
+[2025-08-13T08:46:04.309+0000] {spark_submit.py:521} INFO - numExecutors            null
+[2025-08-13T08:46:04.309+0000] {spark_submit.py:521} INFO - files                   null
+[2025-08-13T08:46:04.310+0000] {spark_submit.py:521} INFO - pyFiles                 null
+[2025-08-13T08:46:04.310+0000] {spark_submit.py:521} INFO - archives                null
+[2025-08-13T08:46:04.310+0000] {spark_submit.py:521} INFO - mainClass               null
+[2025-08-13T08:46:04.310+0000] {spark_submit.py:521} INFO - primaryResource         file:/opt/spark-jobs/transform/gold.transfrom.py
+[2025-08-13T08:46:04.311+0000] {spark_submit.py:521} INFO - name                    arrow-spark
+[2025-08-13T08:46:04.311+0000] {spark_submit.py:521} INFO - childArgs               []
+[2025-08-13T08:46:04.311+0000] {spark_submit.py:521} INFO - jars                    file:/opt/custom-jars/gcs-connector-hadoop3-2.2.14-shaded.jar
+[2025-08-13T08:46:04.312+0000] {spark_submit.py:521} INFO - packages                null
+[2025-08-13T08:46:04.312+0000] {spark_submit.py:521} INFO - packagesExclusions      null
+[2025-08-13T08:46:04.312+0000] {spark_submit.py:521} INFO - repositories            null
+[2025-08-13T08:46:04.312+0000] {spark_submit.py:521} INFO - verbose                 true
+[2025-08-13T08:46:04.313+0000] {spark_submit.py:521} INFO - 
+[2025-08-13T08:46:04.313+0000] {spark_submit.py:521} INFO - Spark properties used, including those specified through
+[2025-08-13T08:46:04.313+0000] {spark_submit.py:521} INFO - --conf and those from the properties file null:
+[2025-08-13T08:46:04.314+0000] {spark_submit.py:521} INFO - (spark.driver.extraClassPath,/opt/custom-jars/*)
+[2025-08-13T08:46:04.314+0000] {spark_submit.py:521} INFO - (spark.executor.extraClassPath,/opt/custom-jars/*)
+[2025-08-13T08:46:04.314+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.AbstractFileSystem.gs.impl,com.google.cloud.hadoop.fs.gcs.GoogleHadoopFS)
+[2025-08-13T08:46:04.314+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.gs.impl,com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem)
+[2025-08-13T08:46:04.314+0000] {spark_submit.py:521} INFO - (spark.hadoop.google.cloud.auth.service.account.enable,true)
+[2025-08-13T08:46:04.315+0000] {spark_submit.py:521} INFO - (spark.hadoop.google.cloud.auth.service.account.json.keyfile,/opt/***/gcp-key.json)
+[2025-08-13T08:46:04.315+0000] {spark_submit.py:521} INFO - (spark.master,spark://spark-master:7077)
+[2025-08-13T08:46:04.315+0000] {spark_submit.py:521} INFO - 
+[2025-08-13T08:46:04.315+0000] {spark_submit.py:521} INFO - 
+[2025-08-13T08:46:04.636+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:04 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2025-08-13T08:46:05.175+0000] {spark_submit.py:521} INFO - Main class:
+[2025-08-13T08:46:05.176+0000] {spark_submit.py:521} INFO - org.apache.spark.deploy.PythonRunner
+[2025-08-13T08:46:05.176+0000] {spark_submit.py:521} INFO - Arguments:
+[2025-08-13T08:46:05.176+0000] {spark_submit.py:521} INFO - file:/opt/spark-jobs/transform/gold.transfrom.py
+[2025-08-13T08:46:05.177+0000] {spark_submit.py:521} INFO - null
+[2025-08-13T08:46:05.177+0000] {spark_submit.py:521} INFO - Spark config:
+[2025-08-13T08:46:05.177+0000] {spark_submit.py:521} INFO - (spark.app.name,arrow-spark)
+[2025-08-13T08:46:05.178+0000] {spark_submit.py:521} INFO - (spark.app.submitTime,1755074765155)
+[2025-08-13T08:46:05.178+0000] {spark_submit.py:521} INFO - (spark.driver.extraClassPath,/opt/custom-jars/*)
+[2025-08-13T08:46:05.178+0000] {spark_submit.py:521} INFO - (spark.executor.extraClassPath,/opt/custom-jars/*)
+[2025-08-13T08:46:05.178+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.AbstractFileSystem.gs.impl,com.google.cloud.hadoop.fs.gcs.GoogleHadoopFS)
+[2025-08-13T08:46:05.179+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.gs.impl,com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem)
+[2025-08-13T08:46:05.179+0000] {spark_submit.py:521} INFO - (spark.hadoop.google.cloud.auth.service.account.enable,true)
+[2025-08-13T08:46:05.179+0000] {spark_submit.py:521} INFO - (spark.hadoop.google.cloud.auth.service.account.json.keyfile,/opt/***/gcp-key.json)
+[2025-08-13T08:46:05.180+0000] {spark_submit.py:521} INFO - (spark.jars,file:///opt/custom-jars/gcs-connector-hadoop3-2.2.14-shaded.jar)
+[2025-08-13T08:46:05.180+0000] {spark_submit.py:521} INFO - (spark.master,spark://spark-master:7077)
+[2025-08-13T08:46:05.180+0000] {spark_submit.py:521} INFO - (spark.repl.local.jars,file:///opt/custom-jars/gcs-connector-hadoop3-2.2.14-shaded.jar)
+[2025-08-13T08:46:05.180+0000] {spark_submit.py:521} INFO - (spark.submit.deployMode,client)
+[2025-08-13T08:46:05.180+0000] {spark_submit.py:521} INFO - (spark.submit.pyFiles,)
+[2025-08-13T08:46:05.181+0000] {spark_submit.py:521} INFO - Classpath elements:
+[2025-08-13T08:46:05.181+0000] {spark_submit.py:521} INFO - file:///opt/custom-jars/gcs-connector-hadoop3-2.2.14-shaded.jar
+[2025-08-13T08:46:05.181+0000] {spark_submit.py:521} INFO - 
+[2025-08-13T08:46:05.181+0000] {spark_submit.py:521} INFO - 
+[2025-08-13T08:46:06.635+0000] {spark_submit.py:521} INFO - Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+[2025-08-13T08:46:06.638+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:06 INFO SparkContext: Running Spark version 4.0.0
+[2025-08-13T08:46:06.640+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:06 INFO SparkContext: OS info Linux, 5.15.167.4-microsoft-standard-WSL2, amd64
+[2025-08-13T08:46:06.640+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:06 INFO SparkContext: Java version 17.0.15
+[2025-08-13T08:46:06.661+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:06 INFO ResourceUtils: ==============================================================
+[2025-08-13T08:46:06.661+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:06 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2025-08-13T08:46:06.662+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:06 INFO ResourceUtils: ==============================================================
+[2025-08-13T08:46:06.662+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:06 INFO SparkContext: Submitted application: gold_transform
+[2025-08-13T08:46:06.685+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:06 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2025-08-13T08:46:06.687+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:06 INFO ResourceProfile: Limiting resource is cpu
+[2025-08-13T08:46:06.688+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:06 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2025-08-13T08:46:06.731+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:06 INFO SecurityManager: Changing view acls to: ***
+[2025-08-13T08:46:06.731+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:06 INFO SecurityManager: Changing modify acls to: ***
+[2025-08-13T08:46:06.732+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:06 INFO SecurityManager: Changing view acls groups to: ***
+[2025-08-13T08:46:06.732+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:06 INFO SecurityManager: Changing modify acls groups to: ***
+[2025-08-13T08:46:06.733+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:06 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: *** groups with view permissions: EMPTY; users with modify permissions: ***; groups with modify permissions: EMPTY; RPC SSL disabled
+[2025-08-13T08:46:06.945+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:06 INFO Utils: Successfully started service 'sparkDriver' on port 37259.
+[2025-08-13T08:46:06.967+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:06 INFO SparkEnv: Registering MapOutputTracker
+[2025-08-13T08:46:06.978+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:06 INFO SparkEnv: Registering BlockManagerMaster
+[2025-08-13T08:46:06.988+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:06 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2025-08-13T08:46:06.989+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:06 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2025-08-13T08:46:06.992+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:06 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2025-08-13T08:46:07.011+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:07 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-509b1fd6-e714-43b4-b38d-8765d987131b
+[2025-08-13T08:46:07.030+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:07 INFO SparkEnv: Registering OutputCommitCoordinator
+[2025-08-13T08:46:07.149+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:07 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+[2025-08-13T08:46:07.235+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:07 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2025-08-13T08:46:07.270+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:07 INFO SparkContext: Added JAR file:///opt/custom-jars/gcs-connector-hadoop3-2.2.14-shaded.jar at spark://89a37f983b11:37259/jars/gcs-connector-hadoop3-2.2.14-shaded.jar with timestamp 1755074766627
+[2025-08-13T08:46:07.287+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:07 INFO SecurityManager: Changing view acls to: ***
+[2025-08-13T08:46:07.287+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:07 INFO SecurityManager: Changing modify acls to: ***
+[2025-08-13T08:46:07.288+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:07 INFO SecurityManager: Changing view acls groups to: ***
+[2025-08-13T08:46:07.288+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:07 INFO SecurityManager: Changing modify acls groups to: ***
+[2025-08-13T08:46:07.289+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:07 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: *** groups with view permissions: EMPTY; users with modify permissions: ***; groups with modify permissions: EMPTY; RPC SSL disabled
+[2025-08-13T08:46:07.415+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:07 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark-master:7077...
+[2025-08-13T08:46:07.455+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:07 INFO TransportClientFactory: Successfully created connection to spark-master/172.18.0.3:7077 after 19 ms (0 ms spent in bootstraps)
+[2025-08-13T08:46:07.542+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:07 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20250813084607-0003
+[2025-08-13T08:46:07.554+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:07 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 37423.
+[2025-08-13T08:46:07.555+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:07 INFO NettyBlockTransferService: Server created on 89a37f983b11:37423
+[2025-08-13T08:46:07.556+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:07 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20250813084607-0003/0 on worker-20250813083942-172.18.0.5-44267 (172.18.0.5:44267) with 2 core(s)
+[2025-08-13T08:46:07.557+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:07 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2025-08-13T08:46:07.561+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:07 INFO StandaloneSchedulerBackend: Granted executor ID app-20250813084607-0003/0 on hostPort 172.18.0.5:44267 with 2 core(s), 1024.0 MiB RAM
+[2025-08-13T08:46:07.573+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:07 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 89a37f983b11, 37423, None)
+[2025-08-13T08:46:07.579+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:07 INFO BlockManagerMasterEndpoint: Registering block manager 89a37f983b11:37423 with 434.4 MiB RAM, BlockManagerId(driver, 89a37f983b11, 37423, None)
+[2025-08-13T08:46:07.584+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:07 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 89a37f983b11, 37423, None)
+[2025-08-13T08:46:07.586+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:07 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 89a37f983b11, 37423, None)
+[2025-08-13T08:46:07.736+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:07 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20250813084607-0003/0 is now RUNNING
+[2025-08-13T08:46:07.760+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:07 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+[2025-08-13T08:46:10.356+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:10 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+[2025-08-13T08:46:10.358+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:10 INFO SharedState: Warehouse path is 'file:/opt/***/spark-warehouse'.
+[2025-08-13T08:46:11.045+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:11 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.18.0.5:36792) with ID 0, ResourceProfileId 0
+[2025-08-13T08:46:11.228+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:11 INFO BlockManagerMasterEndpoint: Registering block manager 172.18.0.5:37961 with 434.4 MiB RAM, BlockManagerId(0, 172.18.0.5, 37961, None)
+[2025-08-13T08:46:13.381+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:13 INFO InMemoryFileIndex: It took 246 ms to list leaf files for 1 paths.
+[2025-08-13T08:46:13.567+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:13 INFO SparkContext: Starting job: parquet at NativeMethodAccessorImpl.java:0
+[2025-08-13T08:46:13.579+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:13 INFO DAGScheduler: Got job 0 (parquet at NativeMethodAccessorImpl.java:0) with 1 output partitions
+[2025-08-13T08:46:13.580+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:13 INFO DAGScheduler: Final stage: ResultStage 0 (parquet at NativeMethodAccessorImpl.java:0)
+[2025-08-13T08:46:13.580+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:13 INFO DAGScheduler: Parents of final stage: List()
+[2025-08-13T08:46:13.582+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:13 INFO DAGScheduler: Missing parents: List()
+[2025-08-13T08:46:13.585+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:13 INFO DAGScheduler: Submitting ResultStage 0 (MapPartitionsRDD[1] at parquet at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2025-08-13T08:46:13.617+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:13 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+[2025-08-13T08:46:13.627+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:13 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 116.0 KiB, free 434.3 MiB)
+[2025-08-13T08:46:13.670+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:13 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 41.7 KiB, free 434.2 MiB)
+[2025-08-13T08:46:13.678+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:13 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:1676
+[2025-08-13T08:46:13.695+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:13 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 0 (MapPartitionsRDD[1] at parquet at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+[2025-08-13T08:46:13.706+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:13 INFO TaskSchedulerImpl: Adding task set 0.0 with 1 tasks resource profile 0
+[2025-08-13T08:46:13.731+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:13 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0) (172.18.0.5,executor 0, partition 0, PROCESS_LOCAL, 10067 bytes)
+[2025-08-13T08:46:16.236+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:16 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 2514 ms on 172.18.0.5 (executor 0) (1/1)
+[2025-08-13T08:46:16.237+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:16 INFO TaskSchedulerImpl: Removed TaskSet 0.0 whose tasks have all completed, from pool
+[2025-08-13T08:46:16.242+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:16 INFO DAGScheduler: ResultStage 0 (parquet at NativeMethodAccessorImpl.java:0) finished in 2643 ms
+[2025-08-13T08:46:16.244+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:16 INFO DAGScheduler: Job 0 is finished. Cancelling potential speculative or zombie tasks for this job
+[2025-08-13T08:46:16.244+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:16 INFO TaskSchedulerImpl: Canceling stage 0
+[2025-08-13T08:46:16.245+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:16 INFO TaskSchedulerImpl: Killing all running tasks in stage 0: Stage finished
+[2025-08-13T08:46:16.247+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:16 INFO DAGScheduler: Job 0 finished: parquet at NativeMethodAccessorImpl.java:0, took 2679.613973 ms
+[2025-08-13T08:46:17.055+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:17 INFO InMemoryFileIndex: It took 243 ms to list leaf files for 1 paths.
+[2025-08-13T08:46:17.085+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:17 INFO SparkContext: Starting job: parquet at NativeMethodAccessorImpl.java:0
+[2025-08-13T08:46:17.086+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:17 INFO DAGScheduler: Got job 1 (parquet at NativeMethodAccessorImpl.java:0) with 1 output partitions
+[2025-08-13T08:46:17.086+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:17 INFO DAGScheduler: Final stage: ResultStage 1 (parquet at NativeMethodAccessorImpl.java:0)
+[2025-08-13T08:46:17.086+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:17 INFO DAGScheduler: Parents of final stage: List()
+[2025-08-13T08:46:17.087+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:17 INFO DAGScheduler: Missing parents: List()
+[2025-08-13T08:46:17.087+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:17 INFO DAGScheduler: Submitting ResultStage 1 (MapPartitionsRDD[3] at parquet at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2025-08-13T08:46:17.093+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:17 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 116.0 KiB, free 434.1 MiB)
+[2025-08-13T08:46:17.102+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:17 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 41.7 KiB, free 434.1 MiB)
+[2025-08-13T08:46:17.103+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:17 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:1676
+[2025-08-13T08:46:17.104+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:17 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 1 (MapPartitionsRDD[3] at parquet at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+[2025-08-13T08:46:17.104+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:17 INFO TaskSchedulerImpl: Adding task set 1.0 with 1 tasks resource profile 0
+[2025-08-13T08:46:17.105+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:17 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 1) (172.18.0.5,executor 0, partition 0, PROCESS_LOCAL, 10083 bytes)
+[2025-08-13T08:46:17.583+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:17 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 1) in 478 ms on 172.18.0.5 (executor 0) (1/1)
+[2025-08-13T08:46:17.584+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:17 INFO TaskSchedulerImpl: Removed TaskSet 1.0 whose tasks have all completed, from pool
+[2025-08-13T08:46:17.585+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:17 INFO DAGScheduler: ResultStage 1 (parquet at NativeMethodAccessorImpl.java:0) finished in 497 ms
+[2025-08-13T08:46:17.585+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:17 INFO DAGScheduler: Job 1 is finished. Cancelling potential speculative or zombie tasks for this job
+[2025-08-13T08:46:17.585+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:17 INFO TaskSchedulerImpl: Canceling stage 1
+[2025-08-13T08:46:17.585+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:17 INFO TaskSchedulerImpl: Killing all running tasks in stage 1: Stage finished
+[2025-08-13T08:46:17.586+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:17 INFO DAGScheduler: Job 1 finished: parquet at NativeMethodAccessorImpl.java:0, took 499.763351 ms
+[2025-08-13T08:46:18.579+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:18 INFO FileSourceStrategy: Pushed Filters:
+[2025-08-13T08:46:18.582+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:18 INFO FileSourceStrategy: Post-Scan Filters: Set()
+[2025-08-13T08:46:18.590+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:18 INFO FileSourceStrategy: Pushed Filters:
+[2025-08-13T08:46:18.591+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:18 INFO FileSourceStrategy: Post-Scan Filters: Set()
+[2025-08-13T08:46:19.043+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:19 INFO CodeGenerator: Code generated in 219.200041 ms
+[2025-08-13T08:46:19.078+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:19 INFO CodeGenerator: Code generated in 14.678804 ms
+[2025-08-13T08:46:19.104+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:19 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 217.7 KiB, free 434.2 MiB)
+[2025-08-13T08:46:19.111+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:19 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 39.6 KiB, free 434.1 MiB)
+[2025-08-13T08:46:19.113+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:19 INFO SparkContext: Created broadcast 2 from $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+[2025-08-13T08:46:19.126+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:19 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+[2025-08-13T08:46:19.160+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:19 INFO CodeGenerator: Code generated in 8.720104 ms
+[2025-08-13T08:46:19.164+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:19 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 217.7 KiB, free 433.9 MiB)
+[2025-08-13T08:46:19.170+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:19 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 39.6 KiB, free 433.9 MiB)
+[2025-08-13T08:46:19.171+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:19 INFO SparkContext: Created broadcast 3 from $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+[2025-08-13T08:46:19.172+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:19 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+[2025-08-13T08:46:19.217+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:19 INFO DAGScheduler: Registering RDD 12 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) as input to shuffle 0
+[2025-08-13T08:46:19.221+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:19 INFO DAGScheduler: Got map stage job 2 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) with 2 output partitions
+[2025-08-13T08:46:19.221+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:19 INFO DAGScheduler: Final stage: ShuffleMapStage 2 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768)
+[2025-08-13T08:46:19.222+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:19 INFO DAGScheduler: Parents of final stage: List()
+[2025-08-13T08:46:19.222+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:19 INFO DAGScheduler: Missing parents: List()
+[2025-08-13T08:46:19.223+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:19 INFO DAGScheduler: Submitting ShuffleMapStage 2 (MapPartitionsRDD[12] at $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768), which has no missing parents
+[2025-08-13T08:46:19.234+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:19 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 44.0 KiB, free 433.9 MiB)
+[2025-08-13T08:46:19.237+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:19 INFO MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 16.7 KiB, free 433.8 MiB)
+[2025-08-13T08:46:19.238+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:19 INFO SparkContext: Created broadcast 4 from broadcast at DAGScheduler.scala:1676
+[2025-08-13T08:46:19.239+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:19 INFO DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 2 (MapPartitionsRDD[12] at $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) (first 15 tasks are for partitions Vector(0, 1))
+[2025-08-13T08:46:19.240+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:19 INFO TaskSchedulerImpl: Adding task set 2.0 with 2 tasks resource profile 0
+[2025-08-13T08:46:19.243+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:19 INFO TaskSetManager: Starting task 0.0 in stage 2.0 (TID 2) (172.18.0.5,executor 0, partition 0, PROCESS_LOCAL, 10606 bytes)
+[2025-08-13T08:46:19.244+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:19 INFO TaskSetManager: Starting task 1.0 in stage 2.0 (TID 3) (172.18.0.5,executor 0, partition 1, PROCESS_LOCAL, 10622 bytes)
+[2025-08-13T08:46:21.177+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:21 INFO TaskSetManager: Finished task 0.0 in stage 2.0 (TID 2) in 1937 ms on 172.18.0.5 (executor 0) (1/2)
+[2025-08-13T08:46:21.187+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:21 INFO TaskSetManager: Finished task 1.0 in stage 2.0 (TID 3) in 1944 ms on 172.18.0.5 (executor 0) (2/2)
+[2025-08-13T08:46:21.188+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:21 INFO TaskSchedulerImpl: Removed TaskSet 2.0 whose tasks have all completed, from pool
+[2025-08-13T08:46:21.189+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:21 INFO DAGScheduler: ShuffleMapStage 2 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) finished in 1962 ms
+[2025-08-13T08:46:21.190+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:21 INFO DAGScheduler: looking for newly runnable stages
+[2025-08-13T08:46:21.190+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:21 INFO DAGScheduler: running: HashSet()
+[2025-08-13T08:46:21.190+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:21 INFO DAGScheduler: waiting: HashSet()
+[2025-08-13T08:46:21.191+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:21 INFO DAGScheduler: failed: HashSet()
+[2025-08-13T08:46:21.212+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:21 INFO ShufflePartitionsUtil: For shuffle(0, advisory target size: 67108864, actual target size 1048576, minimum partition size: 1048576
+[2025-08-13T08:46:21.357+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:21 INFO ParquetUtils: Using default output committer for Parquet: org.apache.parquet.hadoop.ParquetOutputCommitter
+[2025-08-13T08:46:21.372+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:21 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+[2025-08-13T08:46:21.372+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:21 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+[2025-08-13T08:46:21.373+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:21 INFO SQLHadoopMapReduceCommitProtocol: Using user defined output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+[2025-08-13T08:46:21.373+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:21 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+[2025-08-13T08:46:21.373+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:21 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+[2025-08-13T08:46:21.374+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:21 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+[2025-08-13T08:46:22.488+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:22 INFO CodeGenerator: Code generated in 27.339381 ms
+[2025-08-13T08:46:22.509+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:22 INFO SparkContext: Starting job: $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+[2025-08-13T08:46:22.511+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:22 INFO DAGScheduler: Got job 3 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) with 1 output partitions
+[2025-08-13T08:46:22.512+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:22 INFO DAGScheduler: Final stage: ResultStage 4 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768)
+[2025-08-13T08:46:22.512+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:22 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 3)
+[2025-08-13T08:46:22.513+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:22 INFO DAGScheduler: Missing parents: List()
+[2025-08-13T08:46:22.513+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:22 INFO DAGScheduler: Submitting ResultStage 4 (MapPartitionsRDD[15] at $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768), which has no missing parents
+[2025-08-13T08:46:22.546+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:22 INFO MemoryStore: Block broadcast_5 stored as values in memory (estimated size 270.2 KiB, free 433.6 MiB)
+[2025-08-13T08:46:22.549+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:22 INFO MemoryStore: Block broadcast_5_piece0 stored as bytes in memory (estimated size 98.7 KiB, free 433.5 MiB)
+[2025-08-13T08:46:22.551+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:22 INFO SparkContext: Created broadcast 5 from broadcast at DAGScheduler.scala:1676
+[2025-08-13T08:46:22.552+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:22 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 4 (MapPartitionsRDD[15] at $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) (first 15 tasks are for partitions Vector(0))
+[2025-08-13T08:46:22.552+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:22 INFO TaskSchedulerImpl: Adding task set 4.0 with 1 tasks resource profile 0
+[2025-08-13T08:46:22.557+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:22 INFO TaskSetManager: Starting task 0.0 in stage 4.0 (TID 4) (172.18.0.5,executor 0, partition 0, NODE_LOCAL, 9833 bytes)
+[2025-08-13T08:46:22.670+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:22 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 0 to 172.18.0.5:36792
+[2025-08-13T08:46:25.874+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:25 INFO TaskSetManager: Finished task 0.0 in stage 4.0 (TID 4) in 3319 ms on 172.18.0.5 (executor 0) (1/1)
+[2025-08-13T08:46:25.876+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:25 INFO TaskSchedulerImpl: Removed TaskSet 4.0 whose tasks have all completed, from pool
+[2025-08-13T08:46:25.876+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:25 INFO DAGScheduler: ResultStage 4 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) finished in 3354 ms
+[2025-08-13T08:46:25.877+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:25 INFO DAGScheduler: Job 3 is finished. Cancelling potential speculative or zombie tasks for this job
+[2025-08-13T08:46:25.877+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:25 INFO TaskSchedulerImpl: Canceling stage 4
+[2025-08-13T08:46:25.878+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:25 INFO TaskSchedulerImpl: Killing all running tasks in stage 4: Stage finished
+[2025-08-13T08:46:25.878+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:25 INFO DAGScheduler: Job 3 finished: $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768, took 3368.154091 ms
+[2025-08-13T08:46:25.879+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:25 INFO FileFormatWriter: Start to commit write Job c9b28ca1-f9da-45fe-9b39-aa34e38b8980.
+[2025-08-13T08:46:27.445+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:27 INFO GoogleCloudStorageFileSystem: Successfully repaired 'gs://job_gcp/gold/dim_company/dim_company_jobs.parquet/_temporary/0/task_202508130846228649288420606409455_0004_m_000000/' directory.
+[2025-08-13T08:46:28.247+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:28 INFO GoogleCloudStorageFileSystem: Successfully repaired 'gs://job_gcp/gold/dim_company/dim_company_jobs.parquet/' directory.
+[2025-08-13T08:46:29.092+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:29 INFO FileFormatWriter: Write Job c9b28ca1-f9da-45fe-9b39-aa34e38b8980 committed. Elapsed time: 3211 ms.
+[2025-08-13T08:46:29.096+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:29 INFO FileFormatWriter: Finished processing stats for write job c9b28ca1-f9da-45fe-9b39-aa34e38b8980.
+[2025-08-13T08:46:29.106+0000] {spark_submit.py:521} INFO - ✅ Uploaded Spark DataFrame to GCS: gs://job_gcp/gold/dim_company/dim_company_jobs.parquet
+[2025-08-13T08:46:29.142+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:29 INFO FileSourceStrategy: Pushed Filters:
+[2025-08-13T08:46:29.143+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:29 INFO FileSourceStrategy: Post-Scan Filters: Set()
+[2025-08-13T08:46:29.143+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:29 INFO FileSourceStrategy: Pushed Filters:
+[2025-08-13T08:46:29.144+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:29 INFO FileSourceStrategy: Post-Scan Filters: Set()
+[2025-08-13T08:46:29.155+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:29 INFO HashAggregateExec: spark.sql.codegen.aggregate.map.twolevel.enabled is set to true, but current version of codegened fast hashmap does not support this aggregate.
+[2025-08-13T08:46:29.178+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:29 INFO CodeGenerator: Code generated in 13.1814 ms
+[2025-08-13T08:46:29.188+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:29 INFO CodeGenerator: Code generated in 7.553779 ms
+[2025-08-13T08:46:29.192+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:29 INFO MemoryStore: Block broadcast_6 stored as values in memory (estimated size 217.9 KiB, free 433.7 MiB)
+[2025-08-13T08:46:29.204+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:29 INFO MemoryStore: Block broadcast_6_piece0 stored as bytes in memory (estimated size 39.7 KiB, free 433.6 MiB)
+[2025-08-13T08:46:29.206+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:29 INFO SparkContext: Created broadcast 6 from $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+[2025-08-13T08:46:29.206+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:29 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+[2025-08-13T08:46:29.219+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:29 INFO CodeGenerator: Code generated in 7.690717 ms
+[2025-08-13T08:46:29.222+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:29 INFO MemoryStore: Block broadcast_7 stored as values in memory (estimated size 217.9 KiB, free 433.4 MiB)
+[2025-08-13T08:46:29.228+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:29 INFO MemoryStore: Block broadcast_7_piece0 stored as bytes in memory (estimated size 39.7 KiB, free 433.4 MiB)
+[2025-08-13T08:46:29.230+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:29 INFO SparkContext: Created broadcast 7 from $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+[2025-08-13T08:46:29.230+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:29 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+[2025-08-13T08:46:29.236+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:29 INFO DAGScheduler: Registering RDD 24 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) as input to shuffle 1
+[2025-08-13T08:46:29.236+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:29 INFO DAGScheduler: Got map stage job 4 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) with 2 output partitions
+[2025-08-13T08:46:29.237+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:29 INFO DAGScheduler: Final stage: ShuffleMapStage 5 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768)
+[2025-08-13T08:46:29.237+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:29 INFO DAGScheduler: Parents of final stage: List()
+[2025-08-13T08:46:29.237+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:29 INFO DAGScheduler: Missing parents: List()
+[2025-08-13T08:46:29.237+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:29 INFO DAGScheduler: Submitting ShuffleMapStage 5 (MapPartitionsRDD[24] at $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768), which has no missing parents
+[2025-08-13T08:46:29.239+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:29 INFO MemoryStore: Block broadcast_8 stored as values in memory (estimated size 46.1 KiB, free 433.3 MiB)
+[2025-08-13T08:46:29.240+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:29 INFO MemoryStore: Block broadcast_8_piece0 stored as bytes in memory (estimated size 16.3 KiB, free 433.3 MiB)
+[2025-08-13T08:46:29.242+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:29 INFO SparkContext: Created broadcast 8 from broadcast at DAGScheduler.scala:1676
+[2025-08-13T08:46:29.243+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:29 INFO DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 5 (MapPartitionsRDD[24] at $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) (first 15 tasks are for partitions Vector(0, 1))
+[2025-08-13T08:46:29.243+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:29 INFO TaskSchedulerImpl: Adding task set 5.0 with 2 tasks resource profile 0
+[2025-08-13T08:46:29.244+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:29 INFO TaskSetManager: Starting task 0.0 in stage 5.0 (TID 5) (172.18.0.5,executor 0, partition 0, PROCESS_LOCAL, 10606 bytes)
+[2025-08-13T08:46:29.244+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:29 INFO TaskSetManager: Starting task 1.0 in stage 5.0 (TID 6) (172.18.0.5,executor 0, partition 1, PROCESS_LOCAL, 10622 bytes)
+[2025-08-13T08:46:30.288+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:30 INFO TaskSetManager: Finished task 0.0 in stage 5.0 (TID 5) in 1044 ms on 172.18.0.5 (executor 0) (1/2)
+[2025-08-13T08:46:30.498+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:30 INFO TaskSetManager: Finished task 1.0 in stage 5.0 (TID 6) in 1254 ms on 172.18.0.5 (executor 0) (2/2)
+[2025-08-13T08:46:30.499+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:30 INFO TaskSchedulerImpl: Removed TaskSet 5.0 whose tasks have all completed, from pool
+[2025-08-13T08:46:30.499+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:30 INFO DAGScheduler: ShuffleMapStage 5 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) finished in 1261 ms
+[2025-08-13T08:46:30.500+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:30 INFO DAGScheduler: looking for newly runnable stages
+[2025-08-13T08:46:30.500+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:30 INFO DAGScheduler: running: HashSet()
+[2025-08-13T08:46:30.501+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:30 INFO DAGScheduler: waiting: HashSet()
+[2025-08-13T08:46:30.501+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:30 INFO DAGScheduler: failed: HashSet()
+[2025-08-13T08:46:30.503+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:30 INFO ShufflePartitionsUtil: For shuffle(1, advisory target size: 67108864, actual target size 1048576, minimum partition size: 1048576
+[2025-08-13T08:46:30.607+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:30 INFO ParquetUtils: Using default output committer for Parquet: org.apache.parquet.hadoop.ParquetOutputCommitter
+[2025-08-13T08:46:30.608+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:30 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+[2025-08-13T08:46:30.608+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:30 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+[2025-08-13T08:46:30.608+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:30 INFO SQLHadoopMapReduceCommitProtocol: Using user defined output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+[2025-08-13T08:46:30.609+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:30 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+[2025-08-13T08:46:30.609+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:30 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+[2025-08-13T08:46:30.610+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:30 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+[2025-08-13T08:46:30.976+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:30 INFO HashAggregateExec: spark.sql.codegen.aggregate.map.twolevel.enabled is set to true, but current version of codegened fast hashmap does not support this aggregate.
+[2025-08-13T08:46:30.989+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:30 INFO CodeGenerator: Code generated in 10.400346 ms
+[2025-08-13T08:46:30.994+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:30 INFO SparkContext: Starting job: $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+[2025-08-13T08:46:30.995+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:30 INFO DAGScheduler: Got job 5 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) with 1 output partitions
+[2025-08-13T08:46:30.995+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:30 INFO DAGScheduler: Final stage: ResultStage 7 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768)
+[2025-08-13T08:46:30.996+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:30 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 6)
+[2025-08-13T08:46:30.996+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:30 INFO DAGScheduler: Missing parents: List()
+[2025-08-13T08:46:30.997+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:30 INFO DAGScheduler: Submitting ResultStage 7 (MapPartitionsRDD[27] at $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768), which has no missing parents
+[2025-08-13T08:46:31.009+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:31 INFO MemoryStore: Block broadcast_9 stored as values in memory (estimated size 269.1 KiB, free 433.1 MiB)
+[2025-08-13T08:46:31.018+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:31 INFO MemoryStore: Block broadcast_9_piece0 stored as bytes in memory (estimated size 97.8 KiB, free 433.0 MiB)
+[2025-08-13T08:46:31.020+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:31 INFO SparkContext: Created broadcast 9 from broadcast at DAGScheduler.scala:1676
+[2025-08-13T08:46:31.021+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:31 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 7 (MapPartitionsRDD[27] at $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) (first 15 tasks are for partitions Vector(0))
+[2025-08-13T08:46:31.021+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:31 INFO TaskSchedulerImpl: Adding task set 7.0 with 1 tasks resource profile 0
+[2025-08-13T08:46:31.023+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:31 INFO TaskSetManager: Starting task 0.0 in stage 7.0 (TID 7) (172.18.0.5,executor 0, partition 0, NODE_LOCAL, 9833 bytes)
+[2025-08-13T08:46:31.062+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:31 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 1 to 172.18.0.5:36792
+[2025-08-13T08:46:33.738+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:33 INFO TaskSetManager: Finished task 0.0 in stage 7.0 (TID 7) in 2716 ms on 172.18.0.5 (executor 0) (1/1)
+[2025-08-13T08:46:33.739+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:33 INFO TaskSchedulerImpl: Removed TaskSet 7.0 whose tasks have all completed, from pool
+[2025-08-13T08:46:33.740+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:33 INFO DAGScheduler: ResultStage 7 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) finished in 2741 ms
+[2025-08-13T08:46:33.740+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:33 INFO DAGScheduler: Job 5 is finished. Cancelling potential speculative or zombie tasks for this job
+[2025-08-13T08:46:33.740+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:33 INFO TaskSchedulerImpl: Canceling stage 7
+[2025-08-13T08:46:33.741+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:33 INFO TaskSchedulerImpl: Killing all running tasks in stage 7: Stage finished
+[2025-08-13T08:46:33.741+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:33 INFO DAGScheduler: Job 5 finished: $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768, took 2745.569182 ms
+[2025-08-13T08:46:33.741+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:33 INFO FileFormatWriter: Start to commit write Job 976b2307-721e-4646-a44f-48268a6162bd.
+[2025-08-13T08:46:35.021+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:35 INFO GoogleCloudStorageFileSystem: Successfully repaired 'gs://job_gcp/gold/dim_jobposition/dim_jobposition_jobs.parquet/_temporary/0/task_202508130846306483645042063100398_0007_m_000000/' directory.
+[2025-08-13T08:46:35.832+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:35 INFO GoogleCloudStorageFileSystem: Successfully repaired 'gs://job_gcp/gold/dim_jobposition/dim_jobposition_jobs.parquet/' directory.
+[2025-08-13T08:46:36.654+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:36 INFO FileFormatWriter: Write Job 976b2307-721e-4646-a44f-48268a6162bd committed. Elapsed time: 2913 ms.
+[2025-08-13T08:46:36.655+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:36 INFO FileFormatWriter: Finished processing stats for write job 976b2307-721e-4646-a44f-48268a6162bd.
+[2025-08-13T08:46:36.659+0000] {spark_submit.py:521} INFO - ✅ Uploaded Spark DataFrame to GCS: gs://job_gcp/gold/dim_jobposition/dim_jobposition_jobs.parquet
+[2025-08-13T08:46:36.677+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:36 INFO FileSourceStrategy: Pushed Filters:
+[2025-08-13T08:46:36.678+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:36 INFO FileSourceStrategy: Post-Scan Filters: Set()
+[2025-08-13T08:46:36.678+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:36 INFO FileSourceStrategy: Pushed Filters:
+[2025-08-13T08:46:36.679+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:36 INFO FileSourceStrategy: Post-Scan Filters: Set()
+[2025-08-13T08:46:36.703+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:36 INFO CodeGenerator: Code generated in 14.084697 ms
+[2025-08-13T08:46:36.711+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:36 INFO CodeGenerator: Code generated in 5.283345 ms
+[2025-08-13T08:46:36.713+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:36 INFO MemoryStore: Block broadcast_10 stored as values in memory (estimated size 217.5 KiB, free 433.2 MiB)
+[2025-08-13T08:46:36.726+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:36 INFO MemoryStore: Block broadcast_10_piece0 stored as bytes in memory (estimated size 39.7 KiB, free 433.4 MiB)
+[2025-08-13T08:46:36.728+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:36 INFO SparkContext: Created broadcast 10 from $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+[2025-08-13T08:46:36.729+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:36 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+[2025-08-13T08:46:36.741+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:36 INFO CodeGenerator: Code generated in 6.579583 ms
+[2025-08-13T08:46:36.745+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:36 INFO MemoryStore: Block broadcast_11 stored as values in memory (estimated size 217.5 KiB, free 433.4 MiB)
+[2025-08-13T08:46:36.752+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:36 INFO MemoryStore: Block broadcast_11_piece0 stored as bytes in memory (estimated size 39.7 KiB, free 433.4 MiB)
+[2025-08-13T08:46:36.754+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:36 INFO SparkContext: Created broadcast 11 from $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+[2025-08-13T08:46:36.755+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:36 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+[2025-08-13T08:46:36.762+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:36 INFO DAGScheduler: Registering RDD 36 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) as input to shuffle 2
+[2025-08-13T08:46:36.763+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:36 INFO DAGScheduler: Got map stage job 6 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) with 2 output partitions
+[2025-08-13T08:46:36.763+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:36 INFO DAGScheduler: Final stage: ShuffleMapStage 8 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768)
+[2025-08-13T08:46:36.763+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:36 INFO DAGScheduler: Parents of final stage: List()
+[2025-08-13T08:46:36.763+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:36 INFO DAGScheduler: Missing parents: List()
+[2025-08-13T08:46:36.764+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:36 INFO DAGScheduler: Submitting ShuffleMapStage 8 (MapPartitionsRDD[36] at $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768), which has no missing parents
+[2025-08-13T08:46:36.765+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:36 INFO MemoryStore: Block broadcast_12 stored as values in memory (estimated size 40.3 KiB, free 433.4 MiB)
+[2025-08-13T08:46:36.767+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:36 INFO MemoryStore: Block broadcast_12_piece0 stored as bytes in memory (estimated size 15.6 KiB, free 433.3 MiB)
+[2025-08-13T08:46:36.768+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:36 INFO SparkContext: Created broadcast 12 from broadcast at DAGScheduler.scala:1676
+[2025-08-13T08:46:36.769+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:36 INFO DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 8 (MapPartitionsRDD[36] at $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) (first 15 tasks are for partitions Vector(0, 1))
+[2025-08-13T08:46:36.769+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:36 INFO TaskSchedulerImpl: Adding task set 8.0 with 2 tasks resource profile 0
+[2025-08-13T08:46:36.770+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:36 INFO TaskSetManager: Starting task 0.0 in stage 8.0 (TID 8) (172.18.0.5,executor 0, partition 0, PROCESS_LOCAL, 10606 bytes)
+[2025-08-13T08:46:36.771+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:36 INFO TaskSetManager: Starting task 1.0 in stage 8.0 (TID 9) (172.18.0.5,executor 0, partition 1, PROCESS_LOCAL, 10622 bytes)
+[2025-08-13T08:46:37.872+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:37 INFO TaskSetManager: Finished task 0.0 in stage 8.0 (TID 8) in 1102 ms on 172.18.0.5 (executor 0) (1/2)
+[2025-08-13T08:46:37.952+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:37 INFO TaskSetManager: Finished task 1.0 in stage 8.0 (TID 9) in 1181 ms on 172.18.0.5 (executor 0) (2/2)
+[2025-08-13T08:46:37.952+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:37 INFO TaskSchedulerImpl: Removed TaskSet 8.0 whose tasks have all completed, from pool
+[2025-08-13T08:46:37.953+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:37 INFO DAGScheduler: ShuffleMapStage 8 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) finished in 1189 ms
+[2025-08-13T08:46:37.953+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:37 INFO DAGScheduler: looking for newly runnable stages
+[2025-08-13T08:46:37.953+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:37 INFO DAGScheduler: running: HashSet()
+[2025-08-13T08:46:37.954+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:37 INFO DAGScheduler: waiting: HashSet()
+[2025-08-13T08:46:37.954+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:37 INFO DAGScheduler: failed: HashSet()
+[2025-08-13T08:46:37.956+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:37 INFO ShufflePartitionsUtil: For shuffle(2, advisory target size: 67108864, actual target size 1048576, minimum partition size: 1048576
+[2025-08-13T08:46:38.057+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:38 INFO ParquetUtils: Using default output committer for Parquet: org.apache.parquet.hadoop.ParquetOutputCommitter
+[2025-08-13T08:46:38.058+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:38 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+[2025-08-13T08:46:38.058+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:38 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+[2025-08-13T08:46:38.059+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:38 INFO SQLHadoopMapReduceCommitProtocol: Using user defined output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+[2025-08-13T08:46:38.059+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:38 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+[2025-08-13T08:46:38.059+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:38 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+[2025-08-13T08:46:38.060+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:38 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+[2025-08-13T08:46:38.431+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:38 INFO CodeGenerator: Code generated in 17.117114 ms
+[2025-08-13T08:46:38.442+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:38 INFO SparkContext: Starting job: $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+[2025-08-13T08:46:38.443+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:38 INFO DAGScheduler: Got job 7 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) with 1 output partitions
+[2025-08-13T08:46:38.443+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:38 INFO DAGScheduler: Final stage: ResultStage 10 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768)
+[2025-08-13T08:46:38.444+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:38 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 9)
+[2025-08-13T08:46:38.444+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:38 INFO DAGScheduler: Missing parents: List()
+[2025-08-13T08:46:38.444+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:38 INFO DAGScheduler: Submitting ResultStage 10 (MapPartitionsRDD[39] at $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768), which has no missing parents
+[2025-08-13T08:46:38.457+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:38 INFO MemoryStore: Block broadcast_13 stored as values in memory (estimated size 269.8 KiB, free 433.1 MiB)
+[2025-08-13T08:46:38.467+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:38 INFO MemoryStore: Block broadcast_13_piece0 stored as bytes in memory (estimated size 98.4 KiB, free 433.0 MiB)
+[2025-08-13T08:46:38.469+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:38 INFO SparkContext: Created broadcast 13 from broadcast at DAGScheduler.scala:1676
+[2025-08-13T08:46:38.470+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:38 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 10 (MapPartitionsRDD[39] at $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) (first 15 tasks are for partitions Vector(0))
+[2025-08-13T08:46:38.471+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:38 INFO TaskSchedulerImpl: Adding task set 10.0 with 1 tasks resource profile 0
+[2025-08-13T08:46:38.472+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:38 INFO TaskSetManager: Starting task 0.0 in stage 10.0 (TID 10) (172.18.0.5,executor 0, partition 0, NODE_LOCAL, 9833 bytes)
+[2025-08-13T08:46:38.508+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:38 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 2 to 172.18.0.5:36792
+[2025-08-13T08:46:41.376+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:41 INFO TaskSetManager: Finished task 0.0 in stage 10.0 (TID 10) in 2905 ms on 172.18.0.5 (executor 0) (1/1)
+[2025-08-13T08:46:41.377+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:41 INFO TaskSchedulerImpl: Removed TaskSet 10.0 whose tasks have all completed, from pool
+[2025-08-13T08:46:41.378+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:41 INFO DAGScheduler: ResultStage 10 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) finished in 2931 ms
+[2025-08-13T08:46:41.378+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:41 INFO DAGScheduler: Job 7 is finished. Cancelling potential speculative or zombie tasks for this job
+[2025-08-13T08:46:41.378+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:41 INFO TaskSchedulerImpl: Canceling stage 10
+[2025-08-13T08:46:41.379+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:41 INFO TaskSchedulerImpl: Killing all running tasks in stage 10: Stage finished
+[2025-08-13T08:46:41.379+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:41 INFO DAGScheduler: Job 7 finished: $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768, took 2936.090493 ms
+[2025-08-13T08:46:41.379+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:41 INFO FileFormatWriter: Start to commit write Job 27825390-1843-4eb0-b180-1113269465e3.
+[2025-08-13T08:46:42.707+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:42 INFO GoogleCloudStorageFileSystem: Successfully repaired 'gs://job_gcp/gold/dim_date/dim_date_jobs.parquet/_temporary/0/task_20250813084638730276467665807333_0010_m_000000/' directory.
+[2025-08-13T08:46:43.500+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:43 INFO GoogleCloudStorageFileSystem: Successfully repaired 'gs://job_gcp/gold/dim_date/dim_date_jobs.parquet/' directory.
+[2025-08-13T08:46:44.310+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:44 INFO FileFormatWriter: Write Job 27825390-1843-4eb0-b180-1113269465e3 committed. Elapsed time: 2934 ms.
+[2025-08-13T08:46:44.311+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:44 INFO FileFormatWriter: Finished processing stats for write job 27825390-1843-4eb0-b180-1113269465e3.
+[2025-08-13T08:46:44.314+0000] {spark_submit.py:521} INFO - ✅ Uploaded Spark DataFrame to GCS: gs://job_gcp/gold/dim_date/dim_date_jobs.parquet
+[2025-08-13T08:46:44.334+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:44 INFO FileSourceStrategy: Pushed Filters:
+[2025-08-13T08:46:44.335+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:44 INFO FileSourceStrategy: Post-Scan Filters: Set()
+[2025-08-13T08:46:44.335+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:44 INFO FileSourceStrategy: Pushed Filters:
+[2025-08-13T08:46:44.336+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:44 INFO FileSourceStrategy: Post-Scan Filters: Set()
+[2025-08-13T08:46:44.367+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:44 INFO CodeGenerator: Code generated in 13.25933 ms
+[2025-08-13T08:46:44.377+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:44 INFO CodeGenerator: Code generated in 5.19147 ms
+[2025-08-13T08:46:44.379+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:44 INFO MemoryStore: Block broadcast_14 stored as values in memory (estimated size 217.5 KiB, free 433.2 MiB)
+[2025-08-13T08:46:44.392+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:44 INFO MemoryStore: Block broadcast_14_piece0 stored as bytes in memory (estimated size 39.7 KiB, free 433.4 MiB)
+[2025-08-13T08:46:44.393+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:44 INFO SparkContext: Created broadcast 14 from $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+[2025-08-13T08:46:44.394+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:44 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+[2025-08-13T08:46:44.408+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:44 INFO CodeGenerator: Code generated in 6.386233 ms
+[2025-08-13T08:46:44.410+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:44 INFO MemoryStore: Block broadcast_15 stored as values in memory (estimated size 217.5 KiB, free 433.4 MiB)
+[2025-08-13T08:46:44.416+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:44 INFO MemoryStore: Block broadcast_15_piece0 stored as bytes in memory (estimated size 39.7 KiB, free 433.4 MiB)
+[2025-08-13T08:46:44.416+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:44 INFO SparkContext: Created broadcast 15 from $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+[2025-08-13T08:46:44.417+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:44 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+[2025-08-13T08:46:44.425+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:44 INFO DAGScheduler: Registering RDD 48 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) as input to shuffle 3
+[2025-08-13T08:46:44.426+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:44 INFO DAGScheduler: Got map stage job 8 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) with 2 output partitions
+[2025-08-13T08:46:44.427+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:44 INFO DAGScheduler: Final stage: ShuffleMapStage 11 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768)
+[2025-08-13T08:46:44.427+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:44 INFO DAGScheduler: Parents of final stage: List()
+[2025-08-13T08:46:44.427+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:44 INFO DAGScheduler: Missing parents: List()
+[2025-08-13T08:46:44.427+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:44 INFO DAGScheduler: Submitting ShuffleMapStage 11 (MapPartitionsRDD[48] at $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768), which has no missing parents
+[2025-08-13T08:46:44.428+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:44 INFO MemoryStore: Block broadcast_16 stored as values in memory (estimated size 41.5 KiB, free 433.4 MiB)
+[2025-08-13T08:46:44.430+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:44 INFO MemoryStore: Block broadcast_16_piece0 stored as bytes in memory (estimated size 16.2 KiB, free 433.3 MiB)
+[2025-08-13T08:46:44.431+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:44 INFO SparkContext: Created broadcast 16 from broadcast at DAGScheduler.scala:1676
+[2025-08-13T08:46:44.431+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:44 INFO DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 11 (MapPartitionsRDD[48] at $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) (first 15 tasks are for partitions Vector(0, 1))
+[2025-08-13T08:46:44.432+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:44 INFO TaskSchedulerImpl: Adding task set 11.0 with 2 tasks resource profile 0
+[2025-08-13T08:46:44.432+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:44 INFO TaskSetManager: Starting task 0.0 in stage 11.0 (TID 11) (172.18.0.5,executor 0, partition 0, PROCESS_LOCAL, 10606 bytes)
+[2025-08-13T08:46:44.433+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:44 INFO TaskSetManager: Starting task 1.0 in stage 11.0 (TID 12) (172.18.0.5,executor 0, partition 1, PROCESS_LOCAL, 10622 bytes)
+[2025-08-13T08:46:45.546+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:45 INFO TaskSetManager: Finished task 0.0 in stage 11.0 (TID 11) in 1114 ms on 172.18.0.5 (executor 0) (1/2)
+[2025-08-13T08:46:45.738+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:45 INFO TaskSetManager: Finished task 1.0 in stage 11.0 (TID 12) in 1306 ms on 172.18.0.5 (executor 0) (2/2)
+[2025-08-13T08:46:45.739+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:45 INFO TaskSchedulerImpl: Removed TaskSet 11.0 whose tasks have all completed, from pool
+[2025-08-13T08:46:45.739+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:45 INFO DAGScheduler: ShuffleMapStage 11 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) finished in 1312 ms
+[2025-08-13T08:46:45.740+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:45 INFO DAGScheduler: looking for newly runnable stages
+[2025-08-13T08:46:45.740+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:45 INFO DAGScheduler: running: HashSet()
+[2025-08-13T08:46:45.741+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:45 INFO DAGScheduler: waiting: HashSet()
+[2025-08-13T08:46:45.741+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:45 INFO DAGScheduler: failed: HashSet()
+[2025-08-13T08:46:45.743+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:45 INFO ShufflePartitionsUtil: For shuffle(3, advisory target size: 67108864, actual target size 1048576, minimum partition size: 1048576
+[2025-08-13T08:46:45.847+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:45 INFO ParquetUtils: Using default output committer for Parquet: org.apache.parquet.hadoop.ParquetOutputCommitter
+[2025-08-13T08:46:45.847+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:45 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+[2025-08-13T08:46:45.848+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:45 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+[2025-08-13T08:46:45.848+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:45 INFO SQLHadoopMapReduceCommitProtocol: Using user defined output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+[2025-08-13T08:46:45.848+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:45 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+[2025-08-13T08:46:45.849+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:45 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+[2025-08-13T08:46:45.849+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:45 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+[2025-08-13T08:46:46.218+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:46 INFO CodeGenerator: Code generated in 16.508424 ms
+[2025-08-13T08:46:46.223+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:46 INFO SparkContext: Starting job: $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+[2025-08-13T08:46:46.224+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:46 INFO DAGScheduler: Got job 9 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) with 1 output partitions
+[2025-08-13T08:46:46.225+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:46 INFO DAGScheduler: Final stage: ResultStage 13 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768)
+[2025-08-13T08:46:46.225+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:46 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 12)
+[2025-08-13T08:46:46.226+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:46 INFO DAGScheduler: Missing parents: List()
+[2025-08-13T08:46:46.226+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:46 INFO DAGScheduler: Submitting ResultStage 13 (MapPartitionsRDD[51] at $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768), which has no missing parents
+[2025-08-13T08:46:46.239+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:46 INFO MemoryStore: Block broadcast_17 stored as values in memory (estimated size 267.6 KiB, free 433.1 MiB)
+[2025-08-13T08:46:46.249+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:46 INFO MemoryStore: Block broadcast_17_piece0 stored as bytes in memory (estimated size 98.3 KiB, free 433.0 MiB)
+[2025-08-13T08:46:46.251+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:46 INFO SparkContext: Created broadcast 17 from broadcast at DAGScheduler.scala:1676
+[2025-08-13T08:46:46.251+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:46 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 13 (MapPartitionsRDD[51] at $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) (first 15 tasks are for partitions Vector(0))
+[2025-08-13T08:46:46.252+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:46 INFO TaskSchedulerImpl: Adding task set 13.0 with 1 tasks resource profile 0
+[2025-08-13T08:46:46.254+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:46 INFO TaskSetManager: Starting task 0.0 in stage 13.0 (TID 13) (172.18.0.5,executor 0, partition 0, NODE_LOCAL, 9833 bytes)
+[2025-08-13T08:46:46.284+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:46 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 3 to 172.18.0.5:36792
+[2025-08-13T08:46:48.910+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:48 INFO TaskSetManager: Finished task 0.0 in stage 13.0 (TID 13) in 2656 ms on 172.18.0.5 (executor 0) (1/1)
+[2025-08-13T08:46:48.911+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:48 INFO TaskSchedulerImpl: Removed TaskSet 13.0 whose tasks have all completed, from pool
+[2025-08-13T08:46:48.911+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:48 INFO DAGScheduler: ResultStage 13 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) finished in 2683 ms
+[2025-08-13T08:46:48.912+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:48 INFO DAGScheduler: Job 9 is finished. Cancelling potential speculative or zombie tasks for this job
+[2025-08-13T08:46:48.912+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:48 INFO TaskSchedulerImpl: Canceling stage 13
+[2025-08-13T08:46:48.913+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:48 INFO TaskSchedulerImpl: Killing all running tasks in stage 13: Stage finished
+[2025-08-13T08:46:48.913+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:48 INFO DAGScheduler: Job 9 finished: $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768, took 2687.890967 ms
+[2025-08-13T08:46:48.914+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:48 INFO FileFormatWriter: Start to commit write Job 271bffab-e87c-4ff5-8f1b-15ee2dfaa9b4.
+[2025-08-13T08:46:50.142+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:50 INFO GoogleCloudStorageFileSystem: Successfully repaired 'gs://job_gcp/gold/dim_workform/dim_workform_jobs.parquet/_temporary/0/task_202508130846461663820827444106570_0013_m_000000/' directory.
+[2025-08-13T08:46:50.592+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:50 INFO GoogleCloudStorageFileSystem: Successfully repaired 'gs://job_gcp/gold/dim_workform/dim_workform_jobs.parquet/' directory.
+[2025-08-13T08:46:51.243+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:51 INFO FileFormatWriter: Write Job 271bffab-e87c-4ff5-8f1b-15ee2dfaa9b4 committed. Elapsed time: 2330 ms.
+[2025-08-13T08:46:51.244+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:51 INFO FileFormatWriter: Finished processing stats for write job 271bffab-e87c-4ff5-8f1b-15ee2dfaa9b4.
+[2025-08-13T08:46:51.250+0000] {spark_submit.py:521} INFO - ✅ Uploaded Spark DataFrame to GCS: gs://job_gcp/gold/dim_workform/dim_workform_jobs.parquet
+[2025-08-13T08:46:51.305+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:51 INFO FileSourceStrategy: Pushed Filters: IsNotNull(skills_extracted)
+[2025-08-13T08:46:51.306+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:51 INFO FileSourceStrategy: Post-Scan Filters: Set((size(skills_extracted#13, false) > 0), isnotnull(skills_extracted#13))
+[2025-08-13T08:46:51.310+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:51 INFO FileSourceStrategy: Pushed Filters: IsNotNull(skills_extracted)
+[2025-08-13T08:46:51.311+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:51 INFO FileSourceStrategy: Post-Scan Filters: Set((size(skills_extracted#30, false) > 0), isnotnull(skills_extracted#30))
+[2025-08-13T08:46:51.355+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:51 INFO CodeGenerator: Code generated in 17.953201 ms
+[2025-08-13T08:46:51.368+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:51 INFO CodeGenerator: Code generated in 5.200963 ms
+[2025-08-13T08:46:51.371+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:51 INFO MemoryStore: Block broadcast_18 stored as values in memory (estimated size 217.6 KiB, free 433.2 MiB)
+[2025-08-13T08:46:51.387+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:51 INFO MemoryStore: Block broadcast_18_piece0 stored as bytes in memory (estimated size 39.6 KiB, free 433.4 MiB)
+[2025-08-13T08:46:51.401+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:51 INFO SparkContext: Created broadcast 18 from $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+[2025-08-13T08:46:51.402+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:51 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+[2025-08-13T08:46:51.406+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:51 INFO CodeGenerator: Code generated in 6.87823 ms
+[2025-08-13T08:46:51.410+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:51 INFO MemoryStore: Block broadcast_19 stored as values in memory (estimated size 217.6 KiB, free 433.2 MiB)
+[2025-08-13T08:46:51.444+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:51 INFO MemoryStore: Block broadcast_19_piece0 stored as bytes in memory (estimated size 39.6 KiB, free 433.4 MiB)
+[2025-08-13T08:46:51.448+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:51 INFO SparkContext: Created broadcast 19 from $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+[2025-08-13T08:46:51.451+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:51 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+[2025-08-13T08:46:51.531+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:51 INFO DAGScheduler: Registering RDD 60 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) as input to shuffle 4
+[2025-08-13T08:46:51.564+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:51 INFO DAGScheduler: Got map stage job 10 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) with 2 output partitions
+[2025-08-13T08:46:51.565+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:51 INFO DAGScheduler: Final stage: ShuffleMapStage 14 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768)
+[2025-08-13T08:46:51.565+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:51 INFO DAGScheduler: Parents of final stage: List()
+[2025-08-13T08:46:51.566+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:51 INFO DAGScheduler: Missing parents: List()
+[2025-08-13T08:46:51.566+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:51 INFO DAGScheduler: Submitting ShuffleMapStage 14 (MapPartitionsRDD[60] at $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768), which has no missing parents
+[2025-08-13T08:46:51.566+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:51 INFO MemoryStore: Block broadcast_20 stored as values in memory (estimated size 48.5 KiB, free 433.3 MiB)
+[2025-08-13T08:46:51.567+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:51 INFO MemoryStore: Block broadcast_20_piece0 stored as bytes in memory (estimated size 18.4 KiB, free 433.3 MiB)
+[2025-08-13T08:46:51.567+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:51 INFO SparkContext: Created broadcast 20 from broadcast at DAGScheduler.scala:1676
+[2025-08-13T08:46:51.567+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:51 INFO DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 14 (MapPartitionsRDD[60] at $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) (first 15 tasks are for partitions Vector(0, 1))
+[2025-08-13T08:46:51.567+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:51 INFO TaskSchedulerImpl: Adding task set 14.0 with 2 tasks resource profile 0
+[2025-08-13T08:46:51.568+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:51 INFO TaskSetManager: Starting task 0.0 in stage 14.0 (TID 14) (172.18.0.5,executor 0, partition 0, PROCESS_LOCAL, 10606 bytes)
+[2025-08-13T08:46:51.568+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:51 INFO TaskSetManager: Starting task 1.0 in stage 14.0 (TID 15) (172.18.0.5,executor 0, partition 1, PROCESS_LOCAL, 10622 bytes)
+[2025-08-13T08:46:52.766+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:52 INFO TaskSetManager: Finished task 0.0 in stage 14.0 (TID 14) in 1224 ms on 172.18.0.5 (executor 0) (1/2)
+[2025-08-13T08:46:52.968+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:52 INFO TaskSetManager: Finished task 1.0 in stage 14.0 (TID 15) in 1425 ms on 172.18.0.5 (executor 0) (2/2)
+[2025-08-13T08:46:52.969+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:52 INFO TaskSchedulerImpl: Removed TaskSet 14.0 whose tasks have all completed, from pool
+[2025-08-13T08:46:52.969+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:52 INFO DAGScheduler: ShuffleMapStage 14 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) finished in 1436 ms
+[2025-08-13T08:46:52.970+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:52 INFO DAGScheduler: looking for newly runnable stages
+[2025-08-13T08:46:52.970+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:52 INFO DAGScheduler: running: HashSet()
+[2025-08-13T08:46:52.970+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:52 INFO DAGScheduler: waiting: HashSet()
+[2025-08-13T08:46:52.971+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:52 INFO DAGScheduler: failed: HashSet()
+[2025-08-13T08:46:52.974+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:52 INFO ShufflePartitionsUtil: For shuffle(4, advisory target size: 67108864, actual target size 1048576, minimum partition size: 1048576
+[2025-08-13T08:46:53.073+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:53 INFO ParquetUtils: Using default output committer for Parquet: org.apache.parquet.hadoop.ParquetOutputCommitter
+[2025-08-13T08:46:53.074+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:53 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+[2025-08-13T08:46:53.075+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:53 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+[2025-08-13T08:46:53.076+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:53 INFO SQLHadoopMapReduceCommitProtocol: Using user defined output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+[2025-08-13T08:46:53.076+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:53 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+[2025-08-13T08:46:53.076+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:53 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+[2025-08-13T08:46:53.076+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:53 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+[2025-08-13T08:46:53.446+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:53 INFO CodeGenerator: Code generated in 14.560649 ms
+[2025-08-13T08:46:53.452+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:53 INFO SparkContext: Starting job: $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+[2025-08-13T08:46:53.455+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:53 INFO DAGScheduler: Got job 11 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) with 1 output partitions
+[2025-08-13T08:46:53.455+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:53 INFO DAGScheduler: Final stage: ResultStage 16 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768)
+[2025-08-13T08:46:53.456+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:53 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 15)
+[2025-08-13T08:46:53.456+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:53 INFO DAGScheduler: Missing parents: List()
+[2025-08-13T08:46:53.457+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:53 INFO DAGScheduler: Submitting ResultStage 16 (MapPartitionsRDD[63] at $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768), which has no missing parents
+[2025-08-13T08:46:53.471+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:53 INFO MemoryStore: Block broadcast_21 stored as values in memory (estimated size 272.2 KiB, free 433.1 MiB)
+[2025-08-13T08:46:53.481+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:53 INFO MemoryStore: Block broadcast_21_piece0 stored as bytes in memory (estimated size 99.7 KiB, free 433.0 MiB)
+[2025-08-13T08:46:53.486+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:53 INFO SparkContext: Created broadcast 21 from broadcast at DAGScheduler.scala:1676
+[2025-08-13T08:46:53.487+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:53 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 16 (MapPartitionsRDD[63] at $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) (first 15 tasks are for partitions Vector(0))
+[2025-08-13T08:46:53.488+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:53 INFO TaskSchedulerImpl: Adding task set 16.0 with 1 tasks resource profile 0
+[2025-08-13T08:46:53.490+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:53 INFO TaskSetManager: Starting task 0.0 in stage 16.0 (TID 16) (172.18.0.5,executor 0, partition 0, NODE_LOCAL, 9833 bytes)
+[2025-08-13T08:46:53.525+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:53 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 4 to 172.18.0.5:36792
+[2025-08-13T08:46:56.466+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:56 INFO TaskSetManager: Finished task 0.0 in stage 16.0 (TID 16) in 2976 ms on 172.18.0.5 (executor 0) (1/1)
+[2025-08-13T08:46:56.466+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:56 INFO TaskSchedulerImpl: Removed TaskSet 16.0 whose tasks have all completed, from pool
+[2025-08-13T08:46:56.467+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:56 INFO DAGScheduler: ResultStage 16 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) finished in 3010 ms
+[2025-08-13T08:46:56.467+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:56 INFO DAGScheduler: Job 11 is finished. Cancelling potential speculative or zombie tasks for this job
+[2025-08-13T08:46:56.467+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:56 INFO TaskSchedulerImpl: Canceling stage 16
+[2025-08-13T08:46:56.467+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:56 INFO TaskSchedulerImpl: Killing all running tasks in stage 16: Stage finished
+[2025-08-13T08:46:56.468+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:56 INFO DAGScheduler: Job 11 finished: $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768, took 3014.66661 ms
+[2025-08-13T08:46:56.468+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:56 INFO FileFormatWriter: Start to commit write Job 130c9a80-45cb-4a0e-9311-c2e5eb3870cd.
+[2025-08-13T08:46:57.693+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:57 INFO GoogleCloudStorageFileSystem: Successfully repaired 'gs://job_gcp/gold/dim_skills/dim_skills_jobs.parquet/_temporary/0/task_202508130846532867834178266577471_0016_m_000000/' directory.
+[2025-08-13T08:46:58.380+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:58 INFO GoogleCloudStorageFileSystem: Successfully repaired 'gs://job_gcp/gold/dim_skills/dim_skills_jobs.parquet/' directory.
+[2025-08-13T08:46:59.170+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO FileFormatWriter: Write Job 130c9a80-45cb-4a0e-9311-c2e5eb3870cd committed. Elapsed time: 2701 ms.
+[2025-08-13T08:46:59.171+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO FileFormatWriter: Finished processing stats for write job 130c9a80-45cb-4a0e-9311-c2e5eb3870cd.
+[2025-08-13T08:46:59.175+0000] {spark_submit.py:521} INFO - ✅ Uploaded Spark DataFrame to GCS: gs://job_gcp/gold/dim_skills/dim_skills_jobs.parquet
+[2025-08-13T08:46:59.275+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO FileSourceStrategy: Pushed Filters:
+[2025-08-13T08:46:59.276+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO FileSourceStrategy: Post-Scan Filters: Set()
+[2025-08-13T08:46:59.276+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO FileSourceStrategy: Pushed Filters:
+[2025-08-13T08:46:59.277+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO FileSourceStrategy: Post-Scan Filters: Set()
+[2025-08-13T08:46:59.277+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO FileSourceStrategy: Pushed Filters:
+[2025-08-13T08:46:59.277+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO FileSourceStrategy: Post-Scan Filters: Set()
+[2025-08-13T08:46:59.278+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO FileSourceStrategy: Pushed Filters:
+[2025-08-13T08:46:59.278+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO FileSourceStrategy: Post-Scan Filters: Set()
+[2025-08-13T08:46:59.278+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO FileSourceStrategy: Pushed Filters:
+[2025-08-13T08:46:59.279+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO FileSourceStrategy: Post-Scan Filters: Set()
+[2025-08-13T08:46:59.279+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO FileSourceStrategy: Pushed Filters:
+[2025-08-13T08:46:59.279+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO FileSourceStrategy: Post-Scan Filters: Set()
+[2025-08-13T08:46:59.280+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO FileSourceStrategy: Pushed Filters: IsNotNull(job_posting_date)
+[2025-08-13T08:46:59.280+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO FileSourceStrategy: Post-Scan Filters: Set(isnotnull(job_posting_date#148))
+[2025-08-13T08:46:59.280+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO FileSourceStrategy: Pushed Filters: IsNotNull(job_posting_date)
+[2025-08-13T08:46:59.280+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO FileSourceStrategy: Post-Scan Filters: Set(isnotnull(job_posting_date#168))
+[2025-08-13T08:46:59.281+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO FileSourceStrategy: Pushed Filters:
+[2025-08-13T08:46:59.281+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO FileSourceStrategy: Post-Scan Filters: Set()
+[2025-08-13T08:46:59.281+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO FileSourceStrategy: Pushed Filters:
+[2025-08-13T08:46:59.281+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO FileSourceStrategy: Post-Scan Filters: Set()
+[2025-08-13T08:46:59.316+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO HashAggregateExec: spark.sql.codegen.aggregate.map.twolevel.enabled is set to true, but current version of codegened fast hashmap does not support this aggregate.
+[2025-08-13T08:46:59.323+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO MemoryStore: Block broadcast_22 stored as values in memory (estimated size 217.7 KiB, free 433.2 MiB)
+[2025-08-13T08:46:59.340+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO MemoryStore: Block broadcast_22_piece0 stored as bytes in memory (estimated size 39.6 KiB, free 433.4 MiB)
+[2025-08-13T08:46:59.342+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO SparkContext: Created broadcast 22 from $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+[2025-08-13T08:46:59.343+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO CodeGenerator: Code generated in 23.107551 ms
+[2025-08-13T08:46:59.344+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+[2025-08-13T08:46:59.346+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO CodeGenerator: Code generated in 26.971148 ms
+[2025-08-13T08:46:59.346+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO CodeGenerator: Code generated in 27.104525 ms
+[2025-08-13T08:46:59.354+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO MemoryStore: Block broadcast_23 stored as values in memory (estimated size 217.7 KiB, free 433.4 MiB)
+[2025-08-13T08:46:59.355+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO CodeGenerator: Code generated in 8.078296 ms
+[2025-08-13T08:46:59.356+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO CodeGenerator: Code generated in 7.227044 ms
+[2025-08-13T08:46:59.357+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO CodeGenerator: Code generated in 6.436289 ms
+[2025-08-13T08:46:59.359+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO MemoryStore: Block broadcast_24 stored as values in memory (estimated size 217.9 KiB, free 433.2 MiB)
+[2025-08-13T08:46:59.360+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO MemoryStore: Block broadcast_26 stored as values in memory (estimated size 217.5 KiB, free 433.0 MiB)
+[2025-08-13T08:46:59.360+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO MemoryStore: Block broadcast_25 stored as values in memory (estimated size 217.5 KiB, free 432.8 MiB)
+[2025-08-13T08:46:59.361+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO MemoryStore: Block broadcast_23_piece0 stored as bytes in memory (estimated size 39.6 KiB, free 432.8 MiB)
+[2025-08-13T08:46:59.363+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO SparkContext: Created broadcast 23 from $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+[2025-08-13T08:46:59.374+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+[2025-08-13T08:46:59.377+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO MemoryStore: Block broadcast_24_piece0 stored as bytes in memory (estimated size 39.7 KiB, free 432.7 MiB)
+[2025-08-13T08:46:59.377+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO MemoryStore: Block broadcast_25_piece0 stored as bytes in memory (estimated size 39.7 KiB, free 432.7 MiB)
+[2025-08-13T08:46:59.378+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO MemoryStore: Block broadcast_26_piece0 stored as bytes in memory (estimated size 39.7 KiB, free 432.6 MiB)
+[2025-08-13T08:46:59.378+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO SparkContext: Created broadcast 24 from $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+[2025-08-13T08:46:59.379+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO SparkContext: Created broadcast 25 from $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+[2025-08-13T08:46:59.379+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO SparkContext: Created broadcast 26 from $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+[2025-08-13T08:46:59.379+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+[2025-08-13T08:46:59.380+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+[2025-08-13T08:46:59.380+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+[2025-08-13T08:46:59.381+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO DAGScheduler: Registering RDD 77 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) as input to shuffle 5
+[2025-08-13T08:46:59.382+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO DAGScheduler: Got map stage job 12 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) with 2 output partitions
+[2025-08-13T08:46:59.382+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO DAGScheduler: Final stage: ShuffleMapStage 17 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768)
+[2025-08-13T08:46:59.383+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO DAGScheduler: Parents of final stage: List()
+[2025-08-13T08:46:59.383+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO DAGScheduler: Missing parents: List()
+[2025-08-13T08:46:59.384+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO DAGScheduler: Submitting ShuffleMapStage 17 (MapPartitionsRDD[77] at $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768), which has no missing parents
+[2025-08-13T08:46:59.384+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO MemoryStore: Block broadcast_27 stored as values in memory (estimated size 44.0 KiB, free 432.6 MiB)
+[2025-08-13T08:46:59.392+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO MemoryStore: Block broadcast_27_piece0 stored as bytes in memory (estimated size 16.7 KiB, free 432.6 MiB)
+[2025-08-13T08:46:59.393+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO SparkContext: Created broadcast 27 from broadcast at DAGScheduler.scala:1676
+[2025-08-13T08:46:59.394+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 17 (MapPartitionsRDD[77] at $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) (first 15 tasks are for partitions Vector(0, 1))
+[2025-08-13T08:46:59.394+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO TaskSchedulerImpl: Adding task set 17.0 with 2 tasks resource profile 0
+[2025-08-13T08:46:59.395+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO CodeGenerator: Code generated in 11.153034 ms
+[2025-08-13T08:46:59.395+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO CodeGenerator: Code generated in 11.213084 ms
+[2025-08-13T08:46:59.396+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO TaskSetManager: Starting task 0.0 in stage 17.0 (TID 17) (172.18.0.5,executor 0, partition 0, PROCESS_LOCAL, 10606 bytes)
+[2025-08-13T08:46:59.396+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO CodeGenerator: Code generated in 12.649108 ms
+[2025-08-13T08:46:59.397+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO TaskSetManager: Starting task 1.0 in stage 17.0 (TID 18) (172.18.0.5,executor 0, partition 1, PROCESS_LOCAL, 10622 bytes)
+[2025-08-13T08:46:59.400+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO MemoryStore: Block broadcast_29 stored as values in memory (estimated size 217.5 KiB, free 431.9 MiB)
+[2025-08-13T08:46:59.401+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO MemoryStore: Block broadcast_28 stored as values in memory (estimated size 217.5 KiB, free 431.9 MiB)
+[2025-08-13T08:46:59.401+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO MemoryStore: Block broadcast_30 stored as values in memory (estimated size 217.9 KiB, free 431.9 MiB)
+[2025-08-13T08:46:59.412+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO MemoryStore: Block broadcast_28_piece0 stored as bytes in memory (estimated size 39.7 KiB, free 431.9 MiB)
+[2025-08-13T08:46:59.414+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO MemoryStore: Block broadcast_29_piece0 stored as bytes in memory (estimated size 39.7 KiB, free 431.8 MiB)
+[2025-08-13T08:46:59.414+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO MemoryStore: Block broadcast_30_piece0 stored as bytes in memory (estimated size 39.7 KiB, free 431.8 MiB)
+[2025-08-13T08:46:59.415+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO SparkContext: Created broadcast 28 from $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+[2025-08-13T08:46:59.416+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO SparkContext: Created broadcast 29 from $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+[2025-08-13T08:46:59.416+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+[2025-08-13T08:46:59.416+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+[2025-08-13T08:46:59.417+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO SparkContext: Created broadcast 30 from $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+[2025-08-13T08:46:59.417+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+[2025-08-13T08:46:59.422+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO DAGScheduler: Registering RDD 98 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) as input to shuffle 6
+[2025-08-13T08:46:59.423+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO DAGScheduler: Got map stage job 13 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) with 2 output partitions
+[2025-08-13T08:46:59.423+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO DAGScheduler: Final stage: ShuffleMapStage 18 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768)
+[2025-08-13T08:46:59.424+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO DAGScheduler: Parents of final stage: List()
+[2025-08-13T08:46:59.425+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO DAGScheduler: Missing parents: List()
+[2025-08-13T08:46:59.425+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO DAGScheduler: Submitting ShuffleMapStage 18 (MapPartitionsRDD[98] at $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768), which has no missing parents
+[2025-08-13T08:46:59.426+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO MemoryStore: Block broadcast_31 stored as values in memory (estimated size 42.2 KiB, free 431.8 MiB)
+[2025-08-13T08:46:59.437+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO MemoryStore: Block broadcast_31_piece0 stored as bytes in memory (estimated size 16.3 KiB, free 431.8 MiB)
+[2025-08-13T08:46:59.438+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO SparkContext: Created broadcast 31 from broadcast at DAGScheduler.scala:1676
+[2025-08-13T08:46:59.438+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 18 (MapPartitionsRDD[98] at $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) (first 15 tasks are for partitions Vector(0, 1))
+[2025-08-13T08:46:59.439+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO TaskSchedulerImpl: Adding task set 18.0 with 2 tasks resource profile 0
+[2025-08-13T08:46:59.440+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO DAGScheduler: Registering RDD 99 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) as input to shuffle 7
+[2025-08-13T08:46:59.441+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO DAGScheduler: Got map stage job 15 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) with 2 output partitions
+[2025-08-13T08:46:59.443+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO DAGScheduler: Final stage: ShuffleMapStage 19 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768)
+[2025-08-13T08:46:59.443+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO DAGScheduler: Parents of final stage: List()
+[2025-08-13T08:46:59.444+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO DAGScheduler: Missing parents: List()
+[2025-08-13T08:46:59.444+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO DAGScheduler: Submitting ShuffleMapStage 19 (MapPartitionsRDD[99] at $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768), which has no missing parents
+[2025-08-13T08:46:59.446+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO MemoryStore: Block broadcast_32 stored as values in memory (estimated size 41.5 KiB, free 431.7 MiB)
+[2025-08-13T08:46:59.448+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO MemoryStore: Block broadcast_32_piece0 stored as bytes in memory (estimated size 16.2 KiB, free 431.7 MiB)
+[2025-08-13T08:46:59.449+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO SparkContext: Created broadcast 32 from broadcast at DAGScheduler.scala:1676
+[2025-08-13T08:46:59.449+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 19 (MapPartitionsRDD[99] at $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) (first 15 tasks are for partitions Vector(0, 1))
+[2025-08-13T08:46:59.449+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO TaskSchedulerImpl: Adding task set 19.0 with 2 tasks resource profile 0
+[2025-08-13T08:46:59.450+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO DAGScheduler: Registering RDD 97 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) as input to shuffle 8
+[2025-08-13T08:46:59.450+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO DAGScheduler: Got map stage job 14 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) with 2 output partitions
+[2025-08-13T08:46:59.451+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO DAGScheduler: Final stage: ShuffleMapStage 20 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768)
+[2025-08-13T08:46:59.451+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO DAGScheduler: Parents of final stage: List()
+[2025-08-13T08:46:59.451+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO DAGScheduler: Missing parents: List()
+[2025-08-13T08:46:59.452+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO DAGScheduler: Submitting ShuffleMapStage 20 (MapPartitionsRDD[97] at $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768), which has no missing parents
+[2025-08-13T08:46:59.454+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO MemoryStore: Block broadcast_33 stored as values in memory (estimated size 46.1 KiB, free 431.7 MiB)
+[2025-08-13T08:46:59.456+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO MemoryStore: Block broadcast_33_piece0 stored as bytes in memory (estimated size 16.3 KiB, free 431.7 MiB)
+[2025-08-13T08:46:59.456+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO SparkContext: Created broadcast 33 from broadcast at DAGScheduler.scala:1676
+[2025-08-13T08:46:59.458+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 20 (MapPartitionsRDD[97] at $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) (first 15 tasks are for partitions Vector(0, 1))
+[2025-08-13T08:46:59.458+0000] {spark_submit.py:521} INFO - 25/08/13 08:46:59 INFO TaskSchedulerImpl: Adding task set 20.0 with 2 tasks resource profile 0
+[2025-08-13T08:47:00.349+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:00 INFO TaskSetManager: Starting task 0.0 in stage 18.0 (TID 19) (172.18.0.5,executor 0, partition 0, PROCESS_LOCAL, 10606 bytes)
+[2025-08-13T08:47:00.350+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:00 INFO TaskSetManager: Finished task 0.0 in stage 17.0 (TID 17) in 955 ms on 172.18.0.5 (executor 0) (1/2)
+[2025-08-13T08:47:00.565+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:00 INFO TaskSetManager: Starting task 1.0 in stage 18.0 (TID 20) (172.18.0.5,executor 0, partition 1, PROCESS_LOCAL, 10622 bytes)
+[2025-08-13T08:47:00.566+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:00 INFO TaskSetManager: Finished task 1.0 in stage 17.0 (TID 18) in 1169 ms on 172.18.0.5 (executor 0) (2/2)
+[2025-08-13T08:47:00.566+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:00 INFO TaskSchedulerImpl: Removed TaskSet 17.0 whose tasks have all completed, from pool
+[2025-08-13T08:47:00.567+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:00 INFO DAGScheduler: ShuffleMapStage 17 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) finished in 1183 ms
+[2025-08-13T08:47:00.567+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:00 INFO DAGScheduler: looking for newly runnable stages
+[2025-08-13T08:47:00.568+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:00 INFO DAGScheduler: running: HashSet(ShuffleMapStage 18, ShuffleMapStage 19, ShuffleMapStage 20)
+[2025-08-13T08:47:00.568+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:00 INFO DAGScheduler: waiting: HashSet()
+[2025-08-13T08:47:00.569+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:00 INFO DAGScheduler: failed: HashSet()
+[2025-08-13T08:47:00.585+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:00 INFO FileSourceStrategy: Pushed Filters:
+[2025-08-13T08:47:00.586+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:00 INFO FileSourceStrategy: Post-Scan Filters: Set()
+[2025-08-13T08:47:00.589+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:00 INFO FileSourceStrategy: Pushed Filters:
+[2025-08-13T08:47:00.590+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:00 INFO FileSourceStrategy: Post-Scan Filters: Set()
+[2025-08-13T08:47:00.598+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:00 INFO ShufflePartitionsUtil: For shuffle(5, advisory target size: 67108864, actual target size 1048576, minimum partition size: 1048576
+[2025-08-13T08:47:00.631+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:00 INFO CodeGenerator: Code generated in 13.032858 ms
+[2025-08-13T08:47:00.642+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:00 INFO SparkContext: Starting job: $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+[2025-08-13T08:47:00.643+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:00 INFO DAGScheduler: Got job 16 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) with 1 output partitions
+[2025-08-13T08:47:00.644+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:00 INFO DAGScheduler: Final stage: ResultStage 22 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768)
+[2025-08-13T08:47:00.644+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:00 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 21)
+[2025-08-13T08:47:00.645+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:00 INFO DAGScheduler: Missing parents: List()
+[2025-08-13T08:47:00.645+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:00 INFO DAGScheduler: Submitting ResultStage 22 (MapPartitionsRDD[102] at $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768), which has no missing parents
+[2025-08-13T08:47:00.647+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:00 INFO MemoryStore: Block broadcast_34 stored as values in memory (estimated size 44.6 KiB, free 431.6 MiB)
+[2025-08-13T08:47:00.648+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:00 INFO MemoryStore: Block broadcast_34_piece0 stored as bytes in memory (estimated size 18.7 KiB, free 431.6 MiB)
+[2025-08-13T08:47:00.649+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:00 INFO SparkContext: Created broadcast 34 from broadcast at DAGScheduler.scala:1676
+[2025-08-13T08:47:00.649+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:00 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 22 (MapPartitionsRDD[102] at $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) (first 15 tasks are for partitions Vector(0))
+[2025-08-13T08:47:00.649+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:00 INFO TaskSchedulerImpl: Adding task set 22.0 with 1 tasks resource profile 0
+[2025-08-13T08:47:01.411+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:01 INFO TaskSetManager: Starting task 0.0 in stage 20.0 (TID 21) (172.18.0.5,executor 0, partition 0, PROCESS_LOCAL, 10606 bytes)
+[2025-08-13T08:47:01.412+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:01 INFO TaskSetManager: Finished task 0.0 in stage 18.0 (TID 19) in 1064 ms on 172.18.0.5 (executor 0) (1/2)
+[2025-08-13T08:47:01.709+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:01 INFO TaskSetManager: Starting task 1.0 in stage 20.0 (TID 22) (172.18.0.5,executor 0, partition 1, PROCESS_LOCAL, 10622 bytes)
+[2025-08-13T08:47:01.710+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:01 INFO TaskSetManager: Finished task 1.0 in stage 18.0 (TID 20) in 1145 ms on 172.18.0.5 (executor 0) (2/2)
+[2025-08-13T08:47:01.711+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:01 INFO TaskSchedulerImpl: Removed TaskSet 18.0 whose tasks have all completed, from pool
+[2025-08-13T08:47:01.711+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:01 INFO DAGScheduler: ShuffleMapStage 18 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) finished in 2287 ms
+[2025-08-13T08:47:01.711+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:01 INFO DAGScheduler: looking for newly runnable stages
+[2025-08-13T08:47:01.712+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:01 INFO DAGScheduler: running: HashSet(ShuffleMapStage 19, ShuffleMapStage 20, ResultStage 22)
+[2025-08-13T08:47:01.712+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:01 INFO DAGScheduler: waiting: HashSet()
+[2025-08-13T08:47:01.713+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:01 INFO DAGScheduler: failed: HashSet()
+[2025-08-13T08:47:01.720+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:01 INFO FileSourceStrategy: Pushed Filters:
+[2025-08-13T08:47:01.721+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:01 INFO FileSourceStrategy: Post-Scan Filters: Set()
+[2025-08-13T08:47:01.722+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:01 INFO FileSourceStrategy: Pushed Filters:
+[2025-08-13T08:47:01.723+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:01 INFO FileSourceStrategy: Post-Scan Filters: Set()
+[2025-08-13T08:47:01.729+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:01 INFO ShufflePartitionsUtil: For shuffle(6, advisory target size: 67108864, actual target size 1048576, minimum partition size: 1048576
+[2025-08-13T08:47:01.761+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:01 INFO CodeGenerator: Code generated in 16.770181 ms
+[2025-08-13T08:47:01.773+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:01 INFO SparkContext: Starting job: $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+[2025-08-13T08:47:01.774+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:01 INFO DAGScheduler: Got job 17 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) with 1 output partitions
+[2025-08-13T08:47:01.774+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:01 INFO DAGScheduler: Final stage: ResultStage 24 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768)
+[2025-08-13T08:47:01.775+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:01 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 23)
+[2025-08-13T08:47:01.776+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:01 INFO DAGScheduler: Missing parents: List()
+[2025-08-13T08:47:01.776+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:01 INFO DAGScheduler: Submitting ResultStage 24 (MapPartitionsRDD[105] at $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768), which has no missing parents
+[2025-08-13T08:47:01.778+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:01 INFO MemoryStore: Block broadcast_35 stored as values in memory (estimated size 42.6 KiB, free 431.6 MiB)
+[2025-08-13T08:47:01.779+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:01 INFO MemoryStore: Block broadcast_35_piece0 stored as bytes in memory (estimated size 17.8 KiB, free 431.5 MiB)
+[2025-08-13T08:47:01.780+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:01 INFO SparkContext: Created broadcast 35 from broadcast at DAGScheduler.scala:1676
+[2025-08-13T08:47:01.781+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:01 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 24 (MapPartitionsRDD[105] at $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) (first 15 tasks are for partitions Vector(0))
+[2025-08-13T08:47:01.782+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:01 INFO TaskSchedulerImpl: Adding task set 24.0 with 1 tasks resource profile 0
+[2025-08-13T08:47:02.450+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:02 INFO TaskSetManager: Starting task 0.0 in stage 19.0 (TID 23) (172.18.0.5,executor 0, partition 0, PROCESS_LOCAL, 10606 bytes)
+[2025-08-13T08:47:02.451+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:02 INFO TaskSetManager: Finished task 0.0 in stage 20.0 (TID 21) in 1039 ms on 172.18.0.5 (executor 0) (1/2)
+[2025-08-13T08:47:02.947+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:02 INFO TaskSetManager: Starting task 1.0 in stage 19.0 (TID 24) (172.18.0.5,executor 0, partition 1, PROCESS_LOCAL, 10622 bytes)
+[2025-08-13T08:47:02.948+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:02 INFO TaskSetManager: Finished task 1.0 in stage 20.0 (TID 22) in 1239 ms on 172.18.0.5 (executor 0) (2/2)
+[2025-08-13T08:47:02.948+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:02 INFO TaskSchedulerImpl: Removed TaskSet 20.0 whose tasks have all completed, from pool
+[2025-08-13T08:47:02.949+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:02 INFO DAGScheduler: ShuffleMapStage 20 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) finished in 3496 ms
+[2025-08-13T08:47:02.949+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:02 INFO DAGScheduler: looking for newly runnable stages
+[2025-08-13T08:47:02.950+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:02 INFO DAGScheduler: running: HashSet(ShuffleMapStage 19, ResultStage 22, ResultStage 24)
+[2025-08-13T08:47:02.950+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:02 INFO DAGScheduler: waiting: HashSet()
+[2025-08-13T08:47:02.950+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:02 INFO DAGScheduler: failed: HashSet()
+[2025-08-13T08:47:02.955+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:02 INFO FileSourceStrategy: Pushed Filters:
+[2025-08-13T08:47:02.955+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:02 INFO FileSourceStrategy: Post-Scan Filters: Set()
+[2025-08-13T08:47:02.956+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:02 INFO FileSourceStrategy: Pushed Filters:
+[2025-08-13T08:47:02.956+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:02 INFO FileSourceStrategy: Post-Scan Filters: Set()
+[2025-08-13T08:47:02.962+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:02 INFO ShufflePartitionsUtil: For shuffle(8, advisory target size: 67108864, actual target size 1048576, minimum partition size: 1048576
+[2025-08-13T08:47:02.984+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:02 INFO HashAggregateExec: spark.sql.codegen.aggregate.map.twolevel.enabled is set to true, but current version of codegened fast hashmap does not support this aggregate.
+[2025-08-13T08:47:03.003+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO CodeGenerator: Code generated in 12.783181 ms
+[2025-08-13T08:47:03.019+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO SparkContext: Starting job: $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+[2025-08-13T08:47:03.020+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO DAGScheduler: Got job 18 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) with 1 output partitions
+[2025-08-13T08:47:03.020+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO DAGScheduler: Final stage: ResultStage 26 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768)
+[2025-08-13T08:47:03.021+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 25)
+[2025-08-13T08:47:03.021+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO DAGScheduler: Missing parents: List()
+[2025-08-13T08:47:03.021+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO DAGScheduler: Submitting ResultStage 26 (MapPartitionsRDD[108] at $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768), which has no missing parents
+[2025-08-13T08:47:03.023+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO MemoryStore: Block broadcast_36 stored as values in memory (estimated size 42.1 KiB, free 431.5 MiB)
+[2025-08-13T08:47:03.024+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO MemoryStore: Block broadcast_36_piece0 stored as bytes in memory (estimated size 17.7 KiB, free 431.5 MiB)
+[2025-08-13T08:47:03.025+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO SparkContext: Created broadcast 36 from broadcast at DAGScheduler.scala:1676
+[2025-08-13T08:47:03.026+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 26 (MapPartitionsRDD[108] at $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) (first 15 tasks are for partitions Vector(0))
+[2025-08-13T08:47:03.026+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO TaskSchedulerImpl: Adding task set 26.0 with 1 tasks resource profile 0
+[2025-08-13T08:47:03.420+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO TaskSetManager: Starting task 0.0 in stage 22.0 (TID 25) (172.18.0.5,executor 0, partition 0, NODE_LOCAL, 9833 bytes)
+[2025-08-13T08:47:03.421+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO TaskSetManager: Finished task 0.0 in stage 19.0 (TID 23) in 970 ms on 172.18.0.5 (executor 0) (1/2)
+[2025-08-13T08:47:03.436+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 5 to 172.18.0.5:36792
+[2025-08-13T08:47:03.465+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO TaskSetManager: Starting task 0.0 in stage 24.0 (TID 26) (172.18.0.5,executor 0, partition 0, NODE_LOCAL, 9833 bytes)
+[2025-08-13T08:47:03.470+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO TaskSetManager: Finished task 0.0 in stage 22.0 (TID 25) in 50 ms on 172.18.0.5 (executor 0) (1/1)
+[2025-08-13T08:47:03.470+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO TaskSchedulerImpl: Removed TaskSet 22.0 whose tasks have all completed, from pool
+[2025-08-13T08:47:03.471+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO DAGScheduler: ResultStage 22 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) finished in 2825 ms
+[2025-08-13T08:47:03.472+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO DAGScheduler: Job 16 is finished. Cancelling potential speculative or zombie tasks for this job
+[2025-08-13T08:47:03.472+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO TaskSchedulerImpl: Canceling stage 22
+[2025-08-13T08:47:03.473+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO TaskSchedulerImpl: Killing all running tasks in stage 22: Stage finished
+[2025-08-13T08:47:03.473+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO DAGScheduler: Job 16 finished: $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768, took 2828.855952 ms
+[2025-08-13T08:47:03.486+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 6 to 172.18.0.5:36792
+[2025-08-13T08:47:03.504+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO CodeGenerator: Code generated in 7.030193 ms
+[2025-08-13T08:47:03.515+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO TaskSetManager: Starting task 0.0 in stage 26.0 (TID 27) (172.18.0.5,executor 0, partition 0, NODE_LOCAL, 9833 bytes)
+[2025-08-13T08:47:03.516+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO TaskSetManager: Finished task 0.0 in stage 24.0 (TID 26) in 50 ms on 172.18.0.5 (executor 0) (1/1)
+[2025-08-13T08:47:03.517+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO TaskSchedulerImpl: Removed TaskSet 24.0 whose tasks have all completed, from pool
+[2025-08-13T08:47:03.517+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO DAGScheduler: ResultStage 24 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) finished in 1740 ms
+[2025-08-13T08:47:03.518+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO DAGScheduler: Job 17 is finished. Cancelling potential speculative or zombie tasks for this job
+[2025-08-13T08:47:03.518+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO TaskSchedulerImpl: Canceling stage 24
+[2025-08-13T08:47:03.518+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO TaskSchedulerImpl: Killing all running tasks in stage 24: Stage finished
+[2025-08-13T08:47:03.519+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO DAGScheduler: Job 17 finished: $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768, took 1744.155711 ms
+[2025-08-13T08:47:03.520+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO MemoryStore: Block broadcast_37_piece0 stored as bytes in memory (estimated size 20.1 KiB, free 431.5 MiB)
+[2025-08-13T08:47:03.521+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO SparkContext: Created broadcast 37 from $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+[2025-08-13T08:47:03.526+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO CodeGenerator: Code generated in 5.590864 ms
+[2025-08-13T08:47:03.530+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO FileSourceStrategy: Pushed Filters:
+[2025-08-13T08:47:03.531+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO FileSourceStrategy: Post-Scan Filters: Set()
+[2025-08-13T08:47:03.532+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO MemoryStore: Block broadcast_38_piece0 stored as bytes in memory (estimated size 749.0 B, free 431.5 MiB)
+[2025-08-13T08:47:03.532+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO FileSourceStrategy: Pushed Filters:
+[2025-08-13T08:47:03.533+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO FileSourceStrategy: Post-Scan Filters: Set()
+[2025-08-13T08:47:03.533+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO SparkContext: Created broadcast 38 from $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+[2025-08-13T08:47:03.538+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 8 to 172.18.0.5:36792
+[2025-08-13T08:47:03.540+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO FileSourceStrategy: Pushed Filters:
+[2025-08-13T08:47:03.541+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO FileSourceStrategy: Post-Scan Filters: Set()
+[2025-08-13T08:47:03.542+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO FileSourceStrategy: Pushed Filters:
+[2025-08-13T08:47:03.543+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO FileSourceStrategy: Post-Scan Filters: Set()
+[2025-08-13T08:47:03.571+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO TaskSetManager: Finished task 0.0 in stage 26.0 (TID 27) in 56 ms on 172.18.0.5 (executor 0) (1/1)
+[2025-08-13T08:47:03.572+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO TaskSchedulerImpl: Removed TaskSet 26.0 whose tasks have all completed, from pool
+[2025-08-13T08:47:03.573+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO DAGScheduler: ResultStage 26 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) finished in 550 ms
+[2025-08-13T08:47:03.573+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO DAGScheduler: Job 18 is finished. Cancelling potential speculative or zombie tasks for this job
+[2025-08-13T08:47:03.573+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO TaskSchedulerImpl: Canceling stage 26
+[2025-08-13T08:47:03.573+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO TaskSchedulerImpl: Killing all running tasks in stage 26: Stage finished
+[2025-08-13T08:47:03.574+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO DAGScheduler: Job 18 finished: $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768, took 553.469215 ms
+[2025-08-13T08:47:03.580+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO MemoryStore: Block broadcast_39_piece0 stored as bytes in memory (estimated size 28.5 KiB, free 431.4 MiB)
+[2025-08-13T08:47:03.581+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO SparkContext: Created broadcast 39 from $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+[2025-08-13T08:47:03.585+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO FileSourceStrategy: Pushed Filters:
+[2025-08-13T08:47:03.586+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO FileSourceStrategy: Post-Scan Filters: Set()
+[2025-08-13T08:47:03.587+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO FileSourceStrategy: Pushed Filters:
+[2025-08-13T08:47:03.587+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:03 INFO FileSourceStrategy: Post-Scan Filters: Set()
+[2025-08-13T08:47:04.031+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:04 INFO TaskSetManager: Finished task 1.0 in stage 19.0 (TID 24) in 1085 ms on 172.18.0.5 (executor 0) (2/2)
+[2025-08-13T08:47:04.032+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:04 INFO TaskSchedulerImpl: Removed TaskSet 19.0 whose tasks have all completed, from pool
+[2025-08-13T08:47:04.032+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:04 INFO DAGScheduler: ShuffleMapStage 19 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) finished in 4587 ms
+[2025-08-13T08:47:04.033+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:04 INFO DAGScheduler: looking for newly runnable stages
+[2025-08-13T08:47:04.033+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:04 INFO DAGScheduler: running: HashSet()
+[2025-08-13T08:47:04.033+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:04 INFO DAGScheduler: waiting: HashSet()
+[2025-08-13T08:47:04.033+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:04 INFO DAGScheduler: failed: HashSet()
+[2025-08-13T08:47:04.035+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:04 INFO FileSourceStrategy: Pushed Filters:
+[2025-08-13T08:47:04.036+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:04 INFO FileSourceStrategy: Post-Scan Filters: Set()
+[2025-08-13T08:47:04.036+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:04 INFO FileSourceStrategy: Pushed Filters:
+[2025-08-13T08:47:04.036+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:04 INFO FileSourceStrategy: Post-Scan Filters: Set()
+[2025-08-13T08:47:04.038+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:04 INFO ShufflePartitionsUtil: For shuffle(7, advisory target size: 67108864, actual target size 1048576, minimum partition size: 1048576
+[2025-08-13T08:47:04.073+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:04 INFO CodeGenerator: Code generated in 17.698175 ms
+[2025-08-13T08:47:04.122+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:04 INFO SparkContext: Starting job: $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+[2025-08-13T08:47:04.123+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:04 INFO DAGScheduler: Got job 19 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) with 1 output partitions
+[2025-08-13T08:47:04.123+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:04 INFO DAGScheduler: Final stage: ResultStage 28 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768)
+[2025-08-13T08:47:04.124+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:04 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 27)
+[2025-08-13T08:47:04.124+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:04 INFO DAGScheduler: Missing parents: List()
+[2025-08-13T08:47:04.124+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:04 INFO DAGScheduler: Submitting ResultStage 28 (MapPartitionsRDD[111] at $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768), which has no missing parents
+[2025-08-13T08:47:04.126+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:04 INFO MemoryStore: Block broadcast_40 stored as values in memory (estimated size 41.5 KiB, free 431.4 MiB)
+[2025-08-13T08:47:04.127+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:04 INFO MemoryStore: Block broadcast_40_piece0 stored as bytes in memory (estimated size 17.7 KiB, free 431.4 MiB)
+[2025-08-13T08:47:04.128+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:04 INFO SparkContext: Created broadcast 40 from broadcast at DAGScheduler.scala:1676
+[2025-08-13T08:47:04.128+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:04 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 28 (MapPartitionsRDD[111] at $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) (first 15 tasks are for partitions Vector(0))
+[2025-08-13T08:47:04.128+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:04 INFO TaskSchedulerImpl: Adding task set 28.0 with 1 tasks resource profile 0
+[2025-08-13T08:47:04.129+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:04 INFO TaskSetManager: Starting task 0.0 in stage 28.0 (TID 28) (172.18.0.5,executor 0, partition 0, NODE_LOCAL, 9833 bytes)
+[2025-08-13T08:47:04.143+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:04 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 7 to 172.18.0.5:36792
+[2025-08-13T08:47:04.166+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:04 INFO TaskSetManager: Finished task 0.0 in stage 28.0 (TID 28) in 37 ms on 172.18.0.5 (executor 0) (1/1)
+[2025-08-13T08:47:04.168+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:04 INFO TaskSchedulerImpl: Removed TaskSet 28.0 whose tasks have all completed, from pool
+[2025-08-13T08:47:04.169+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:04 INFO DAGScheduler: ResultStage 28 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) finished in 43 ms
+[2025-08-13T08:47:04.170+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:04 INFO DAGScheduler: Job 19 is finished. Cancelling potential speculative or zombie tasks for this job
+[2025-08-13T08:47:04.171+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:04 INFO TaskSchedulerImpl: Canceling stage 28
+[2025-08-13T08:47:04.171+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:04 INFO TaskSchedulerImpl: Killing all running tasks in stage 28: Stage finished
+[2025-08-13T08:47:04.171+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:04 INFO DAGScheduler: Job 19 finished: $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768, took 45.992483 ms
+[2025-08-13T08:47:04.174+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:04 INFO MemoryStore: Block broadcast_41_piece0 stored as bytes in memory (estimated size 232.0 B, free 431.4 MiB)
+[2025-08-13T08:47:04.176+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:04 INFO SparkContext: Created broadcast 41 from $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+[2025-08-13T08:47:04.180+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:04 INFO FileSourceStrategy: Pushed Filters:
+[2025-08-13T08:47:04.181+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:04 INFO FileSourceStrategy: Post-Scan Filters: Set()
+[2025-08-13T08:47:04.181+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:04 INFO FileSourceStrategy: Pushed Filters:
+[2025-08-13T08:47:04.181+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:04 INFO FileSourceStrategy: Post-Scan Filters: Set()
+[2025-08-13T08:47:04.672+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:04 INFO ParquetUtils: Using default output committer for Parquet: org.apache.parquet.hadoop.ParquetOutputCommitter
+[2025-08-13T08:47:04.678+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:04 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+[2025-08-13T08:47:04.680+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:04 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+[2025-08-13T08:47:04.681+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:04 INFO SQLHadoopMapReduceCommitProtocol: Using user defined output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+[2025-08-13T08:47:04.682+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:04 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+[2025-08-13T08:47:04.683+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:04 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+[2025-08-13T08:47:04.684+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:04 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+[2025-08-13T08:47:05.569+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:05 INFO CodeGenerator: Code generated in 13.356728 ms
+[2025-08-13T08:47:05.586+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:05 INFO CodeGenerator: Code generated in 10.840069 ms
+[2025-08-13T08:47:05.588+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:05 INFO MemoryStore: Block broadcast_42 stored as values in memory (estimated size 218.5 KiB, free 431.2 MiB)
+[2025-08-13T08:47:05.596+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:05 INFO MemoryStore: Block broadcast_42_piece0 stored as bytes in memory (estimated size 39.8 KiB, free 431.1 MiB)
+[2025-08-13T08:47:05.597+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:05 INFO SparkContext: Created broadcast 42 from $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+[2025-08-13T08:47:05.598+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:05 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+[2025-08-13T08:47:05.624+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:05 INFO CodeGenerator: Code generated in 17.590435 ms
+[2025-08-13T08:47:05.627+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:05 INFO MemoryStore: Block broadcast_43 stored as values in memory (estimated size 218.5 KiB, free 430.9 MiB)
+[2025-08-13T08:47:05.635+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:05 INFO MemoryStore: Block broadcast_43_piece0 stored as bytes in memory (estimated size 39.9 KiB, free 430.9 MiB)
+[2025-08-13T08:47:05.636+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:05 INFO SparkContext: Created broadcast 43 from $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+[2025-08-13T08:47:05.637+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:05 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+[2025-08-13T08:47:05.649+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:05 INFO SparkContext: Starting job: $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+[2025-08-13T08:47:05.650+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:05 INFO DAGScheduler: Got job 20 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) with 2 output partitions
+[2025-08-13T08:47:05.650+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:05 INFO DAGScheduler: Final stage: ResultStage 29 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768)
+[2025-08-13T08:47:05.650+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:05 INFO DAGScheduler: Parents of final stage: List()
+[2025-08-13T08:47:05.651+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:05 INFO DAGScheduler: Missing parents: List()
+[2025-08-13T08:47:05.651+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:05 INFO DAGScheduler: Submitting ResultStage 29 (MapPartitionsRDD[120] at $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768), which has no missing parents
+[2025-08-13T08:47:05.671+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:05 INFO MemoryStore: Block broadcast_44 stored as values in memory (estimated size 270.2 KiB, free 430.6 MiB)
+[2025-08-13T08:47:05.673+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:05 INFO MemoryStore: Block broadcast_44_piece0 stored as bytes in memory (estimated size 93.6 KiB, free 430.5 MiB)
+[2025-08-13T08:47:05.674+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:05 INFO SparkContext: Created broadcast 44 from broadcast at DAGScheduler.scala:1676
+[2025-08-13T08:47:05.674+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:05 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 29 (MapPartitionsRDD[120] at $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) (first 15 tasks are for partitions Vector(0, 1))
+[2025-08-13T08:47:05.674+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:05 INFO TaskSchedulerImpl: Adding task set 29.0 with 2 tasks resource profile 0
+[2025-08-13T08:47:05.676+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:05 INFO TaskSetManager: Starting task 0.0 in stage 29.0 (TID 29) (172.18.0.5,executor 0, partition 0, PROCESS_LOCAL, 10617 bytes)
+[2025-08-13T08:47:05.676+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:05 INFO TaskSetManager: Starting task 1.0 in stage 29.0 (TID 30) (172.18.0.5,executor 0, partition 1, PROCESS_LOCAL, 10633 bytes)
+[2025-08-13T08:47:09.228+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:09 INFO TaskSetManager: Finished task 0.0 in stage 29.0 (TID 29) in 3553 ms on 172.18.0.5 (executor 0) (1/2)
+[2025-08-13T08:47:09.589+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:09 INFO TaskSetManager: Finished task 1.0 in stage 29.0 (TID 30) in 3912 ms on 172.18.0.5 (executor 0) (2/2)
+[2025-08-13T08:47:09.590+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:09 INFO TaskSchedulerImpl: Removed TaskSet 29.0 whose tasks have all completed, from pool
+[2025-08-13T08:47:09.591+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:09 INFO DAGScheduler: ResultStage 29 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) finished in 3939 ms
+[2025-08-13T08:47:09.591+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:09 INFO DAGScheduler: Job 20 is finished. Cancelling potential speculative or zombie tasks for this job
+[2025-08-13T08:47:09.592+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:09 INFO TaskSchedulerImpl: Canceling stage 29
+[2025-08-13T08:47:09.593+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:09 INFO TaskSchedulerImpl: Killing all running tasks in stage 29: Stage finished
+[2025-08-13T08:47:09.593+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:09 INFO DAGScheduler: Job 20 finished: $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768, took 3941.08498 ms
+[2025-08-13T08:47:09.594+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:09 INFO FileFormatWriter: Start to commit write Job bafedc16-06d1-4431-b52d-c4303d094257.
+[2025-08-13T08:47:11.448+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:11 INFO GoogleCloudStorageFileSystem: Successfully repaired 'gs://job_gcp/gold/fact_job/fact_job_jobs.parquet/_temporary/0/task_202508130847055160483099908569092_0029_m_000000/' directory.
+[2025-08-13T08:47:12.601+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:12 INFO GoogleCloudStorageFileSystem: Successfully repaired 'gs://job_gcp/gold/fact_job/fact_job_jobs.parquet/_temporary/0/task_202508130847055160483099908569092_0029_m_000001/' directory.
+[2025-08-13T08:47:13.405+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:13 INFO GoogleCloudStorageFileSystem: Successfully repaired 'gs://job_gcp/gold/fact_job/fact_job_jobs.parquet/' directory.
+[2025-08-13T08:47:14.216+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:14 INFO FileFormatWriter: Write Job bafedc16-06d1-4431-b52d-c4303d094257 committed. Elapsed time: 4626 ms.
+[2025-08-13T08:47:14.216+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:14 INFO FileFormatWriter: Finished processing stats for write job bafedc16-06d1-4431-b52d-c4303d094257.
+[2025-08-13T08:47:14.226+0000] {spark_submit.py:521} INFO - ✅ Uploaded Spark DataFrame to GCS: gs://job_gcp/gold/fact_job/fact_job_jobs.parquet
+[2025-08-13T08:47:14.265+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:14 INFO FileSourceStrategy: Pushed Filters: IsNotNull(skills_extracted)
+[2025-08-13T08:47:14.266+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:14 INFO FileSourceStrategy: Post-Scan Filters: Set((size(skills_extracted#13, false) > 0), isnotnull(skills_extracted#13))
+[2025-08-13T08:47:14.266+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:14 INFO FileSourceStrategy: Pushed Filters: IsNotNull(skills_extracted)
+[2025-08-13T08:47:14.266+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:14 INFO FileSourceStrategy: Post-Scan Filters: Set((size(skills_extracted#30, false) > 0), isnotnull(skills_extracted#30))
+[2025-08-13T08:47:14.267+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:14 INFO FileSourceStrategy: Pushed Filters: IsNotNull(skills_extracted)
+[2025-08-13T08:47:14.267+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:14 INFO FileSourceStrategy: Post-Scan Filters: Set((size(skills_extracted#257, false) > 0), isnotnull(skills_extracted#257))
+[2025-08-13T08:47:14.267+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:14 INFO FileSourceStrategy: Pushed Filters: IsNotNull(skills_extracted)
+[2025-08-13T08:47:14.267+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:14 INFO FileSourceStrategy: Post-Scan Filters: Set((size(skills_extracted#277, false) > 0), isnotnull(skills_extracted#277))
+[2025-08-13T08:47:14.287+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:14 INFO MemoryStore: Block broadcast_45 stored as values in memory (estimated size 217.6 KiB, free 431.1 MiB)
+[2025-08-13T08:47:14.292+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:14 INFO MemoryStore: Block broadcast_45_piece0 stored as bytes in memory (estimated size 39.6 KiB, free 431.1 MiB)
+[2025-08-13T08:47:14.293+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:14 INFO SparkContext: Created broadcast 45 from $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+[2025-08-13T08:47:14.294+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:14 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+[2025-08-13T08:47:14.300+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:14 INFO MemoryStore: Block broadcast_46 stored as values in memory (estimated size 217.6 KiB, free 430.9 MiB)
+[2025-08-13T08:47:14.307+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:14 INFO MemoryStore: Block broadcast_46_piece0 stored as bytes in memory (estimated size 39.6 KiB, free 430.8 MiB)
+[2025-08-13T08:47:14.309+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:14 INFO SparkContext: Created broadcast 46 from $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+[2025-08-13T08:47:14.309+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:14 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+[2025-08-13T08:47:14.314+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:14 INFO DAGScheduler: Registering RDD 129 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) as input to shuffle 9
+[2025-08-13T08:47:14.314+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:14 INFO DAGScheduler: Got map stage job 21 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) with 2 output partitions
+[2025-08-13T08:47:14.315+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:14 INFO DAGScheduler: Final stage: ShuffleMapStage 30 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768)
+[2025-08-13T08:47:14.315+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:14 INFO DAGScheduler: Parents of final stage: List()
+[2025-08-13T08:47:14.315+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:14 INFO DAGScheduler: Missing parents: List()
+[2025-08-13T08:47:14.315+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:14 INFO DAGScheduler: Submitting ShuffleMapStage 30 (MapPartitionsRDD[129] at $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768), which has no missing parents
+[2025-08-13T08:47:14.316+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:14 INFO MemoryStore: Block broadcast_47 stored as values in memory (estimated size 48.5 KiB, free 430.8 MiB)
+[2025-08-13T08:47:14.317+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:14 INFO MemoryStore: Block broadcast_47_piece0 stored as bytes in memory (estimated size 18.4 KiB, free 430.8 MiB)
+[2025-08-13T08:47:14.318+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:14 INFO SparkContext: Created broadcast 47 from broadcast at DAGScheduler.scala:1676
+[2025-08-13T08:47:14.319+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:14 INFO DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 30 (MapPartitionsRDD[129] at $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) (first 15 tasks are for partitions Vector(0, 1))
+[2025-08-13T08:47:14.319+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:14 INFO TaskSchedulerImpl: Adding task set 30.0 with 2 tasks resource profile 0
+[2025-08-13T08:47:14.320+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:14 INFO TaskSetManager: Starting task 0.0 in stage 30.0 (TID 31) (172.18.0.5,executor 0, partition 0, PROCESS_LOCAL, 10606 bytes)
+[2025-08-13T08:47:14.320+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:14 INFO TaskSetManager: Starting task 1.0 in stage 30.0 (TID 32) (172.18.0.5,executor 0, partition 1, PROCESS_LOCAL, 10622 bytes)
+[2025-08-13T08:47:15.612+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO TaskSetManager: Finished task 1.0 in stage 30.0 (TID 32) in 1291 ms on 172.18.0.5 (executor 0) (1/2)
+[2025-08-13T08:47:15.706+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO TaskSetManager: Finished task 0.0 in stage 30.0 (TID 31) in 1386 ms on 172.18.0.5 (executor 0) (2/2)
+[2025-08-13T08:47:15.707+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO TaskSchedulerImpl: Removed TaskSet 30.0 whose tasks have all completed, from pool
+[2025-08-13T08:47:15.708+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO DAGScheduler: ShuffleMapStage 30 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) finished in 1391 ms
+[2025-08-13T08:47:15.708+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO DAGScheduler: looking for newly runnable stages
+[2025-08-13T08:47:15.708+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO DAGScheduler: running: HashSet()
+[2025-08-13T08:47:15.708+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO DAGScheduler: waiting: HashSet()
+[2025-08-13T08:47:15.709+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO DAGScheduler: failed: HashSet()
+[2025-08-13T08:47:15.711+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO FileSourceStrategy: Pushed Filters: IsNotNull(skills_extracted)
+[2025-08-13T08:47:15.712+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO FileSourceStrategy: Post-Scan Filters: Set((size(skills_extracted#13, false) > 0), isnotnull(skills_extracted#13))
+[2025-08-13T08:47:15.712+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO FileSourceStrategy: Pushed Filters: IsNotNull(skills_extracted)
+[2025-08-13T08:47:15.713+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO FileSourceStrategy: Post-Scan Filters: Set((size(skills_extracted#30, false) > 0), isnotnull(skills_extracted#30))
+[2025-08-13T08:47:15.717+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO ShufflePartitionsUtil: For shuffle(9, advisory target size: 67108864, actual target size 1048576, minimum partition size: 1048576
+[2025-08-13T08:47:15.740+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO CodeGenerator: Code generated in 12.375465 ms
+[2025-08-13T08:47:15.751+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO SparkContext: Starting job: $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+[2025-08-13T08:47:15.752+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO DAGScheduler: Got job 22 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) with 1 output partitions
+[2025-08-13T08:47:15.752+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO DAGScheduler: Final stage: ResultStage 32 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768)
+[2025-08-13T08:47:15.753+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 31)
+[2025-08-13T08:47:15.753+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO DAGScheduler: Missing parents: List()
+[2025-08-13T08:47:15.753+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO DAGScheduler: Submitting ResultStage 32 (MapPartitionsRDD[132] at $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768), which has no missing parents
+[2025-08-13T08:47:15.756+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO MemoryStore: Block broadcast_48 stored as values in memory (estimated size 46.7 KiB, free 430.7 MiB)
+[2025-08-13T08:47:15.758+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO MemoryStore: Block broadcast_48_piece0 stored as bytes in memory (estimated size 19.5 KiB, free 430.7 MiB)
+[2025-08-13T08:47:15.759+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO SparkContext: Created broadcast 48 from broadcast at DAGScheduler.scala:1676
+[2025-08-13T08:47:15.760+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 32 (MapPartitionsRDD[132] at $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) (first 15 tasks are for partitions Vector(0))
+[2025-08-13T08:47:15.760+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO TaskSchedulerImpl: Adding task set 32.0 with 1 tasks resource profile 0
+[2025-08-13T08:47:15.761+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO TaskSetManager: Starting task 0.0 in stage 32.0 (TID 33) (172.18.0.5,executor 0, partition 0, NODE_LOCAL, 9833 bytes)
+[2025-08-13T08:47:15.773+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 9 to 172.18.0.5:36792
+[2025-08-13T08:47:15.810+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO TaskSetManager: Finished task 0.0 in stage 32.0 (TID 33) in 50 ms on 172.18.0.5 (executor 0) (1/1)
+[2025-08-13T08:47:15.812+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO TaskSchedulerImpl: Removed TaskSet 32.0 whose tasks have all completed, from pool
+[2025-08-13T08:47:15.813+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO DAGScheduler: ResultStage 32 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) finished in 57 ms
+[2025-08-13T08:47:15.813+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO DAGScheduler: Job 22 is finished. Cancelling potential speculative or zombie tasks for this job
+[2025-08-13T08:47:15.814+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO TaskSchedulerImpl: Canceling stage 32
+[2025-08-13T08:47:15.814+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO TaskSchedulerImpl: Killing all running tasks in stage 32: Stage finished
+[2025-08-13T08:47:15.815+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO DAGScheduler: Job 22 finished: $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768, took 60.924317 ms
+[2025-08-13T08:47:15.826+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO MemoryStore: Block broadcast_49_piece0 stored as bytes in memory (estimated size 43.5 KiB, free 430.7 MiB)
+[2025-08-13T08:47:15.828+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO SparkContext: Created broadcast 49 from $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+[2025-08-13T08:47:15.833+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO FileSourceStrategy: Pushed Filters: IsNotNull(skills_extracted)
+[2025-08-13T08:47:15.834+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO FileSourceStrategy: Post-Scan Filters: Set((size(skills_extracted#13, false) > 0), isnotnull(skills_extracted#13))
+[2025-08-13T08:47:15.835+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO FileSourceStrategy: Pushed Filters: IsNotNull(skills_extracted)
+[2025-08-13T08:47:15.835+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO FileSourceStrategy: Post-Scan Filters: Set((size(skills_extracted#30, false) > 0), isnotnull(skills_extracted#30))
+[2025-08-13T08:47:15.880+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO CodeGenerator: Code generated in 23.275687 ms
+[2025-08-13T08:47:15.895+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO CodeGenerator: Code generated in 8.056089 ms
+[2025-08-13T08:47:15.897+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO MemoryStore: Block broadcast_50 stored as values in memory (estimated size 218.1 KiB, free 430.4 MiB)
+[2025-08-13T08:47:15.904+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO MemoryStore: Block broadcast_50_piece0 stored as bytes in memory (estimated size 39.7 KiB, free 430.4 MiB)
+[2025-08-13T08:47:15.906+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO SparkContext: Created broadcast 50 from $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+[2025-08-13T08:47:15.908+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+[2025-08-13T08:47:15.921+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO CodeGenerator: Code generated in 7.721377 ms
+[2025-08-13T08:47:15.923+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO MemoryStore: Block broadcast_51 stored as values in memory (estimated size 218.1 KiB, free 430.2 MiB)
+[2025-08-13T08:47:15.931+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO MemoryStore: Block broadcast_51_piece0 stored as bytes in memory (estimated size 39.7 KiB, free 430.2 MiB)
+[2025-08-13T08:47:15.932+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO SparkContext: Created broadcast 51 from $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+[2025-08-13T08:47:15.934+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+[2025-08-13T08:47:15.951+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO DAGScheduler: Registering RDD 141 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) as input to shuffle 10
+[2025-08-13T08:47:15.951+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO DAGScheduler: Got map stage job 23 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) with 2 output partitions
+[2025-08-13T08:47:15.952+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO DAGScheduler: Final stage: ShuffleMapStage 33 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768)
+[2025-08-13T08:47:15.953+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO DAGScheduler: Parents of final stage: List()
+[2025-08-13T08:47:15.953+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO DAGScheduler: Missing parents: List()
+[2025-08-13T08:47:15.953+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO DAGScheduler: Submitting ShuffleMapStage 33 (MapPartitionsRDD[141] at $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768), which has no missing parents
+[2025-08-13T08:47:15.955+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO MemoryStore: Block broadcast_52 stored as values in memory (estimated size 80.5 KiB, free 430.1 MiB)
+[2025-08-13T08:47:15.957+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO MemoryStore: Block broadcast_52_piece0 stored as bytes in memory (estimated size 28.1 KiB, free 430.0 MiB)
+[2025-08-13T08:47:15.958+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO SparkContext: Created broadcast 52 from broadcast at DAGScheduler.scala:1676
+[2025-08-13T08:47:15.959+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 33 (MapPartitionsRDD[141] at $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) (first 15 tasks are for partitions Vector(0, 1))
+[2025-08-13T08:47:15.959+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO TaskSchedulerImpl: Adding task set 33.0 with 2 tasks resource profile 0
+[2025-08-13T08:47:15.960+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO TaskSetManager: Starting task 0.0 in stage 33.0 (TID 34) (172.18.0.5,executor 0, partition 0, PROCESS_LOCAL, 10606 bytes)
+[2025-08-13T08:47:15.960+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:15 INFO TaskSetManager: Starting task 1.0 in stage 33.0 (TID 35) (172.18.0.5,executor 0, partition 1, PROCESS_LOCAL, 10622 bytes)
+[2025-08-13T08:47:17.173+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:17 INFO TaskSetManager: Finished task 0.0 in stage 33.0 (TID 34) in 1213 ms on 172.18.0.5 (executor 0) (1/2)
+[2025-08-13T08:47:17.248+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:17 INFO TaskSetManager: Finished task 1.0 in stage 33.0 (TID 35) in 1288 ms on 172.18.0.5 (executor 0) (2/2)
+[2025-08-13T08:47:17.249+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:17 INFO TaskSchedulerImpl: Removed TaskSet 33.0 whose tasks have all completed, from pool
+[2025-08-13T08:47:17.250+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:17 INFO DAGScheduler: ShuffleMapStage 33 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) finished in 1297 ms
+[2025-08-13T08:47:17.250+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:17 INFO DAGScheduler: looking for newly runnable stages
+[2025-08-13T08:47:17.250+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:17 INFO DAGScheduler: running: HashSet()
+[2025-08-13T08:47:17.251+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:17 INFO DAGScheduler: waiting: HashSet()
+[2025-08-13T08:47:17.251+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:17 INFO DAGScheduler: failed: HashSet()
+[2025-08-13T08:47:17.252+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:17 INFO ShufflePartitionsUtil: For shuffle(10, advisory target size: 67108864, actual target size 1048576, minimum partition size: 1048576
+[2025-08-13T08:47:17.368+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:17 INFO ParquetUtils: Using default output committer for Parquet: org.apache.parquet.hadoop.ParquetOutputCommitter
+[2025-08-13T08:47:17.369+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:17 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+[2025-08-13T08:47:17.369+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:17 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+[2025-08-13T08:47:17.370+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:17 INFO SQLHadoopMapReduceCommitProtocol: Using user defined output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+[2025-08-13T08:47:17.370+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:17 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+[2025-08-13T08:47:17.370+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:17 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+[2025-08-13T08:47:17.371+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:17 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+[2025-08-13T08:47:18.206+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:18 INFO CodeGenerator: Code generated in 22.43944 ms
+[2025-08-13T08:47:18.211+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:18 INFO SparkContext: Starting job: $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+[2025-08-13T08:47:18.212+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:18 INFO DAGScheduler: Got job 24 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) with 1 output partitions
+[2025-08-13T08:47:18.212+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:18 INFO DAGScheduler: Final stage: ResultStage 35 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768)
+[2025-08-13T08:47:18.212+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:18 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 34)
+[2025-08-13T08:47:18.213+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:18 INFO DAGScheduler: Missing parents: List()
+[2025-08-13T08:47:18.213+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:18 INFO DAGScheduler: Submitting ResultStage 35 (MapPartitionsRDD[144] at $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768), which has no missing parents
+[2025-08-13T08:47:18.224+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:18 INFO MemoryStore: Block broadcast_53 stored as values in memory (estimated size 296.8 KiB, free 429.8 MiB)
+[2025-08-13T08:47:18.226+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:18 INFO MemoryStore: Block broadcast_53_piece0 stored as bytes in memory (estimated size 107.5 KiB, free 429.7 MiB)
+[2025-08-13T08:47:18.227+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:18 INFO SparkContext: Created broadcast 53 from broadcast at DAGScheduler.scala:1676
+[2025-08-13T08:47:18.227+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:18 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 35 (MapPartitionsRDD[144] at $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) (first 15 tasks are for partitions Vector(0))
+[2025-08-13T08:47:18.228+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:18 INFO TaskSchedulerImpl: Adding task set 35.0 with 1 tasks resource profile 0
+[2025-08-13T08:47:18.228+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:18 INFO TaskSetManager: Starting task 0.0 in stage 35.0 (TID 36) (172.18.0.5,executor 0, partition 0, NODE_LOCAL, 9833 bytes)
+[2025-08-13T08:47:18.246+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:18 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 10 to 172.18.0.5:36792
+[2025-08-13T08:47:21.129+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:21 INFO TaskSetManager: Finished task 0.0 in stage 35.0 (TID 36) in 2900 ms on 172.18.0.5 (executor 0) (1/1)
+[2025-08-13T08:47:21.129+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:21 INFO TaskSchedulerImpl: Removed TaskSet 35.0 whose tasks have all completed, from pool
+[2025-08-13T08:47:21.131+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:21 INFO DAGScheduler: ResultStage 35 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) finished in 2916 ms
+[2025-08-13T08:47:21.131+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:21 INFO DAGScheduler: Job 24 is finished. Cancelling potential speculative or zombie tasks for this job
+[2025-08-13T08:47:21.132+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:21 INFO TaskSchedulerImpl: Canceling stage 35
+[2025-08-13T08:47:21.132+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:21 INFO TaskSchedulerImpl: Killing all running tasks in stage 35: Stage finished
+[2025-08-13T08:47:21.132+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:21 INFO DAGScheduler: Job 24 finished: $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768, took 2919.054428 ms
+[2025-08-13T08:47:21.132+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:21 INFO FileFormatWriter: Start to commit write Job 6bcbf92e-9329-4493-8e5e-3d98d8034f33.
+[2025-08-13T08:47:22.412+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:22 INFO GoogleCloudStorageFileSystem: Successfully repaired 'gs://job_gcp/gold/fact_jobskill/fact_jobskill_jobs.parquet/_temporary/0/task_202508130847182874610530662749262_0035_m_000000/' directory.
+[2025-08-13T08:47:23.115+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:23 INFO GoogleCloudStorageFileSystem: Successfully repaired 'gs://job_gcp/gold/fact_jobskill/fact_jobskill_jobs.parquet/' directory.
+[2025-08-13T08:47:23.918+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:23 INFO FileFormatWriter: Write Job 6bcbf92e-9329-4493-8e5e-3d98d8034f33 committed. Elapsed time: 2786 ms.
+[2025-08-13T08:47:23.919+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:23 INFO FileFormatWriter: Finished processing stats for write job 6bcbf92e-9329-4493-8e5e-3d98d8034f33.
+[2025-08-13T08:47:23.923+0000] {spark_submit.py:521} INFO - ✅ Uploaded Spark DataFrame to GCS: gs://job_gcp/gold/fact_jobskill/fact_jobskill_jobs.parquet
+[2025-08-13T08:47:23.926+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:23 INFO SparkContext: SparkContext is stopping with exitCode 0 from stop at NativeMethodAccessorImpl.java:0.
+[2025-08-13T08:47:23.936+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:23 INFO SparkUI: Stopped Spark web UI at http://89a37f983b11:4040
+[2025-08-13T08:47:23.943+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:23 INFO StandaloneSchedulerBackend: Shutting down all executors
+[2025-08-13T08:47:23.943+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:23 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Asking each executor to shut down
+[2025-08-13T08:47:23.969+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:23 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+[2025-08-13T08:47:23.997+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:23 INFO MemoryStore: MemoryStore cleared
+[2025-08-13T08:47:23.998+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:23 INFO BlockManager: BlockManager stopped
+[2025-08-13T08:47:24.000+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:24 INFO BlockManagerMaster: BlockManagerMaster stopped
+[2025-08-13T08:47:24.004+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:24 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+[2025-08-13T08:47:24.026+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:24 INFO SparkContext: Successfully stopped SparkContext
+[2025-08-13T08:47:24.545+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:24 INFO ShutdownHookManager: Shutdown hook called
+[2025-08-13T08:47:24.545+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:24 INFO ShutdownHookManager: Deleting directory /tmp/spark-4ed637ae-ac15-42a4-8a15-a6061bac3380
+[2025-08-13T08:47:24.549+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:24 INFO ShutdownHookManager: Deleting directory /opt/***/artifacts/spark-e1eabca1-c607-4c48-984e-75eb994232cb
+[2025-08-13T08:47:24.554+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:24 INFO ShutdownHookManager: Deleting directory /tmp/spark-c228707a-95a9-4c04-88da-254d2440547f
+[2025-08-13T08:47:24.559+0000] {spark_submit.py:521} INFO - 25/08/13 08:47:24 INFO ShutdownHookManager: Deleting directory /tmp/spark-c228707a-95a9-4c04-88da-254d2440547f/pyspark-5f1919d8-62df-4da4-b46c-eaad9ea993ab
+[2025-08-13T08:47:24.612+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-08-13T08:47:24.625+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=spark_transform_pipeline, task_id=gold_transform, run_id=manual__2025-08-13T08:44:20.643148+00:00, execution_date=20250813T084420, start_date=20250813T084601, end_date=20250813T084724
+[2025-08-13T08:47:24.657+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-08-13T08:47:24.675+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-08-13T08:47:24.678+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

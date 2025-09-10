@@ -1,0 +1,73 @@
+PS C:\Users\msi\Desktop\jd> docker cp ./jars/aws-java-sdk-bundle-1.12.367.jar spark-master:/opt/bitnami/spark/jars/
+Successfully copied 311MB to spark-master:/opt/bitnami/spark/jars/
+PS C:\Users\msi\Desktop\jd> 
+PS C:\Users\msi\Desktop\jd> docker exec -it spark-master bash
+I have no name!@2413a4c3d443:/opt/bitnami/spark$ ls /opt/bitnami/spark/jars | grep aws
+aws-java-sdk-bundle-1.12.367.jar
+hadoop-aws-3.4.1.jar
+I have no name!@2413a4c3d443:/opt/bitnami/spark$ 
+
+
+PS C:\Users\msi\Desktop\jd> docker exec -it spark-master ls /opt/custom-jars
+aws-java-sdk-bundle-1.12.367.jar  hadoop-aws-3.3.2.jar
+PS C:\Users\msi\Desktop\jd> 
+
+docker exec -it spark-master bash
+
+
+--packages org.apache.hadoop:hadoop-aws:3.3.6,software.amazon.awssdk:auth:2.25.70,software.amazon.awssdk:sdk-core:2.31.59
+
+
+leSystem \
+  --conf spark.hadoop.fs.s3a.path.style.access=true \
+  --conf spark.hadoop.fs.s3a.connection.ssl.enabled=false \
+  --conf spark.hadoop.fs.s3a.aws.credentials.provider=org.apache.hadoop.fs.s3a.SimpleAWSCredentialsProvider \
+  --conf spark.hadoop.fs.s3a.connection.timeout=60000 \
+  --conf spark.hadoop.fs.s3a.connection.establish.timeout=60000 \
+  --conf spark.hadoop.fs.s3a.connection.request.timeout=60000 \
+    /opt/spark-jobs/gold_transform.py
+
+    spark-submit \
+  --jars /opt/custom-jars/hadoop-aws-3.3.4.jar,/opt/custom-jars/aws-java-sdk-bundle-1.12.621.jar \
+  --conf spark.hadoop.fs.s3a.endpoint=http://minio:9000 \
+  --conf spark.hadoop.fs.s3a.access.key=minioadmin \
+  --conf spark.hadoop.fs.s3a.secret.key=minioadmin \
+  --conf spark.hadoop.fs.s3a.path.style.access=true \
+  --conf spark.hadoop.fs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem \
+  --conf spark.hadoop.fs.s3a.connection.ssl.enabled=false \
+  --conf spark.hadoop.fs.s3a.connection.timeout=120000 \
+  --conf spark.hadoop.fs.s3a.connection.establish.timeout=120000 \
+  --conf spark.hadoop.fs.s3a.connection.request.timeout=120000 \
+  --conf spark.hadoop.fs.s3a.aws.credentials.provider=org.apache.hadoop.fs.s3a.SimpleAWSCredentialsProvider \
+   /opt/spark-jobs/gold_transform.py
+
+
+
+   spark-submit \
+  --jars /opt/custom-jars/gcs-connector-hadoop3-2.2.14-shaded.jar\
+  --conf spark.hadoop.fs.gs.impl=com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem \
+  --conf spark.hadoop.google.cloud.auth.service.account.enable=true \
+  --conf spark.hadoop.google.cloud.auth.service.account.json.keyfile=/opt/airflow/gcp-key.json \
+  /opt/spark-jobs/gold_transform.py
+
+
+  spark-submit \
+  --master yarn \
+  --deploy-mode cluster \
+  --driver-memory 512m \
+  --executor-memory 512m \
+  --executor-cores 1 \
+  --conf spark.yarn.submit.waitAppCompletion=true \
+  --conf spark.hadoop.fs.s3a.endpoint=http://minio:9000 \
+  --conf spark.hadoop.fs.s3a.access.key=minioadmin \
+  --conf spark.hadoop.fs.s3a.secret.key=minioadmin \
+  --conf spark.hadoop.fs.s3a.path.style.access=true \
+    /opt/spark-jobs/gold_transform.py
+
+
+    spark-submit \
+  --jars /opt/custom-jars/spark-bigquery-with-dependencies_2.13-0.30.0.jar \
+  upload_jobs_to_dwh.py
+
+
+spark_default	spark		spark://spark-master	7077

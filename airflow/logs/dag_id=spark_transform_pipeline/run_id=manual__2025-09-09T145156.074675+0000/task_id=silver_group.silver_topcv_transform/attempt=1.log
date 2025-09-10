@@ -1,0 +1,838 @@
+[2025-09-09T14:52:02.820+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-09-09T14:52:02.857+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: spark_transform_pipeline.silver_group.silver_topcv_transform manual__2025-09-09T14:51:56.074675+00:00 [queued]>
+[2025-09-09T14:52:02.864+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: spark_transform_pipeline.silver_group.silver_topcv_transform manual__2025-09-09T14:51:56.074675+00:00 [queued]>
+[2025-09-09T14:52:02.865+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-09-09T14:52:02.879+0000] {taskinstance.py:2330} INFO - Executing <Task(SparkSubmitOperator): silver_group.silver_topcv_transform> on 2025-09-09 14:51:56.074675+00:00
+[2025-09-09T14:52:02.887+0000] {standard_task_runner.py:63} INFO - Started process 1687 to run task
+[2025-09-09T14:52:02.890+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'spark_transform_pipeline', 'silver_group.silver_topcv_transform', 'manual__2025-09-09T14:51:56.074675+00:00', '--job-id', '118', '--raw', '--subdir', 'DAGS_FOLDER/etl_jobs_dag.py', '--cfg-path', '/tmp/tmpf4qslrd3']
+[2025-09-09T14:52:02.893+0000] {standard_task_runner.py:91} INFO - Job 118: Subtask silver_group.silver_topcv_transform
+[2025-09-09T14:52:02.954+0000] {task_command.py:426} INFO - Running <TaskInstance: spark_transform_pipeline.silver_group.silver_topcv_transform manual__2025-09-09T14:51:56.074675+00:00 [running]> on host 118acb478e13
+[2025-09-09T14:52:03.062+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='spark_transform_pipeline' AIRFLOW_CTX_TASK_ID='silver_group.silver_topcv_transform' AIRFLOW_CTX_EXECUTION_DATE='2025-09-09T14:51:56.074675+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-09-09T14:51:56.074675+00:00'
+[2025-09-09T14:52:03.063+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-09-09T14:52:03.093+0000] {base.py:84} INFO - Using connection ID 'spark_default' for task execution.
+[2025-09-09T14:52:03.094+0000] {spark_submit.py:351} INFO - Spark-Submit cmd: spark-submit --master spark://spark-master:7077 --conf spark.master=spark://spark-master:7077 --conf spark.jars.packages=org.apache.hadoop:hadoop-aws:3.3.4,com.amazonaws:aws-java-sdk-bundle:1.12.367 --conf spark.hadoop.fs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem --conf spark.hadoop.fs.s3a.endpoint=http://minio:9000 --conf spark.hadoop.fs.s3a.access.key=minio --conf spark.hadoop.fs.s3a.secret.key=****** --conf spark.hadoop.fs.s3a.path.style.access=true --conf spark.hadoop.fs.s3a.connection.ssl.enabled=false --conf spark.hadoop.fs.s3a.connection.timeout=60000 --conf spark.hadoop.fs.s3a.connection.establish.timeout=60000 --conf spark.hadoop.fs.s3a.attempts.maximum=3 --conf spark.hadoop.fs.s3a.connection.maximum=15 --conf spark.jars.ivy=/tmp/ivy --name arrow-spark --verbose /opt/spark-jobs/elt/transform/silver_topcv_transform.py
+[2025-09-09T14:52:04.185+0000] {spark_submit.py:521} INFO - WARNING: Using incubator modules: jdk.incubator.vector
+[2025-09-09T14:52:06.088+0000] {spark_submit.py:521} INFO - Parsed arguments:
+[2025-09-09T14:52:06.089+0000] {spark_submit.py:521} INFO - master                  spark://spark-master:7077
+[2025-09-09T14:52:06.089+0000] {spark_submit.py:521} INFO - remote                  null
+[2025-09-09T14:52:06.089+0000] {spark_submit.py:521} INFO - deployMode              null
+[2025-09-09T14:52:06.090+0000] {spark_submit.py:521} INFO - executorMemory          null
+[2025-09-09T14:52:06.090+0000] {spark_submit.py:521} INFO - executorCores           null
+[2025-09-09T14:52:06.090+0000] {spark_submit.py:521} INFO - totalExecutorCores      null
+[2025-09-09T14:52:06.090+0000] {spark_submit.py:521} INFO - propertiesFile          null
+[2025-09-09T14:52:06.090+0000] {spark_submit.py:521} INFO - driverMemory            null
+[2025-09-09T14:52:06.091+0000] {spark_submit.py:521} INFO - driverCores             null
+[2025-09-09T14:52:06.091+0000] {spark_submit.py:521} INFO - driverExtraClassPath    null
+[2025-09-09T14:52:06.091+0000] {spark_submit.py:521} INFO - driverExtraLibraryPath  null
+[2025-09-09T14:52:06.091+0000] {spark_submit.py:521} INFO - driverExtraJavaOptions  null
+[2025-09-09T14:52:06.092+0000] {spark_submit.py:521} INFO - supervise               false
+[2025-09-09T14:52:06.092+0000] {spark_submit.py:521} INFO - queue                   null
+[2025-09-09T14:52:06.092+0000] {spark_submit.py:521} INFO - numExecutors            null
+[2025-09-09T14:52:06.092+0000] {spark_submit.py:521} INFO - files                   null
+[2025-09-09T14:52:06.093+0000] {spark_submit.py:521} INFO - pyFiles                 null
+[2025-09-09T14:52:06.093+0000] {spark_submit.py:521} INFO - archives                null
+[2025-09-09T14:52:06.093+0000] {spark_submit.py:521} INFO - mainClass               null
+[2025-09-09T14:52:06.094+0000] {spark_submit.py:521} INFO - primaryResource         file:/opt/spark-jobs/elt/transform/silver_topcv_transform.py
+[2025-09-09T14:52:06.094+0000] {spark_submit.py:521} INFO - name                    arrow-spark
+[2025-09-09T14:52:06.094+0000] {spark_submit.py:521} INFO - childArgs               []
+[2025-09-09T14:52:06.094+0000] {spark_submit.py:521} INFO - jars                    null
+[2025-09-09T14:52:06.095+0000] {spark_submit.py:521} INFO - packages                org.apache.hadoop:hadoop-aws:3.3.4,com.amazonaws:aws-java-sdk-bundle:1.12.367
+[2025-09-09T14:52:06.095+0000] {spark_submit.py:521} INFO - packagesExclusions      null
+[2025-09-09T14:52:06.095+0000] {spark_submit.py:521} INFO - repositories            null
+[2025-09-09T14:52:06.096+0000] {spark_submit.py:521} INFO - verbose                 true
+[2025-09-09T14:52:06.096+0000] {spark_submit.py:521} INFO - 
+[2025-09-09T14:52:06.096+0000] {spark_submit.py:521} INFO - Spark properties used, including those specified through
+[2025-09-09T14:52:06.096+0000] {spark_submit.py:521} INFO - --conf and those from the properties file null:
+[2025-09-09T14:52:06.096+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.s3a.access.key,*********(redacted))
+[2025-09-09T14:52:06.097+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.s3a.attempts.maximum,3)
+[2025-09-09T14:52:06.097+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.s3a.connection.establish.timeout,60000)
+[2025-09-09T14:52:06.097+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.s3a.connection.maximum,15)
+[2025-09-09T14:52:06.098+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.s3a.connection.ssl.enabled,false)
+[2025-09-09T14:52:06.098+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.s3a.connection.timeout,60000)
+[2025-09-09T14:52:06.098+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.s3a.endpoint,http://minio:9000)
+[2025-09-09T14:52:06.099+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.s3a.impl,org.apache.hadoop.fs.s3a.S3AFileSystem)
+[2025-09-09T14:52:06.099+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.s3a.path.style.access,true)
+[2025-09-09T14:52:06.099+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.s3a.secret.key,*********(redacted))
+[2025-09-09T14:52:06.099+0000] {spark_submit.py:521} INFO - (spark.jars.ivy,/tmp/ivy)
+[2025-09-09T14:52:06.100+0000] {spark_submit.py:521} INFO - (spark.jars.packages,org.apache.hadoop:hadoop-aws:3.3.4,com.amazonaws:aws-java-sdk-bundle:1.12.367)
+[2025-09-09T14:52:06.100+0000] {spark_submit.py:521} INFO - (spark.master,spark://spark-master:7077)
+[2025-09-09T14:52:06.100+0000] {spark_submit.py:521} INFO - 
+[2025-09-09T14:52:06.101+0000] {spark_submit.py:521} INFO - 
+[2025-09-09T14:52:06.282+0000] {spark_submit.py:521} INFO - :: loading settings :: url = jar:file:/home/***/.local/lib/python3.11/site-packages/pyspark/jars/ivy-2.5.3.jar!/org/apache/ivy/core/settings/ivysettings.xml
+[2025-09-09T14:52:06.370+0000] {spark_submit.py:521} INFO - Ivy Default Cache set to: /tmp/ivy/cache
+[2025-09-09T14:52:06.371+0000] {spark_submit.py:521} INFO - The jars for the packages stored in: /tmp/ivy/jars
+[2025-09-09T14:52:06.375+0000] {spark_submit.py:521} INFO - org.apache.hadoop#hadoop-aws added as a dependency
+[2025-09-09T14:52:06.375+0000] {spark_submit.py:521} INFO - com.amazonaws#aws-java-sdk-bundle added as a dependency
+[2025-09-09T14:52:06.376+0000] {spark_submit.py:521} INFO - :: resolving dependencies :: org.apache.spark#spark-submit-parent-69d28cbf-5a1c-4953-a6ff-4aaed0b51d73;1.0
+[2025-09-09T14:52:06.376+0000] {spark_submit.py:521} INFO - confs: [default]
+[2025-09-09T14:52:06.574+0000] {spark_submit.py:521} INFO - found org.apache.hadoop#hadoop-aws;3.3.4 in central
+[2025-09-09T14:52:06.615+0000] {spark_submit.py:521} INFO - found org.wildfly.openssl#wildfly-openssl;1.0.7.Final in central
+[2025-09-09T14:52:06.634+0000] {spark_submit.py:521} INFO - found com.amazonaws#aws-java-sdk-bundle;1.12.367 in central
+[2025-09-09T14:52:06.654+0000] {spark_submit.py:521} INFO - :: resolution report :: resolve 270ms :: artifacts dl 8ms
+[2025-09-09T14:52:06.655+0000] {spark_submit.py:521} INFO - :: modules in use:
+[2025-09-09T14:52:06.655+0000] {spark_submit.py:521} INFO - com.amazonaws#aws-java-sdk-bundle;1.12.367 from central in [default]
+[2025-09-09T14:52:06.655+0000] {spark_submit.py:521} INFO - org.apache.hadoop#hadoop-aws;3.3.4 from central in [default]
+[2025-09-09T14:52:06.655+0000] {spark_submit.py:521} INFO - org.wildfly.openssl#wildfly-openssl;1.0.7.Final from central in [default]
+[2025-09-09T14:52:06.656+0000] {spark_submit.py:521} INFO - :: evicted modules:
+[2025-09-09T14:52:06.656+0000] {spark_submit.py:521} INFO - com.amazonaws#aws-java-sdk-bundle;1.12.262 by [com.amazonaws#aws-java-sdk-bundle;1.12.367] in [default]
+[2025-09-09T14:52:06.656+0000] {spark_submit.py:521} INFO - ---------------------------------------------------------------------
+[2025-09-09T14:52:06.656+0000] {spark_submit.py:521} INFO - |                  |            modules            ||   artifacts   |
+[2025-09-09T14:52:06.657+0000] {spark_submit.py:521} INFO - |       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+[2025-09-09T14:52:06.657+0000] {spark_submit.py:521} INFO - ---------------------------------------------------------------------
+[2025-09-09T14:52:06.657+0000] {spark_submit.py:521} INFO - |      default     |   4   |   0   |   0   |   1   ||   3   |   0   |
+[2025-09-09T14:52:06.657+0000] {spark_submit.py:521} INFO - ---------------------------------------------------------------------
+[2025-09-09T14:52:06.661+0000] {spark_submit.py:521} INFO - :: retrieving :: org.apache.spark#spark-submit-parent-69d28cbf-5a1c-4953-a6ff-4aaed0b51d73
+[2025-09-09T14:52:06.662+0000] {spark_submit.py:521} INFO - confs: [default]
+[2025-09-09T14:52:06.668+0000] {spark_submit.py:521} INFO - 0 artifacts copied, 3 already retrieved (0kB/6ms)
+[2025-09-09T14:52:06.946+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:06 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2025-09-09T14:52:07.138+0000] {spark_submit.py:521} INFO - Main class:
+[2025-09-09T14:52:07.139+0000] {spark_submit.py:521} INFO - org.apache.spark.deploy.PythonRunner
+[2025-09-09T14:52:07.139+0000] {spark_submit.py:521} INFO - Arguments:
+[2025-09-09T14:52:07.140+0000] {spark_submit.py:521} INFO - file:/opt/spark-jobs/elt/transform/silver_topcv_transform.py
+[2025-09-09T14:52:07.140+0000] {spark_submit.py:521} INFO - file:///tmp/ivy/jars/org.apache.hadoop_hadoop-aws-3.3.4.jar,file:///tmp/ivy/jars/com.amazonaws_aws-java-sdk-bundle-1.12.367.jar,file:///tmp/ivy/jars/org.wildfly.openssl_wildfly-openssl-1.0.7.Final.jar
+[2025-09-09T14:52:07.142+0000] {spark_submit.py:521} INFO - Spark config:
+[2025-09-09T14:52:07.142+0000] {spark_submit.py:521} INFO - (spark.app.name,arrow-spark)
+[2025-09-09T14:52:07.142+0000] {spark_submit.py:521} INFO - (spark.app.submitTime,1757429527113)
+[2025-09-09T14:52:07.142+0000] {spark_submit.py:521} INFO - (spark.files,file:///tmp/ivy/jars/org.apache.hadoop_hadoop-aws-3.3.4.jar,file:///tmp/ivy/jars/com.amazonaws_aws-java-sdk-bundle-1.12.367.jar,file:///tmp/ivy/jars/org.wildfly.openssl_wildfly-openssl-1.0.7.Final.jar)
+[2025-09-09T14:52:07.142+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.s3a.access.key,*********(redacted))
+[2025-09-09T14:52:07.143+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.s3a.attempts.maximum,3)
+[2025-09-09T14:52:07.143+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.s3a.connection.establish.timeout,60000)
+[2025-09-09T14:52:07.143+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.s3a.connection.maximum,15)
+[2025-09-09T14:52:07.143+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.s3a.connection.ssl.enabled,false)
+[2025-09-09T14:52:07.143+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.s3a.connection.timeout,60000)
+[2025-09-09T14:52:07.144+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.s3a.endpoint,http://minio:9000)
+[2025-09-09T14:52:07.144+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.s3a.impl,org.apache.hadoop.fs.s3a.S3AFileSystem)
+[2025-09-09T14:52:07.144+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.s3a.path.style.access,true)
+[2025-09-09T14:52:07.144+0000] {spark_submit.py:521} INFO - (spark.hadoop.fs.s3a.secret.key,*********(redacted))
+[2025-09-09T14:52:07.144+0000] {spark_submit.py:521} INFO - (spark.jars,file:///tmp/ivy/jars/org.apache.hadoop_hadoop-aws-3.3.4.jar,file:///tmp/ivy/jars/com.amazonaws_aws-java-sdk-bundle-1.12.367.jar,file:///tmp/ivy/jars/org.wildfly.openssl_wildfly-openssl-1.0.7.Final.jar)
+[2025-09-09T14:52:07.144+0000] {spark_submit.py:521} INFO - (spark.jars.ivy,/tmp/ivy)
+[2025-09-09T14:52:07.144+0000] {spark_submit.py:521} INFO - (spark.jars.packages,org.apache.hadoop:hadoop-aws:3.3.4,com.amazonaws:aws-java-sdk-bundle:1.12.367)
+[2025-09-09T14:52:07.145+0000] {spark_submit.py:521} INFO - (spark.master,spark://spark-master:7077)
+[2025-09-09T14:52:07.145+0000] {spark_submit.py:521} INFO - (spark.repl.local.jars,file:///tmp/ivy/jars/org.apache.hadoop_hadoop-aws-3.3.4.jar,file:///tmp/ivy/jars/com.amazonaws_aws-java-sdk-bundle-1.12.367.jar,file:///tmp/ivy/jars/org.wildfly.openssl_wildfly-openssl-1.0.7.Final.jar)
+[2025-09-09T14:52:07.145+0000] {spark_submit.py:521} INFO - (spark.submit.deployMode,client)
+[2025-09-09T14:52:07.145+0000] {spark_submit.py:521} INFO - (spark.submit.pyFiles,/tmp/ivy/jars/org.apache.hadoop_hadoop-aws-3.3.4.jar,/tmp/ivy/jars/com.amazonaws_aws-java-sdk-bundle-1.12.367.jar,/tmp/ivy/jars/org.wildfly.openssl_wildfly-openssl-1.0.7.Final.jar)
+[2025-09-09T14:52:07.145+0000] {spark_submit.py:521} INFO - Classpath elements:
+[2025-09-09T14:52:07.145+0000] {spark_submit.py:521} INFO - file:///tmp/ivy/jars/org.apache.hadoop_hadoop-aws-3.3.4.jar
+[2025-09-09T14:52:07.146+0000] {spark_submit.py:521} INFO - file:///tmp/ivy/jars/com.amazonaws_aws-java-sdk-bundle-1.12.367.jar
+[2025-09-09T14:52:07.146+0000] {spark_submit.py:521} INFO - file:///tmp/ivy/jars/org.wildfly.openssl_wildfly-openssl-1.0.7.Final.jar
+[2025-09-09T14:52:07.146+0000] {spark_submit.py:521} INFO - 
+[2025-09-09T14:52:07.146+0000] {spark_submit.py:521} INFO - 
+[2025-09-09T14:52:08.552+0000] {spark_submit.py:521} INFO - Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+[2025-09-09T14:52:08.560+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:08 INFO SparkContext: Running Spark version 4.0.1
+[2025-09-09T14:52:08.562+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:08 INFO SparkContext: OS info Linux, 5.15.167.4-microsoft-standard-WSL2, amd64
+[2025-09-09T14:52:08.563+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:08 INFO SparkContext: Java version 17.0.16
+[2025-09-09T14:52:08.588+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:08 INFO ResourceUtils: ==============================================================
+[2025-09-09T14:52:08.588+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:08 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2025-09-09T14:52:08.589+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:08 INFO ResourceUtils: ==============================================================
+[2025-09-09T14:52:08.590+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:08 INFO SparkContext: Submitted application: SilverTopCVTransformTest
+[2025-09-09T14:52:08.621+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:08 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2025-09-09T14:52:08.627+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:08 INFO ResourceProfile: Limiting resource is cpu
+[2025-09-09T14:52:08.630+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:08 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2025-09-09T14:52:08.724+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:08 INFO SecurityManager: Changing view acls to: ***
+[2025-09-09T14:52:08.725+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:08 INFO SecurityManager: Changing modify acls to: ***
+[2025-09-09T14:52:08.726+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:08 INFO SecurityManager: Changing view acls groups to: ***
+[2025-09-09T14:52:08.726+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:08 INFO SecurityManager: Changing modify acls groups to: ***
+[2025-09-09T14:52:08.730+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:08 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: *** groups with view permissions: EMPTY; users with modify permissions: ***; groups with modify permissions: EMPTY; RPC SSL disabled
+[2025-09-09T14:52:09.044+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:09 INFO Utils: Successfully started service 'sparkDriver' on port 35553.
+[2025-09-09T14:52:09.082+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:09 INFO SparkEnv: Registering MapOutputTracker
+[2025-09-09T14:52:09.101+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:09 INFO SparkEnv: Registering BlockManagerMaster
+[2025-09-09T14:52:09.118+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:09 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2025-09-09T14:52:09.119+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:09 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2025-09-09T14:52:09.122+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:09 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2025-09-09T14:52:09.148+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:09 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-6edbff32-0abd-4235-87a9-908d551477b7
+[2025-09-09T14:52:09.177+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:09 INFO SparkEnv: Registering OutputCommitCoordinator
+[2025-09-09T14:52:09.326+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:09 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+[2025-09-09T14:52:09.401+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:09 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2025-09-09T14:52:09.448+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:09 INFO SparkContext: Added JAR file:///tmp/ivy/jars/org.apache.hadoop_hadoop-aws-3.3.4.jar at spark://118acb478e13:35553/jars/org.apache.hadoop_hadoop-aws-3.3.4.jar with timestamp 1757429528543
+[2025-09-09T14:52:09.449+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:09 INFO SparkContext: Added JAR file:///tmp/ivy/jars/com.amazonaws_aws-java-sdk-bundle-1.12.367.jar at spark://118acb478e13:35553/jars/com.amazonaws_aws-java-sdk-bundle-1.12.367.jar with timestamp 1757429528543
+[2025-09-09T14:52:09.450+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:09 INFO SparkContext: Added JAR file:///tmp/ivy/jars/org.wildfly.openssl_wildfly-openssl-1.0.7.Final.jar at spark://118acb478e13:35553/jars/org.wildfly.openssl_wildfly-openssl-1.0.7.Final.jar with timestamp 1757429528543
+[2025-09-09T14:52:09.459+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:09 INFO SparkContext: Added file file:///tmp/ivy/jars/org.apache.hadoop_hadoop-aws-3.3.4.jar at spark://118acb478e13:35553/files/org.apache.hadoop_hadoop-aws-3.3.4.jar with timestamp 1757429528543
+[2025-09-09T14:52:09.462+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:09 INFO Utils: Copying /tmp/ivy/jars/org.apache.hadoop_hadoop-aws-3.3.4.jar to /tmp/spark-b861c621-b62a-420c-a496-6214d0738b24/userFiles-35d41e59-2c4d-4a2d-ac44-18d34152d1c1/org.apache.hadoop_hadoop-aws-3.3.4.jar
+[2025-09-09T14:52:09.510+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:09 INFO SparkContext: Added file file:///tmp/ivy/jars/com.amazonaws_aws-java-sdk-bundle-1.12.367.jar at spark://118acb478e13:35553/files/com.amazonaws_aws-java-sdk-bundle-1.12.367.jar with timestamp 1757429528543
+[2025-09-09T14:52:09.511+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:09 INFO Utils: Copying /tmp/ivy/jars/com.amazonaws_aws-java-sdk-bundle-1.12.367.jar to /tmp/spark-b861c621-b62a-420c-a496-6214d0738b24/userFiles-35d41e59-2c4d-4a2d-ac44-18d34152d1c1/com.amazonaws_aws-java-sdk-bundle-1.12.367.jar
+[2025-09-09T14:52:12.679+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:12 INFO SparkContext: Added file file:///tmp/ivy/jars/org.wildfly.openssl_wildfly-openssl-1.0.7.Final.jar at spark://118acb478e13:35553/files/org.wildfly.openssl_wildfly-openssl-1.0.7.Final.jar with timestamp 1757429528543
+[2025-09-09T14:52:12.680+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:12 INFO Utils: Copying /tmp/ivy/jars/org.wildfly.openssl_wildfly-openssl-1.0.7.Final.jar to /tmp/spark-b861c621-b62a-420c-a496-6214d0738b24/userFiles-35d41e59-2c4d-4a2d-ac44-18d34152d1c1/org.wildfly.openssl_wildfly-openssl-1.0.7.Final.jar
+[2025-09-09T14:52:12.757+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:12 INFO SecurityManager: Changing view acls to: ***
+[2025-09-09T14:52:12.758+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:12 INFO SecurityManager: Changing modify acls to: ***
+[2025-09-09T14:52:12.758+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:12 INFO SecurityManager: Changing view acls groups to: ***
+[2025-09-09T14:52:12.759+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:12 INFO SecurityManager: Changing modify acls groups to: ***
+[2025-09-09T14:52:12.759+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:12 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: *** groups with view permissions: EMPTY; users with modify permissions: ***; groups with modify permissions: EMPTY; RPC SSL disabled
+[2025-09-09T14:52:12.996+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:12 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark-master:7077...
+[2025-09-09T14:52:13.068+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:13 INFO TransportClientFactory: Successfully created connection to spark-master/172.18.0.2:7077 after 34 ms (0 ms spent in bootstraps)
+[2025-09-09T14:52:13.481+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:13 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20250909145213-0007
+[2025-09-09T14:52:13.505+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:13 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 45475.
+[2025-09-09T14:52:13.505+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:13 INFO NettyBlockTransferService: Server created on 118acb478e13:45475
+[2025-09-09T14:52:13.508+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:13 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2025-09-09T14:52:13.524+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:13 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 118acb478e13, 45475, None)
+[2025-09-09T14:52:13.529+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:13 INFO BlockManagerMasterEndpoint: Registering block manager 118acb478e13:45475 with 434.4 MiB RAM, BlockManagerId(driver, 118acb478e13, 45475, None)
+[2025-09-09T14:52:13.532+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:13 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 118acb478e13, 45475, None)
+[2025-09-09T14:52:13.534+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:13 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 118acb478e13, 45475, None)
+[2025-09-09T14:52:13.585+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:13 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20250909145213-0007/0 on worker-20250909135521-172.18.0.7-44119 (172.18.0.7:44119) with 2 core(s)
+[2025-09-09T14:52:13.585+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:13 INFO StandaloneSchedulerBackend: Granted executor ID app-20250909145213-0007/0 on hostPort 172.18.0.7:44119 with 2 core(s), 1024.0 MiB RAM
+[2025-09-09T14:52:13.793+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:13 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+[2025-09-09T14:52:14.745+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:14 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20250909145213-0007/0 is now RUNNING
+[2025-09-09T14:52:17.109+0000] {spark_submit.py:521} INFO - 👉 Đang thử đọc từ MinIO...
+[2025-09-09T14:52:17.128+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:17 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+[2025-09-09T14:52:17.133+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:17 INFO SharedState: Warehouse path is 'file:/opt/***/spark-warehouse'.
+[2025-09-09T14:52:18.897+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:18 WARN MetricsConfig: Cannot locate configuration: tried hadoop-metrics2-s3a-file-system.properties,hadoop-metrics2.properties
+[2025-09-09T14:52:18.911+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:18 INFO MetricsSystemImpl: Scheduled Metric snapshot period at 10 second(s).
+[2025-09-09T14:52:18.925+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:18 INFO MetricsSystemImpl: s3a-file-system metrics system started
+[2025-09-09T14:52:18.947+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:18 INFO MetricsSystemImpl: Stopping s3a-file-system metrics system...
+[2025-09-09T14:52:18.948+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:18 INFO MetricsSystemImpl: s3a-file-system metrics system stopped.
+[2025-09-09T14:52:19.004+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:18 INFO MetricsSystemImpl: s3a-file-system metrics system shutdown complete.
+[2025-09-09T14:52:19.005+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:18 WARN FileSystem: Failed to initialize filesystem s3a://job/bronze/topcv/topcv_jobs.parquet: java.lang.NumberFormatException: For input string: "60s"
+[2025-09-09T14:52:19.005+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:18 WARN FileStreamSink: Assume no metadata directory. Error while looking for metadata directory in the path: s3a://job/bronze/topcv/topcv_jobs.parquet.
+[2025-09-09T14:52:19.005+0000] {spark_submit.py:521} INFO - java.lang.NumberFormatException: For input string: "60s"
+[2025-09-09T14:52:19.005+0000] {spark_submit.py:521} INFO - at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+[2025-09-09T14:52:19.006+0000] {spark_submit.py:521} INFO - at java.base/java.lang.Long.parseLong(Long.java:711)
+[2025-09-09T14:52:19.006+0000] {spark_submit.py:521} INFO - at java.base/java.lang.Long.parseLong(Long.java:836)
+[2025-09-09T14:52:19.006+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.conf.Configuration.getLong(Configuration.java:1607)
+[2025-09-09T14:52:19.006+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.s3a.S3AUtils.longOption(S3AUtils.java:1024)
+[2025-09-09T14:52:19.006+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.s3a.S3AFileSystem.initThreadPools(S3AFileSystem.java:719)
+[2025-09-09T14:52:19.006+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.s3a.S3AFileSystem.initialize(S3AFileSystem.java:498)
+[2025-09-09T14:52:19.007+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem.createFileSystem(FileSystem.java:3615)
+[2025-09-09T14:52:19.007+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem.access$300(FileSystem.java:172)
+[2025-09-09T14:52:19.007+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem$Cache.getInternal(FileSystem.java:3716)
+[2025-09-09T14:52:19.007+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem$Cache.get(FileSystem.java:3667)
+[2025-09-09T14:52:19.007+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:557)
+[2025-09-09T14:52:19.007+0000] {spark_submit.py:521} INFO - at org.apache.hadoop.fs.Path.getFileSystem(Path.java:366)
+[2025-09-09T14:52:19.007+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.execution.streaming.FileStreamSink$.hasMetadata(FileStreamSink.scala:55)
+[2025-09-09T14:52:19.008+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.execution.datasources.DataSource.resolveRelation(DataSource.scala:381)
+[2025-09-09T14:52:19.008+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.catalyst.analysis.ResolveDataSource.org$apache$spark$sql$catalyst$analysis$ResolveDataSource$$loadV1BatchSource(ResolveDataSource.scala:143)
+[2025-09-09T14:52:19.009+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.catalyst.analysis.ResolveDataSource$$anonfun$apply$1.$anonfun$applyOrElse$2(ResolveDataSource.scala:61)
+[2025-09-09T14:52:19.009+0000] {spark_submit.py:521} INFO - at scala.Option.getOrElse(Option.scala:201)
+[2025-09-09T14:52:19.009+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.catalyst.analysis.ResolveDataSource$$anonfun$apply$1.applyOrElse(ResolveDataSource.scala:61)
+[2025-09-09T14:52:19.010+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.catalyst.analysis.ResolveDataSource$$anonfun$apply$1.applyOrElse(ResolveDataSource.scala:45)
+[2025-09-09T14:52:19.010+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.$anonfun$resolveOperatorsUpWithPruning$3(AnalysisHelper.scala:139)
+[2025-09-09T14:52:19.010+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(origin.scala:86)
+[2025-09-09T14:52:19.010+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.$anonfun$resolveOperatorsUpWithPruning$1(AnalysisHelper.scala:139)
+[2025-09-09T14:52:19.010+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper$.allowInvokingTransformsInAnalyzer(AnalysisHelper.scala:416)
+[2025-09-09T14:52:19.010+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.resolveOperatorsUpWithPruning(AnalysisHelper.scala:135)
+[2025-09-09T14:52:19.011+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.resolveOperatorsUpWithPruning$(AnalysisHelper.scala:131)
+[2025-09-09T14:52:19.011+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.resolveOperatorsUpWithPruning(LogicalPlan.scala:37)
+[2025-09-09T14:52:19.011+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.resolveOperatorsUp(AnalysisHelper.scala:112)
+[2025-09-09T14:52:19.011+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.resolveOperatorsUp$(AnalysisHelper.scala:111)
+[2025-09-09T14:52:19.011+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.resolveOperatorsUp(LogicalPlan.scala:37)
+[2025-09-09T14:52:19.012+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.catalyst.analysis.ResolveDataSource.apply(ResolveDataSource.scala:45)
+[2025-09-09T14:52:19.012+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.catalyst.analysis.ResolveDataSource.apply(ResolveDataSource.scala:43)
+[2025-09-09T14:52:19.012+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.catalyst.rules.RuleExecutor.$anonfun$execute$2(RuleExecutor.scala:242)
+[2025-09-09T14:52:19.012+0000] {spark_submit.py:521} INFO - at scala.collection.LinearSeqOps.foldLeft(LinearSeq.scala:183)
+[2025-09-09T14:52:19.012+0000] {spark_submit.py:521} INFO - at scala.collection.LinearSeqOps.foldLeft$(LinearSeq.scala:179)
+[2025-09-09T14:52:19.012+0000] {spark_submit.py:521} INFO - at scala.collection.immutable.List.foldLeft(List.scala:79)
+[2025-09-09T14:52:19.013+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.catalyst.rules.RuleExecutor.$anonfun$execute$1(RuleExecutor.scala:239)
+[2025-09-09T14:52:19.013+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.catalyst.rules.RuleExecutor.$anonfun$execute$1$adapted(RuleExecutor.scala:231)
+[2025-09-09T14:52:19.013+0000] {spark_submit.py:521} INFO - at scala.collection.immutable.List.foreach(List.scala:334)
+[2025-09-09T14:52:19.013+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.catalyst.rules.RuleExecutor.execute(RuleExecutor.scala:231)
+[2025-09-09T14:52:19.013+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.catalyst.analysis.Analyzer.org$apache$spark$sql$catalyst$analysis$Analyzer$$executeSameContext(Analyzer.scala:340)
+[2025-09-09T14:52:19.014+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.catalyst.analysis.Analyzer.$anonfun$execute$1(Analyzer.scala:336)
+[2025-09-09T14:52:19.014+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.catalyst.analysis.AnalysisContext$.withNewAnalysisContext(Analyzer.scala:234)
+[2025-09-09T14:52:19.015+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.catalyst.analysis.Analyzer.execute(Analyzer.scala:336)
+[2025-09-09T14:52:19.015+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.catalyst.analysis.Analyzer.execute(Analyzer.scala:299)
+[2025-09-09T14:52:19.015+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.catalyst.rules.RuleExecutor.$anonfun$executeAndTrack$1(RuleExecutor.scala:201)
+[2025-09-09T14:52:19.015+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.catalyst.QueryPlanningTracker$.withTracker(QueryPlanningTracker.scala:89)
+[2025-09-09T14:52:19.016+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.catalyst.rules.RuleExecutor.executeAndTrack(RuleExecutor.scala:201)
+[2025-09-09T14:52:19.016+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.catalyst.analysis.resolver.HybridAnalyzer.resolveInFixedPoint(HybridAnalyzer.scala:190)
+[2025-09-09T14:52:19.016+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.catalyst.analysis.resolver.HybridAnalyzer.$anonfun$apply$1(HybridAnalyzer.scala:76)
+[2025-09-09T14:52:19.016+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.catalyst.analysis.resolver.HybridAnalyzer.withTrackedAnalyzerBridgeState(HybridAnalyzer.scala:111)
+[2025-09-09T14:52:19.016+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.catalyst.analysis.resolver.HybridAnalyzer.apply(HybridAnalyzer.scala:71)
+[2025-09-09T14:52:19.017+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.catalyst.analysis.Analyzer.$anonfun$executeAndCheck$1(Analyzer.scala:330)
+[2025-09-09T14:52:19.017+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper$.markInAnalyzer(AnalysisHelper.scala:423)
+[2025-09-09T14:52:19.017+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.catalyst.analysis.Analyzer.executeAndCheck(Analyzer.scala:330)
+[2025-09-09T14:52:19.017+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.execution.QueryExecution.$anonfun$lazyAnalyzed$2(QueryExecution.scala:110)
+[2025-09-09T14:52:19.017+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.catalyst.QueryPlanningTracker.measurePhase(QueryPlanningTracker.scala:148)
+[2025-09-09T14:52:19.017+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.execution.QueryExecution.$anonfun$executePhase$2(QueryExecution.scala:278)
+[2025-09-09T14:52:19.018+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.execution.QueryExecution$.withInternalError(QueryExecution.scala:654)
+[2025-09-09T14:52:19.018+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.execution.QueryExecution.$anonfun$executePhase$1(QueryExecution.scala:278)
+[2025-09-09T14:52:19.018+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:804)
+[2025-09-09T14:52:19.018+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.execution.QueryExecution.executePhase(QueryExecution.scala:277)
+[2025-09-09T14:52:19.019+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.execution.QueryExecution.$anonfun$lazyAnalyzed$1(QueryExecution.scala:110)
+[2025-09-09T14:52:19.019+0000] {spark_submit.py:521} INFO - at scala.util.Try$.apply(Try.scala:217)
+[2025-09-09T14:52:19.021+0000] {spark_submit.py:521} INFO - at org.apache.spark.util.Utils$.doTryWithCallerStacktrace(Utils.scala:1378)
+[2025-09-09T14:52:19.021+0000] {spark_submit.py:521} INFO - at org.apache.spark.util.LazyTry.tryT$lzycompute(LazyTry.scala:46)
+[2025-09-09T14:52:19.022+0000] {spark_submit.py:521} INFO - at org.apache.spark.util.LazyTry.tryT(LazyTry.scala:46)
+[2025-09-09T14:52:19.022+0000] {spark_submit.py:521} INFO - at org.apache.spark.util.LazyTry.get(LazyTry.scala:58)
+[2025-09-09T14:52:19.022+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.execution.QueryExecution.analyzed(QueryExecution.scala:121)
+[2025-09-09T14:52:19.023+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.execution.QueryExecution.assertAnalyzed(QueryExecution.scala:80)
+[2025-09-09T14:52:19.023+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.classic.Dataset$.$anonfun$ofRows$1(Dataset.scala:115)
+[2025-09-09T14:52:19.023+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:804)
+[2025-09-09T14:52:19.024+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.classic.Dataset$.ofRows(Dataset.scala:113)
+[2025-09-09T14:52:19.024+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.classic.DataFrameReader.load(DataFrameReader.scala:109)
+[2025-09-09T14:52:19.024+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.classic.DataFrameReader.load(DataFrameReader.scala:58)
+[2025-09-09T14:52:19.024+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.DataFrameReader.parquet(DataFrameReader.scala:457)
+[2025-09-09T14:52:19.025+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.classic.DataFrameReader.parquet(DataFrameReader.scala:306)
+[2025-09-09T14:52:19.025+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.classic.DataFrameReader.parquet(DataFrameReader.scala:58)
+[2025-09-09T14:52:19.026+0000] {spark_submit.py:521} INFO - at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[2025-09-09T14:52:19.026+0000] {spark_submit.py:521} INFO - at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+[2025-09-09T14:52:19.026+0000] {spark_submit.py:521} INFO - at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[2025-09-09T14:52:19.026+0000] {spark_submit.py:521} INFO - at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+[2025-09-09T14:52:19.027+0000] {spark_submit.py:521} INFO - at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+[2025-09-09T14:52:19.027+0000] {spark_submit.py:521} INFO - at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+[2025-09-09T14:52:19.027+0000] {spark_submit.py:521} INFO - at py4j.Gateway.invoke(Gateway.java:282)
+[2025-09-09T14:52:19.027+0000] {spark_submit.py:521} INFO - at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+[2025-09-09T14:52:19.028+0000] {spark_submit.py:521} INFO - at py4j.commands.CallCommand.execute(CallCommand.java:79)
+[2025-09-09T14:52:19.028+0000] {spark_submit.py:521} INFO - at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:184)
+[2025-09-09T14:52:19.028+0000] {spark_submit.py:521} INFO - at py4j.ClientServerConnection.run(ClientServerConnection.java:108)
+[2025-09-09T14:52:19.028+0000] {spark_submit.py:521} INFO - at java.base/java.lang.Thread.run(Thread.java:840)
+[2025-09-09T14:52:19.029+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:18 WARN MetricsConfig: Cannot locate configuration: tried hadoop-metrics2-s3a-file-system.properties,hadoop-metrics2.properties
+[2025-09-09T14:52:19.029+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:18 INFO MetricsSystemImpl: Scheduled Metric snapshot period at 10 second(s).
+[2025-09-09T14:52:19.029+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:18 INFO MetricsSystemImpl: s3a-file-system metrics system started
+[2025-09-09T14:52:19.030+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:18 INFO MetricsSystemImpl: Stopping s3a-file-system metrics system...
+[2025-09-09T14:52:19.030+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:18 INFO MetricsSystemImpl: s3a-file-system metrics system stopped.
+[2025-09-09T14:52:19.030+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:18 INFO MetricsSystemImpl: s3a-file-system metrics system shutdown complete.
+[2025-09-09T14:52:19.030+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:18 WARN FileSystem: Failed to initialize filesystem s3a://job/bronze/topcv/topcv_jobs.parquet: java.lang.NumberFormatException: For input string: "60s"
+[2025-09-09T14:52:19.084+0000] {spark_submit.py:521} INFO - ⚠️ Không đọc được từ MinIO, fallback sang DataFrame giả lập
+[2025-09-09T14:52:19.105+0000] {spark_submit.py:521} INFO - Lỗi: For input string: "60s"
+[2025-09-09T14:52:19.786+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:19 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.18.0.7:45346) with ID 0, ResourceProfileId 0
+[2025-09-09T14:52:20.121+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:20 INFO BlockManagerMasterEndpoint: Registering block manager 172.18.0.7:34371 with 434.4 MiB RAM, BlockManagerId(0, 172.18.0.7, 34371, None)
+[2025-09-09T14:52:21.000+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:20 INFO CodeGenerator: Code generated in 380.900933 ms
+[2025-09-09T14:52:21.037+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:21 INFO SparkContext: Starting job: showString at NativeMethodAccessorImpl.java:0
+[2025-09-09T14:52:21.053+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:21 INFO DAGScheduler: Got job 0 (showString at NativeMethodAccessorImpl.java:0) with 1 output partitions
+[2025-09-09T14:52:21.055+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:21 INFO DAGScheduler: Final stage: ResultStage 0 (showString at NativeMethodAccessorImpl.java:0)
+[2025-09-09T14:52:21.056+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:21 INFO DAGScheduler: Parents of final stage: List()
+[2025-09-09T14:52:21.060+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:21 INFO DAGScheduler: Missing parents: List()
+[2025-09-09T14:52:21.069+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:21 INFO DAGScheduler: Submitting ResultStage 0 (MapPartitionsRDD[6] at showString at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2025-09-09T14:52:21.219+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:21 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+[2025-09-09T14:52:21.298+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:21 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 14.4 KiB, free 434.4 MiB)
+[2025-09-09T14:52:21.405+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:21 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 7.4 KiB, free 434.4 MiB)
+[2025-09-09T14:52:21.426+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:21 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:1676
+[2025-09-09T14:52:21.483+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:21 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 0 (MapPartitionsRDD[6] at showString at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+[2025-09-09T14:52:21.501+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:21 INFO TaskSchedulerImpl: Adding task set 0.0 with 1 tasks resource profile 0
+[2025-09-09T14:52:49.563+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:49 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0) (172.18.0.7,executor 0, partition 0, PROCESS_LOCAL, 10687 bytes)
+[2025-09-09T14:52:50.914+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:50 WARN TaskSetManager: Lost task 0.0 in stage 0.0 (TID 0) (172.18.0.7 executor 0): java.io.InvalidClassException: org.apache.spark.sql.types.StructField; local class incompatible: stream classdesc serialVersionUID = 211707512700890436, local class serialVersionUID = 8518787353547913830
+[2025-09-09T14:52:50.919+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectStreamClass.initNonProxy(Unknown Source)
+[2025-09-09T14:52:50.919+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readNonProxyDesc(Unknown Source)
+[2025-09-09T14:52:50.920+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readClassDesc(Unknown Source)
+[2025-09-09T14:52:50.920+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:50.921+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:50.922+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readArray(Unknown Source)
+[2025-09-09T14:52:50.922+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:50.923+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream$FieldValues.<init>(Unknown Source)
+[2025-09-09T14:52:50.923+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readSerialData(Unknown Source)
+[2025-09-09T14:52:50.924+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:50.925+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:50.925+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readArray(Unknown Source)
+[2025-09-09T14:52:50.926+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:50.926+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream$FieldValues.<init>(Unknown Source)
+[2025-09-09T14:52:50.926+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readSerialData(Unknown Source)
+[2025-09-09T14:52:50.927+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:50.927+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:50.927+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readArray(Unknown Source)
+[2025-09-09T14:52:50.928+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:50.928+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream$FieldValues.<init>(Unknown Source)
+[2025-09-09T14:52:50.928+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readSerialData(Unknown Source)
+[2025-09-09T14:52:50.929+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:50.929+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:50.929+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream$FieldValues.<init>(Unknown Source)
+[2025-09-09T14:52:50.930+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readSerialData(Unknown Source)
+[2025-09-09T14:52:50.930+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:50.930+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:50.931+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream$FieldValues.<init>(Unknown Source)
+[2025-09-09T14:52:50.931+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readSerialData(Unknown Source)
+[2025-09-09T14:52:50.932+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:50.932+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:50.932+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject(Unknown Source)
+[2025-09-09T14:52:50.933+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject(Unknown Source)
+[2025-09-09T14:52:50.933+0000] {spark_submit.py:521} INFO - at scala.collection.generic.DefaultSerializationProxy.readObject(DefaultSerializationProxy.scala:58)
+[2025-09-09T14:52:50.934+0000] {spark_submit.py:521} INFO - at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[2025-09-09T14:52:50.934+0000] {spark_submit.py:521} INFO - at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+[2025-09-09T14:52:50.934+0000] {spark_submit.py:521} INFO - at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+[2025-09-09T14:52:50.934+0000] {spark_submit.py:521} INFO - at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+[2025-09-09T14:52:50.935+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectStreamClass.invokeReadObject(Unknown Source)
+[2025-09-09T14:52:50.935+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readSerialData(Unknown Source)
+[2025-09-09T14:52:50.935+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:50.936+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:50.936+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream$FieldValues.<init>(Unknown Source)
+[2025-09-09T14:52:50.936+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readSerialData(Unknown Source)
+[2025-09-09T14:52:50.936+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:50.937+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:50.937+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream$FieldValues.<init>(Unknown Source)
+[2025-09-09T14:52:50.939+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readSerialData(Unknown Source)
+[2025-09-09T14:52:50.940+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:50.940+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:50.940+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject(Unknown Source)
+[2025-09-09T14:52:50.941+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject(Unknown Source)
+[2025-09-09T14:52:50.941+0000] {spark_submit.py:521} INFO - at scala.collection.generic.DefaultSerializationProxy.readObject(DefaultSerializationProxy.scala:58)
+[2025-09-09T14:52:50.941+0000] {spark_submit.py:521} INFO - at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[2025-09-09T14:52:50.941+0000] {spark_submit.py:521} INFO - at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+[2025-09-09T14:52:50.946+0000] {spark_submit.py:521} INFO - at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+[2025-09-09T14:52:50.956+0000] {spark_submit.py:521} INFO - at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+[2025-09-09T14:52:50.957+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectStreamClass.invokeReadObject(Unknown Source)
+[2025-09-09T14:52:50.958+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readSerialData(Unknown Source)
+[2025-09-09T14:52:50.958+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:50.958+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:50.958+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream$FieldValues.<init>(Unknown Source)
+[2025-09-09T14:52:50.959+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readSerialData(Unknown Source)
+[2025-09-09T14:52:50.959+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:50.959+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:50.960+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream$FieldValues.<init>(Unknown Source)
+[2025-09-09T14:52:50.960+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readSerialData(Unknown Source)
+[2025-09-09T14:52:50.960+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:50.960+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:50.961+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject(Unknown Source)
+[2025-09-09T14:52:50.961+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject(Unknown Source)
+[2025-09-09T14:52:50.961+0000] {spark_submit.py:521} INFO - at org.apache.spark.serializer.JavaDeserializationStream.readObject(JavaSerializer.scala:88)
+[2025-09-09T14:52:50.962+0000] {spark_submit.py:521} INFO - at org.apache.spark.serializer.JavaSerializerInstance.deserialize(JavaSerializer.scala:136)
+[2025-09-09T14:52:50.962+0000] {spark_submit.py:521} INFO - at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:86)
+[2025-09-09T14:52:50.962+0000] {spark_submit.py:521} INFO - at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:171)
+[2025-09-09T14:52:50.963+0000] {spark_submit.py:521} INFO - at org.apache.spark.scheduler.Task.run(Task.scala:147)
+[2025-09-09T14:52:50.963+0000] {spark_submit.py:521} INFO - at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$5(Executor.scala:647)
+[2025-09-09T14:52:50.963+0000] {spark_submit.py:521} INFO - at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:80)
+[2025-09-09T14:52:50.964+0000] {spark_submit.py:521} INFO - at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:77)
+[2025-09-09T14:52:50.964+0000] {spark_submit.py:521} INFO - at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:99)
+[2025-09-09T14:52:50.964+0000] {spark_submit.py:521} INFO - at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:650)
+[2025-09-09T14:52:50.965+0000] {spark_submit.py:521} INFO - at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+[2025-09-09T14:52:50.967+0000] {spark_submit.py:521} INFO - at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+[2025-09-09T14:52:50.968+0000] {spark_submit.py:521} INFO - at java.base/java.lang.Thread.run(Unknown Source)
+[2025-09-09T14:52:50.970+0000] {spark_submit.py:521} INFO - 
+[2025-09-09T14:52:50.971+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:50 INFO TaskSetManager: Starting task 0.1 in stage 0.0 (TID 1) (172.18.0.7,executor 0, partition 0, PROCESS_LOCAL, 10687 bytes)
+[2025-09-09T14:52:50.974+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:50 INFO TaskSetManager: Lost task 0.1 in stage 0.0 (TID 1) on 172.18.0.7, executor 0: java.io.InvalidClassException (org.apache.spark.sql.types.StructField; local class incompatible: stream classdesc serialVersionUID = 211707512700890436, local class serialVersionUID = 8518787353547913830) [duplicate 1]
+[2025-09-09T14:52:50.988+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:50 INFO TaskSetManager: Starting task 0.2 in stage 0.0 (TID 2) (172.18.0.7,executor 0, partition 0, PROCESS_LOCAL, 10687 bytes)
+[2025-09-09T14:52:51.010+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:51 INFO TaskSetManager: Lost task 0.2 in stage 0.0 (TID 2) on 172.18.0.7, executor 0: java.io.InvalidClassException (org.apache.spark.sql.types.StructField; local class incompatible: stream classdesc serialVersionUID = 211707512700890436, local class serialVersionUID = 8518787353547913830) [duplicate 2]
+[2025-09-09T14:52:51.013+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:51 INFO TaskSetManager: Starting task 0.3 in stage 0.0 (TID 3) (172.18.0.7,executor 0, partition 0, PROCESS_LOCAL, 10687 bytes)
+[2025-09-09T14:52:51.043+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:51 INFO TaskSetManager: Lost task 0.3 in stage 0.0 (TID 3) on 172.18.0.7, executor 0: java.io.InvalidClassException (org.apache.spark.sql.types.StructField; local class incompatible: stream classdesc serialVersionUID = 211707512700890436, local class serialVersionUID = 8518787353547913830) [duplicate 3]
+[2025-09-09T14:52:51.052+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:51 ERROR TaskSetManager: Task 0 in stage 0.0 failed 4 times; aborting job
+[2025-09-09T14:52:51.063+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:51 INFO TaskSchedulerImpl: Removed TaskSet 0.0 whose tasks have all completed, from pool
+[2025-09-09T14:52:51.074+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:51 INFO TaskSchedulerImpl: Canceling stage 0
+[2025-09-09T14:52:51.077+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:51 INFO TaskSchedulerImpl: Killing all running tasks in stage 0: Job aborted due to stage failure: Task 0 in stage 0.0 failed 4 times, most recent failure: Lost task 0.3 in stage 0.0 (TID 3) (172.18.0.7 executor 0): java.io.InvalidClassException: org.apache.spark.sql.types.StructField; local class incompatible: stream classdesc serialVersionUID = 211707512700890436, local class serialVersionUID = 8518787353547913830
+[2025-09-09T14:52:51.078+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectStreamClass.initNonProxy(Unknown Source)
+[2025-09-09T14:52:51.078+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readNonProxyDesc(Unknown Source)
+[2025-09-09T14:52:51.078+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readClassDesc(Unknown Source)
+[2025-09-09T14:52:51.079+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:51.079+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.079+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readArray(Unknown Source)
+[2025-09-09T14:52:51.079+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.079+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream$FieldValues.<init>(Unknown Source)
+[2025-09-09T14:52:51.080+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readSerialData(Unknown Source)
+[2025-09-09T14:52:51.080+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:51.080+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.080+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readArray(Unknown Source)
+[2025-09-09T14:52:51.081+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.081+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream$FieldValues.<init>(Unknown Source)
+[2025-09-09T14:52:51.081+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readSerialData(Unknown Source)
+[2025-09-09T14:52:51.081+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:51.082+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.082+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readArray(Unknown Source)
+[2025-09-09T14:52:51.082+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.082+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream$FieldValues.<init>(Unknown Source)
+[2025-09-09T14:52:51.082+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readSerialData(Unknown Source)
+[2025-09-09T14:52:51.083+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:51.083+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.083+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream$FieldValues.<init>(Unknown Source)
+[2025-09-09T14:52:51.083+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readSerialData(Unknown Source)
+[2025-09-09T14:52:51.083+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:51.084+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.084+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream$FieldValues.<init>(Unknown Source)
+[2025-09-09T14:52:51.084+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readSerialData(Unknown Source)
+[2025-09-09T14:52:51.084+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:51.084+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.085+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject(Unknown Source)
+[2025-09-09T14:52:51.087+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject(Unknown Source)
+[2025-09-09T14:52:51.087+0000] {spark_submit.py:521} INFO - at scala.collection.generic.DefaultSerializationProxy.readObject(DefaultSerializationProxy.scala:58)
+[2025-09-09T14:52:51.088+0000] {spark_submit.py:521} INFO - at jdk.internal.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+[2025-09-09T14:52:51.089+0000] {spark_submit.py:521} INFO - at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+[2025-09-09T14:52:51.089+0000] {spark_submit.py:521} INFO - at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+[2025-09-09T14:52:51.089+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectStreamClass.invokeReadObject(Unknown Source)
+[2025-09-09T14:52:51.089+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readSerialData(Unknown Source)
+[2025-09-09T14:52:51.090+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:51.090+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.091+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream$FieldValues.<init>(Unknown Source)
+[2025-09-09T14:52:51.091+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readSerialData(Unknown Source)
+[2025-09-09T14:52:51.091+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:51.092+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.092+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream$FieldValues.<init>(Unknown Source)
+[2025-09-09T14:52:51.092+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readSerialData(Unknown Source)
+[2025-09-09T14:52:51.093+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:51.093+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.094+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject(Unknown Source)
+[2025-09-09T14:52:51.094+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject(Unknown Source)
+[2025-09-09T14:52:51.095+0000] {spark_submit.py:521} INFO - at scala.collection.generic.DefaultSerializationProxy.readObject(DefaultSerializationProxy.scala:58)
+[2025-09-09T14:52:51.095+0000] {spark_submit.py:521} INFO - at jdk.internal.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+[2025-09-09T14:52:51.096+0000] {spark_submit.py:521} INFO - at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+[2025-09-09T14:52:51.096+0000] {spark_submit.py:521} INFO - at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+[2025-09-09T14:52:51.096+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectStreamClass.invokeReadObject(Unknown Source)
+[2025-09-09T14:52:51.096+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readSerialData(Unknown Source)
+[2025-09-09T14:52:51.097+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:51.097+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.097+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream$FieldValues.<init>(Unknown Source)
+[2025-09-09T14:52:51.098+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readSerialData(Unknown Source)
+[2025-09-09T14:52:51.098+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:51.098+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.099+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream$FieldValues.<init>(Unknown Source)
+[2025-09-09T14:52:51.099+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readSerialData(Unknown Source)
+[2025-09-09T14:52:51.099+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:51.100+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.100+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject(Unknown Source)
+[2025-09-09T14:52:51.100+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject(Unknown Source)
+[2025-09-09T14:52:51.101+0000] {spark_submit.py:521} INFO - at org.apache.spark.serializer.JavaDeserializationStream.readObject(JavaSerializer.scala:88)
+[2025-09-09T14:52:51.101+0000] {spark_submit.py:521} INFO - at org.apache.spark.serializer.JavaSerializerInstance.deserialize(JavaSerializer.scala:136)
+[2025-09-09T14:52:51.101+0000] {spark_submit.py:521} INFO - at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:86)
+[2025-09-09T14:52:51.102+0000] {spark_submit.py:521} INFO - at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:171)
+[2025-09-09T14:52:51.102+0000] {spark_submit.py:521} INFO - at org.apache.spark.scheduler.Task.run(Task.scala:147)
+[2025-09-09T14:52:51.102+0000] {spark_submit.py:521} INFO - at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$5(Executor.scala:647)
+[2025-09-09T14:52:51.103+0000] {spark_submit.py:521} INFO - at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:80)
+[2025-09-09T14:52:51.104+0000] {spark_submit.py:521} INFO - at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:77)
+[2025-09-09T14:52:51.104+0000] {spark_submit.py:521} INFO - at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:99)
+[2025-09-09T14:52:51.105+0000] {spark_submit.py:521} INFO - at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:650)
+[2025-09-09T14:52:51.105+0000] {spark_submit.py:521} INFO - at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+[2025-09-09T14:52:51.106+0000] {spark_submit.py:521} INFO - at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+[2025-09-09T14:52:51.106+0000] {spark_submit.py:521} INFO - at java.base/java.lang.Thread.run(Unknown Source)
+[2025-09-09T14:52:51.107+0000] {spark_submit.py:521} INFO - 
+[2025-09-09T14:52:51.107+0000] {spark_submit.py:521} INFO - Driver stacktrace:
+[2025-09-09T14:52:51.108+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:51 INFO DAGScheduler: ResultStage 0 (showString at NativeMethodAccessorImpl.java:0) failed in 29969 ms due to Job aborted due to stage failure: Task 0 in stage 0.0 failed 4 times, most recent failure: Lost task 0.3 in stage 0.0 (TID 3) (172.18.0.7 executor 0): java.io.InvalidClassException: org.apache.spark.sql.types.StructField; local class incompatible: stream classdesc serialVersionUID = 211707512700890436, local class serialVersionUID = 8518787353547913830
+[2025-09-09T14:52:51.110+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectStreamClass.initNonProxy(Unknown Source)
+[2025-09-09T14:52:51.110+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readNonProxyDesc(Unknown Source)
+[2025-09-09T14:52:51.111+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readClassDesc(Unknown Source)
+[2025-09-09T14:52:51.111+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:51.111+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.112+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readArray(Unknown Source)
+[2025-09-09T14:52:51.112+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.112+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream$FieldValues.<init>(Unknown Source)
+[2025-09-09T14:52:51.112+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readSerialData(Unknown Source)
+[2025-09-09T14:52:51.113+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:51.113+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.113+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readArray(Unknown Source)
+[2025-09-09T14:52:51.114+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.115+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream$FieldValues.<init>(Unknown Source)
+[2025-09-09T14:52:51.115+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readSerialData(Unknown Source)
+[2025-09-09T14:52:51.115+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:51.116+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.117+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readArray(Unknown Source)
+[2025-09-09T14:52:51.117+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.117+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream$FieldValues.<init>(Unknown Source)
+[2025-09-09T14:52:51.118+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readSerialData(Unknown Source)
+[2025-09-09T14:52:51.118+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:51.119+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.119+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream$FieldValues.<init>(Unknown Source)
+[2025-09-09T14:52:51.120+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readSerialData(Unknown Source)
+[2025-09-09T14:52:51.120+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:51.121+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.122+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream$FieldValues.<init>(Unknown Source)
+[2025-09-09T14:52:51.122+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readSerialData(Unknown Source)
+[2025-09-09T14:52:51.123+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:51.123+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.132+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject(Unknown Source)
+[2025-09-09T14:52:51.134+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject(Unknown Source)
+[2025-09-09T14:52:51.134+0000] {spark_submit.py:521} INFO - at scala.collection.generic.DefaultSerializationProxy.readObject(DefaultSerializationProxy.scala:58)
+[2025-09-09T14:52:51.135+0000] {spark_submit.py:521} INFO - at jdk.internal.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+[2025-09-09T14:52:51.135+0000] {spark_submit.py:521} INFO - at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+[2025-09-09T14:52:51.136+0000] {spark_submit.py:521} INFO - at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+[2025-09-09T14:52:51.136+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectStreamClass.invokeReadObject(Unknown Source)
+[2025-09-09T14:52:51.137+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readSerialData(Unknown Source)
+[2025-09-09T14:52:51.139+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:51.140+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.141+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream$FieldValues.<init>(Unknown Source)
+[2025-09-09T14:52:51.141+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readSerialData(Unknown Source)
+[2025-09-09T14:52:51.142+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:51.142+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.142+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream$FieldValues.<init>(Unknown Source)
+[2025-09-09T14:52:51.143+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readSerialData(Unknown Source)
+[2025-09-09T14:52:51.143+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:51.146+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.146+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject(Unknown Source)
+[2025-09-09T14:52:51.147+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject(Unknown Source)
+[2025-09-09T14:52:51.147+0000] {spark_submit.py:521} INFO - at scala.collection.generic.DefaultSerializationProxy.readObject(DefaultSerializationProxy.scala:58)
+[2025-09-09T14:52:51.148+0000] {spark_submit.py:521} INFO - at jdk.internal.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+[2025-09-09T14:52:51.148+0000] {spark_submit.py:521} INFO - at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+[2025-09-09T14:52:51.148+0000] {spark_submit.py:521} INFO - at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+[2025-09-09T14:52:51.149+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectStreamClass.invokeReadObject(Unknown Source)
+[2025-09-09T14:52:51.149+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readSerialData(Unknown Source)
+[2025-09-09T14:52:51.149+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:51.149+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.150+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream$FieldValues.<init>(Unknown Source)
+[2025-09-09T14:52:51.151+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readSerialData(Unknown Source)
+[2025-09-09T14:52:51.152+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:51.153+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.153+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream$FieldValues.<init>(Unknown Source)
+[2025-09-09T14:52:51.154+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readSerialData(Unknown Source)
+[2025-09-09T14:52:51.154+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:51.155+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.155+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject(Unknown Source)
+[2025-09-09T14:52:51.156+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject(Unknown Source)
+[2025-09-09T14:52:51.156+0000] {spark_submit.py:521} INFO - at org.apache.spark.serializer.JavaDeserializationStream.readObject(JavaSerializer.scala:88)
+[2025-09-09T14:52:51.157+0000] {spark_submit.py:521} INFO - at org.apache.spark.serializer.JavaSerializerInstance.deserialize(JavaSerializer.scala:136)
+[2025-09-09T14:52:51.157+0000] {spark_submit.py:521} INFO - at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:86)
+[2025-09-09T14:52:51.157+0000] {spark_submit.py:521} INFO - at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:171)
+[2025-09-09T14:52:51.158+0000] {spark_submit.py:521} INFO - at org.apache.spark.scheduler.Task.run(Task.scala:147)
+[2025-09-09T14:52:51.158+0000] {spark_submit.py:521} INFO - at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$5(Executor.scala:647)
+[2025-09-09T14:52:51.158+0000] {spark_submit.py:521} INFO - at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:80)
+[2025-09-09T14:52:51.159+0000] {spark_submit.py:521} INFO - at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:77)
+[2025-09-09T14:52:51.160+0000] {spark_submit.py:521} INFO - at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:99)
+[2025-09-09T14:52:51.162+0000] {spark_submit.py:521} INFO - at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:650)
+[2025-09-09T14:52:51.163+0000] {spark_submit.py:521} INFO - at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+[2025-09-09T14:52:51.163+0000] {spark_submit.py:521} INFO - at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+[2025-09-09T14:52:51.164+0000] {spark_submit.py:521} INFO - at java.base/java.lang.Thread.run(Unknown Source)
+[2025-09-09T14:52:51.164+0000] {spark_submit.py:521} INFO - 
+[2025-09-09T14:52:51.165+0000] {spark_submit.py:521} INFO - Driver stacktrace:
+[2025-09-09T14:52:51.165+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:51 INFO DAGScheduler: Job 0 failed: showString at NativeMethodAccessorImpl.java:0, took 30079.543821 ms
+[2025-09-09T14:52:51.377+0000] {spark_submit.py:521} INFO - Traceback (most recent call last):
+[2025-09-09T14:52:51.377+0000] {spark_submit.py:521} INFO - File "/opt/spark-jobs/elt/transform/silver_topcv_transform.py", line 41, in <module>
+[2025-09-09T14:52:51.386+0000] {spark_submit.py:521} INFO - df.show()
+[2025-09-09T14:52:51.388+0000] {spark_submit.py:521} INFO - File "/home/***/.local/lib/python3.11/site-packages/pyspark/python/lib/pyspark.zip/pyspark/sql/classic/dataframe.py", line 285, in show
+[2025-09-09T14:52:51.393+0000] {spark_submit.py:521} INFO - File "/home/***/.local/lib/python3.11/site-packages/pyspark/python/lib/pyspark.zip/pyspark/sql/classic/dataframe.py", line 303, in _show_string
+[2025-09-09T14:52:51.396+0000] {spark_submit.py:521} INFO - File "/home/***/.local/lib/python3.11/site-packages/pyspark/python/lib/py4j-0.10.9.9-src.zip/py4j/java_gateway.py", line 1362, in __call__
+[2025-09-09T14:52:51.398+0000] {spark_submit.py:521} INFO - File "/home/***/.local/lib/python3.11/site-packages/pyspark/python/lib/pyspark.zip/pyspark/errors/exceptions/captured.py", line 282, in deco
+[2025-09-09T14:52:51.399+0000] {spark_submit.py:521} INFO - File "/home/***/.local/lib/python3.11/site-packages/pyspark/python/lib/py4j-0.10.9.9-src.zip/py4j/protocol.py", line 327, in get_return_value
+[2025-09-09T14:52:51.448+0000] {spark_submit.py:521} INFO - py4j.protocol.Py4JJavaError: An error occurred while calling o60.showString.
+[2025-09-09T14:52:51.450+0000] {spark_submit.py:521} INFO - : org.apache.spark.SparkException: Job aborted due to stage failure: Task 0 in stage 0.0 failed 4 times, most recent failure: Lost task 0.3 in stage 0.0 (TID 3) (172.18.0.7 executor 0): java.io.InvalidClassException: org.apache.spark.sql.types.StructField; local class incompatible: stream classdesc serialVersionUID = 211707512700890436, local class serialVersionUID = 8518787353547913830
+[2025-09-09T14:52:51.452+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectStreamClass.initNonProxy(Unknown Source)
+[2025-09-09T14:52:51.452+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readNonProxyDesc(Unknown Source)
+[2025-09-09T14:52:51.453+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readClassDesc(Unknown Source)
+[2025-09-09T14:52:51.453+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:51.453+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.453+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readArray(Unknown Source)
+[2025-09-09T14:52:51.453+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.454+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream$FieldValues.<init>(Unknown Source)
+[2025-09-09T14:52:51.454+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readSerialData(Unknown Source)
+[2025-09-09T14:52:51.454+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:51.454+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.455+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readArray(Unknown Source)
+[2025-09-09T14:52:51.455+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.455+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream$FieldValues.<init>(Unknown Source)
+[2025-09-09T14:52:51.456+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readSerialData(Unknown Source)
+[2025-09-09T14:52:51.456+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:51.456+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.456+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readArray(Unknown Source)
+[2025-09-09T14:52:51.457+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.457+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream$FieldValues.<init>(Unknown Source)
+[2025-09-09T14:52:51.457+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readSerialData(Unknown Source)
+[2025-09-09T14:52:51.457+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:51.457+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.458+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream$FieldValues.<init>(Unknown Source)
+[2025-09-09T14:52:51.458+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readSerialData(Unknown Source)
+[2025-09-09T14:52:51.458+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:51.458+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.459+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream$FieldValues.<init>(Unknown Source)
+[2025-09-09T14:52:51.459+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readSerialData(Unknown Source)
+[2025-09-09T14:52:51.459+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:51.459+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.459+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject(Unknown Source)
+[2025-09-09T14:52:51.460+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject(Unknown Source)
+[2025-09-09T14:52:51.460+0000] {spark_submit.py:521} INFO - at scala.collection.generic.DefaultSerializationProxy.readObject(DefaultSerializationProxy.scala:58)
+[2025-09-09T14:52:51.460+0000] {spark_submit.py:521} INFO - at jdk.internal.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+[2025-09-09T14:52:51.460+0000] {spark_submit.py:521} INFO - at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+[2025-09-09T14:52:51.461+0000] {spark_submit.py:521} INFO - at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+[2025-09-09T14:52:51.461+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectStreamClass.invokeReadObject(Unknown Source)
+[2025-09-09T14:52:51.461+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readSerialData(Unknown Source)
+[2025-09-09T14:52:51.461+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:51.461+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.462+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream$FieldValues.<init>(Unknown Source)
+[2025-09-09T14:52:51.462+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readSerialData(Unknown Source)
+[2025-09-09T14:52:51.462+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:51.462+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.462+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream$FieldValues.<init>(Unknown Source)
+[2025-09-09T14:52:51.463+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readSerialData(Unknown Source)
+[2025-09-09T14:52:51.463+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:51.463+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.463+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject(Unknown Source)
+[2025-09-09T14:52:51.464+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject(Unknown Source)
+[2025-09-09T14:52:51.464+0000] {spark_submit.py:521} INFO - at scala.collection.generic.DefaultSerializationProxy.readObject(DefaultSerializationProxy.scala:58)
+[2025-09-09T14:52:51.464+0000] {spark_submit.py:521} INFO - at jdk.internal.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+[2025-09-09T14:52:51.464+0000] {spark_submit.py:521} INFO - at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+[2025-09-09T14:52:51.464+0000] {spark_submit.py:521} INFO - at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+[2025-09-09T14:52:51.464+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectStreamClass.invokeReadObject(Unknown Source)
+[2025-09-09T14:52:51.465+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readSerialData(Unknown Source)
+[2025-09-09T14:52:51.465+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:51.465+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.465+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream$FieldValues.<init>(Unknown Source)
+[2025-09-09T14:52:51.465+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readSerialData(Unknown Source)
+[2025-09-09T14:52:51.466+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:51.466+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.466+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream$FieldValues.<init>(Unknown Source)
+[2025-09-09T14:52:51.466+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readSerialData(Unknown Source)
+[2025-09-09T14:52:51.466+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:51.467+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.467+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject(Unknown Source)
+[2025-09-09T14:52:51.467+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject(Unknown Source)
+[2025-09-09T14:52:51.467+0000] {spark_submit.py:521} INFO - at org.apache.spark.serializer.JavaDeserializationStream.readObject(JavaSerializer.scala:88)
+[2025-09-09T14:52:51.468+0000] {spark_submit.py:521} INFO - at org.apache.spark.serializer.JavaSerializerInstance.deserialize(JavaSerializer.scala:136)
+[2025-09-09T14:52:51.468+0000] {spark_submit.py:521} INFO - at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:86)
+[2025-09-09T14:52:51.468+0000] {spark_submit.py:521} INFO - at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:171)
+[2025-09-09T14:52:51.468+0000] {spark_submit.py:521} INFO - at org.apache.spark.scheduler.Task.run(Task.scala:147)
+[2025-09-09T14:52:51.468+0000] {spark_submit.py:521} INFO - at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$5(Executor.scala:647)
+[2025-09-09T14:52:51.469+0000] {spark_submit.py:521} INFO - at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:80)
+[2025-09-09T14:52:51.469+0000] {spark_submit.py:521} INFO - at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:77)
+[2025-09-09T14:52:51.469+0000] {spark_submit.py:521} INFO - at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:99)
+[2025-09-09T14:52:51.469+0000] {spark_submit.py:521} INFO - at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:650)
+[2025-09-09T14:52:51.469+0000] {spark_submit.py:521} INFO - at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+[2025-09-09T14:52:51.469+0000] {spark_submit.py:521} INFO - at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+[2025-09-09T14:52:51.470+0000] {spark_submit.py:521} INFO - at java.base/java.lang.Thread.run(Unknown Source)
+[2025-09-09T14:52:51.470+0000] {spark_submit.py:521} INFO - 
+[2025-09-09T14:52:51.470+0000] {spark_submit.py:521} INFO - Driver stacktrace:
+[2025-09-09T14:52:51.470+0000] {spark_submit.py:521} INFO - at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$3(DAGScheduler.scala:2935)
+[2025-09-09T14:52:51.470+0000] {spark_submit.py:521} INFO - at scala.Option.getOrElse(Option.scala:201)
+[2025-09-09T14:52:51.470+0000] {spark_submit.py:521} INFO - at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2(DAGScheduler.scala:2935)
+[2025-09-09T14:52:51.471+0000] {spark_submit.py:521} INFO - at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2$adapted(DAGScheduler.scala:2927)
+[2025-09-09T14:52:51.471+0000] {spark_submit.py:521} INFO - at scala.collection.immutable.List.foreach(List.scala:334)
+[2025-09-09T14:52:51.471+0000] {spark_submit.py:521} INFO - at org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:2927)
+[2025-09-09T14:52:51.472+0000] {spark_submit.py:521} INFO - at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1(DAGScheduler.scala:1295)
+[2025-09-09T14:52:51.472+0000] {spark_submit.py:521} INFO - at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1$adapted(DAGScheduler.scala:1295)
+[2025-09-09T14:52:51.472+0000] {spark_submit.py:521} INFO - at scala.Option.foreach(Option.scala:437)
+[2025-09-09T14:52:51.472+0000] {spark_submit.py:521} INFO - at org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:1295)
+[2025-09-09T14:52:51.473+0000] {spark_submit.py:521} INFO - at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:3207)
+[2025-09-09T14:52:51.473+0000] {spark_submit.py:521} INFO - at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:3141)
+[2025-09-09T14:52:51.473+0000] {spark_submit.py:521} INFO - at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:3130)
+[2025-09-09T14:52:51.473+0000] {spark_submit.py:521} INFO - at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:50)
+[2025-09-09T14:52:51.474+0000] {spark_submit.py:521} INFO - at org.apache.spark.scheduler.DAGScheduler.runJob(DAGScheduler.scala:1009)
+[2025-09-09T14:52:51.474+0000] {spark_submit.py:521} INFO - at org.apache.spark.SparkContext.runJob(SparkContext.scala:2484)
+[2025-09-09T14:52:51.474+0000] {spark_submit.py:521} INFO - at org.apache.spark.SparkContext.runJob(SparkContext.scala:2505)
+[2025-09-09T14:52:51.474+0000] {spark_submit.py:521} INFO - at org.apache.spark.SparkContext.runJob(SparkContext.scala:2524)
+[2025-09-09T14:52:51.474+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.execution.SparkPlan.executeTake(SparkPlan.scala:544)
+[2025-09-09T14:52:51.475+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.execution.SparkPlan.executeTake(SparkPlan.scala:497)
+[2025-09-09T14:52:51.475+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.execution.CollectLimitExec.executeCollect(limit.scala:58)
+[2025-09-09T14:52:51.475+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.classic.Dataset.collectFromPlan(Dataset.scala:2244)
+[2025-09-09T14:52:51.475+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.classic.Dataset.$anonfun$head$1(Dataset.scala:1379)
+[2025-09-09T14:52:51.475+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.classic.Dataset.$anonfun$withAction$2(Dataset.scala:2234)
+[2025-09-09T14:52:51.475+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.execution.QueryExecution$.withInternalError(QueryExecution.scala:654)
+[2025-09-09T14:52:51.476+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.classic.Dataset.$anonfun$withAction$1(Dataset.scala:2232)
+[2025-09-09T14:52:51.476+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId0$8(SQLExecution.scala:163)
+[2025-09-09T14:52:51.476+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.execution.SQLExecution$.withSessionTagsApplied(SQLExecution.scala:272)
+[2025-09-09T14:52:51.476+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId0$7(SQLExecution.scala:125)
+[2025-09-09T14:52:51.476+0000] {spark_submit.py:521} INFO - at org.apache.spark.JobArtifactSet$.withActiveJobArtifactState(JobArtifactSet.scala:94)
+[2025-09-09T14:52:51.477+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.artifact.ArtifactManager.$anonfun$withResources$1(ArtifactManager.scala:112)
+[2025-09-09T14:52:51.477+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.artifact.ArtifactManager.withClassLoaderIfNeeded(ArtifactManager.scala:106)
+[2025-09-09T14:52:51.477+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.artifact.ArtifactManager.withResources(ArtifactManager.scala:111)
+[2025-09-09T14:52:51.477+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId0$6(SQLExecution.scala:125)
+[2025-09-09T14:52:51.477+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:295)
+[2025-09-09T14:52:51.478+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId0$1(SQLExecution.scala:124)
+[2025-09-09T14:52:51.478+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:804)
+[2025-09-09T14:52:51.478+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId0(SQLExecution.scala:78)
+[2025-09-09T14:52:51.478+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:237)
+[2025-09-09T14:52:51.478+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.classic.Dataset.withAction(Dataset.scala:2232)
+[2025-09-09T14:52:51.478+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.classic.Dataset.head(Dataset.scala:1379)
+[2025-09-09T14:52:51.479+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.Dataset.take(Dataset.scala:2810)
+[2025-09-09T14:52:51.479+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.classic.Dataset.getRows(Dataset.scala:339)
+[2025-09-09T14:52:51.479+0000] {spark_submit.py:521} INFO - at org.apache.spark.sql.classic.Dataset.showString(Dataset.scala:375)
+[2025-09-09T14:52:51.479+0000] {spark_submit.py:521} INFO - at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[2025-09-09T14:52:51.479+0000] {spark_submit.py:521} INFO - at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+[2025-09-09T14:52:51.480+0000] {spark_submit.py:521} INFO - at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[2025-09-09T14:52:51.480+0000] {spark_submit.py:521} INFO - at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+[2025-09-09T14:52:51.480+0000] {spark_submit.py:521} INFO - at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+[2025-09-09T14:52:51.480+0000] {spark_submit.py:521} INFO - at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+[2025-09-09T14:52:51.480+0000] {spark_submit.py:521} INFO - at py4j.Gateway.invoke(Gateway.java:282)
+[2025-09-09T14:52:51.480+0000] {spark_submit.py:521} INFO - at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+[2025-09-09T14:52:51.481+0000] {spark_submit.py:521} INFO - at py4j.commands.CallCommand.execute(CallCommand.java:79)
+[2025-09-09T14:52:51.481+0000] {spark_submit.py:521} INFO - at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:184)
+[2025-09-09T14:52:51.481+0000] {spark_submit.py:521} INFO - at py4j.ClientServerConnection.run(ClientServerConnection.java:108)
+[2025-09-09T14:52:51.481+0000] {spark_submit.py:521} INFO - at java.base/java.lang.Thread.run(Thread.java:840)
+[2025-09-09T14:52:51.481+0000] {spark_submit.py:521} INFO - Caused by: java.io.InvalidClassException: org.apache.spark.sql.types.StructField; local class incompatible: stream classdesc serialVersionUID = 211707512700890436, local class serialVersionUID = 8518787353547913830
+[2025-09-09T14:52:51.482+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectStreamClass.initNonProxy(Unknown Source)
+[2025-09-09T14:52:51.482+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readNonProxyDesc(Unknown Source)
+[2025-09-09T14:52:51.482+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readClassDesc(Unknown Source)
+[2025-09-09T14:52:51.482+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:51.482+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.483+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readArray(Unknown Source)
+[2025-09-09T14:52:51.483+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.483+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream$FieldValues.<init>(Unknown Source)
+[2025-09-09T14:52:51.483+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readSerialData(Unknown Source)
+[2025-09-09T14:52:51.483+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:51.484+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.484+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readArray(Unknown Source)
+[2025-09-09T14:52:51.484+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.484+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream$FieldValues.<init>(Unknown Source)
+[2025-09-09T14:52:51.485+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readSerialData(Unknown Source)
+[2025-09-09T14:52:51.485+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:51.485+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.486+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readArray(Unknown Source)
+[2025-09-09T14:52:51.487+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.487+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream$FieldValues.<init>(Unknown Source)
+[2025-09-09T14:52:51.488+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readSerialData(Unknown Source)
+[2025-09-09T14:52:51.488+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:51.489+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.489+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream$FieldValues.<init>(Unknown Source)
+[2025-09-09T14:52:51.490+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readSerialData(Unknown Source)
+[2025-09-09T14:52:51.491+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:51.491+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.491+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream$FieldValues.<init>(Unknown Source)
+[2025-09-09T14:52:51.492+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readSerialData(Unknown Source)
+[2025-09-09T14:52:51.492+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:51.492+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.492+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject(Unknown Source)
+[2025-09-09T14:52:51.493+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject(Unknown Source)
+[2025-09-09T14:52:51.494+0000] {spark_submit.py:521} INFO - at scala.collection.generic.DefaultSerializationProxy.readObject(DefaultSerializationProxy.scala:58)
+[2025-09-09T14:52:51.495+0000] {spark_submit.py:521} INFO - at jdk.internal.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+[2025-09-09T14:52:51.495+0000] {spark_submit.py:521} INFO - at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+[2025-09-09T14:52:51.495+0000] {spark_submit.py:521} INFO - at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+[2025-09-09T14:52:51.495+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectStreamClass.invokeReadObject(Unknown Source)
+[2025-09-09T14:52:51.496+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readSerialData(Unknown Source)
+[2025-09-09T14:52:51.496+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:51.496+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.496+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream$FieldValues.<init>(Unknown Source)
+[2025-09-09T14:52:51.497+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readSerialData(Unknown Source)
+[2025-09-09T14:52:51.497+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:51.497+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.497+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream$FieldValues.<init>(Unknown Source)
+[2025-09-09T14:52:51.498+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readSerialData(Unknown Source)
+[2025-09-09T14:52:51.498+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:51.498+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.498+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject(Unknown Source)
+[2025-09-09T14:52:51.498+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject(Unknown Source)
+[2025-09-09T14:52:51.499+0000] {spark_submit.py:521} INFO - at scala.collection.generic.DefaultSerializationProxy.readObject(DefaultSerializationProxy.scala:58)
+[2025-09-09T14:52:51.499+0000] {spark_submit.py:521} INFO - at jdk.internal.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+[2025-09-09T14:52:51.499+0000] {spark_submit.py:521} INFO - at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+[2025-09-09T14:52:51.499+0000] {spark_submit.py:521} INFO - at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+[2025-09-09T14:52:51.500+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectStreamClass.invokeReadObject(Unknown Source)
+[2025-09-09T14:52:51.500+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readSerialData(Unknown Source)
+[2025-09-09T14:52:51.500+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:51.500+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.501+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream$FieldValues.<init>(Unknown Source)
+[2025-09-09T14:52:51.501+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readSerialData(Unknown Source)
+[2025-09-09T14:52:51.501+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:51.501+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.502+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream$FieldValues.<init>(Unknown Source)
+[2025-09-09T14:52:51.502+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readSerialData(Unknown Source)
+[2025-09-09T14:52:51.502+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+[2025-09-09T14:52:51.502+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+[2025-09-09T14:52:51.502+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject(Unknown Source)
+[2025-09-09T14:52:51.503+0000] {spark_submit.py:521} INFO - at java.base/java.io.ObjectInputStream.readObject(Unknown Source)
+[2025-09-09T14:52:51.503+0000] {spark_submit.py:521} INFO - at org.apache.spark.serializer.JavaDeserializationStream.readObject(JavaSerializer.scala:88)
+[2025-09-09T14:52:51.503+0000] {spark_submit.py:521} INFO - at org.apache.spark.serializer.JavaSerializerInstance.deserialize(JavaSerializer.scala:136)
+[2025-09-09T14:52:51.503+0000] {spark_submit.py:521} INFO - at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:86)
+[2025-09-09T14:52:51.503+0000] {spark_submit.py:521} INFO - at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:171)
+[2025-09-09T14:52:51.504+0000] {spark_submit.py:521} INFO - at org.apache.spark.scheduler.Task.run(Task.scala:147)
+[2025-09-09T14:52:51.504+0000] {spark_submit.py:521} INFO - at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$5(Executor.scala:647)
+[2025-09-09T14:52:51.504+0000] {spark_submit.py:521} INFO - at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:80)
+[2025-09-09T14:52:51.505+0000] {spark_submit.py:521} INFO - at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:77)
+[2025-09-09T14:52:51.505+0000] {spark_submit.py:521} INFO - at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:99)
+[2025-09-09T14:52:51.505+0000] {spark_submit.py:521} INFO - at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:650)
+[2025-09-09T14:52:51.505+0000] {spark_submit.py:521} INFO - at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+[2025-09-09T14:52:51.506+0000] {spark_submit.py:521} INFO - at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+[2025-09-09T14:52:51.506+0000] {spark_submit.py:521} INFO - at java.base/java.lang.Thread.run(Unknown Source)
+[2025-09-09T14:52:51.506+0000] {spark_submit.py:521} INFO - 
+[2025-09-09T14:52:52.945+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:52 INFO SparkContext: Invoking stop() from shutdown hook
+[2025-09-09T14:52:52.959+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:52 INFO SparkContext: SparkContext is stopping with exitCode 0 from run at Executors.java:539.
+[2025-09-09T14:52:53.074+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:53 INFO SparkUI: Stopped Spark web UI at http://118acb478e13:4040
+[2025-09-09T14:52:53.083+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:53 INFO StandaloneSchedulerBackend: Shutting down all executors
+[2025-09-09T14:52:53.086+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:53 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Asking each executor to shut down
+[2025-09-09T14:52:53.180+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:53 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+[2025-09-09T14:52:53.380+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:53 INFO MemoryStore: MemoryStore cleared
+[2025-09-09T14:52:53.381+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:53 INFO BlockManager: BlockManager stopped
+[2025-09-09T14:52:53.431+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:53 INFO BlockManagerMaster: BlockManagerMaster stopped
+[2025-09-09T14:52:53.440+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:53 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+[2025-09-09T14:52:53.796+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:53 INFO SparkContext: Successfully stopped SparkContext
+[2025-09-09T14:52:53.809+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:53 INFO ShutdownHookManager: Shutdown hook called
+[2025-09-09T14:52:53.812+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:53 INFO ShutdownHookManager: Deleting directory /tmp/spark-b861c621-b62a-420c-a496-6214d0738b24/pyspark-08843fdb-bbd1-4605-8934-419737716e4e
+[2025-09-09T14:52:53.818+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:53 INFO ShutdownHookManager: Deleting directory /tmp/artifacts-4958a5b1-d9d6-467c-8bcc-7ba74bb3781b
+[2025-09-09T14:52:53.868+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:53 INFO ShutdownHookManager: Deleting directory /tmp/spark-977982ed-5618-4866-8c45-e9ef7d559f9e
+[2025-09-09T14:52:53.894+0000] {spark_submit.py:521} INFO - 25/09/09 14:52:53 INFO ShutdownHookManager: Deleting directory /tmp/spark-b861c621-b62a-420c-a496-6214d0738b24
+[2025-09-09T14:52:54.403+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-09-09T14:52:55.552+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/providers/apache/spark/operators/spark_submit.py", line 156, in execute
+    self._hook.submit(self._application)
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/providers/apache/spark/hooks/spark_submit.py", line 452, in submit
+    raise AirflowException(
+airflow.exceptions.AirflowException: Cannot execute: spark-submit --master spark://spark-master:7077 --conf spark.master=spark://spark-master:7077 --conf spark.jars.packages=org.apache.hadoop:hadoop-aws:3.3.4,com.amazonaws:aws-java-sdk-bundle:1.12.367 --conf spark.hadoop.fs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem --conf spark.hadoop.fs.s3a.endpoint=http://minio:9000 --conf spark.hadoop.fs.s3a.access.key=minio --conf spark.hadoop.fs.s3a.secret.key=****** --conf spark.hadoop.fs.s3a.path.style.access=true --conf spark.hadoop.fs.s3a.connection.ssl.enabled=false --conf spark.hadoop.fs.s3a.connection.timeout=60000 --conf spark.hadoop.fs.s3a.connection.establish.timeout=60000 --conf spark.hadoop.fs.s3a.attempts.maximum=3 --conf spark.hadoop.fs.s3a.connection.maximum=15 --conf spark.jars.ivy=/tmp/ivy --name arrow-spark --verbose /opt/spark-jobs/elt/transform/silver_topcv_transform.py. Error code is: 1.
+[2025-09-09T14:52:56.194+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=spark_transform_pipeline, task_id=silver_group.silver_topcv_transform, run_id=manual__2025-09-09T14:51:56.074675+00:00, execution_date=20250909T145156, start_date=20250909T145202, end_date=20250909T145256
+[2025-09-09T14:52:57.763+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 118 for task silver_group.silver_topcv_transform (Cannot execute: spark-submit --master spark://spark-master:7077 --conf spark.master=spark://spark-master:7077 --conf spark.jars.packages=org.apache.hadoop:hadoop-aws:3.3.4,com.amazonaws:aws-java-sdk-bundle:1.12.367 --conf spark.hadoop.fs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem --conf spark.hadoop.fs.s3a.endpoint=http://minio:9000 --conf spark.hadoop.fs.s3a.access.key=minio --conf spark.hadoop.fs.s3a.secret.key=****** --conf spark.hadoop.fs.s3a.path.style.access=true --conf spark.hadoop.fs.s3a.connection.ssl.enabled=false --conf spark.hadoop.fs.s3a.connection.timeout=60000 --conf spark.hadoop.fs.s3a.connection.establish.timeout=60000 --conf spark.hadoop.fs.s3a.attempts.maximum=3 --conf spark.hadoop.fs.s3a.connection.maximum=15 --conf spark.jars.ivy=/tmp/ivy --name arrow-spark --verbose /opt/spark-jobs/elt/transform/silver_topcv_transform.py. Error code is: 1.; 1687)
+[2025-09-09T14:52:57.986+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-09-09T14:52:59.066+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-09-09T14:52:59.179+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
